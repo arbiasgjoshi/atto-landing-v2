@@ -1,0 +1,135 @@
+.mobileOnly {
+  display: none;
+
+  @include max(tablet) {
+    display: block;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+}
+
+.container {
+  background-color: #e6f8fa;
+  padding: 6rem 1.8rem 0 1.8rem;
+  @include flex-direction(column-reverse);
+
+  @include min(tablet) {
+    flex-direction: column;
+    flex-direction: row;
+    padding: 8.3rem 7rem 5.7rem 7rem;
+  }
+
+  .firstBox {
+    @include min(tablet) {
+      width: 36rem;
+      margin-right: 10rem;
+    }
+
+    h4 {
+      margin-top: 1rem;
+      margin-bottom: 4.1rem;
+      font-weight: var(--regular);
+    }
+
+    > div:not(.ticksWrapper) {
+      width: 100%;
+      margin-bottom: 2rem;
+
+      input {
+        width: 100%;
+        border: 2px solid #000000;
+
+        &:focus {
+          border-color: #fff;
+          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+
+    > button {
+      width: 100%;
+    }
+
+    .ticksWrapper {
+      display: flex;
+      margin: 2rem 0 4.2rem 0rem;
+
+      @include min(tablet) {
+        margin: 1rem 3.4rem 0 2.5rem;
+      }
+
+      .tickItem {
+        display: flex;
+        height: 2.4rem;
+        margin: 0.4rem 0 0.5rem 0;
+        font-size: 1.5rem;
+
+        i {
+          color: var(--primary-color);
+          margin-right: 0.9rem;
+        }
+      }
+
+      .tickItem:first-child {
+        margin-right: 2.4rem;
+      }
+
+      @include max(mobile) {
+        justify-content: space-between;
+
+        .tickItem {
+          margin: 0;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .listWrapper {
+    @include min(tablet) {
+      margin-top: 1.5rem;
+      padding: 0;
+      height: 28rem;
+      width: 55rem;
+    }
+
+    > div {
+      height: 4rem;
+
+      @include max(tablet) {
+        align-items: center;
+      }
+
+      @include min(tablet) {
+        margin-bottom: 2rem;
+      }
+
+      > div:first-child {
+        margin-top: 0;
+        margin: 0 1rem 0 0;
+
+        @include max(tablet) {
+          border-radius: 50%;
+          background-color: rgba(0, 185, 203, 0.1);
+          margin: 0 1.7rem 0 0;
+        }
+
+        i {
+          background-color: transparent;
+        }
+      }
+
+      > div:last-child {
+        width: 100%;
+      }
+    }
+  }
+
+  @include max(tablet) {
+    h3,
+    h4,
+    input {
+      display: none;
+    }
+  }
+}

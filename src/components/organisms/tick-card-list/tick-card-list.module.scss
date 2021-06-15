@@ -1,0 +1,47 @@
+.container {
+  display: grid;
+  box-sizing: border-box;
+  border: 2px solid #efefef;
+  border-radius: 2rem;
+  padding: 1.5rem 0;
+
+  @include min(tablet) {
+    padding: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .item {
+    // padding: 2.8rem 4rem 4.2rem 4rem;
+    display: flex;
+    height: 8rem;
+    padding: 0 2rem;
+    align-items: center;
+    border-bottom: 1px solid #efefef;
+
+    &:nth-child(odd) {
+      border-right: 1px solid #efefef;
+      padding-right: 3.1rem;
+    }
+
+    @include min(tablet) {
+      padding: 0 4rem;
+      height: 12rem;
+    }
+
+    @include min(desktop) {
+      &:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+    }
+
+    @include max(tablet) {
+      > div {
+        margin-bottom: 0;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

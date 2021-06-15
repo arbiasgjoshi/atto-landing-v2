@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="32px" viewBox="0 0 29 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>BFFC0E09-B372-4154-8718-E9C1E6BA8D7ASVG</title>
+    <g id="WEB-DESIGN" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Atto-/-Menu---Industries" transform="translate(-242.000000, -275.000000)" stroke="#000000" stroke-width="1.2">
+            <g id="Group-97" transform="translate(150.000000, 73.000000)">
+                <g id="Group-8" transform="translate(76.000000, 88.000000)">
+                    <g id="menu-/-industries" transform="translate(0.000000, 100.000000)">
+                        <g id="Plumbing_industry" transform="translate(30.000000, 30.000000) scale(-1, 1) translate(-30.000000, -30.000000) translate(16.000000, 14.750000)">
+                            <g id="Group" transform="translate(0.000000, 3.500000)">
+                                <path d="M14,0.6 C16.28528,0.6 18.2906764,1.79785696 19.4230537,3.59965843 L19.4230537,3.59965843 L27.4,3.59997611 L27.4,10.4000966 L19.4224,10.4013816 C18.2899046,12.202604 16.2848402,13.4 14,13.4 C11.8254614,13.4 9.904338,12.315423 8.74764896,10.6579574 C7.70242458,10.4004184 7.27604264,10.5645797 6.97615278,10.8031007 C6.59928053,11.1028506 6.4,11.5280047 6.4,12 L6.4,12 L6.4,14.4 L0.6,14.4 L0.6,9.09912109 C0.6,7.58058073 1.21551009,6.20580046 2.21065528,5.21065528 C3.20580046,4.21551009 4.58058073,3.6 6.09921259,3.59999999 L6.09921259,3.59999999 L8.57696905,3.59962215 C9.70935054,1.79784088 11.7147354,0.6 14,0.6 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                                <path d="M0,23.5307506 C0,21.7480687 2.81498614,18.511526 3.14656134,18.1488148 C3.23883149,18.0542559 3.36550826,18 3.49843861,18 C3.63136896,18 3.75804573,18.0542559 3.85031588,18.1488148 C4.16309434,18.5115498 7,21.7482671 7,23.5307506 C6.99843461,25.4467309 5.43296489,26.9984523 3.5,27 C1.56703511,26.9984523 0.00156139008,25.4467309 0,23.5307506 Z" id="Fill-11" fill="#FFFFFF"></path>
+                                <path d="M16,7 C13.790861,7 12,8.790861 12,11" id="Oval" stroke-linecap="round" stroke-linejoin="round" transform="translate(14.000000, 9.000000) rotate(-135.000000) translate(-14.000000, -9.000000) "></path>
+                            </g>
+                            <line x1="14" y1="4" x2="14" y2="-3" id="Path-18" stroke-linecap="round" stroke-linejoin="round" transform="translate(14.000000, 0.500000) rotate(90.000000) translate(-14.000000, -0.500000) "></line>
+                            <line x1="14" y1="3.5" x2="14" y2="0.5" id="Path-18" stroke-linecap="round" stroke-linejoin="round" transform="translate(14.000000, 2.000000) rotate(180.000000) translate(-14.000000, -2.000000) "></line>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

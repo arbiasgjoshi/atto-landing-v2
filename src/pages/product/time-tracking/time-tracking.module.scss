@@ -1,0 +1,95 @@
+.timeTrackingContainer {
+  .learnMoreContainer {
+    margin-top: -1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include max(tablet) {
+      max-width: 90%;
+      margin: 0 auto;
+      justify-content: center;
+      > div {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .workListContainer {
+    width: 100%;
+    margin: 5rem auto 0;
+
+    > div {
+      margin-bottom: 3rem;
+    }
+
+    @include max(mobile) {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    @include min(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 0.3rem;
+      width: 100%;
+
+      > div > div:last-child {
+        margin-left: 2rem;
+        width: 30.3rem;
+      }
+    }
+
+    @include min(desktop) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 0.3rem;
+      margin-left: 2rem;
+      width: 100%;
+
+      > div {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .commonProblemsContainer {
+    display: grid;
+    row-gap: 2rem;
+
+    @include max(mobile) {
+      row-gap: 5rem;
+    }
+
+    @include min(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2.5rem;
+      row-gap: 2rem;
+    }
+
+    @include min(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 4.5rem;
+      row-gap: 0;
+    }
+  }
+
+  .mobileImage {
+    margin-top: 2rem;
+    width: 100%;
+
+    > div {
+      max-width: 100% !important;
+    }
+
+    @include min(tablet) {
+      display: none !important;
+    }
+  }
+
+  .desktopImage {
+    @include max(tablet) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,153 @@
+.container {
+  align-items: center;
+  @include flex-direction(column);
+  margin-top: 2rem;
+
+  @include min(tablet) {
+    margin: 0;
+    flex-direction: row;
+    // padding-bottom: 6.6rem;
+  }
+
+  @include min(tablet) {
+    height: 73rem;
+  }
+
+  &.other {
+    height: unset;
+  }
+
+  .firstBox {
+    max-width: 60rem;
+
+    @include min(laptop) {
+      margin: 3.6rem 4rem 3.6rem 0;
+    }
+
+    .smallTitleStyle {
+      color: var(--primary-color);
+      font-size: var(--h6-line-height-size);
+      line-height: var(--h6-line-height-size);
+      font-weight: 500;
+      letter-spacing: var(--body-style-one-letter-spacing);
+    }
+
+    .descr {
+      margin-top: 1.6rem;
+      @include min(tablet) {
+        font-size: var(--body-style-one);
+        font-weight: var(--body-style-one-font-weight);
+        letter-spacing: -0.5px;
+        line-height: var(--body-style-one-line-height-size);
+      }
+      margin-bottom: 4rem;
+    }
+
+    h1 {
+      margin-top: 1.2rem;
+      margin-bottom: 3rem;
+
+      &.hasDescr {
+        margin-bottom: 0;
+      }
+    }
+
+    .listContainer {
+      > div {
+        @include max(laptop) {
+          row-gap: 0;
+        }
+
+        > div {
+          @include max(tablet) {
+            margin-bottom: 2rem;
+          }
+
+          > div:first-child {
+            width: 3rem;
+            height: 3rem;
+            margin-right: 1.7rem;
+
+            @include min(laptop) {
+              margin-right: 0;
+              width: 2.8rem;
+              height: 2.8rem;
+            }
+
+            > i {
+              width: 2.8rem;
+              height: 2.8rem;
+              margin-right: 1.4rem;
+              font-size: 1rem;
+            }
+          }
+
+          &:last-child {
+            @include max(tablet) {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        h5 {
+          font-size: var(--body-style-three);
+          font-weight: 400;
+        }
+      }
+    }
+
+    .emailContainer {
+      width: 100%;
+      margin-top: 3rem;
+
+      .mobileImage {
+        display: none;
+
+        @include max(tablet) {
+          display: block;
+
+          img {
+            margin-bottom: 3rem;
+          }
+        }
+      }
+
+      @include min(tablet) {
+        margin-top: 4rem;
+        max-width: 48.2rem;
+      }
+
+      > div {
+        > div {
+          margin-left: 0;
+          margin-right: 0;
+          justify-content: flex-start;
+          &:last-child {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  .secondBox {
+    max-width: 50rem;
+    margin-left: auto;
+    @include max(tablet) {
+      margin: 4rem 0;
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .hasHeight {
+    height: unset;
+
+    @include max(tablet) {
+      max-width: 80%;
+      height: auto;
+    }
+  }
+}

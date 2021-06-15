@@ -1,0 +1,91 @@
+.container {
+  @include flex-direction(column);
+
+  .firstRow {
+    @include flex-direction(column-reverse);
+
+    @include min(tablet) {
+      flex-direction: row;
+      @include flex-align(center, space-between);
+      margin-bottom: 7rem;
+    }
+
+    .textContainer {
+      @include min(tablet) {
+        max-width: 55rem;
+        margin-right: 5.2rem;
+        h2 {
+          margin-bottom: 1.6rem;
+        }
+
+        p {
+          font-size: var(--body-style-one);
+          line-height: var(--body-style-one-line-height-size);
+          font-weight: normal;
+
+          @include min(desktop) {
+            margin-right: 9rem;
+          }
+        }
+      }
+    }
+
+    .imageContainer {
+      max-width: 54rem;
+      margin-bottom: 4rem;
+
+      @include min(tablet) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .secondRow {
+    @include flex-direction(column);
+
+    @include min(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-right: 4rem;
+    }
+
+    > div {
+      @include min(tablet) {
+        max-width: 26.3rem;
+        margin-top: 0;
+      }
+
+      > div {
+        @include max(tablet) {
+          text-align: center;
+          justify-content: center;
+        }
+      }
+
+      > div:nth-child(2) {
+        h5 {
+          margin-right: 1rem;
+        }
+
+        p {
+          @include min(tablet) {
+            height: 15rem;
+            // @include flex-align(center, center);
+          }
+        }
+      }
+    }
+
+    @include max(tablet) {
+      > div {
+        margin-top: 4rem;
+      }
+    }
+  }
+
+  &.moreCards {
+    .secondRow {
+      margin: 0;
+    }
+  }
+}

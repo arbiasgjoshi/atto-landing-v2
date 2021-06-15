@@ -1,0 +1,11 @@
+.productContainer {
+  > svg {
+    margin-left: -4.3rem; // this was on product/index added inline style
+
+    @include max(tablet) {
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.container {
+  .featuresContainer {
+    @include min(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 16rem;
+      row-gap: 5rem;
+
+      &.pricing {
+        column-gap: 4.5rem;
+      }
+    }
+
+    @include min(desktop) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 3rem;
+      row-gap: 7rem;
+    }
+
+    &.pricing {
+      column-gap: 4.5rem;
+    }
+  }
+}

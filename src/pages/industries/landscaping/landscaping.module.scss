@@ -1,0 +1,18 @@
+.background {
+  z-index: -1;
+  top: 147rem;
+  position: absolute;
+  background-color: var(--secondary-color);
+  height: 176.7rem;
+  width: 100%;
+
+  .topImage {
+    top: -57px;
+    width: 100%;
+  }
+
+  .bottomImage {
+    top: 170.3rem;
+    width: 100%;
+  }
+}

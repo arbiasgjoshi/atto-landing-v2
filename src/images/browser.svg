@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Timezones</title>
+    <g id="WEB-DESIGN" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Atto-/-Product-/-Time-Tracking" transform="translate(-700.000000, -7499.000000)" stroke="#00B9CB" stroke-width="1.5">
+            <g id="Group-14" transform="translate(150.000000, 6499.000000)">
+                <g id="Group-27" transform="translate(0.000000, 220.000000)">
+                    <g id="Group-13" transform="translate(0.000000, 780.000000)">
+                        <g id="Single-Feature-Copy-3" transform="translate(390.000000, 0.000000)">
+                            <g id="OVAL-/-Grey-Normal" transform="translate(160.000000, 0.000000)">
+                                <g id="All_featres_time_zone" transform="translate(6.000000, 6.000000)">
+                                    <line x1="0" y1="14" x2="28" y2="14" id="Path-4"></line>
+                                    <line x1="14" y1="-9.90874049e-15" x2="14" y2="28" id="Path-14"></line>
+                                    <circle id="Oval" cx="14" cy="14" r="14"></circle>
+                                    <ellipse id="Oval" cx="14" cy="14" rx="7" ry="14"></ellipse>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,54 @@
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  .BrainhubCarouselItem {
+    align-items: unset;
+  }
+}
+
+.btnWrapper {
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  @include absolute(top 50%);
+  margin-top: -2rem;
+  border-radius: 100%;
+  background-color: #f7f7f7;
+  @include flex-align(center, center);
+  z-index: 2;
+  transition: ease all 0.15s;
+
+  &.largeStyle {
+    width: 6rem;
+    height: 6rem;
+    margin-top: -3rem;
+  }
+
+  &.leftAligned {
+    left: 0;
+  }
+
+  &.pulledLeft {
+    left: -5.5rem;
+  }
+
+  &.rightAligned {
+    right: 0;
+  }
+
+  &.pulledRight {
+    right: -5.5rem;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    background-color: #e3e3e3;
+    cursor: pointer;
+  }
+}

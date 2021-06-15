@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="33px" viewBox="0 0 36 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>66824B34-FF39-49AF-A3FD-677CA0C3503DSVG</title>
+    <g id="WEB-DESIGN" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Atto-/-Menu---Industries" transform="translate(-574.000000, -274.000000)" stroke="#000000" stroke-width="1.2">
+            <g id="Group-97" transform="translate(150.000000, 73.000000)">
+                <g id="Group-8" transform="translate(412.000000, 88.000000)">
+                    <g id="menu-/-industries" transform="translate(0.000000, 100.000000)">
+                        <g id="Electrician_industry" transform="translate(13.000000, 14.350000)">
+                            <path d="M17,8.6 C19.3195959,8.6 21.4195959,9.54020203 22.939697,11.060303 C24.459798,12.5804041 25.4,14.6804041 25.4,17 C25.4,18.6213536 24.9408137,20.135496 24.1450312,21.4192047 C23.2580335,22.8500562 21.9533508,23.994848 20.4011725,24.6830928 L20.4011725,24.6830928 L20.4,30.3 L14,30.7 L13.5999016,24.683569 C12.0474113,23.9954472 10.7424406,22.8506225 9.85524357,21.4196479 C9.05929206,20.1358445 8.6,18.6215402 8.6,17 C8.6,14.6804041 9.54020203,12.5804041 11.060303,11.060303 C12.5804041,9.54020203 14.6804041,8.6 17,8.6 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                            <circle id="Combined-Shape" fill="#FFFFFF" cx="17" cy="17.5" r="1"></circle>
+                            <g id="Group" transform="translate(-0.000000, 16.500000)" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="31.5" y1="3" x2="31.5" y2="-2" id="Path-18" transform="translate(31.500000, 0.500000) rotate(90.000000) translate(-31.500000, -0.500000) "></line>
+                                <line x1="2.5" y1="3" x2="2.5" y2="-2" id="Path-18" transform="translate(2.500000, 0.500000) rotate(90.000000) translate(-2.500000, -0.500000) "></line>
+                            </g>
+                            <g id="Group" transform="translate(6.746952, 6.746952) rotate(45.000000) translate(-6.746952, -6.746952) translate(4.246952, 6.246952)" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="2.5" y1="3" x2="2.5" y2="-2" id="Path-18" transform="translate(2.500000, 0.500000) rotate(90.000000) translate(-2.500000, -0.500000) "></line>
+                            </g>
+                            <g id="Group" transform="translate(17.000000, 14.600000) rotate(90.000000) translate(-17.000000, -14.600000) translate(2.400000, 11.600000)">
+                                <line x1="23.7" y1="3" x2="29.7" y2="3" id="Path-18" stroke-linecap="square" transform="translate(26.700000, 3.000000) rotate(90.000000) translate(-26.700000, -3.000000) "></line>
+                                <line x1="25.7" y1="3" x2="31.7" y2="3" id="Path-18" stroke-linecap="square" transform="translate(28.700000, 3.000000) rotate(90.000000) translate(-28.700000, -3.000000) "></line>
+                                <line x1="2.5" y1="5.5" x2="2.5" y2="0.5" id="Path-18" stroke-linecap="round" stroke-linejoin="round" transform="translate(2.500000, 3.000000) rotate(90.000000) translate(-2.500000, -3.000000) "></line>
+                                <line x1="22.5" y1="7" x2="22.5" y2="-1" id="Path-18" stroke-linecap="round" stroke-linejoin="round" transform="translate(22.500000, 3.000000) rotate(90.000000) translate(-22.500000, -3.000000) "></line>
+                            </g>
+                            <g id="Group" transform="translate(27.253048, 6.746952) rotate(135.000000) translate(-27.253048, -6.746952) translate(24.753048, 6.246952)" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="2.5" y1="3" x2="2.5" y2="-2" id="Path-18" transform="translate(2.500000, 0.500000) rotate(90.000000) translate(-2.500000, -0.500000) "></line>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

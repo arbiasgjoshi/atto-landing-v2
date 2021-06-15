@@ -1,0 +1,16 @@
+.Collapsible {
+  &__trigger {
+    > div > .opened {
+      display: none;
+    }
+    &.is-open {
+      > div > .opened {
+        display: block;
+      }
+
+      > div > .closed {
+        display: none;
+      }
+    }
+  }
+}

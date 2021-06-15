@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="31px" viewBox="0 0 28 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>4AD1728F-343B-4DB0-B5E8-2A20E74877E4SVG</title>
+    <g id="WEB-DESIGN" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Atto-/-Product-/-Time-Tracking" transform="translate(-316.000000, -6723.000000)">
+            <g id="Group-14" transform="translate(150.000000, 6499.000000)">
+                <g id="Group-27" transform="translate(0.000000, 220.000000)">
+                    <g id="OVAL-/-Grey-Normal" transform="translate(160.000000, 0.000000)">
+                        <g id="All_featres_time_tracking" transform="translate(6.000000, 4.000000)">
+                            <circle id="Oval-9" stroke="#00B9CB" stroke-width="2" cx="14" cy="17" r="13"></circle>
+                            <g id="Group" transform="translate(12.000000, 10.000000)" fill="#00B9CB">
+                                <circle id="Oval-9" cx="2" cy="7" r="2"></circle>
+                                <path d="M2,0 C2.55228475,-1.01453063e-16 3,0.44771525 3,1 L3,7 C3,7.55228475 2.55228475,8 2,8 C1.44771525,8 1,7.55228475 1,7 L1,1 C1,0.44771525 1.44771525,1.01453063e-16 2,0 Z" id="Rectangle-4" transform="translate(2.000000, 4.000000) scale(-1, 1) translate(-2.000000, -4.000000) "></path>
+                            </g>
+                            <rect id="Rectangle-11" fill="#00B9CB" transform="translate(14.000000, 1.000000) rotate(-270.000000) translate(-14.000000, -1.000000) " x="13" y="-3" width="2" height="8" rx="1"></rect>
+                            <path d="M14,0 C14.4142136,-7.6089797e-17 14.75,0.335786438 14.75,0.75 L14.75,3.25 C14.75,3.66421356 14.4142136,4 14,4 C13.5857864,4 13.25,3.66421356 13.25,3.25 L13.25,0.75 C13.25,0.335786438 13.5857864,7.6089797e-17 14,0 Z" id="Rectangle-4" fill="#00B9CB" transform="translate(14.000000, 2.000000) scale(-1, 1) translate(-14.000000, -2.000000) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

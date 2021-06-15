@@ -1,0 +1,15 @@
+main {
+  overflow: hidden;
+
+  .container {
+    > * {
+      max-width: var(--main-container-max);
+      margin: 0 auto;
+      padding: 0 1.6rem;
+
+      @include min(tablet) {
+        padding: 0 2.4rem;
+      }
+    }
+  }
+}

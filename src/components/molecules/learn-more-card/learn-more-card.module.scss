@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-20);
+  box-sizing: border-box;
+
+  @include min(tablet) {
+    width: 35rem;
+    height: 44rem;
+  }
+
+  &:hover {
+    background-color: #fafafa;
+    transition: 0.3s;
+    cursor: pointer;
+
+    button {
+      transition: 0.3s;
+      color: #ffffff;
+      background-color: #000;
+      border-color: #000;
+    }
+  }
+
+  .iconWrapper {
+    @include flex-align(center, center);
+    margin: 2rem 0;
+
+    @include min(tablet) {
+      margin: 6rem 14rem 2rem 14rem;
+      width: 7rem;
+      height: 5rem;
+    }
+  }
+
+  .textWrapper {
+    padding: 1rem;
+    text-align: center;
+
+    @include min(tablet) {
+    }
+
+    .cardTitle {
+      margin-bottom: 1.2rem;
+    }
+
+    .paragraphText {
+      @include min(tablet) {
+        height: 12rem;
+        width: 27rem;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  button {
+    background-color: transparent;
+    color: #000;
+    box-sizing: border-box;
+    border: 2px solid #efefef;
+    border-radius: 4px;
+    margin-bottom: 5rem;
+    font-size: 2rem;
+
+    @include max(mobile) {
+      height: unset !important;
+      width: 18rem !important;
+      font-size: 2rem !important;
+    }
+  }
+
+  &.smaller {
+    width: 100%;
+
+    @include max(mobile) {
+      padding: 5rem 3.5rem 0;
+      margin-bottom: 2rem;
+
+      .textWrapper {
+        margin-bottom: 3rem;
+      }
+    }
+
+    @include min(tablet) {
+      width: 48%;
+    }
+
+    @include min(desktop) {
+      width: 27.6rem;
+    }
+
+    .textWrapper {
+      .paragraphText {
+        @include min(tablet) {
+          width: 22rem;
+        }
+      }
+    }
+  }
+}

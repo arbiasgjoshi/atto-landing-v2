@@ -1,0 +1,21 @@
+.container {
+  p {
+    color: var(--color-22);
+    font-size: 1.8rem;
+    line-height: 3rem;
+    letter-spacing: 0;
+
+    &:first-child {
+      margin-bottom: 1rem;
+    }
+  }
+
+  h2 {
+    letter-spacing: -1px;
+    font-size: 5rem;
+    width: 62rem;
+    margin-bottom: 1rem;
+    padding-right: 5rem;
+    font-weight: 400;
+  }
+}

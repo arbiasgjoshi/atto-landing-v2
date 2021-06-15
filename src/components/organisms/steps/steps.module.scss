@@ -1,0 +1,24 @@
+.container {
+  @include flex-align(center, center);
+  flex-direction: column;
+
+  .listContainer {
+    @include flex-direction(column);
+
+    @include min(tablet) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include min(laptop) {
+      column-gap: 3rem;
+    }
+  }
+
+  > button {
+    width: 27rem !important;
+    height: 7.4rem;
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+}

@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  &.swap {
+    flex-direction: row-reverse;
+
+    .leftBox {
+      margin-left: 9.6rem;
+    }
+  }
+
+  .leftBox {
+    @include flex-align(center, center);
+    flex-direction: column;
+    margin-left: 3.5rem;
+    max-width: 31.5rem;
+
+    @include max(tablet) {
+      text-align: center;
+    }
+
+    .iconWrapper {
+      width: 100%;
+      margin-bottom: 2.2rem;
+      display: flex;
+      justify-content: flex-start;
+
+      @include max(tablet) {
+        justify-content: center;
+        margin-bottom: 1.8rem;
+      }
+    }
+  }
+
+  .imageWrapper {
+    border-top-left-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+  }
+
+  @include max(mobile) {
+    flex-direction: column-reverse;
+    padding: 0 2rem;
+
+    &.swap {
+      flex-direction: column-reverse;
+
+      .leftBox {
+        margin-left: 0;
+      }
+    }
+
+    .imageWrapper {
+      border-top-left-radius: 5rem;
+      border-bottom-right-radius: 5rem;
+      margin-bottom: 3rem;
+    }
+
+    .leftBox {
+      margin-left: 0;
+      max-width: 100%;
+    }
+  }
+}

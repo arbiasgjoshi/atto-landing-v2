@@ -1,0 +1,6 @@
+.middleAlign {
+  @include flex-align(center, center);
+  width: 18rem;
+  height: 12rem;
+  margin: 0 auto 2rem;
+}

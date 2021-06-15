@@ -1,0 +1,77 @@
+.container {
+  height: auto;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+  min-height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &.centeredContent {
+    margin: 1.5rem 1.6rem;
+  }
+
+  @include min(tablet) {
+    margin: 0 1rem;
+  }
+
+  @include min(laptop) {
+    width: 30rem;
+    padding: 3.2rem;
+    margin: 2rem 0;
+  }
+
+  .starsWrapper {
+    width: 100%;
+    @include flex-align(center, space-between);
+
+    .starsImg {
+      width: 12.8rem;
+    }
+  }
+
+  .content {
+    margin-top: 2rem;
+    flex-grow: 1;
+    @include flex-direction(column);
+    height: 100%;
+    justify-content: space-between;
+
+    h6 {
+      margin-bottom: 0;
+    }
+
+    > span {
+      font-size: 1.8rem;
+      line-height: 2rem;
+    }
+  }
+
+  .stars {
+    @include flex-direction(row);
+    > svg {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .authorWrapper {
+    display: flex;
+    align-items: center;
+
+    .profilePicture {
+      margin-right: 1rem;
+      background-color: #e3e3e3;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+    }
+
+    > span {
+      font-size: 1.8rem;
+      line-height: 2rem;
+    }
+  }
+}

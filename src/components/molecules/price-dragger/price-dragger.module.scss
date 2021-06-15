@@ -1,0 +1,78 @@
+.draggerWrapper {
+  @include flex-direction(column);
+  max-width: 100%;
+  width: 100rem;
+  position: relative;
+  padding: 8rem 0 0;
+  margin: 2rem auto 0;
+
+  @include max(tablet) {
+    display: none;
+  }
+}
+
+.draggerResults {
+  padding: 1.4rem 1.2rem;
+  width: 17rem;
+  border-radius: 5rem;
+  margin-bottom: 1rem;
+  @include absolute(left -9.25rem top 0);
+  background: url('@images/bubble-icon.png') no-repeat center;
+  background-size: 97% auto;
+  height: 7rem;
+  cursor: grab;
+
+  h5 {
+    color: #000;
+    text-align: center;
+  }
+}
+
+.plansWrapper {
+  @include flex-direction(row);
+  max-width: 100rem;
+  margin: 0 auto;
+  justify-content: center;
+  background-image: url('@images/pricing-dots@2x.png');
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 7rem;
+
+  .planCard {
+    width: 33rem;
+    border: 0.2rem solid #090606;
+    background-color: #fff;
+    border-radius: 0.8rem;
+    padding: 3.6rem 4rem 3rem;
+    margin: 0 5rem;
+    @include flex-direction(column);
+
+    h6 {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    .pricingValue {
+      @include flex-direction(row);
+      align-items: center;
+
+      .currency {
+        line-height: 4rem;
+        font-size: 3.2rem;
+        font-weight: 400;
+        margin-right: 0.8rem;
+      }
+
+      h2 {
+        width: auto;
+        margin-right: 1.2rem;
+      }
+
+      .plan {
+        line-height: 3rem;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

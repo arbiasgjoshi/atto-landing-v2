@@ -1,0 +1,41 @@
+.container {
+  @include flex-direction(column-reverse);
+
+  @include min(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &.swap {
+    @include min(tablet) {
+      @include flex-direction(row-reverse);
+    }
+  }
+
+  .firstBox {
+    max-width: 68rem;
+    .titleContainer {
+      margin-bottom: 3rem;
+
+      @include min(tablet) {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+
+  .secondBox {
+    @include flex-align(flex-start, center);
+
+    @include min(tablet) {
+      max-width: 40rem;
+    }
+
+    > div {
+      // min-height: 62rem;
+      @include max(mobile) {
+        padding: 4rem 0 !important; //because of inline-style
+        height: fit-content !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@mixin transition($args...) {
+  transition: $args;
+}
+
+@mixin visibility {
+  position: absolute;
+  opacity: 0;
+  transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+  z-index: map-get($z-index, below-content);
+  &.show {
+    opacity: 1;
+    z-index: map-get($z-index, modal);
+  }
+}
+
+@mixin slide($from, $position) {
+  position: $position;
+  @include transition(1.5s);
+  #{$from}: -100%;
+
+  &.show {
+    #{$from}: 0;
+  }
+}
+
+@mixin collapse($time: 0.15s, $maxHeight: 500px) {
+  max-height: 0;
+  // display: none;
+  @include transition(max-height $time ease-out);
+  overflow: hidden;
+
+  &.show,
+  &.active {
+    display: inherit;
+    max-height: $maxHeight;
+    @include transition(max-height $time ease-in);
+  }
+}
+
+@mixin collapse-full($time: 0.15s, $removeHeight: 0px) {
+  height: 0;
+  @include transition(height $time ease-out);
+  overflow: hidden;
+
+  &.show,
+  &.active {
+    height: calc(100vh - #{$removeHeight});
+    @include transition(height $time ease-in);
+  }
+}
+
+@mixin arrow-rotate($translate: 50%, $rotate: -135deg) {
+  &:after {
+    transform: translateY($translate) rotate($rotate);
+  }
+}

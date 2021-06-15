@@ -1,0 +1,154 @@
+.container {
+  @include flex-direction(column);
+  position: relative;
+
+  .textContainer {
+    @include flex-direction(column);
+    margin-bottom: 4rem;
+    margin-top: 3.1rem;
+
+    @include max(mobile) {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 5rem;
+    }
+
+    @include custom-max(350) {
+      margin-top: 20rem;
+    }
+
+    .iconWrapper {
+      margin-bottom: 2rem;
+      width: 5.2rem;
+      height: 6.2rem;
+
+      @include max(mobile) {
+        align-self: center;
+      }
+    }
+
+    .textWrapper {
+      max-width: 36.5rem;
+    }
+  }
+
+  .topImage {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+
+    img:first-child {
+      margin-bottom: 3.2rem;
+    }
+
+    @include min(tablet) {
+      max-width: 40rem;
+    }
+
+    @include max(tablet) {
+      display: none;
+    }
+
+    @include min(laptop) {
+      max-width: 73.6rem;
+    }
+  }
+
+  .secondtopImage {
+    z-index: -1;
+    position: absolute;
+    max-width: 73.6rem;
+    right: 0;
+    top: 51.7rem;
+    @include max(tablet) {
+      display: none;
+    }
+  }
+
+  .imagesContainer {
+    @include flex-direction(row);
+
+    .imageBox1 {
+      width: 40.2rem;
+      margin-right: 0;
+
+      > img {
+        margin-left: -1.7rem;
+      }
+    }
+
+    .imageBox1 {
+      max-height: 88.2rem;
+
+      @include max(tablet) {
+        display: none;
+        max-height: 35.3rem;
+      }
+    }
+
+    .imageBox2 {
+      width: 66.4rem;
+      position: relative;
+      @include flex-direction(row);
+      justify-content: space-between;
+
+      // @include min(tablet) {
+      //   margin-top: 15.2rem;
+      // }
+
+      @include max(tablet) {
+        display: none;
+      }
+
+      @include min(laptop) {
+        margin-top: 22.2rem;
+      }
+
+      img:last-child {
+        margin-top: 2rem;
+        @include min(desktop) {
+          margin-top: 0;
+          @include absolute(right 0 top -24.9rem);
+        }
+      }
+    }
+  }
+
+  .mobileVersion {
+    @include flex-direction(row);
+    align-items: flex-start;
+    justify-content: space-between;
+    display: none;
+    img:last-child {
+      margin-top: 4.8rem;
+    }
+
+    @include max(tablet) {
+      display: flex;
+    }
+  }
+
+  .primaryMobile {
+    display: none;
+
+    @include max(tablet) {
+      display: flex;
+    }
+  }
+
+  &.nonIndustry {
+    .imagesContainer {
+      .imageBox2 {
+        @include min(tablet) {
+          margin-top: 55rem;
+        }
+      }
+
+      .imageBox3 {
+        @include min(tablet) {
+          margin-top: 30rem;
+        }
+      }
+    }
+  }
+}

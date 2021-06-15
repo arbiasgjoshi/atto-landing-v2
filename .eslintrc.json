@@ -1,0 +1,40 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "airbnb/hooks", "prettier"],
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "react/jsx-filename-extension": 0,
+    "object-curly-newline": "off",
+    "linebreak-style": 0,
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "radix": "off",
+    "no-plusplus": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react/jsx-one-expression-per-line": "off"
+  },
+  "settings": {
+    "import/no-unresolved": {
+      "alias": [
+        ["@components", "src/components"],
+        ["@images", "src/images"],
+        ["@data", "src/data"],
+        ["@api", "src/api"],
+        ["@hooks", "src/hooks"],
+        ["@helpers", "src/helpers"],
+        ["@styles", "src/styles"],
+        ["@services", "src/services"]
+      ]
+    }
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  }
+}

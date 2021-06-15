@@ -1,0 +1,78 @@
+.container {
+  @include flex-direction(column-reverse);
+
+  @include min(tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &.swap {
+    @include min(tablet) {
+      flex-direction: row-reverse;
+    }
+
+    .secondBlock {
+      justify-content: flex-start;
+    }
+  }
+
+  .textWrapper {
+    @include flex-direction(column);
+    justify-content: center;
+
+    @include max(tablet) {
+      margin: 0 !important;
+    }
+
+    @include min(tablet) {
+      width: 56rem;
+    }
+
+    p {
+      font-size: var(--body-style-two-mobile-size);
+      line-height: var(--body-style-two-mobile-line-height);
+
+      @include min(tablet) {
+        margin-top: 0.4rem;
+        font-size: var(--body-style-two);
+        line-height: var(--body-style-two-line-height-size);
+        letter-spacing: -0.5px;
+      }
+    }
+
+    .descr2 {
+      margin-bottom: 4rem;
+    }
+
+    > div:last-child {
+      > div {
+        > div:first-child {
+          min-width: unset;
+        }
+      }
+    }
+  }
+
+  .secondBlock {
+    @include flex-align(center, flex-end);
+
+    .imageWrapper {
+      @include flex-align(center, center);
+      margin-bottom: 4rem;
+
+      @include min(tablet) {
+        margin-bottom: 0;
+        height: 60rem;
+        max-width: 50rem;
+      }
+
+      > svg {
+        @include max(mobile) {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

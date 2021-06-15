@@ -1,0 +1,93 @@
+.container {
+  @include flex-direction(column);
+
+  @include min(tablet) {
+    flex-direction: row;
+    margin: 0 7.5rem 0 7.5rem;
+  }
+
+  .imageContainer {
+    width: 20rem;
+    @include flex-align(center, center);
+    align-self: center;
+
+    @include min(mobile) {
+      width: 30rem;
+    }
+
+    @include min(tablet) {
+      width: unset;
+      margin-right: 14rem;
+      max-width: 25rem;
+      max-height: 40rem;
+    }
+  }
+
+  .paragraphContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+
+    @include min(tablet) {
+      max-width: 60.2rem;
+    }
+
+    h4 {
+      margin-bottom: 5rem;
+      text-align: left;
+    }
+
+    h6 {
+      font-size: var(--body-style-three);
+      font-weight: var(--body-style-three-font-weight);
+      line-height: var(--body-style-three-line-height-size);
+      text-align: left;
+    }
+
+    .starsPic {
+      width: 19.2rem;
+      margin-bottom: 5rem;
+    }
+  }
+
+  @include max(mobile) {
+    .paragraphContainer {
+      img {
+        margin: 0 auto 2rem;
+      }
+      h4 {
+        margin-bottom: 3rem;
+      }
+      h4,
+      h6 {
+        text-align: center;
+      }
+    }
+  }
+
+  &.homepage {
+    margin-bottom: 11rem;
+    @include min(tablet) {
+      margin: 0 9rem;
+    }
+
+    .imageContainer {
+      @include min(tablet) {
+        margin-right: 7rem;
+      }
+    }
+    h4 {
+      font-weight: normal;
+      font-family: Charter;
+
+      @include min(tablet) {
+        width: 60rem;
+        height: 24rem;
+        font-size: 5rem;
+        line-height: 6rem;
+        letter-spacing: -1px;
+        margin-bottom: 4rem !important;
+      }
+    }
+  }
+}

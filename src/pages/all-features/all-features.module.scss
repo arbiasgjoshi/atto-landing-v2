@@ -1,0 +1,107 @@
+.behindMask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 43.7rem;
+  background-color: #f7f7f7;
+  border-bottom: 2px solid #efefef;
+  z-index: -1;
+}
+
+.cardListWrapper {
+  @include flex-direction(column);
+  border: 2px solid #efefef;
+  border-radius: 2rem;
+  padding: 2rem;
+
+  @include max(tablet) {
+    margin-top: 6.7rem;
+  }
+
+  @include min(tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5rem;
+  }
+
+  .cardWrapper {
+    border-top: 2px solid #efefef;
+    padding: 2rem 0;
+
+    @include min(tablet) {
+      padding: 4rem 0;
+    }
+
+    &:nth-child(odd) {
+      padding-left: 1rem;
+
+      @include min(tablet) {
+        padding-right: 3.2rem;
+        padding-left: 3.1rem;
+      }
+    }
+
+    &:nth-child(even) {
+      border-right: none;
+      padding-left: 1rem;
+      @include min(tablet) {
+        padding-left: 4rem;
+        border-left: 2px solid #efefef;
+      }
+    }
+
+    &:nth-child(1) {
+      border-top: none;
+    }
+
+    &:nth-child(2) {
+      @include min(tablet) {
+        border-top: none;
+      }
+    }
+
+    &.emptyCard {
+      @include max(mobile) {
+        display: none;
+      }
+    }
+
+    // &:nth-last-child(2):nth-child(even) {
+    //   border-bottom: 2px solid #efefef;
+    // }
+  }
+
+  &.timeTrackingStyle,
+  &.locationTrackingStyle {
+    .cardWrapper {
+      &:nth-child(7) {
+        border-bottom: 0;
+      }
+
+      &:nth-child(8) {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &.teamActivityStyle {
+    .cardWrapper {
+      &:nth-child(5) {
+        border-bottom: 0;
+      }
+
+      &:nth-child(6) {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &.timesheetStyle {
+    .cardWrapper {
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.contentContainer {
+  width: 100%;
+  @include min(desktop) {
+    width: 62rem;
+    margin-left: 13rem;
+  }
+
+  blockquote {
+    &::before {
+      content: '';
+      height: 4rem;
+      width: 5rem;
+      display: inline-flex;
+      margin-bottom: 5rem;
+      background-image: url('@images/open-quote.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    padding-left: 5rem;
+    font-size: 3rem;
+    line-height: 4rem;
+    font-family: Charter;
+    font-style: italic;
+    @include flex-direction(column);
+    margin: 0;
+
+    span {
+      margin-top: 2rem;
+      font-size: 1.8rem;
+      line-height: 3rem;
+      color: #999;
+      font-weight: 400;
+      font-style: normal;
+    }
+  }
+
+  .specialParagraph {
+    padding-left: 5rem;
+    border-left: 3px solid #00b9cb;
+    font-size: 3rem;
+    font-style: italic;
+    letter-spacing: 0;
+    line-height: 40px;
+  }
+
+  h4 {
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    // margin-left: 5rem;
+
+    li {
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+      font-size: 2.1rem;
+      letter-spacing: 0;
+      line-height: 3.2rem;
+      font-family: Charter;
+      @include flex-align(center, flex-start);
+      &::before {
+        content: '';
+        display: inline-flex;
+        margin-right: 2rem;
+        width: 2px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: #000;
+      }
+    }
+  }
+
+  p {
+    font-family: Charter;
+    font-size: 2.1rem;
+    letter-spacing: 0;
+    line-height: 3.2rem;
+  }
+}

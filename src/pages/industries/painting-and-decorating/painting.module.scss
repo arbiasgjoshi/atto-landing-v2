@@ -1,0 +1,14 @@
+.background {
+  position: relative;
+
+  &::after {
+    content: '';
+    top: 36rem;
+    left: 0;
+    z-index: -2;
+    position: absolute;
+    background-color: var(--secondary-color);
+    height: 112rem;
+    width: 100%;
+  }
+}

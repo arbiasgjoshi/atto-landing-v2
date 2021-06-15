@@ -1,0 +1,45 @@
+.container {
+  @include flex-direction(column);
+  max-width: 36rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .topBox {
+    // border: 2px solid #efefef;
+    // border-radius: 2rem;
+    background-image: url('@images/review-badge@2x.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 3rem;
+
+    > h4 {
+      margin: 5rem 0 3.2rem 0;
+      height: 12rem;
+      @include flex-align(center, center);
+    }
+
+    > p {
+      margin: 3.7rem 0 5.9rem;
+    }
+  }
+
+  .authorBox {
+    h5 {
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  p {
+    color: var(--color-22);
+    font-size: var(--body-style-four-mobile-size);
+    font-weight: var(--body-style-four-font-weight);
+    line-height: var(--body-style-four-mobile-line-height);
+    letter-spacing: var(--body-style-four-letter-spacing);
+
+    @include min(tablet) {
+      line-height: var(--body-style-four-line-height-size);
+      font-size: var(--body-style-four);
+    }
+  }
+}

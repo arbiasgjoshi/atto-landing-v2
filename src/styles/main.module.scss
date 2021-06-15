@@ -1,0 +1,98 @@
+.container {
+  padding-top: 14.3rem;
+  @include max(tablet) {
+    padding: 8rem 1.6rem 2rem;
+    overflow: hidden;
+  }
+
+  &.industryPadding {
+    padding-top: 7.3rem;
+  }
+
+  &.noPadding {
+    padding-top: 0;
+  }
+
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+.background {
+  position: relative;
+
+  &::after {
+    content: '';
+    top: 9rem;
+    height: 26.6rem;
+    left: 0;
+    z-index: -2;
+    position: absolute;
+    background-color: var(--secondary-color);
+
+    width: 100%;
+
+    @include min(tablet) {
+      top: 36rem;
+      height: 112rem;
+    }
+  }
+}
+
+.oldVsNewGradient {
+  position: relative;
+
+  &::before {
+    content: '';
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+    @include absolute(left 0 top 0);
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+    @include absolute(left 0 bottom 0);
+    transform: scaleY(-1);
+    z-index: -1;
+  }
+}
+
+.imageFormWrapper {
+  @include flex-direction(column);
+  align-items: center;
+
+  svg,
+  .gatsby-image-wrapper {
+    order: -2;
+    margin: 2rem 0 4rem;
+  }
+
+  hr {
+    order: -1;
+  }
+
+  @include max(tablet) {
+    svg {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @include min(tablet) {
+    svg,
+    hr,
+    .gatsby-image-wrapper {
+      order: unset;
+    }
+
+    svg,
+    .gatsby-image-wrapper {
+      margin: unset;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  display: grid;
+  row-gap: 3rem;
+
+  @include min(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2.5rem;
+    row-gap: 3rem;
+
+    &.gapStyle {
+      row-gap: 5rem;
+    }
+  }
+
+  @include min(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4.5rem;
+    row-gap: 0;
+
+    &.gapStyle {
+      row-gap: 7rem;
+    }
+
+    &.twoCards {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 6rem;
+      column-gap: 12rem;
+      width: unset;
+
+      div:last-child {
+        width: unset;
+      }
+    }
+  }
+
+  @include max(tablet) {
+    @include flex-direction(column);
+    text-align: center;
+    width: 100%;
+    column-gap: unset;
+    row-gap: 6rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    // > div {
+    //   margin-bottom: 2rem;
+    // }
+  }
+}

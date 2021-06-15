@@ -1,0 +1,48 @@
+.container {
+  .content {
+    display: none;
+    @include min(tablet) {
+      display: block;
+      margin-top: 3rem;
+
+      > div h4 {
+        font-size: 3.2rem !important;
+        line-height: 4rem !important;
+        letter-spacing: -0.05rem;
+      }
+    }
+  }
+
+  .inactive {
+    display: none;
+  }
+
+  .collapseDiv {
+    display: none;
+    @include max(tablet) {
+      display: block;
+    }
+  }
+
+  .triggerItemWrap {
+    @include flex-direction(row);
+    align-items: center;
+    width: 100%;
+    padding: 0 0.8rem;
+    h5 {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      color: #000;
+      letter-spacing: -0.05rem;
+      font-weight: 500;
+      width: 100%;
+    }
+    > i {
+      font-size: 1.6rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      transition: ease all 0.15s;
+      @include flex-align(center, center);
+    }
+  }
+}

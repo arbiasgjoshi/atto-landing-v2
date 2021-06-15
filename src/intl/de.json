@@ -1,0 +1,177 @@
+{
+  "title": "Attotime",
+  "description": "",
+  "header": {
+    "navLinks": [
+      {
+        "name": "Product",
+        "url": "/product",
+        "subMenuLinks": [
+          {
+            "name": "Time Tracking",
+            "url": "/product/time-tracking"
+          },
+          {
+            "name": "Location Tracking",
+            "url": "/product/location-tracking"
+          },
+          {
+            "name": "Team Activity",
+            "url": "/product/team-activity"
+          },
+          {
+            "name": "Timesheets",
+            "url": "/product/timesheets"
+          }
+        ]
+      },
+      {
+        "name": "Why Atto",
+        "url": "/why-atto"
+      },
+      {
+        "name": "Industries",
+        "url": "/industries",
+        "subMenuLinks": [
+          {
+            "name": "Construction Companies",
+            "url": "/industries/time-tracking-for-construction-companies"
+          },
+          {
+            "name": "Landscaping",
+            "url": "/industries/time-tracking-for-landscaping"
+          },
+          {
+            "name": "Roofing",
+            "url": "/industries/time-tracking-for-roofing"
+          },
+          {
+            "name": "Painting",
+            "url": "/industries/time-tracking-for-painting"
+          },
+          {
+            "name": "Healthcare",
+            "url": "/industries/time-tracking-for-healthcare"
+          },
+          {
+            "name": "Plumbing and Heating",
+            "url": "/industries/time-tracking-for-plumbing-and-heating"
+          },
+          {
+            "name": "Cleaners",
+            "url": "/industries/time-tracking-for-cleaners"
+          },
+          {
+            "name": "Electricians",
+            "url": "/industries/time-tracking-for-electricians"
+          }
+        ]
+      },
+      {
+        "name": "Pricing",
+        "url": "/pricing"
+      },
+      {
+        "name": "Resources",
+        "url": "/resources"
+      }
+    ]
+  },
+  "pages": {
+    "homepage": {},
+    "productTimeTracking": {
+      "pageTagtitle": "Zeit",
+      "bannerTitle": "Ein Teitel",
+      "bannerSubTitle": "Nur hier sein.",
+      "firstSectionChecklists": [
+        {
+          "checkTitle": ""
+        }
+      ],
+      "firstFeatureTaglines": [
+        {
+          "title": "",
+          "description": "",
+          "alt": "",
+          "icon": ""
+        }
+      ],
+      "secondSectionTitle": "Start tracking time in a tap",
+      "secondSectionSubtitle": "Say goodbye to employee estimates. Use the time clock to precisely capture work activity.",
+      "productFeatures": [
+        {
+          "title": "",
+          "description": "",
+          "alt": "",
+          "icon": ""
+        }
+      ],
+      "thirdSectionTitle": "Accurately track time from any location and any device",
+      "thirSectionSubtitle": "Time-tracking options to suit your business' needs. In the office, in teams, at a job site, or on the move. Online or offline.",
+      "thirSectionFeatures": [
+        {
+          "image": "",
+          "icon": "",
+          "title": "",
+          "desc": ""
+        }
+      ],
+      "fourthSectionTitle": "Lower costs, higher productivity. Less admin, more bussiness",
+      "fourthSectionImage": "",
+      "fourthSectionCheckLists": [
+        {
+          "checkTitle": ""
+        }
+      ],
+      "fifthSectionTitle": "Our full suite of time tracking features at a glance",
+      "fifthSectionFeaturesList": [
+        {
+          "icon": "",
+          "featureTitle": "",
+          "featureDesc": ""
+        }
+      ]
+    },
+    "productLocationTracking": {},
+    "productTeamActivty": {},
+    "productTimesheets": {},
+    "industries": {},
+    "timeTrackingForConstructionCompanies": {},
+    "timetrackingForLandscaping": {},
+    "timeTrackingForRoofing": {},
+    "timeTrackingForPainting": {},
+    "timeTrackingForHealthcare": {},
+    "timeTrackingForPlumbingAndHeating": {},
+    "timeTrackingForCleaners": {},
+    "timeTrackingForElectricians": {},
+    "timeCard": {},
+    "timeClock": {},
+    "timeTracking": {},
+    "timesheets": {},
+    "workhours": {}
+  },
+  "footer": {
+    "leftNavItems": {
+      "logoUrl": "/",
+      "desc": "A highly accurate time tracking solution for any company",
+      "languages": [
+        {
+          "id": 0,
+          "name": "English"
+        },
+        {
+          "id": 1,
+          "name": "Deutsch"
+        },
+        {
+          "id": 2,
+          "name": "Español"
+        },
+        {
+          "id": 3,
+          "name": "Français"
+        }
+      ]
+    }
+  }
+}

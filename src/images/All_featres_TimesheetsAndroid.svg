@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="30px" viewBox="0 0 28 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>831626A6-377E-4D66-B0AF-309B0F8F9D83Android</title>
+    <g id="WEB-DESIGN" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Atto-/-Product-/-Timesheets" transform="translate(-316.000000, -4738.000000)">
+            <g id="Group-14" transform="translate(150.000000, 4513.000000)">
+                <g id="Group-35" transform="translate(0.000000, 220.000000)">
+                    <g id="Group" transform="translate(160.000000, 0.000000)">
+                        <g id="All_featres_Timesheets" transform="translate(6.000000, 5.000000)">
+                            <path d="M26.5625,0.9375 L26.5625,29.0625 L0.9375,29.0625 L0.9375,0.9375 L26.5625,0.9375 Z" id="Rectangle-10" stroke="#00B9CB" stroke-width="1.875"></path>
+                            <g id="Group" transform="translate(8.750000, 5.000000)">
+                                <circle id="Oval-9" stroke="#00B9CB" stroke-width="1.875" cx="5" cy="7.5" r="4.0625"></circle>
+                                <path d="M5,0.625 C5.34517797,0.625 5.625,0.904822031 5.625,1.25 L5.625,2.5 C5.625,2.84517797 5.34517797,3.125 5,3.125 C4.65482203,3.125 4.375,2.84517797 4.375,2.5 L4.375,1.25 C4.375,0.904822031 4.65482203,0.625 5,0.625 Z" id="Rectangle-4" fill="#00B9CB" transform="translate(5.000000, 1.875000) scale(-1, 1) translate(-5.000000, -1.875000) "></path>
+                                <circle id="Oval-9" fill="#00B9CB" cx="5" cy="7.5" r="1"></circle>
+                                <rect id="Rectangle-11" fill="#00B9CB" transform="translate(5.000000, 0.625000) rotate(-270.000000) translate(-5.000000, -0.625000) " x="4.375" y="-1.25" width="1.25" height="3.75" rx="0.625"></rect>
+                            </g>
+                            <rect id="Rectangle-11" fill="#00B9CB" transform="translate(13.750000, 20.937500) rotate(-270.000000) translate(-13.750000, -20.937500) " x="12.8125" y="12.1875" width="1.875" height="17.5" rx="0.9375"></rect>
+                            <rect id="Rectangle-11" fill="#00B9CB" transform="translate(13.750000, 24.062500) rotate(-270.000000) translate(-13.750000, -24.062500) " x="12.8125" y="15.3125" width="1.875" height="17.5" rx="0.9375"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

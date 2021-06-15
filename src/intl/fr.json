@@ -1,0 +1,18 @@
+{
+  "title": "Attotime",
+  "description": "",
+  "header": {},
+  "pages": {
+    "homepage": {},
+    "product-time-tracking": {},
+    "product-location-tracking": {},
+    "product-team-activty": {},
+    "product-timesheets": {},
+    "time-card": {},
+    "time-clock": {},
+    "time-tracking": {},
+    "timesheets": {},
+    "workhours": {}
+  },
+  "footer": {}
+}

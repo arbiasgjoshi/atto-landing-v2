@@ -1,0 +1,18 @@
+// Set up grid areas for template
+@include min(laptop) {
+  @each $area in $grid-areas {
+    #{$area} {
+      grid-area: $area;
+    }
+  }
+}
+
+@mixin grid-start($gap: main) {
+  display: grid;
+
+  @if ($gap == main) {
+    gap: var(--module-spacing);
+  } @else {
+    gap: $gap;
+  }
+}

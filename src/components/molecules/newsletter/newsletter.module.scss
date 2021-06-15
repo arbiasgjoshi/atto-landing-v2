@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: 7px solid #99e3ea;
+  padding: 0.5rem;
+
+  @include min(tablet) {
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    height: 281px;
+    border: 10px solid #99e3ea;
+  }
+
+  .leftWrapper {
+    @include flex-align(center, flex-start);
+    @include min(tablet) {
+      justify-content: center;
+      margin-right: 5rem;
+      margin-left: 6rem;
+
+      h3 {
+      }
+    }
+  }
+
+  .formWrapper {
+    @include flex-align(flex-start, center);
+    flex-direction: column;
+
+    > div {
+      width: 100%;
+
+      > div {
+        @include max(tablet) {
+          margin: 0;
+        }
+      }
+    }
+
+    @include min(tablet) {
+      align-items: center;
+    }
+
+    p {
+      height: 2rem;
+      font-size: var(--body-style-four);
+      margin-bottom: 1.6rem;
+      width: 100%;
+    }
+
+    input {
+      border: 1px solid #000;
+    }
+  }
+
+  &.column {
+    flex-direction: column;
+    padding: 6rem 7rem;
+
+    .leftWrapper {
+      margin-left: 0;
+    }
+
+    .formWrapper {
+    }
+  }
+}

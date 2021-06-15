@@ -1,0 +1,29 @@
+.Collapsible {
+  min-height: 9rem;
+  border-top: 2px solid #efefef;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &__trigger {
+    width: 100%;
+    @include flex-direction(row);
+    align-items: center;
+    justify-content: space-between;
+    @include absolute(left 0 top 2.25rem);
+    height: 4.5rem;
+
+    &.is-open {
+      > div > i {
+        transform: rotate(180deg);
+      }
+
+      > div > h5 {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  &__contentOuter {
+    padding-top: 6.5rem;
+  }
+}

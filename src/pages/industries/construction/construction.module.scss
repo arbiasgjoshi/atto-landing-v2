@@ -1,0 +1,58 @@
+.greenBackground {
+  position: relative;
+
+  @include min(tablet) {
+    margin-top: 6rem;
+    padding-top: 10.9rem;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 26.6rem;
+    background-color: var(--secondary-color);
+    @include absolute(left 0 top 33rem);
+    z-index: -1;
+
+    @include min(tablet) {
+      height: calc(100% - 593px);
+      @include absolute(left 0 top 0);
+    }
+  }
+  position: relative;
+
+  .topImageMask {
+    @include max(mobile) {
+      display: none;
+    }
+
+    @include absolute(top -6rem left 0);
+    height: 6rem;
+    width: 100%;
+    background-size: cover;
+    background-position: top center;
+
+    > div {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .bottomImageMask {
+    @include max(mobile) {
+      display: none;
+    }
+
+    @include absolute(bottom 50rem left 0);
+    z-index: -1;
+    height: 9.3rem;
+    width: 100%;
+    background-size: cover;
+    background-position: top center;
+
+    > div {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

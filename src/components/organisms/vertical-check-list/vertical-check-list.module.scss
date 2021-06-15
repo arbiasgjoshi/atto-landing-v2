@@ -1,0 +1,41 @@
+.container {
+  @include flex-direction(column);
+  justify-content: space-between;
+
+  @include min(laptop) {
+    flex-direction: row;
+  }
+
+  .firstBox {
+    @include flex-align(center, center);
+
+    @include min(tablet) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      > img {
+        max-height: 100%;
+      }
+    }
+
+    @include min(laptop) {
+      max-width: 55rem;
+    }
+  }
+
+  .listContainer {
+    @include flex-align(center, center);
+    @include flex-direction(column);
+
+    @include min(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include min(laptop) {
+      max-width: 53.8rem;
+      @include flex-direction(column);
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@mixin has-tooltip() {
+  position: relative;
+  cursor: help;
+  overflow: visible;
+
+  &:hover,
+  &:focus {
+    .tooltip {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+@mixin tooltip-text($background-color, $text-color, $position: top) {
+  position: absolute;
+  background-color: $background-color;
+  color: $text-color;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+
+  text-align: center;
+  white-space: nowrap;
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  @if ($position == 'top' or $position == 'bottom') {
+    left: 50%;
+    transform: translate(-50%, 0);
+    @if ($position == 'top') {
+      bottom: calc(100% + 1rem);
+    } @else {
+      top: calc(100% + 1rem);
+    }
+
+    &:after {
+      left: calc(50% - 1rem);
+
+      @if ($position == 'top') {
+        @include arrow($background-color, 1rem, down);
+        top: 100%;
+      } @else {
+        @include arrow($background-color, 1rem, top);
+        bottom: 100%;
+      }
+    }
+  } @else if($position == 'right' or $position == 'left') {
+    top: 50%;
+    transform: translate(0, -50%);
+
+    @if ($position == 'right') {
+      left: calc(100% + 1rem);
+    } @else {
+      right: calc(100% + 1rem);
+    }
+
+    &:after {
+      top: calc(50% - 0.5rem);
+
+      @if ($position == 'right') {
+        @include arrow($background-color, 1rem, left);
+        right: calc(100% - 0.5rem);
+      } @else {
+        @include arrow($background-color, 1rem, right);
+        left: calc(100% - 0.5rem);
+      }
+    }
+  }
+}
+
+@mixin tooltip($background-color, $text-color, $position: top) {
+  @include has-tooltip();
+
+  .tooltip {
+    @include tooltip-text($background-color, $text-color, $position);
+  }
+}

@@ -1,0 +1,153 @@
+.card {
+  display: flex;
+  height: min-content;
+
+  @include max(tablet) {
+    // margin: 1.5rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .iconWrapper {
+    margin-right: 2.1rem;
+    height: 3rem;
+    width: 3rem;
+    min-width: 3rem;
+
+    @include min(tablet) {
+      margin-right: 1.6rem;
+      height: 4rem;
+      width: 4rem;
+      min-width: 4rem;
+    }
+
+    i {
+      width: 3rem;
+      height: 3rem;
+      background-color: rgba(0, 185, 203, 0.1);
+      @include flex-align(center, center);
+      border-radius: 100%;
+      color: var(--primary-color);
+
+      @include min(tablet) {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+
+    &.greyStyle {
+      i {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+
+  &.noStyle {
+    .iconWrapper {
+      i {
+        background-color: transparent;
+      }
+    }
+
+    .textWrapper {
+      h5 {
+        font-weight: 500 !important;
+      }
+    }
+  }
+
+  .cardIcon {
+    height: 4rem;
+    min-width: 4rem;
+  }
+
+  .textWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .paragraph {
+      margin-top: 0.8rem;
+      max-width: 50rem;
+      height: 9rem;
+    }
+
+    @include max(mobile) {
+      .paragraph {
+        height: unset;
+      }
+    }
+  }
+
+  &.hasDescr {
+    .iconWrapper {
+      margin-top: 0;
+    }
+  }
+
+  &.small {
+    align-items: flex-start;
+    .iconWrapper {
+      margin-top: 0;
+      margin-right: 1rem;
+      min-width: unset;
+    }
+    i {
+      padding: 0.5rem 0.7rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      background-color: unset;
+    }
+
+    .textWrapper {
+      .cardTitle {
+        font-size: 2rem;
+        line-height: 2rem;
+        font-weight: var(--medium);
+        letter-spacing: -0.5px;
+      }
+    }
+  }
+
+  &.centerAligned {
+    align-items: center;
+  }
+
+  &.big {
+    .textWrapper {
+      .cardTitle {
+        max-width: 42rem;
+        font-size: 3.2rem;
+        line-height: 4rem;
+        letter-spacing: -0.05rem;
+      }
+    }
+  }
+
+  &.oldListStyle {
+    .iconWrapper {
+      i {
+        background-color: rgba(224, 86, 86, 0.1);
+        color: #e05656;
+      }
+    }
+  }
+
+  &.workHoursTracker {
+    margin-bottom: 2.8rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .iconWrapper {
+      margin-right: 1.8rem;
+    }
+
+    .textWrapper {
+      .paragraph {
+        height: fit-content;
+        margin-right: 2rem;
+      }
+    }
+  }
+}

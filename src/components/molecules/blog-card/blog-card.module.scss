@@ -1,0 +1,90 @@
+.cardWrapper {
+  @include flex-direction(column);
+  position: relative;
+  margin-bottom: 2rem;
+
+  @include min(desktop) {
+    margin-bottom: 0;
+  }
+
+  .smallTitleWrapper {
+    margin: 0 0rem 0.5rem 3rem;
+    color: var(--gray);
+
+    @include min(desktop) {
+      margin: 0 5rem 1.5rem 5rem;
+    }
+
+    .horizontalLine {
+      position: absolute;
+      background-color: #c7c7c7;
+      border-radius: 1px;
+      height: 0.1rem;
+      width: 2.2rem;
+      top: 1.5rem;
+      left: 0;
+
+      @include min(tablet) {
+        top: 2rem;
+      }
+
+      @include min(desktop) {
+        left: 0;
+        top: 1.6rem;
+        height: 1px;
+        width: 3rem;
+      }
+    }
+
+    p {
+      font-size: var(--body-style-four);
+      color: var(--gray);
+    }
+  }
+
+  .imageWrapper {
+    @include min(desktop) {
+      width: 51rem;
+      height: 22.4rem;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .textContainer {
+    margin: 1rem 0 0 3rem;
+    position: relative;
+
+    @include min(desktop) {
+      margin: 3rem 7rem 0 5rem;
+    }
+
+    .horizontalLine {
+      position: absolute;
+      width: 2rem;
+      height: 1px;
+      border-radius: 1px;
+      background-color: #c7c7c7;
+      top: 1.5rem;
+      left: -3rem;
+
+      @include min(tablet) {
+        top: 2rem;
+      }
+
+      @include min(desktop) {
+        left: -5rem;
+        top: 2rem;
+        width: 3rem;
+        height: 1px;
+      }
+    }
+
+    h4 {
+      margin-bottom: 2rem;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+$z-index: (
+  modal: var(--modal-index),
+  navigation: var(--navigation-index),
+  scroll-to-top: var(--scroll-to-top-index),
+  above-search: var(--above-search-form-index),
+  search: var(--search-form-index),
+  above-content: 1,
+  content: 0,
+  below-content: -1,
+);

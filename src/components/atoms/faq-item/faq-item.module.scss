@@ -1,0 +1,52 @@
+.item {
+  padding-left: 3rem;
+  border-bottom: 2px solid #efefef;
+
+  @include min(tablet) {
+    width: 80rem;
+  }
+
+  &:first-child {
+    border-top: 2px solid #efefef;
+  }
+
+  .itemTitle {
+    display: flex;
+    align-items: center;
+
+    h5 {
+      margin: 2.3rem 0;
+      @include flex-align(center, space-between);
+      @include min(tablet) {
+        width: 70.5rem;
+      }
+    }
+
+    .plus {
+      padding: 0.4rem;
+      margin-left: 1.5rem;
+      cursor: pointer;
+      height: 2.4rem;
+      width: 2.4rem;
+      @include flex-align(center, center);
+    }
+  }
+
+  p {
+    font-size: 2.2rem;
+    margin-top: -0.8rem;
+    overflow: hidden;
+    height: auto;
+    max-height: 600px;
+    margin-bottom: 3.4rem;
+
+    @include min(tablet) {
+      width: 70.5rem;
+    }
+
+    &.collapsed {
+      margin: 0;
+      max-height: 0;
+    }
+  }
+}

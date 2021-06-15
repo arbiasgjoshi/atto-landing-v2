@@ -1,0 +1,14 @@
+.reviewCards {
+  @include flex-align(center, center);
+  flex-direction: column;
+
+  @include min(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  @include min(laptop) {
+    gap: 0;
+  }
+}

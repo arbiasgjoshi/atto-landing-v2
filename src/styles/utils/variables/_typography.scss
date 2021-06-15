@@ -1,0 +1,12 @@
+$backup-fonts: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans',
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$headings: (
+  h1 var(--h1-size) var(--h1-mobile-size),
+  h2 var(--h2-size) var(--h2-mobile-size),
+  h3 var(--h3-size) var(--h3-mobile-size),
+  h4 var(--h4-size) var(--h4-mobile-size),
+  h5 var(--h5-size) var(--h5-mobile-size),
+  h6 var(--h6-size) var(--h6-mobile-size),
+  p var(--body-style-three) var(--body-style-three-mobile-size)
+);

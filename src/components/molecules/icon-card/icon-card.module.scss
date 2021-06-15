@@ -1,0 +1,160 @@
+.container {
+  width: 100%;
+
+  .iconWrapper {
+    @include flex-align(flex-end, center);
+    margin: 0 auto 3.5rem;
+
+    &:not(.adjustedWidth) {
+      > img {
+        max-height: 100%;
+        width: auto;
+      }
+    }
+
+    @include min(tablet) {
+      max-width: 100%;
+      width: 12rem;
+      height: 12rem;
+    }
+
+    &.bigImageStyle {
+      @include flex-align(center, center);
+      width: unset;
+      height: unset;
+
+      @include min(desktop) {
+        justify-content: flex-start;
+      }
+    }
+
+    &.adjustedWidth {
+      @include max(mobile) {
+        justify-content: start;
+      }
+      @include min(desktop) {
+        @include flex-align(center, center);
+      }
+      img {
+        max-width: unset;
+      }
+    }
+  }
+
+  .textWrapper {
+    flex-grow: 1;
+    @include flex-direction(column);
+    @include min(tablet) {
+      width: 35rem;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    h4 {
+      margin-bottom: 1.6rem;
+    }
+
+    p {
+      flex-grow: 1;
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  &.round {
+    .iconWrapper {
+      padding: 0;
+      margin-bottom: 2rem;
+
+      @include min(tablet) {
+        justify-content: flex-start;
+        margin-bottom: 4rem;
+      }
+
+      img {
+        width: 25rem;
+        height: 25rem;
+      }
+    }
+
+    .textWrapper {
+      text-align: left;
+      width: unset;
+
+      @include max(mobile) {
+        text-align: center;
+      }
+
+      h4 {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &.smallerMargin {
+    display: flex;
+    flex-direction: column;
+
+    .iconWrapper {
+      margin-bottom: 2.4rem;
+      height: 24.4rem;
+    }
+
+    .textWrapper {
+      h4 {
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+
+  &.timesheetMargin {
+    .textWrapper {
+      h4 {
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+
+  &.smallTimesheetImages {
+    .iconWrapper {
+      @include max(tablet) {
+        margin-bottom: 2rem;
+        max-width: 11rem;
+      }
+    }
+  }
+
+  &.timeCard {
+    > div:first-child {
+      margin-left: 0;
+    }
+    > div {
+      text-align: left;
+    }
+  }
+
+  &.twoCards {
+    > div:first-child {
+      margin-left: 0;
+      margin-bottom: 3.5rem;
+
+      @include max(mobile) {
+        justify-content: start;
+      }
+    }
+    > div {
+      text-align: left;
+      margin: 0;
+
+      p {
+        font-size: var(--body-style-three);
+        font-weight: var(--body-style-three-font-weight);
+        line-height: var(--body-style-three-line-height-size);
+      }
+
+      h4.hasBreakStyle {
+        margin-right: 8.5rem;
+      }
+    }
+  }
+}

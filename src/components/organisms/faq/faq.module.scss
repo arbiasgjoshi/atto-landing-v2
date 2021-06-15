@@ -1,0 +1,41 @@
+.questionsContainer {
+  @include min(tablet) {
+    margin: 0 12rem;
+  }
+
+  .listStyle {
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+
+    @include min(tablet) {
+      padding: 0 5rem;
+      margin-top: -0.2rem;
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-bottom: 3.2rem;
+    }
+  }
+}
+
+.triggerItemWrap {
+  @include flex-direction(row);
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  h5 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    color: #000;
+    letter-spacing: -0.05rem;
+    font-weight: 500;
+    width: 100%;
+  }
+  > i {
+    font-size: 2.4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    transition: ease all 0.15s;
+  }
+}

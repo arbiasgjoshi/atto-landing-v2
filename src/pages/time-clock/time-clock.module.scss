@@ -1,0 +1,60 @@
+.workListContainer {
+  width: 90%;
+  margin: 0 auto;
+
+  > div {
+    margin-bottom: 3rem;
+  }
+
+  @include max(mobile) {
+    text-align: center;
+    margin-top: 2rem;
+
+    .featureCardWithBanner {
+      margin-bottom: 5rem;
+
+      > div:first-child {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  @include min(tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.3rem;
+    width: 100%;
+
+    > div > div:last-child {
+      margin-left: 2rem;
+      width: 26.3rem;
+    }
+  }
+
+  @include min(desktop) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0.3rem;
+    // margin-left: 2rem;
+    width: 100%;
+
+    > div {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.learnMoreContainer {
+  display: grid;
+
+  @include max(tablet) {
+    justify-content: center;
+    row-gap: 1.2rem;
+  }
+
+  @include min(tablet) {
+    margin-top: 6.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.2rem;
+  }
+}

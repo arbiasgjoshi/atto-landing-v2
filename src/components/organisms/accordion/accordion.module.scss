@@ -1,0 +1,91 @@
+.triggerItemWrap {
+  cursor: pointer;
+  @include flex-direction(row);
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid #efefef;
+
+  .svgWrap {
+    min-width: 4rem;
+    width: 4rem;
+    height: 4rem;
+    @include flex-align(center, center);
+  }
+
+  h5 {
+    letter-spacing: -0.05rem;
+    width: 100%;
+    margin: 2rem;
+    transition: ease all 0.25s;
+    &:hover {
+      color: #262626;
+    }
+
+    @include max(mobile) {
+      margin-left: 0;
+      &.activeClass {
+        color: var(--primary-color);
+
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+
+    @include min(tablet) {
+      margin: 2.3rem 1.5rem 2.3rem 3rem;
+    }
+  }
+
+  .iconItem {
+    @include min(tablet) {
+      margin-right: 2.6rem;
+    }
+    i {
+      font-size: 1.6rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      @include flex-align(center, center);
+      transition: ease all 0.15s;
+    }
+
+    &.industryIcon {
+      margin-right: 1.2rem;
+    }
+  }
+}
+
+.contentWrapper {
+  padding: 0 2rem 2rem 0;
+  transform-origin: top center;
+
+  @include min(tablet) {
+    padding: 0 3.2rem 2.2rem 3rem;
+  }
+}
+
+.accordionItem {
+  header:last-child {
+    .triggerItemWrap {
+      border-bottom: 1px solid #efefef;
+    }
+  }
+
+  &.industryAccordion {
+    .triggerItemWrap {
+      h5 {
+        margin: 1.5rem 2rem;
+        @include min(tablet) {
+          margin: 2.3rem 1.8rem;
+        }
+      }
+    }
+
+    .contentWrapper {
+      padding: 0 2rem 2rem 2rem;
+      @include min(tablet) {
+        padding: 0 7.2rem 3.2rem 5.8rem;
+      }
+    }
+  }
+}

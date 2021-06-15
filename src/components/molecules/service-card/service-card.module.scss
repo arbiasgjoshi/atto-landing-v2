@@ -1,0 +1,57 @@
+.container {
+  @include flex-align(center, flex-start);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #e6f8fa;
+  height: 10rem;
+  position: relative;
+
+  @include min(tablet) {
+    justify-content: flex-start;
+    height: 12.4rem;
+    width: 36.4rem;
+  }
+
+  &:hover {
+    background-color: #c1e2e6;
+    cursor: pointer;
+
+    .arrowContainer {
+      opacity: 1;
+    }
+  }
+
+  .iconWrapper {
+    @include flex-align(center, center);
+    height: 6rem;
+    width: 6rem;
+    margin-right: 1rem;
+    margin-left: 2rem;
+  }
+
+  .textContainer {
+    @include flex-align(center, flex-start);
+    height: 6rem;
+    max-width: 19rem;
+    width: calc(50% + 6.4rem);
+  }
+
+  .arrowContainer {
+    position: absolute;
+    height: 2.9rem;
+    right: 2rem;
+    opacity: 0;
+  }
+
+  @include max(tablet) {
+    height: 8rem;
+    padding: 1rem;
+    .textContainer {
+      max-width: unset;
+    }
+
+    .iconWrapper {
+      margin-left: 0;
+    }
+  }
+}

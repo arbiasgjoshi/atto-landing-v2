@@ -1,0 +1,57 @@
+.contentContainer {
+  width: 100%;
+  @include min(desktop) {
+    position: sticky;
+    width: 29rem;
+    top: 93px;
+  }
+
+  h6 {
+    margin-bottom: 4rem;
+  }
+
+  .listContainer {
+    @include flex-direction(column);
+    margin-bottom: 7rem;
+
+    .itemWrapper {
+      line-height: 3rem;
+      font-size: 1.8rem;
+      display: flex;
+      margin-bottom: 2rem;
+      margin-bottom: 2rem;
+
+      .iconWrapper {
+        @include flex-align(center, center);
+        min-width: 2.4rem;
+        margin-right: 1rem;
+        padding: 0.8rem;
+      }
+    }
+  }
+
+  .miniSlider {
+    background-color: #e6f8fa;
+    @include flex-direction(column);
+    height: 13.5rem;
+    padding: 2.5rem 3.4rem 2.9rem 3.4rem;
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    .sliderWrapper {
+      display: flex;
+
+      .sliderIconWrapper {
+        width: 2.4rem;
+        height: 2.4rem;
+        padding: 0.7rem;
+
+        i {
+          margin-left: 12.9rem;
+        }
+      }
+    }
+  }
+}

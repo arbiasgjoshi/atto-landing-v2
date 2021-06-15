@@ -1,0 +1,49 @@
+.container {
+  @include flex-direction(column);
+  @include flex-align(center, flex-start);
+  position: relative;
+
+  .imageContainer {
+    @include flex-align(center, center);
+    width: 18rem;
+    height: 12rem;
+
+    @include min(tablet) {
+      margin-top: 2.4rem;
+    }
+  }
+
+  .textContainer {
+    margin-top: 2rem;
+    text-align: center;
+
+    @include min(tablet) {
+      margin-top: 3.3rem;
+    }
+
+    p {
+      margin: 0.8rem 2rem 1.7rem 2rem;
+      font-size: var(--body-style-three);
+      line-height: var(--body-style-three-line-height-size);
+    }
+  }
+
+  @include min(tablet) {
+    &::after {
+      content: '';
+      @include absolute(left 30rem top 7.9rem);
+      width: 15rem;
+      height: 1rem;
+      background-image: url('@images/step-arrow-forward.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

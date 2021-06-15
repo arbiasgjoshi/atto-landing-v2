@@ -1,0 +1,167 @@
+.pageFooter {
+  padding: 4rem 0 2rem;
+
+  @include min(tablet) {
+    margin-top: 6.9rem;
+  }
+}
+
+.footerTop {
+  @include flex-align(flex-start, flex-start);
+
+  @include max(mobile) {
+    @include flex-direction(column);
+    .leftFooterItems {
+      width: unset;
+
+      p {
+        margin-bottom: 2rem;
+        display: none;
+      }
+
+      > div:last-child {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .footerSitemap {
+      width: 100%;
+      display: grid;
+      row-gap: 4rem;
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 0rem;
+    }
+  }
+}
+
+.leftFooterItems {
+  width: 33.3333%;
+
+  p {
+    font-size: 2.2rem;
+    line-height: 3rem;
+    padding-right: 13.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 15rem;
+  }
+}
+
+.footerSitemap {
+  flex-grow: 1;
+  @include flex-direction(column);
+  justify-content: space-between;
+
+  @include min(tablet) {
+    flex-direction: row;
+  }
+
+  .footerLinksWrapper {
+    width: 16.5rem;
+    @include flex-direction(column);
+
+    .downloadBtn {
+      margin-top: 2rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+
+      @include min(tablet) {
+        margin-top: 4rem;
+      }
+
+      > h6 {
+        font-weight: 500;
+      }
+    }
+
+    .parentPath {
+      font-weight: var(--medium);
+      color: var(--tertiary-color);
+      font-size: 2rem;
+      line-height: 3rem;
+      margin-bottom: 2.4rem;
+    }
+
+    a {
+      font-weight: var(--regular);
+      text-decoration: none;
+      color: var(--tertiary-color);
+      font-size: 1.8rem;
+      line-height: 3rem;
+
+      &.hasLine {
+        @include flex-direction(column);
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 2rem;
+          height: 0.2rem;
+          margin: 1rem 0 1.2rem;
+          background-color: #efefef;
+        }
+      }
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+
+.downloadApp {
+  margin-top: 4rem;
+  @include min(tablet) {
+    margin-top: 2rem;
+  }
+  h6 {
+    margin-bottom: 2rem;
+    line-height: 3rem;
+  }
+  a {
+    @include flex-direction(row);
+    align-items: center;
+    width: 100%;
+    height: 4.8rem;
+    margin-bottom: 1.2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    i {
+      width: 2rem;
+      height: 2.4rem;
+      margin-right: 1rem;
+      background-color: #ccc;
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 2.4rem;
+      font-weight: normal;
+      color: var(--fifth-color);
+    }
+  }
+}
+
+.footerBottom {
+  font-size: 1.8rem;
+  line-height: 3rem;
+  color: var(--tertiary-color);
+  margin-top: 10.4rem;
+
+  @include max(tablet) {
+    margin-top: 2rem;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #666;
+
+    &:hover {
+      color: #666;
+    }
+  }
+}
