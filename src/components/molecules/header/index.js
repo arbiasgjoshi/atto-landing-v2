@@ -1,35 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { StaticImage } from 'gatsby-plugin-image';
-import { Link } from 'gatsby-plugin-intl';
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby-plugin-intl";
 
-import Button from '@components/atoms/button';
-import Divider from '@components/atoms/divider';
-import Icon from '@components/atoms/icon';
-import Modal from '@components/molecules/modal';
-import useScroll from 'react-use-scroll';
+import Button from "@components/atoms/button";
+import Divider from "@components/atoms/divider";
+import Icon from "@components/atoms/icon";
+import Modal from "@components/molecules/modal";
+import useScroll from "react-use-scroll";
 
-import ProductIcon from '@images/product-overview-logo.svg';
-import TimeTrackingIcon from '@images/time-tracking.svg';
-import LocationTrackingIcon from '@images/location-tracking-logo.svg';
-import TeamActivityLogo from '@images/team-activity-logo.svg';
-import TimesheetsLogo from '@images/timesheets-logo.svg';
+import ProductIcon from "@images/product-overview-logo.svg";
+import TimeTrackingIcon from "@images/time-tracking.svg";
+import LocationTrackingIcon from "@images/location-tracking-logo.svg";
+import TeamActivityLogo from "@images/team-activity-logo.svg";
+import TimesheetsLogo from "@images/timesheets-logo.svg";
 
-import ConstructionLogo from '@images/construction-industry-logo.svg';
-import PaintingLogo from '@images/painting-industry-logo.svg';
-import HealthcareLogo from '@images/healthcare-industry-logo.svg';
-import PlumbingLogo from '@images/plumbing-industry-logo.svg';
-import ElectrianLogo from '@images/electrician-industry-logo.svg';
-import LandscapingLogo from '@images/landscaping-industry-logo.svg';
-import RoofingLogo from '@images/roofing-industry-logo.svg';
-import CleaningLogo from '@images/cleaning-industry-logo.svg';
-import ThreeDots from '@images/three-dots.svg';
+import ConstructionLogo from "@images/construction-industry-logo.svg";
+import PaintingLogo from "@images/painting-industry-logo.svg";
+import HealthcareLogo from "@images/healthcare-industry-logo.svg";
+import PlumbingLogo from "@images/plumbing-industry-logo.svg";
+import ElectrianLogo from "@images/electrician-industry-logo.svg";
+import LandscapingLogo from "@images/landscaping-industry-logo.svg";
+import RoofingLogo from "@images/roofing-industry-logo.svg";
+import CleaningLogo from "@images/cleaning-industry-logo.svg";
+import ThreeDots from "@images/three-dots.svg";
 
-import HelpCenterLogo from '@images/help-center-logo.svg';
-import BlogLogo from '@images/blog-menu-logo.svg';
-import ContactLogo from '@images/contact-menu-logo.svg';
-import Collapsible from 'react-collapsible';
-import HeaderLogo from '@images/logo@3x.png';
+import HelpCenterLogo from "@images/help-center-logo.svg";
+import BlogLogo from "@images/blog-menu-logo.svg";
+import ContactLogo from "@images/contact-menu-logo.svg";
+import Collapsible from "react-collapsible";
+import HeaderLogo from "@images/logo@3x.png";
 
 import {
   headerWrapper,
@@ -64,9 +64,9 @@ import {
   collapsibleMenu,
   mobileButtons,
   triggerItemWrap,
-} from './header.module.scss';
+} from "./header.module.scss";
 
-import './collapsible.scss';
+import "./collapsible.scss";
 
 const HeaderComponent = ({ headerStyle }) => {
   const [open, setOpen] = useState(false);
@@ -84,7 +84,8 @@ const HeaderComponent = ({ headerStyle }) => {
 
   const scroll = useScroll();
 
-  const listentoScroll = () => (scroll === 0 ? setShadow(false) : setShadow(true));
+  const listentoScroll = () =>
+    scroll === 0 ? setShadow(false) : setShadow(true);
 
   useEffect(() => {
     listentoScroll();
@@ -108,20 +109,28 @@ const HeaderComponent = ({ headerStyle }) => {
               <div className={notMobile}>
                 <h6>Product Overview</h6>
                 <p>
-                  Atto is a simple all-in-one time-tracking and timesheet solution. Spend less time
-                  managing your business and more time getting work done.
+                  Atto is a simple all-in-one time-tracking and timesheet
+                  solution. Spend less time managing your business and more time
+                  getting work done.
                 </p>
               </div>
               <div className={mobile}>
                 <h6>Overview</h6>
-                <p>Atto is a simple all-in-one time-tracking and timesheet solution.</p>
+                <p>
+                  Atto is a simple all-in-one time-tracking and timesheet
+                  solution.
+                </p>
               </div>
             </div>
           </Link>
         </div>
         <Divider className="style7" />
         <div className={subItems}>
-          <Link className={menuItem} activeClassName={activeMenuItem} to="/product/time-tracking">
+          <Link
+            className={menuItem}
+            activeClassName={activeMenuItem}
+            to="/product/time-tracking"
+          >
             <div className={menuIcon}>
               <TimeTrackingIcon />
             </div>
@@ -143,7 +152,11 @@ const HeaderComponent = ({ headerStyle }) => {
               <p>Real-time updates on your team’s locations and movements</p>
             </div>
           </Link>
-          <Link className={menuItem} activeClassName={activeMenuItem} to="/product/team-activity">
+          <Link
+            className={menuItem}
+            activeClassName={activeMenuItem}
+            to="/product/team-activity"
+          >
             <div className={menuIcon}>
               <TeamActivityLogo />
             </div>
@@ -152,7 +165,11 @@ const HeaderComponent = ({ headerStyle }) => {
               <p>Stay in the loop of your team’s progress as work happens</p>
             </div>
           </Link>
-          <Link className={menuItem} activeClassName={activeMenuItem} to="/product/timesheets">
+          <Link
+            className={menuItem}
+            activeClassName={activeMenuItem}
+            to="/product/timesheets"
+          >
             <div className={menuIcon}>
               <TimesheetsLogo />
             </div>
@@ -204,7 +221,11 @@ const HeaderComponent = ({ headerStyle }) => {
   const industriesSection = () => (
     <div className={`${menuSection} ${contentPadding}`}>
       <div className={menuItems}>
-        <Link className={menuItem} activeClassName={activeMenuItem} to="/industries/construction">
+        <Link
+          className={menuItem}
+          activeClassName={activeMenuItem}
+          to="/industries/construction"
+        >
           <div className={menuIcon}>
             <ConstructionLogo />
           </div>
@@ -249,10 +270,17 @@ const HeaderComponent = ({ headerStyle }) => {
           </div>
           <div className={menuItemDesc}>
             <h6>Plumbing & Heating</h6>
-            <p>All cisterns go! Get to work with accurate time tracking from Atto.</p>
+            <p>
+              All cisterns go! Get to work with accurate time tracking from
+              Atto.
+            </p>
           </div>
         </Link>
-        <Link className={menuItem} activeClassName={activeMenuItem} to="/industries/electrical">
+        <Link
+          className={menuItem}
+          activeClassName={activeMenuItem}
+          to="/industries/electrical"
+        >
           <div className={menuIcon}>
             <ElectrianLogo />
           </div>
@@ -261,7 +289,11 @@ const HeaderComponent = ({ headerStyle }) => {
             <p>Avoid a nasty shock by tracking work hours in real-time</p>
           </div>
         </Link>
-        <Link className={menuItem} activeClassName={activeMenuItem} to="/industries/landscaping">
+        <Link
+          className={menuItem}
+          activeClassName={activeMenuItem}
+          to="/industries/landscaping"
+        >
           <div className={menuIcon}>
             <LandscapingLogo />
           </div>
@@ -270,7 +302,11 @@ const HeaderComponent = ({ headerStyle }) => {
             <p>The grass is always greener for landscapers that use Atto.</p>
           </div>
         </Link>
-        <Link className={menuItem} activeClassName={activeMenuItem} to="/industries/roofing">
+        <Link
+          className={menuItem}
+          activeClassName={activeMenuItem}
+          to="/industries/roofing"
+        >
           <div className={menuIcon}>
             <RoofingLogo />
           </div>
@@ -292,7 +328,11 @@ const HeaderComponent = ({ headerStyle }) => {
             <p>Let’s make it a clean sweep! Keep your time tracking tidy.</p>
           </div>
         </Link>
-        <Link className={menuItem} activeClassName={activeMenuItem} to="/all-features">
+        <Link
+          className={menuItem}
+          activeClassName={activeMenuItem}
+          to="/all-features"
+        >
           <div className={menuIcon}>
             <ThreeDots />
           </div>
@@ -308,7 +348,11 @@ const HeaderComponent = ({ headerStyle }) => {
   const resourceSection = () => (
     <div className={`${menuSection} ${resourcesMenu} ${contentPadding}`}>
       <div className={menuItems}>
-        <Link className={menuItem} activeClassName={activeMenuItem} to="/help-center">
+        <Link
+          className={menuItem}
+          activeClassName={activeMenuItem}
+          to="/help-center"
+        >
           <div className={menuIcon}>
             <HelpCenterLogo />
           </div>
@@ -326,13 +370,19 @@ const HeaderComponent = ({ headerStyle }) => {
             <p>Get helpful productivity tips from our blog</p>
           </div>
         </Link>
-        <Link className={menuItem} activeClassName={activeMenuItem} to="/contact">
+        <Link
+          className={menuItem}
+          activeClassName={activeMenuItem}
+          to="/contact"
+        >
           <div className={menuIcon}>
             <ContactLogo />
           </div>
           <div className={menuItemDesc}>
             <h6>Contact</h6>
-            <p>Reach out to our support team to get answers to your questions</p>
+            <p>
+              Reach out to our support team to get answers to your questions
+            </p>
           </div>
         </Link>
       </div>
@@ -341,11 +391,11 @@ const HeaderComponent = ({ headerStyle }) => {
 
   const viewMenuSections = (val) => {
     switch (val) {
-      case 'product':
+      case "product":
         return productSection();
-      case 'industries':
+      case "industries":
         return industriesSection();
-      case 'resources':
+      case "resources":
         return resourceSection();
       default:
         return null;
@@ -354,7 +404,7 @@ const HeaderComponent = ({ headerStyle }) => {
 
   const menuClasses = (val) => {
     let menuClass = menu;
-    if (val === 'resources') {
+    if (val === "resources") {
       menuClass += ` ${resourcesMenu}`;
     }
 
@@ -396,7 +446,9 @@ const HeaderComponent = ({ headerStyle }) => {
 
   return (
     <header
-      className={`${headerWrapper} ${headerStyle && pricingStyle} ${shadow && onScrollStyle}`}
+      className={`${headerWrapper} ${headerStyle && pricingStyle} ${
+        shadow && onScrollStyle
+      }`}
     >
       <Modal close={closeModal} showDialog={showDialog} />
       <div className={container}>
@@ -409,18 +461,22 @@ const HeaderComponent = ({ headerStyle }) => {
           <Link
             to="/product"
             activeClassName={activeMenuItem}
-            onMouseEnter={() => showMenu('product')}
+            onMouseEnter={() => showMenu("product")}
           >
             Product
           </Link>
           <Link
             to="/#"
             activeClassName={activeMenuItem}
-            onMouseEnter={() => showMenu('industries')}
+            onMouseEnter={() => showMenu("industries")}
           >
             Industries
           </Link>
-          <Link to="/#" activeClassName={activeMenuItem} onMouseEnter={() => showMenu('resources')}>
+          <Link
+            to="/#"
+            activeClassName={activeMenuItem}
+            onMouseEnter={() => showMenu("resources")}
+          >
             Resources
           </Link>
           <Link to="/pricing" activeClassName={activeMenuItem}>
@@ -431,7 +487,11 @@ const HeaderComponent = ({ headerStyle }) => {
           <Link to="/login" className={login}>
             Log In
           </Link>
-          <Button onBtnClick={openModal} btnText="Try for Free" btnStyle="teal" />
+          <Button
+            onBtnClick={openModal}
+            btnText="Try for Free"
+            btnStyle="teal"
+          />
           <button
             className={`${menuTrigger} ${openMobile && activeButton} `}
             type="button"
@@ -453,16 +513,22 @@ const HeaderComponent = ({ headerStyle }) => {
         )}
         {openMobile && (
           <div className={collapsibleMenu}>
-            <Collapsible trigger={triggerItem('Product')} transitionTime={200}>
+            <Collapsible trigger={triggerItem("Product")} transitionTime={200}>
               {productSection()}
             </Collapsible>
-            <Collapsible trigger={triggerItem('Industries')} transitionTime={200}>
+            <Collapsible
+              trigger={triggerItem("Industries")}
+              transitionTime={200}
+            >
               {industriesSection()}
             </Collapsible>
             <Link to="/pricing">
               <h5>Pricing</h5>
             </Link>
-            <Collapsible trigger={triggerItem('Resources')} transitionTime={200}>
+            <Collapsible
+              trigger={triggerItem("Resources")}
+              transitionTime={200}
+            >
               {resourceSection()}
             </Collapsible>
             <div className={mobileButtons}>
