@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby-plugin-intl';
-import { StaticImage } from 'gatsby-plugin-image';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby-plugin-intl";
+import { StaticImage } from "gatsby-plugin-image";
 
-import CustomSelect from '../../atoms/custom-select';
+import CustomSelect from "../../atoms/custom-select";
 
 import {
   leftFooterItems,
@@ -15,7 +15,7 @@ import {
   hasLine,
   parentPath,
   downloadApp,
-} from './footer.module.scss';
+} from "./footer.module.scss";
 
 const Footer = ({ FooterLinks }) => (
   <footer className={pageFooter}>
@@ -52,7 +52,12 @@ const Footer = ({ FooterLinks }) => (
               <div className={downloadApp}>
                 <h5 className={parentPath}>Download</h5>
                 {section.downloadApp.map((app) => (
-                  <Link to={app.href} target="_blank" rel="noreferrer" key={app.id}>
+                  <Link
+                    to={app.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={app.id}
+                  >
                     <img src={app.src} alt="Mobile" />
                   </Link>
                 ))}
@@ -63,11 +68,11 @@ const Footer = ({ FooterLinks }) => (
       </div>
     </div>
     <p className={footerBottom}>
-      © Specta Labs, Inc.{' '}
+      © Specta Labs, Inc.{" "}
       <Link to="/terms" target="_blank">
         Terms
-      </Link>{' '}
-      &{' '}
+      </Link>{" "}
+      &{" "}
       <Link to="/privacy" target="_blank">
         Privacy
       </Link>

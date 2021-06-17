@@ -361,7 +361,7 @@ const HeaderComponent = ({ headerStyle }) => {
             <p>Get answers to all of your questions in an instant</p>
           </div>
         </Link>
-        <Link className={menuItem} activeClassName={activeMenuItem} to="/blog">
+        <a className={menuItem} activeClassName={activeMenuItem} href="/blog">
           <div className={menuIcon}>
             <BlogLogo />
           </div>
@@ -369,7 +369,7 @@ const HeaderComponent = ({ headerStyle }) => {
             <h6>Blog</h6>
             <p>Get helpful productivity tips from our blog</p>
           </div>
-        </Link>
+        </a>
         <Link
           className={menuItem}
           activeClassName={activeMenuItem}

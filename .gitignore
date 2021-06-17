@@ -53,3 +53,4 @@ node_modules/
 public
 .DS_Store
 src/.DS_Store
+_residue
