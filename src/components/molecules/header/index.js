@@ -361,7 +361,11 @@ const HeaderComponent = ({ headerStyle }) => {
             <p>Get answers to all of your questions in an instant</p>
           </div>
         </Link>
-        <a className={menuItem} activeClassName={activeMenuItem} href="/blog">
+        <a
+          className={menuItem}
+          activeClassName={activeMenuItem}
+          href="https://attotime.com/blog"
+        >
           <div className={menuIcon}>
             <BlogLogo />
           </div>
