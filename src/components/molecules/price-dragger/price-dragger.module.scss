@@ -6,18 +6,32 @@
   padding: 8rem 0 0;
   margin: 2rem auto 0;
 
-  @include max(tablet) {
-    display: none;
-  }
+  // @include max(tablet) {
+  //   display: none;
+  // }
 }
 
 .draggerResults {
+  @include max(tablet) {
+    @include absolute(left 50% top 0);
+    transform: unset !important;
+    margin-left: -8.5rem;
+    height: unset;
+    border: 2px solid var(--primary-color);
+  }
+
   padding: 1.4rem 1.2rem;
   width: 17rem;
-  border-radius: 5rem;
   margin-bottom: 1rem;
-  @include absolute(left -9.25rem top 0);
-  background: url('@images/bubble-icon.png') no-repeat center;
+  border-radius: 5rem;
+
+  @include min(desktop) {
+    @include absolute(left -9.25rem top 0);
+    background-image: url('@images/bubble-icon.png');
+    background-position: bottom center;
+    background-size: 99% auto;
+    background-repeat: no-repeat;
+  }
   background-size: 97% auto;
   height: 7rem;
   cursor: grab;
@@ -29,24 +43,30 @@
 }
 
 .plansWrapper {
-  @include flex-direction(row);
+  flex-direction: column;
   max-width: 100rem;
-  margin: 0 auto;
+  margin: 3rem auto 0;
   justify-content: center;
   background-image: url('@images/pricing-dots@2x.png');
   background-position: left center;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-top: 7rem;
+  @include min(laptop) {
+    @include flex-direction(row);
+    margin-top: 7rem;
+  }
 
   .planCard {
+    border: 0.2rem solid #efefef;
     width: 33rem;
-    border: 0.2rem solid #090606;
     background-color: #fff;
     border-radius: 0.8rem;
-    padding: 3.6rem 4rem 3rem;
-    margin: 0 5rem;
+    padding: 3.6rem 3rem 3rem 3rem;
     @include flex-direction(column);
+    margin: 0 0 3rem;
+    @include min(laptop) {
+      margin: 0 5rem;
+    }
 
     h6 {
       color: var(--primary-color);

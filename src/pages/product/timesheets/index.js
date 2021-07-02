@@ -1,10 +1,11 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import { FooterLinks } from '@locale/en.js';
-import { container } from '@styles/main.module.scss';
+// import { FooterLinks } from '@locale/en.js';
+import { container, imageWrapper } from '@styles/main.module.scss';
 
 import Divider from '@components/atoms/divider';
-import SEO from '@components/molecules/seo';
+import { StaticImage } from 'gatsby-plugin-image';
+import Seo from '@components/molecules/seo';
+import { useIntl } from 'gatsby-plugin-react-intl';
 import Title from '@components/molecules/title';
 import Header from '@components/molecules/header';
 import Footer from '@components/molecules/footer';
@@ -20,10 +21,10 @@ import GrowthNumbers from '@components/organisms/growth-numbers';
 import VideoCheckList from '@components/organisms/video-checklist';
 import Services from '@components/organisms/services';
 
-import authorImage from '@images/authorImage.png';
-import noImage from '@images/no-image.png';
-import roundImage2 from '@images/syncWithPayroll2x.png';
-import roundImage3 from '@images/timesheets-inbox2x.png';
+// import imgOne from '@images/en/timesheets/Estimate your Employees’ Wages@2x.png';
+// import ProductOverviewBanner from '@images/product-overview-banner-image.svg';
+// import imgThree from '@images/timesheets-inbox2x.png';
+import imgTwo from '@images/en/timesheets/Sync with Payroll and Accounting Software@2x.png';
 
 import icon from '@images/accurate.png';
 import icon2 from '@images/trustworthy.png';
@@ -42,70 +43,87 @@ import WageEstimate from '@images/Wage_estimatesSVG.svg';
 import icon20 from '@images/time-tracking-clock@1x.png';
 import icon21 from '@images/location@1x.png';
 import icon22 from '@images/profile@1x.png';
+import authorImage from '@images/en/timesheets/Time tracking app review@2x.png';
 
-import Activity from '@images/activitySVG.svg'; // TODO change svg when png is provided
+import featureImgLocaleOneEn from '@images/en/timesheets/Boost productivity with timesheet insights@2x.png';
+import featureImgLocaleOneDe from '@images/de/timesheets/DE_Boost productivity with timesheet insights@2x.png';
+import featureImgLocaleOneEs from '@images/es/timesheets/ES_Boost productivity with timesheet insights@2x.png';
+import featureImgLocaleOneFr from '@images/fr/timesheets/FR_Boost productivity with timesheet insights@2x.png';
 
-import ConstructionLogo from '@images/construction-industry-logo.svg';
-import PaintingLogo from '@images/painting-industry-logo.svg';
-import HealthcareLogo from '@images/healthcare-industry-logo.svg';
-import PlumbingLogo from '@images/plumbing-industry-logo.svg';
-import ElectrianLogo from '@images/electrician-industry-logo.svg';
-import LandscapingLogo from '@images/landscaping-industry-logo.svg';
-import RoofingLogo from '@images/roofing-industry-logo.svg';
-import CleaningLogo from '@images/cleaning-industry-logo.svg';
-import ThreeDots from '@images/three-dots.svg';
-import photo1 from '../../../images/boost_productivity.png';
+import featureImgLocaleTwoEn from '@images/en/timesheets/Gain a clear understanding of your employees’ activity@2x.png';
+import featureImgLocaleTwoDe from '@images/de/timesheets/DE_Gain a clear understanding of your employees’ activity@2x.png';
+import featureImgLocaleTwoEs from '@images/es/timesheets/ES_Gain a clear understanding of your employees’ activity@2x.png';
+import featureImgLocaleTwoFr from '@images/fr/timesheets/FR_Gain a clear understanding of your employees’ activity@2x.png';
+
+import featureImgLocaleThreeEn from '@images/en/timesheets/Timesheets on-time and in your Inbox@2x.png';
+import featureImgLocaleThreeDe from '@images/de/timesheets/DE_Timesheets on-time and in your Inbox@2x.png';
+import featureImgLocaleThreeEs from '@images/es/timesheets/ES_Timesheets on-time and in your Inbox@2x.png';
+import featureImgLocaleThreeFr from '@images/fr/timesheets/FR_Timesheets on-time and in your Inbox@2x.png';
+
+import featureImgLocaleFourEn from '@images/en/timesheets/Estimate your Employees’ Wages@2x.png';
+import featureImgLocaleFourDe from '@images/de/timesheets/DE_Estimate your Employees’ Wages@2x.png';
+import featureImgLocaleFourEs from '@images/es/timesheets/ES_Estimate your Employees’ Wages@2x.png';
+import featureImgLocaleFourFr from '@images/fr/timesheets/FR_Estimate your Employees’ Wages@2x.png';
+
 import {
   teamActivityContainer,
   roundImagesContainer,
   learnMoreContainer,
   readyMadeTitle,
-} from './timesheets.module.scss';
+} from '../product.module.scss';
 
 const Timesheets = () => {
+  const Intl = useIntl();
+
   const checkLists = [
-    { title: 'View precise, instantly-generated, and verified timesheets' },
-    { title: 'Save countless hours a week from your payroll process' },
-    { title: 'Analyze every hour spent on the job' },
-    { title: 'See how productive your employees are' },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.checkListItemZero' }) },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.checkListItemOne' }) },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.checkListItemTwo' }) },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.checkListItemThree' }) },
   ];
 
   const checkLists2 = [
-    { title: 'Compare how long tasks take different employees or teams' },
-    { title: 'Spot employees that are struggling at work' },
-    { title: 'Identify bottlenecks that are slowing progress' },
-    { title: 'See if jobs are running on-time and on-budget' },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.firstFeatureCheckitemOne' }) },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.firstFeatureCheckitemTwo' }) },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.firstFeatureCheckitemThree' }) },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.firstFeatureCheckitemFour' }) },
   ];
 
   const checkLists3 = [
-    { title: 'Gain a better understanding of your employees’ workdays' },
-    { title: 'See how long employees spend on breaks, jobs, and on the clock.' },
-    { title: 'Review timesheets quicker for faster approval and payroll' },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.secondFeatureCheckitemOne' }) },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.secondFeatureCheckitemTwo' }) },
+    { title: Intl.formatMessage({ id: 'pages.productTimesheets.secondFeatureCheckitemThree' }) },
   ];
 
   const firstList = [
     {
-      title: 'Highly Accurate',
-      description: `Eliminate employee guesswork, time wastage, and additional payroll costs. With accurate timesheets, you only pay for hours spent on the job.`,
-      alt: 'Highly Accurate',
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.secondSectionFeatureOneTitle' }),
+      alt: Intl.formatMessage({ id: 'pages.productTimesheets.secondSectionFeatureOneTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.secondSectionFeatureOneDesc',
+      }),
       icon,
       imageWidth: 94,
       imageHeight: 93,
       imagePadding: '.8rem .6rem 1.9rem 2rem',
     },
     {
-      title: 'Verified and Trustworthy',
-      description: `Gain trust and confidence in your time tracking data. Timesheets are verified using location data, increasing employee accountability and transparency.`,
-      alt: 'Verified and trustworthy',
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.secondSectionFeatureTwoTitle' }),
+      alt: Intl.formatMessage({ id: 'pages.productTimesheets.secondSectionFeatureTwoTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.secondSectionFeatureTwoDesc',
+      }),
       icon: icon2,
       imageWidth: 100,
       imageHeight: 96,
       imagePadding: '1.2rem 1rem',
     },
     {
-      title: 'Instantly Available',
-      description: `No longer wait until the end of the week to see hours worked. Timesheets are instantly generated so you can view them anytime.`,
-      alt: 'Instantly Available',
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.secondSectionFeatureThreeTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.secondSectionFeatureThreeDesc',
+      }),
+      alt: Intl.formatMessage({ id: 'pages.productTimesheets.secondSectionFeatureThreeTitle' }),
       icon: icon3,
       imageWidth: 120,
       imageHeight: 120,
@@ -115,149 +133,254 @@ const Timesheets = () => {
 
   const featureList = [
     {
-      title: 'Comprehensive Timesheet Reports',
-      description: `Get all the data you need including regular time, overtime, breaks, time off, and more.`,
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.thirdSectionFeatureOneTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.thirdSectionFeatureOneDesc',
+      }),
       logo: <AllTimesheets />,
-      alt: 'Employee status logo',
     },
     {
-      title: 'Scheduled Email Reports',
-      description: `Schedule an email with your employees’ timesheets to coincide with your payroll schedule.`,
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.thirdSectionFeatureTwoTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.thirdSectionFeatureTwoDesc',
+      }),
       logo: <AllFeatureEmail />,
-      alt: 'Geofencing Flag',
     },
     {
-      title: 'Timesheets by Employee, Team, Jobs',
-      description: `Generate timesheets based on work done by an employee, team, or toward a category of job.`,
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.thirdSectionFeatureThreeTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.thirdSectionFeatureThreeDesc',
+      }),
       logo: <AvoidGuess />,
-      alt: 'Ringbell reminder logo',
     },
     {
-      title: 'Wage Estimates And Pay Rates',
-      description: `Assign pay rates to your employees and their estimated pay will be added to their timesheets.`,
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.thirdSectionFeatureFourTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.thirdSectionFeatureFourDesc',
+      }),
       logo: <Wages />,
-      alt: 'Wage estimates',
     },
     {
-      title: 'Download and Share',
-      description: `Download any timesheet report as a PDF or CSV file in one click.`,
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.thirdSectionFeatureFiveTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.thirdSectionFeatureFiveDesc',
+      }),
       logo: <Share />,
-      alt: '',
     },
     {
-      title: 'Timesheet Rounding',
-      description: `Set a rounding increment and clock in/out times are rounded automatically.`,
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.thirdSectionFeatureSixTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.thirdSectionFeatureSixDesc',
+      }),
       logo: <AllFeatresRounding />,
-      alt: '',
     },
     {
-      title: 'Time Entry Change History',
-      description: `View any historic changes made to time entries by an employee or admin.`,
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.thirdSectionFeatureSevenTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.thirdSectionFeatureSevenDesc',
+      }),
       logo: <ChangeHistory />,
-      alt: '',
     },
     {
-      title: 'Archive Employees',
-      description: `View timesheets for employees even after they’ve left the company – vital for compliance purposes.`,
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.thirdSectionFeatureEightTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.thirdSectionFeatureEightDesc',
+      }),
       logo: <ArchivedMembers />,
-      alt: '',
     },
     {
-      title: 'Payroll Integrations',
-      description: `Streamline your payroll with our QuickBooks Online and Xero integrations.`,
+      title: Intl.formatMessage({ id: 'pages.productTimesheets.thirdSectionFeatureNineTitle' }),
+      description: Intl.formatMessage({
+        id: 'pages.productTimesheets.thirdSectionFeatureNineDesc',
+      }),
       logo: <WageEstimate />,
-      alt: '',
     },
   ];
 
-  const serviceList = [
-    { title: 'Construction', url: '/industries/construction', icon: <ConstructionLogo /> },
-    { title: 'Landscaping & Gardening', url: '/industries/landscaping', icon: <LandscapingLogo /> },
-    { title: 'Roofing', url: '/industries/roofing', icon: <RoofingLogo /> },
-    {
-      title: 'Painting & Decorating',
-      url: '/industries/painting-and-decorating',
-      icon: <PaintingLogo />,
-    },
-    {
-      title: 'Cleaning & Maintenance',
-      url: '/industries/cleaning-and-maintenance',
-      icon: <CleaningLogo />,
-    },
-    {
-      title: 'Healthcare & Medical',
-      url: '/industries/healthcare-and-medical',
-      icon: <HealthcareLogo />,
-    },
-    { title: 'Electrical', url: '/industries/electrical', icon: <ElectrianLogo /> },
-    {
-      title: 'Plumbing & Heating',
-      url: '/industries/plumbing-and-heating',
-      icon: <PlumbingLogo />,
-    },
-    { title: 'Other industries', url: '/industries/electrical', icon: <ThreeDots /> },
-  ];
+  const bannerImage = (loc) => {
+    if (loc === 'en') {
+      return (
+        <StaticImage
+          src="../../../images/en/overview/Everything you need to keep track of your employees’ time@2x.png"
+          alt="Everything you need to keep track of your employees’ time"
+          width={1220}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (loc === 'de') {
+      return (
+        <StaticImage
+          src="../../../images/de/overview/DE_Everything you need to keep track of your employees’ time@2x.png"
+          alt="Everything you need to keep track of your employees’ time"
+          width={1220}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (loc === 'es') {
+      return (
+        <StaticImage
+          src="../../../images/es/overview/ES_Everything you need to keep track of your employees’ time@2x.png"
+          alt="Everything you need to keep track of your employees’ time"
+          width={1220}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (loc === 'fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/timesheets/FR_Everything you need to keep track of your employees’ time@2x.png"
+          alt="Everything you need to keep track of your employees’ time"
+          width={1220}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+  };
+
+  const timeSheetFeatureImgOne = (loc) => {
+    if (loc === 'en') {
+      //
+      return featureImgLocaleOneEn;
+    }
+    if (loc === 'es') {
+      //
+      return featureImgLocaleOneEs;
+    }
+    if (loc === 'de') {
+      //
+      return featureImgLocaleOneDe;
+    }
+    if (loc === 'fr') {
+      //
+      return featureImgLocaleOneFr;
+    }
+  };
+
+  const timeSheetFeatureImgTwo = (loc) => {
+    if (loc === 'en') {
+      //
+      return featureImgLocaleTwoEn;
+    }
+    if (loc === 'es') {
+      //
+      return featureImgLocaleTwoEs;
+    }
+    if (loc === 'de') {
+      //
+      return featureImgLocaleTwoDe;
+    }
+    if (loc === 'fr') {
+      //
+      return featureImgLocaleTwoFr;
+    }
+  };
+
+  const timeSheetFeatureImgThree = (loc) => {
+    if (loc === 'en') {
+      //
+      return featureImgLocaleThreeEn;
+    }
+    if (loc === 'es') {
+      //
+      return featureImgLocaleThreeEs;
+    }
+    if (loc === 'de') {
+      //
+      return featureImgLocaleThreeDe;
+    }
+    if (loc === 'fr') {
+      //
+      return featureImgLocaleThreeFr;
+    }
+  };
+
+  const timeSheetFeatureImgFour = (loc) => {
+    if (loc === 'en') {
+      //
+      return featureImgLocaleFourEn;
+    }
+    if (loc === 'es') {
+      //
+      return featureImgLocaleFourEs;
+    }
+    if (loc === 'de') {
+      //
+      return featureImgLocaleFourDe;
+    }
+    if (loc === 'fr') {
+      //
+      return featureImgLocaleFourFr;
+    }
+  };
 
   return (
     <div className={`${container} ${teamActivityContainer}`}>
-      <SEO title="Timesheets" />
+      <Seo
+        title={Intl.formatMessage({ id: 'pages.productTimesheets.metaTitle' })}
+        description={Intl.formatMessage({ id: 'pages.productTimesheets.metaDescription' })}
+      />
       <Header />
       <MainTitleCard
         maxParagraphWidth={760}
         hasParagraph
         showButton
-        paragraph="TIMESHEETS"
-        title="Timesheet reports without the hassle"
-        subtitle="Spend more time on the things that matter with timesheets filled painlessly and on-time."
+        paragraph={Intl.formatMessage({ id: 'pages.productTimesheets.name' })}
+        title={Intl.formatMessage({ id: 'pages.productTimesheets.bannerTitle' })}
+        subtitle={Intl.formatMessage({ id: 'pages.productTimesheets.bannerDescription' })}
       />
       <Divider className="style2" />
-      <VideoCheckList list={checkLists} cardStyle="centerAligned" />
+      <VideoCheckList list={checkLists} placeholder="timesheets" cardStyle="centerAligned" />
       <Divider />
       <div className={readyMadeTitle}>
         <Title
-          title="Ready-made professional timesheets"
-          description="Your employees’ hours are instantly transformed into timesheet reports. View every hour worked from regular time to overtime. Create reports based on specific employees, teams, or job codes. And download and share them in a few clicks."
+          title={Intl.formatMessage({ id: 'pages.productTimesheets.secondSectionTitle' })}
+          description={Intl.formatMessage({ id: 'pages.productTimesheets.secondSectionDesc' })}
           maxDescriptionWidth={980}
         />
       </div>
-      <Divider className="style3" />
-      <div>
-        <StaticImage
-          alt="Clock In"
-          quality={95}
-          src="../../../images/ready-made.svg"
-          placeholder="none"
-        />
+      <Divider className="style01" />
+      <div className={imageWrapper} style={{ width: 'calc(100% + 70px)' }}>
+        {bannerImage(Intl.locale)}
       </div>
       <Divider className="style3" />
       <IconCardList cardList={firstList} style="smallTimesheetImages" />
       <Divider />
       <ListArticle
-        title="Boost productivity with timesheet insights"
-        description="Work smarter, not longer. Use timesheet reports to filter all the work done by each employee, team, or towards a specific category of job."
+        title={Intl.formatMessage({ id: 'pages.productTimesheets.firstFeatureTitle' })}
+        description={Intl.formatMessage({ id: 'pages.productTimesheets.firstFeatureDesc' })}
         list={checkLists2}
-        image={photo1}
+        image={timeSheetFeatureImgOne(Intl.locale)}
         textMargin="10.3 0"
       />
       <Divider />
       <ListArticle
-        title="Gain a clear understanding of your employees’ activity"
-        description="Atto uses employee’ timesheet data to generate clear, simple timelines of everyone’s daily activity. Now it’s much easier to understand their working patterns, and far quicker to review timesheets."
+        title={Intl.formatMessage({ id: 'pages.productTimesheets.secondFeatureTitle' })}
+        description={Intl.formatMessage({ id: 'pages.productTimesheets.secondFeatureDesc' })}
         list={checkLists3}
-        image={<Activity />}
+        image={timeSheetFeatureImgTwo(Intl.locale)}
         isSwapped
         textMargin="5.8rem 0"
       />
       <Divider />
-      <Title maxWidth={880} title="Our full suite of timesheet features at a glance" />
+      <Title
+        maxWidth={880}
+        title={Intl.formatMessage({ id: 'pages.productTimesheets.thirdSectionTitle' })}
+      />
       <Divider className="style3" />
       <FeaturesList list={featureList} />
       <Divider />
-      <GrowthNumbers />
+      <GrowthNumbers title={Intl.formatMessage({ id: 'pages.miscellaneous.trustedGlobally' })} />
       <Divider />
       <Title
-        title="Streamline the entrie payroll process"
-        description="Go from timesheets to payroll in no time at all. With Atto, you’ll enjoy a streamlined payroll process that will save hours of admin every payday."
+        title={Intl.formatMessage({ id: 'pages.productTimesheets.fourthSectionTitle' })}
+        description={Intl.formatMessage({ id: 'pages.productTimesheets.fourthSectionDesc' })}
         maxDescriptionWidth={1000}
       />
       <Divider className="style2" />
@@ -265,83 +388,113 @@ const Timesheets = () => {
         <IconCard
           isRound
           bigImage
-          icon={noImage}
-          alt="Estimate emp"
-          title="Estimate your Employees' Wages"
-          description="Avoid unexpected wage bills. Assign pay rates to your employees and their estimated pay will be added to their timesheets."
+          icon={timeSheetFeatureImgFour(Intl.locale)}
+          title={Intl.formatMessage({ id: 'pages.productTimesheets.fourthSectionFeatureOneTitle' })}
+          alt={Intl.formatMessage({ id: 'pages.productTimesheets.fourthSectionFeatureOneTitle' })}
+          description={Intl.formatMessage({
+            id: 'pages.productTimesheets.fourthSectionFeatureOneDesc',
+          })}
           style="timesheetMargin"
         />
         <IconCard
           isRound
           bigImage
-          icon={roundImage2}
-          alt="Sync"
-          title="Sync with Payroll and Accounting Software"
-          description="Integrate with Xero and QuickBooks Online to automatically sync timesheet data to your favorite payroll software."
+          icon={imgTwo}
+          title={Intl.formatMessage({ id: 'pages.productTimesheets.fourthSectionFeatureTwoTitle' })}
+          alt={Intl.formatMessage({ id: 'pages.productTimesheets.fourthSectionFeatureTwoTitle' })}
+          description={Intl.formatMessage({
+            id: 'pages.productTimesheets.fourthSectionFeatureTwoDesc',
+          })}
           style="timesheetMargin"
         />
         <IconCard
           isRound
           bigImage
-          icon={roundImage3}
-          alt="Timesheets on-time"
-          title="Timesheets on-time and in your Inbox"
-          description={`Schedule your employees' timesheets to be automatically emailed to you in line with your payroll schedule.`}
+          icon={timeSheetFeatureImgThree(Intl.locale)}
+          title={Intl.formatMessage({
+            id: 'pages.productTimesheets.fourthSectionFeatureThreeTitle',
+          })}
+          description={Intl.formatMessage({
+            id: 'pages.productTimesheets.fourthSectionFeatureThreeDesc',
+          })}
+          alt={Intl.formatMessage({ id: 'pages.productTimesheets.fourthSectionFeatureThreeTitle' })}
           style="timesheetMargin"
         />
       </div>
       <Divider />
       <Title
-        title="Timesheets for any industry"
-        description="Atto helps all types of businesses across the world to manage their employees' time"
+        title={Intl.formatMessage({
+          id: 'pages.productTimesheets.fifthSectionTitle',
+        })}
+        description={Intl.formatMessage({
+          id: 'pages.homepage.thirdSectionDesc',
+        })}
         maxDescriptionWidth={700}
       />
       <Divider className="style2" />
-      <Services list={serviceList} />
+      <Services />
       <Divider />
       <Story
         img={authorImage}
-        paragraph={`"Does precisely and perfectly what it says. The great big pulsating green button is appealing, makes you want to start work right away! Loving it and the helpful staff."`}
-        author="Robert Bennet - DPA Cleaning Services, Inc."
+        paragraph={Intl.formatMessage({ id: 'pages.productTimesheets.review' })}
+        author="David Warwick"
       />
       <Divider />
       <Title
-        title="It doesn’t end here!"
+        title={Intl.formatMessage({
+          id: 'pages.productTimeTracking.eighthSectionTitle',
+        })}
+        description={Intl.formatMessage({
+          id: 'pages.productTimeTracking.eighthSectionDesc',
+        })}
         marginBottom=".4rem"
-        description="Learn more about what Atto can do for you"
       />
       <Divider className="style2" />
       <div className={learnMoreContainer}>
         <LearnMoreCard
-          title="Time Tracking"
-          description="See exactly where your employees’ time is going. Track work hours, breaks, overtime, time off, and more!"
+          title={Intl.formatMessage({
+            id: 'pages.productLocationTracking.bottomFeatureOneTitle',
+          })}
+          description={Intl.formatMessage({
+            id: 'pages.productLocationTracking.bottomFeatureOneDesc',
+          })}
           icon={icon20}
           path="/product/time-tracking"
         />
 
         <LearnMoreCard
-          title="GPS Location Tracking"
-          description="Increase the safety and accountability of your team with real-time updates on their location."
+          title={Intl.formatMessage({
+            id: 'pages.productTimeTracking.bottomFeatureOneTitle',
+          })}
+          description={Intl.formatMessage({
+            id: 'pages.productTimeTracking.bottomFeatureOneDesc',
+          })}
           icon={icon21}
           path="/product/gps-location-tracking"
         />
 
         <LearnMoreCard
-          title="Team Activity"
-          description="Stay in the loop with what’s happening – without having to pick up the phone."
+          title={Intl.formatMessage({
+            id: 'pages.productTimeTracking.bottomFeatureTwoTitle',
+          })}
+          description={Intl.formatMessage({
+            id: 'pages.productTimeTracking.bottomFeatureTwoDesc',
+          })}
           icon={icon22}
           path="/product/team-activity"
         />
       </div>
-      <Divider className="style3" />
+      <Divider className="style4" />
       <SubscribeBanner
-        title="Sit back and relax with timesheets on-time, every time"
-        placeholder="Type your email"
-        checkItemOne="No credit card required"
-        checkItemTwo="14 day free trial"
-        checkItemThree="Cancel anytime"
+        title={Intl.formatMessage({
+          id: 'pages.productTimesheets.subscribeBanner',
+        })}
+        placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
+        checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
+        checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
+        checkItemThree={Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}
       />
-      <Footer FooterLinks={FooterLinks} />
+      <Footer />
     </div>
   );
 };

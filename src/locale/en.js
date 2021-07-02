@@ -1,5 +1,5 @@
 import googlePlay from '../images/google-play@2x.png';
-import appStore from '../images/app-store@2x.png';
+import appStore from '../images/apple-store@2x.png';
 
 export const placeholderData = {};
 
@@ -11,7 +11,7 @@ export const FooterLinks = [
     subMenuLinks: [
       {
         id: 0,
-        path: '/product/why-atto',
+        path: '/product',
         name: 'Why Atto',
         hasLine: true,
       },
@@ -175,26 +175,22 @@ export const FooterLinks = [
 export const faqList = [
   {
     title: 'What happens at the end of my free trial?',
-    paragraph:
+    description:
       'After your 14-day free trial ends, you’ll be asked to purchase a subscription in order to continue using Atto. As we don’t require a credit card to sign up for our free trial, you won’t be charged unless you actively choose to subscribe.',
-    toggled: true,
   },
   {
     title: 'Are there any usage limits or add-on charges?',
-    paragraph:
+    description:
       'After your 14-day free trial ends, you’ll be asked to purchase a subscription in order to continue using Atto. As we don’t require a credit card to sign up for our free trial, you won’t be charged unless you actively choose to subscribe.',
-    toggled: false,
   },
   {
     title: 'What payment options do you accept?',
-    paragraph:
+    description:
       'After your 14-day free trial ends, you’ll be asked to purchase a subscription in order to continue using Atto. As we don’t require a credit card to sign up for our free trial, you won’t be charged unless you actively choose to subscribe.',
-    toggled: false,
   },
   {
     title: 'I have a question that isn’t answered',
-    paragraph:
+    description:
       'After your 14-day free trial ends, you’ll be asked to purchase a subscription in order to continue using Atto. As we don’t require a credit card to sign up for our free trial, you won’t be charged unless you actively choose to subscribe.',
-    toggled: false,
   },
 ];

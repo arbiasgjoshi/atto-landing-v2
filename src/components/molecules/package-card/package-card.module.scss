@@ -4,7 +4,7 @@
   border-radius: 8px;
   background-color: #ffffff;
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
 
   .greenSubtitle {
     font-weight: normal;
@@ -35,8 +35,8 @@
       display: flex;
       align-items: center;
       line-height: 3rem;
-      margin-bottom: 4.5rem;
-      min-height: 8rem;
+      margin-bottom: 1.5rem;
+      min-height: 11rem;
 
       > p {
         max-width: 23.3rem;
@@ -56,6 +56,12 @@
           line-height: 8rem;
         }
       }
+
+      &.extendedContent {
+        > p {
+          max-width: 32rem;
+        }
+      }
     }
 
     > .packageBtnWrap > button {
@@ -73,6 +79,17 @@
       h5 {
         font-size: 2.2rem !important;
         font-weight: 400 !important;
+      }
+    }
+
+    @include max(tablet) {
+      > div {
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      > h5 {
+        margin-bottom: 2rem;
       }
     }
   }

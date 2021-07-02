@@ -1,9 +1,8 @@
 .container {
-  @include flex-direction(column-reverse);
-
-  @include min(mobile) {
-    flex-direction: column;
-  }
+  // @include flex-direction(column-reverse);
+  flex-direction: column;
+  // @include min(mobile) {
+  // }
 
   .checkListContainer {
     @include min(tablet) {

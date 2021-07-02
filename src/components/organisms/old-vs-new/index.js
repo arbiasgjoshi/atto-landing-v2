@@ -17,14 +17,14 @@ const OldVsNew = ({ oldList, newList }) => (
     <div className={container}>
       <div className={oldListStyle}>
         <span className={oldWayTitle}>The old way with paper timesheets</span>
-        {oldList?.map((title) => (
-          <CheckCard title={title} style="oldListStyle" hasCloseIcon />
+        {oldList?.map((title, idx) => (
+          <CheckCard title={title} style="oldListStyle" hasCloseIcon key={idx} />
         ))}
       </div>
       <div className={newListStyle}>
         <span className={newWayTitle}>The new way with atto</span>
-        {newList?.map((title) => (
-          <CheckCard title={title} />
+        {newList?.map((title, idx) => (
+          <CheckCard title={title} key={idx} />
         ))}
       </div>
     </div>

@@ -58,6 +58,7 @@ export const featureCardsList = [
   },
   {
     title: 'Via the Time Clock Kiosk',
+    comingSoon: true,
     description:
       'Set up a time clock kiosk to enable your team to track time from a single device.',
     logo: <KioskTracking />,

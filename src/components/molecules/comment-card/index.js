@@ -24,15 +24,11 @@ const CommentCard = ({ date, title, description, author, authorImage, sliderItem
         <StarsSVG />
         <StarsSVG />
       </div>
-      <span>{date}</span>
     </div>
     <div className={content}>
       <h6>{title}</h6>
       <span>{description}</span>
       <div className={authorWrapper}>
-        <div className={profilePicture}>
-          <img src={authorImage} alt="" />
-        </div>
         <span>{author}</span>
       </div>
     </div>

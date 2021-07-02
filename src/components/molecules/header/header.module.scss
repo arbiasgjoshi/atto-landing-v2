@@ -75,6 +75,7 @@
         line-height: 1.5rem;
         padding: 0.9rem 0;
         width: 8.6rem;
+        // display: none;
       }
 
       .menuTrigger {
@@ -152,6 +153,7 @@
   a {
     margin-right: 1.6rem;
     transition: ease all 0.2s;
+    min-width: 5rem;
     &:hover {
       color: var(--primary-color);
     }
@@ -197,7 +199,7 @@
   .leftItems {
     @include flex-direction(column);
     padding: 7.6rem;
-    flex-grow: 1;
+    // flex-grow: 1;
     width: 66.66667%;
 
     @include min(tablet) {
@@ -235,6 +237,7 @@
       width: 100%;
       opacity: 1;
       border: 0;
+      margin: 39px 0;
     }
 
     .subItems {
@@ -474,6 +477,14 @@
       letter-spacing: -0.05rem;
       font-weight: 500;
       width: 100%;
+    }
+  }
+
+  > div:first-child {
+    > section {
+      > div {
+        padding-left: 0.8rem;
+      }
     }
   }
 

@@ -19,9 +19,16 @@
         }
 
         p {
-          font-size: var(--body-style-one);
-          line-height: var(--body-style-one-line-height-size);
+          font-size: var(--body-style-two);
+          line-height: var(--body-style-two-line-height-size);
+          letter-spacing: var(--body-style-two-letter-spacing);
           font-weight: normal;
+
+          &.bigStyle {
+            font-size: var(--body-style-one);
+            line-height: var(--body-style-one-line-height-size);
+            letter-spacing: var(--body-style-one-letter-spacing);
+          }
 
           @include min(desktop) {
             margin-right: 9rem;
@@ -66,13 +73,6 @@
         h5 {
           margin-right: 1rem;
         }
-
-        p {
-          @include min(tablet) {
-            height: 15rem;
-            // @include flex-align(center, center);
-          }
-        }
       }
     }
 
@@ -84,6 +84,14 @@
   }
 
   &.moreCards {
+    // .firstRow {
+    //   .textContainer {
+    //     p {
+    //       font-size: var(--body-style-two);
+    //       list-style: var(--body-style-two-line-height-size);
+    //     }
+    //   }
+    // }
     .secondRow {
       margin: 0;
     }

@@ -7,23 +7,18 @@ import { reviewCards } from './review-cards.module.scss';
 const ReviewCards = () => (
   <div className={reviewCards}>
     <ReviewCard
-      title={`"A must-have for your organization"`}
-      author="Bill Thomas"
+      title={`"A must-have app for your company"`}
       rating="5 / 5"
-      job="Hightlight Construction Group"
+      author="Julia Conner"
+      job=""
     />
     <ReviewCard
-      title={`"A must-have for your organization"`}
-      author="Jack Williams"
+      title={`“Would highly recommend for keeping track of your staff’s time”`}
+      author="Frank Mason"
       rating="5 / 5"
-      job="Hightlight Construction Group"
+      job=""
     />
-    <ReviewCard
-      title={`"A must-have for your organization"`}
-      author="Drew Obama"
-      rating="5 / 5"
-      job="Hightlight Construction Group"
-    />
+    <ReviewCard title={`"So perfectly simplistic"`} author="Rich Mathews" rating="5 / 5" job="" />
   </div>
 );
 

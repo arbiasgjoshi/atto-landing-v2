@@ -21,6 +21,14 @@
     display: none;
     @include max(tablet) {
       display: block;
+
+      > div {
+        header {
+          h5 {
+            text-transform: uppercase;
+          }
+        }
+      }
     }
   }
 

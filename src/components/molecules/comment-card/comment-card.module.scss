@@ -3,7 +3,7 @@
   border-radius: 8px;
   background-color: #ffffff;
   padding: 1.5rem;
-  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
   margin: 1.5rem 0;
   min-height: 25rem;
   display: flex;
@@ -11,7 +11,11 @@
   justify-content: space-between;
 
   &.centeredContent {
-    margin: 1.5rem 1.6rem;
+    margin: 2.5rem auto; // whenever adding more than 3, replace with this: margin: 1.5rem 1rem;
+
+    @include max(mobile) {
+      margin: 2.5rem 1.2rem;
+    }
   }
 
   @include min(tablet) {

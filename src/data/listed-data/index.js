@@ -42,6 +42,8 @@ import icon7 from '@images/manage-overtime.png';
 import icon8 from '@images/switch-between-jobs.png';
 import icon9 from '@images/add-time-off.png';
 
+// const Intl = useIntl();
+
 export const serviceList = [
   { title: 'Construction', url: '/industries/construction', icon: <ConstructionLogo /> },
   { title: 'Landscaping & Gardening', url: '/industries/landscaping', icon: <LandscapingLogo /> },

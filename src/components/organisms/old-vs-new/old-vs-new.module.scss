@@ -12,13 +12,12 @@
   letter-spacing: 0;
   font-family: 'Spicy Pumpkin';
   width: 50%;
-  padding-left: 8rem;
-  @include absolute(top -13.5rem);
+  @include absolute(left 3.1rem top -13.5rem);
   width: 100%;
 
   &::after {
     content: '';
-    @include absolute(left 10rem top 6rem);
+    @include absolute(left 1.9rem top 6rem);
     background-image: url('@images/red-indicator-arrow@2x.png');
     background-size: contain;
     background-position: center;
@@ -29,6 +28,15 @@
   @include min(tablet) {
     line-height: 5rem;
   }
+
+  @include max(tablet) {
+    padding-left: 2rem;
+    @include absolute(top -10rem);
+
+    &::after {
+      left: 3rem;
+    }
+  }
 }
 
 .newWayTitle {
@@ -37,13 +45,12 @@
   font-size: 38px;
   font-family: 'Spicy Pumpkin';
   width: 50%;
-  padding-left: 4.2rem;
-  @include absolute(top -13.5rem);
+  @include absolute(top -13.5rem left 4.2rem);
   width: 100%;
 
   &::after {
     content: '';
-    @include absolute(left 6rem top 6rem);
+    @include absolute(left 1.9rem top 6rem);
     background-image: url('@images/green-indicator-arrow@2x.png');
     background-size: contain;
     background-position: center;
@@ -54,18 +61,45 @@
   @include min(tablet) {
     line-height: 5rem;
   }
+
+  @include max(tablet) {
+    padding-left: 2rem;
+    @include absolute(top -10rem);
+
+    &::after {
+      left: 3rem;
+    }
+  }
 }
 
 .container {
   @include flex-align(flex-start, space-between);
   flex-direction: column;
-  border: 2px solid #efefef;
-  border-radius: 20px;
-  background: #fff;
   margin-top: 10rem;
+
+  @include max(tablet) {
+    .oldWayTitle,
+    .newWayTitle {
+      font-size: 3rem;
+      line-height: 3rem;
+      padding-left: 0;
+      left: 1rem;
+      top: -7rem;
+
+      &::after {
+        left: 2rem;
+        top: 4rem;
+        height: 5rem;
+        background-repeat: no-repeat;
+      }
+    }
+  }
 
   @include min(tablet) {
     flex-direction: row;
+    border: 2px solid #efefef;
+    background: #fff;
+    border-radius: 20px;
   }
 
   @include min(laptop) {
@@ -75,6 +109,12 @@
   .oldListStyle,
   .newListStyle {
     position: relative;
+
+    @include max(mobile) {
+      border: 2px solid #efefef;
+      background: #fff;
+      border-radius: 20px;
+    }
     > div {
       border-bottom: 2px solid #efefef;
       align-items: center;
@@ -105,6 +145,10 @@
       > div {
         padding: 3rem 4rem 3rem 3.1rem;
       }
+    }
+
+    @include max(mobile) {
+      margin-bottom: 10rem;
     }
   }
 

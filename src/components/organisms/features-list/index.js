@@ -8,15 +8,18 @@ import * as styles from './features-list.module.scss';
 const FeaturesList = ({ list, isLeftAligned, style = '' }) => (
   <div className={styles.container}>
     <div className={`${styles.featuresContainer} ${styles[style]}`}>
-      {list?.map(({ title, description, alt, logo }, index) => (
-        <FeatureCard
-          isLeftAligned={isLeftAligned}
-          key={index}
-          title={title}
-          logo={logo}
-          description={description}
-          alt={alt}
-        />
+      {list?.map(({ title, description, alt, logo, comingSoon = false }, index) => (
+        <>
+          <FeatureCard
+            isLeftAligned={isLeftAligned}
+            key={index}
+            title={title}
+            logo={logo}
+            description={description}
+            alt={alt}
+            comingSoon={comingSoon}
+          />
+        </>
       ))}
     </div>
   </div>

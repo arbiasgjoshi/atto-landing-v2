@@ -36,8 +36,6 @@
     row-gap: 0;
     display: flex;
     justify-content: space-between;
-    border-top: 2px solid #e3e3e3;
-    border-bottom: 2px solid #e3e3e3;
   }
 
   h3 {
@@ -61,6 +59,7 @@
   text-align: center;
 }
 .mobileImage {
+  margin-top: 2rem;
   > div {
     max-width: 100% !important;
   }

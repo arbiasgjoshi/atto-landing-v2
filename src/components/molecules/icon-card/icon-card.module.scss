@@ -29,9 +29,6 @@
     }
 
     &.adjustedWidth {
-      @include max(mobile) {
-        justify-content: start;
-      }
       @include min(desktop) {
         @include flex-align(center, center);
       }
@@ -57,7 +54,7 @@
     p {
       flex-grow: 1;
       display: inline-flex;
-      align-items: center;
+      align-items: flex-start;
     }
   }
 
@@ -65,10 +62,12 @@
     .iconWrapper {
       padding: 0;
       margin-bottom: 2rem;
+      margin-top: 6rem;
 
       @include min(tablet) {
         justify-content: flex-start;
         margin-bottom: 4rem;
+        margin-top: 0;
       }
 
       img {
@@ -130,6 +129,7 @@
     }
     > div {
       text-align: left;
+      justify-content: start;
     }
   }
 

@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { StaticImage, getImage } from 'gatsby-plugin-image';
-import ReactPlayer from 'react-player';
+import { StaticImage } from 'gatsby-plugin-image';
+import { motion } from 'framer-motion';
 
 import Icon from '@components/atoms/icon';
 import Button from '@components/atoms/button';
@@ -17,26 +17,121 @@ import {
   maskOverlay,
   playIcon,
   videoPlayer,
+  playingMask,
+  playerIframe,
   watchButton,
 } from './video.module.scss';
 
-const Video = ({ videoUrl }) => {
+const Video = ({ placeholder }) => {
   const [play, setPlay] = useState(false);
+  const [videoUrl, setVideoUrl] = useState(
+    'https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+  );
+
+  const srcUrl =
+    'https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;&amp;player_id=0&amp;app_id=58479';
+
+  const switchPlaceholder = (val) => {
+    if (val === 'location-tracking') {
+      return (
+        <StaticImage
+          className={videoPlaceholder}
+          width={960}
+          height={489}
+          quality={96}
+          alt="Video placeholder"
+          placeholder="none"
+          src="../../../images/Video placeholder - Location Tracking@2x.png"
+        />
+      );
+    }
+
+    if (val === 'time-tracking') {
+      return (
+        <StaticImage
+          className={videoPlaceholder}
+          width={960}
+          height={489}
+          quality={96}
+          alt="Video placeholder"
+          placeholder="none"
+          src="../../../images/Video placeholder - Time Tracking@2x.png"
+        />
+      );
+    }
+
+    if (val === 'timesheets') {
+      return (
+        <StaticImage
+          className={videoPlaceholder}
+          width={960}
+          height={489}
+          quality={96}
+          alt="Video placeholder"
+          placeholder="none"
+          src="../../../images/Video placeholder - Timesheets@2x.png"
+        />
+      );
+    }
+
+    if (val === 'team-activity') {
+      return (
+        <StaticImage
+          className={videoPlaceholder}
+          width={960}
+          height={489}
+          quality={96}
+          alt="Video placeholder"
+          placeholder="none"
+          src="../../../images/Video placeholder - Team Activity@2x.png"
+        />
+      );
+    }
+
+    return (
+      <StaticImage
+        className={videoPlaceholder}
+        width={960}
+        height={489}
+        quality={96}
+        alt="Video placeholder"
+        placeholder="none"
+        src="../../../images/Video placeholder - Homepage@2x.png"
+      />
+    );
+  };
+
+  useEffect(() => {
+    if (play) {
+      setVideoUrl(
+        'https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479'
+      );
+    } else {
+      setVideoUrl(
+        'https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+      );
+    }
+  }, [play]);
 
   return (
     <div className={videoContainer}>
       {!play && (
-        <div className={maskOverlay}>
+        <motion.div
+          key="content"
+          style={{ overflow: 'hidden' }}
+          initial="open"
+          animate="collapsed"
+          exit="open"
+          variants={{
+            open: { opacity: 0 },
+            collapsed: { opacity: 1 },
+          }}
+          transition={{ duration: 0.25 }}
+          style={{ height: '100%' }}
+          className={maskOverlay}
+        >
           <span className={`${videoBackground} ${leftAligned}`} />
-          <StaticImage
-            className={videoPlaceholder}
-            width={960}
-            height={489}
-            quality={96}
-            alt="Video placeholder"
-            placeholder="none"
-            src="../../../images/video_placeholder@2x.png"
-          />
+          {switchPlaceholder(placeholder)}
           <span className={`${videoBackground} ${rightAligned}`} />
           <div className={playIcon} onClick={() => setPlay(true)} role="button" tabIndex="-1">
             <Icon iconClass="play" fSize={11} />
@@ -44,10 +139,28 @@ const Video = ({ videoUrl }) => {
           <div className={watchButton}>
             <Button btnText="Watch Video" btnStyle="round" onBtnClick={() => setPlay(true)} />
           </div>
-        </div>
+        </motion.div>
       )}
-      <div className={videoPlayer}>
-        <ReactPlayer url={videoUrl} playing={play} width="100%" height="100%" />
+      <div className={`${videoPlayer} ${play && playingMask}`}>
+        <div className={`${playerIframe}`}>
+          {play && (
+            <iframe
+              src={videoUrl}
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                width: '100%',
+                height: '100%',
+              }}
+              title="Atto  &amp;middot;  Time tracking, simplified"
+            />
+          )}
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
     </div>
   );

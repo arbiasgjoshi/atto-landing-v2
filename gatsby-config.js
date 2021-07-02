@@ -1,9 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: 'Attotime Landing Site ',
-    description: `Attotime Website`,
-    author: `Arbias Gjoshi`,
-    siteUrl: 'http://localhost:8000',
+    title: 'ATTO',
+    description: `Atto is a simple, all-in-one solution that accurately tracks your employees’ time and automates timesheets. Join 10,000+ businesses that trust Atto. Sign up now!`,
+    author: `Zetta Technologies`,
+    siteUrl: 'https://attotime.com',
+    image: 'src/images/Atto - Social Media Share@2x.png',
+  },
+  flags: {
+    PARALLEL_SOURCING: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false,
+    FAST_DEV: false,
+    LMDB_STORE: false,
+    PRESERVE_WEBPACK_CACHE: false,
+    DEV_SSR: false,
   },
   plugins: [
     {
@@ -18,7 +27,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        icon: 'src/images/atto_favicon@2x.png',
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -29,11 +43,17 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://attotime.com/`,
+      },
+    },
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/images/atto_favicon@2x.png',
       },
     },
     {
@@ -73,15 +93,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `gatsby-plugin-react-intl`,
       options: {
         // language JSON resource path
         path: `${__dirname}/src/intl`,
         // supported language
+        redirectDefaultLanguageToRoot: true,
         languages: [`en`, `de`, `es`, `fr`],
         // language file path
         defaultLanguage: `en`,
-        redirect: true,
+        redirect: false,
       },
     },
   ],

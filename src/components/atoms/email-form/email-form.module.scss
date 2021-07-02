@@ -5,13 +5,24 @@
   align-items: center;
 
   &.homepage {
-    > div input {
-      border: 2px solid #000000;
-      border-radius: 4px;
-      background-color: #ffffff;
+    > form > div {
+      // FIXME Need to delete this below if otherwise
+      > div:focus-within {
+        &:before {
+          content: none !important;
+        }
+      }
+      // FIXME Need to delete this above if otherwise
 
-      &:focus {
-        border-color: var(--primary-color);
+      input {
+        border: 2px solid #000000;
+        border-radius: 4px;
+        background-color: #ffffff;
+
+        &:focus {
+          border-color: var(--primary-color);
+          box-shadow: none; // FIXME Need to comment this if otherwise
+        }
       }
     }
 
@@ -27,12 +38,13 @@
   &.productPage {
     color: var(--gray);
 
-    > div input {
+    > form > div input {
       border: 2px solid var(--color-20);
       border-radius: 4px;
 
       &:focus {
         border-color: var(--primary-color);
+        box-shadow: none;
       }
     }
 

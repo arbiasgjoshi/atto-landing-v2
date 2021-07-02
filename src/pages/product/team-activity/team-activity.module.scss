@@ -2,29 +2,6 @@
   max-width: 114rem;
   margin: 0 auto;
 
-  .learnMoreContainer {
-    @include flex-align(center, center);
-    @include min(tablet) {
-      margin-top: -0.5rem;
-      justify-content: space-between;
-    }
-    flex-wrap: wrap;
-
-    > div {
-      @include max(tablet) {
-        margin-bottom: 1rem;
-      }
-    }
-
-    @include max(tablet) {
-      max-width: 90%;
-      margin: 0 auto;
-      > div {
-        margin-bottom: 3rem;
-      }
-    }
-  }
-
   .featuresStyle {
     margin-top: 3rem;
 

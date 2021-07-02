@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
+import { useIntl } from 'gatsby-plugin-react-intl';
 
 import Icon from '@components/atoms/icon';
 import Divider from '@components/atoms/divider';
 import EmailForm from '@components/atoms/email-form';
 import Number from '@components/atoms/number-card';
 import HeaderComponent from '@components/molecules/header';
-import SEO from '@components/molecules/seo';
+import Seo from '@components/molecules/seo';
 import FooterComponent from '@components/molecules/footer';
 import Title from '@components/molecules/title';
 import MainTitle from '@components/molecules/main-title-card';
@@ -19,26 +20,18 @@ import Story from '@components/organisms/story';
 import Services from '@components/organisms/services';
 import VideoCheckList from '@components/organisms/video-checklist';
 
-import { serviceList, checkList, titleList } from '@data/listed-data';
-import authorImage from '@images/no-image.png';
+import authorImage from '@images/hear-what-businesses-have-to-say@2x.png';
 
-import { container } from '@styles/main.module.scss';
+import { container, formRotated } from '@styles/main.module.scss';
 import '@styles/includes/slick-carousel.scss';
-import { FooterLinks } from '@locale/en.js';
+// import { FooterLinks } from '@locale/en.js';
 import {
   btnWrapper,
   pulledLeft,
   pulledRight,
   carouselWrapper,
 } from '@components/molecules/carousel/carousel.module.scss';
-import {
-  // slider,
-  sliderWrapper,
-  numbers,
-  mobileImage,
-  mobileImageWrapper,
-  desktopImage,
-} from './homepage.module.scss';
+import { sliderWrapper, numbers, desktopImage, mobileImage } from './homepage.module.scss';
 
 const SampleNextArrow = (props) => {
   // eslint-disable-next-line react/prop-types
@@ -61,6 +54,8 @@ const SamplePrevArrow = (props) => {
 };
 
 const Home = () => {
+  const Intl = useIntl();
+
   const [settings, setSettings] = useState({
     dots: false,
     infinite: false,
@@ -73,6 +68,121 @@ const Home = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   });
+
+  const titleList = [
+    { title: Intl.formatMessage({ id: 'pages.homepage.timesheetCheckItemZero' }), id: '1asdd1a' },
+    { title: Intl.formatMessage({ id: 'pages.homepage.timesheetCheckItemOne' }), id: '1asdd1b' },
+    { title: Intl.formatMessage({ id: 'pages.homepage.timesheetCheckItemTwo' }), id: '1asdd1c' },
+    { title: Intl.formatMessage({ id: 'pages.homepage.timesheetCheckItemThree' }), id: '1asdd1d' },
+  ];
+
+  const checkList = [
+    { title: Intl.formatMessage({ id: 'pages.homepage.subscribeCheckItemZero' }), id: '1asdd1a' },
+    { title: Intl.formatMessage({ id: 'pages.homepage.subscribeCheckItemOne' }), id: '1asdd1a' },
+    { title: Intl.formatMessage({ id: 'pages.homepage.subscribeCheckItemTwo' }), id: '1asdd1a' },
+    { title: Intl.formatMessage({ id: 'pages.homepage.subscribeCheckItemThree' }), id: '1asdd1a' },
+    { title: Intl.formatMessage({ id: 'pages.homepage.subscribeCheckItemFour' }), id: '1asdd1a' },
+  ];
+
+  const imageOneLocale = (loc) => {
+    if (loc === 'en') {
+      return (
+        <StaticImage
+          src="../images/en/time-tracking-simplified@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
+          width={1140}
+          quality={95}
+          placeholder="none"
+          className={desktopImage}
+        />
+      );
+    }
+    if (loc === 'de') {
+      return (
+        <StaticImage
+          src="../images/de/de-time-tracking-simplified@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
+          width={1140}
+          quality={95}
+          placeholder="none"
+          className={desktopImage}
+        />
+      );
+    }
+    if (loc === 'fr') {
+      return (
+        <StaticImage
+          src="../images/fr/fr-time-tracking-simplified@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
+          width={1140}
+          quality={95}
+          placeholder="none"
+          className={desktopImage}
+        />
+      );
+    }
+    if (loc === 'es') {
+      return (
+        <StaticImage
+          src="../images/es/es-time-tracking-simplified@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
+          width={1140}
+          quality={95}
+          placeholder="none"
+          className={desktopImage}
+        />
+      );
+    }
+  };
+
+  const mobileLocale = (loc) => {
+    if (loc === 'de') {
+      return (
+        <StaticImage
+          src="../images/DE_Mobile Time tracking, simplified@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
+          width={434}
+          quality={95}
+          placeholder="none"
+          className={mobileImage}
+        />
+      );
+    }
+    if (loc === 'fr') {
+      return (
+        <StaticImage
+          src="../images/FR_Mobile Time tracking, simplified@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
+          width={434}
+          quality={95}
+          placeholder="none"
+          className={mobileImage}
+        />
+      );
+    }
+    if (loc === 'es') {
+      return (
+        <StaticImage
+          src="../images/ES_Mobile Time tracking, simplified@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
+          width={434}
+          quality={95}
+          placeholder="none"
+          className={mobileImage}
+        />
+      );
+    }
+    return (
+      <StaticImage
+        src="../images/Mobile Time tracking, simplified@2x.png"
+        alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
+        width={434}
+        quality={95}
+        placeholder="none"
+        className={mobileImage}
+      />
+    );
+  };
 
   useEffect(() => {
     if (window.innerWidth < 768) {
@@ -99,75 +209,49 @@ const Home = () => {
 
   return (
     <div className={container}>
-      <SEO title="ATTO: Timesheets for Employees | Time & GPS Location Tracking" />
+      <Seo
+        title={Intl.formatMessage({ id: 'pages.homepage.metaTitle' })}
+        description={Intl.formatMessage({ id: 'pages.homepage.metaDescription' })}
+      />
       <HeaderComponent />
       <MainTitle
-        title="Time tracking, simplified."
-        subtitle="Atto is a simple all-in-one time-tracking and timesheet solution. Spend less time managing your business and more time getting work done."
+        title={Intl.formatMessage({ id: 'pages.homepage.title' })}
+        subtitle={Intl.formatMessage({ id: 'pages.homepage.description' })}
       />
-      <div className={mobileImageWrapper}>
-        <StaticImage
-          src="../images/homepage-banner-mobile@2x.png"
-          alt="Home banner image"
-          height={396}
-          quality={95}
-          placeholder="none"
-          className={mobileImage}
+      <div className={formRotated}>
+        <EmailForm
+          placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
+          checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
+          checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
+          checkItemThree={Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}
+          style="homepage"
         />
+        <Divider className="style1" />
+        {imageOneLocale(Intl.locale)}
+        {mobileLocale(Intl.locale)}
       </div>
-      <EmailForm
-        placeholder="Type your email"
-        checkItemOne="No credit card required"
-        checkItemTwo="14 day free trial"
-        checkItemThree="Cancel anytime"
-        style="homepage"
-      />
-      <Divider className="style1" />
-      <StaticImage
-        src="../images/banner-image-2@2x.png"
-        alt="Home banner image"
-        width={1140}
-        height={505}
-        quality={95}
-        placeholder="none"
-        className={desktopImage}
-      />
       <Divider className="style4" />
       <div className={sliderWrapper}>
         <Slider {...settings} className={carouselWrapper} width={960}>
           <CommentCard
-            title="Amazing for my business!"
-            description="Super convenient and easy to use, so happy i’ve found Atto! Highly recommend."
+            title={Intl.formatMessage({ id: 'pages.homepage.reviews.firstTitle' })}
+            description={Intl.formatMessage({ id: 'pages.homepage.reviews.firstDesc' })}
             date="23 Jul"
-            author="Nita Ora"
+            author="Julia Conner"
             sliderItem
           />
           <CommentCard
-            title="A must have software"
-            description="I just love the ongoning improvements."
+            title={Intl.formatMessage({ id: 'pages.homepage.reviews.secondTitle' })}
+            description={Intl.formatMessage({ id: 'pages.homepage.reviews.secondDesc' })}
             date="20 Jul"
-            author="James Stone"
-            sliderItem
-          />
-          <CommentCard
-            title="Everything you need"
-            description="Service is fabolous and it’s easy to use. My employees love it."
-            date="18 Jun"
             author="Rich Mathews"
             sliderItem
           />
           <CommentCard
-            title="A must have software"
-            description="I just love the ongoning improvements."
-            date="20 Jul"
-            author="James Stone"
-            sliderItem
-          />
-          <CommentCard
-            title="Everything you need"
-            description="Service is fabolous and it’s easy to use. My employees love it."
+            title={Intl.formatMessage({ id: 'pages.homepage.reviews.thirdTitle' })}
+            description={Intl.formatMessage({ id: 'pages.homepage.reviews.thirdDesc' })}
             date="18 Jun"
-            author="Rich Mathews"
+            author="Robert Bennett"
             sliderItem
           />
         </Slider>
@@ -178,38 +262,55 @@ const Home = () => {
       <Title
         maxWidth={840}
         maxDescriptionWidth={766}
-        title="Thousands of businesses have saved time using Atto"
-        description="And it’s not just time saved, but money and stress too."
+        title={Intl.formatMessage({ id: 'pages.homepage.secondSectionTitle' })}
+        description={Intl.formatMessage({ id: 'pages.homepage.secondSectionDesc' })}
         marginBottom="2rem"
       />
       <Divider className="style3" />
-      <VideoCheckList list={titleList} cardStyle="centerAligned" />
+      <VideoCheckList
+        list={titleList}
+        videoUrl="https://vimeo.com/704266"
+        placeholder="home"
+        cardStyle="centerAligned"
+      />
       <Divider />
       <Title
-        title="See how Atto works with your industry"
-        description="Atto helps all types of businesses across the world manage their employees’ time."
+        title={Intl.formatMessage({ id: 'pages.homepage.thirdSectionTitle' })}
+        description={Intl.formatMessage({ id: 'pages.homepage.thirdSectionDesc' })}
         maxDescriptionWidth={700}
       />
       <Divider className="style2" />
-      <Services list={serviceList} />
+      <Services />
       <Divider className="style8" />
       <div className={numbers}>
-        <Number title="500,000+" description="Timesheets Produced" />
-        <Number title="150,000+" description="App Downloads" />
-        <Number title="10,000+" description="Companies use Atto" />
-        <Number title="250 million+" description="Minutes Tracked" />
+        <Number
+          title="1.2M +"
+          description={Intl.formatMessage({ id: 'pages.miscellaneous.timesheetsGenerated' })}
+        />
+        <Number
+          title="100k +"
+          description={Intl.formatMessage({ id: 'pages.miscellaneous.jobsCompleted' })}
+        />
+        <Number
+          title="10k +"
+          description={Intl.formatMessage({ id: 'pages.miscellaneous.companiesTrustUs' })}
+        />
+        <Number
+          title="750M +"
+          description={Intl.formatMessage({ id: 'pages.miscellaneous.hoursTracked' })}
+        />
       </div>
       <Divider />
-      <Title title="Hear what business owners say about Atto" />
+      <Title title={Intl.formatMessage({ id: 'pages.homepage.fourthSectionTitle' })} />
       <Divider className="style9" />
       <CarouselComponent large>
         <Story
           className="homepage"
           img={authorImage}
-          paragraph="“Atto has saved us $1,000’s on payroll and taken away the stress of running a business.”"
-          author="Robert Bennet - DPA Cleaning Services, Inc."
+          paragraph={Intl.formatMessage({ id: 'pages.homepage.reviews.bottomReview' })}
+          author="Julia Conner – Pennprojects, LLC"
         />
-        <Story
+        {/* <Story
           className="homepage"
           img={authorImage}
           paragraph="“Atto has saved us $1,000’s on payroll and taken away the stress of running a business.”"
@@ -220,15 +321,15 @@ const Home = () => {
           img={authorImage}
           paragraph="“Atto has saved us $1,000’s on payroll and taken away the stress of running a business.”"
           author="Robert Bennet - DPA Cleaning Services, Inc."
-        />
+        /> */}
       </CarouselComponent>
       <Divider />
       <FreeTrial
-        title="No time to waste!"
-        description="Stay in control of your employees’ time."
+        title={Intl.formatMessage({ id: 'pages.homepage.subscribeTitle' })}
+        description={Intl.formatMessage({ id: 'pages.homepage.subscribeDesc' })}
         list={checkList}
       />
-      <FooterComponent FooterLinks={FooterLinks} />
+      <FooterComponent />
     </div>
   );
 };

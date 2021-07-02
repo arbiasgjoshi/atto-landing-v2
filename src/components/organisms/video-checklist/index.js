@@ -7,9 +7,9 @@ import CheckList from '@components/molecules/check-list';
 
 import { container, checkListContainer } from './video-checklist.module.scss';
 
-const VideoCheckList = ({ list, cardStyle, videoUrl, videoPlaceholder }) => (
+const VideoCheckList = ({ list, cardStyle, videoUrl, placeholder }) => (
   <div className={container}>
-    <Video videoUrl={videoUrl} placeholder={videoPlaceholder} />
+    <Video videoUrl={videoUrl} placeholder={placeholder} />
     <Divider className="style2" />
     <div className={checkListContainer}>
       <CheckList list={list} cardStyle={cardStyle} />
@@ -21,7 +21,7 @@ VideoCheckList.propTypes = {
   list: PropTypes.arrayOf({}),
   cardStyle: PropTypes.string,
   videoUrl: PropTypes.string,
-  videoPlaceholder: PropTypes.string,
+  placeholder: PropTypes.string,
 };
 
 export default VideoCheckList;

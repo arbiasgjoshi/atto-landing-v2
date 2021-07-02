@@ -10,6 +10,17 @@ import icon4 from '@images/manage-overtime.png';
 import icon5 from '@images/switch-between-jobs.png';
 import icon6 from '@images/add-time-off.png';
 
+import imageOne from '@images/painting/Respond to absenteeism and last-minute schedule changes@2x.png';
+import imageTwo from '@images/painting/Avoid surprises by forecasting wages ahead of payday@2x.png';
+
+import StopCleaners from '@images/accordion-images/Stop electricians from clocking in until they arrive on-site@2x.png';
+import CheckHowMuch from '@images/accordion-images/Keep tabs on how much work each team has done@2x.png';
+import PreciseJobTimeTracking from '@images/accordion-images/Precise job bids with accurate time tracking@2x.png';
+import WinContracts from '@images/accordion-images/Win valuable contracts with precise cost estimates @2x.png';
+import WorkerLocations from '@images/accordion-images/See where all your workers are in real-time@2x.png';
+import AdminAutomatedTimesheets from '@images/accordion-images/Spend less time on admin with automated timesheets@2x.png';
+import GetDailySummary from '@images/accordion-images/Get a daily summary of each worker’s movements@2x.png';
+
 export const checkList1 = [
   { title: 'Track your painters’ and decorators’ time and location.' },
   { title: 'See who’s available to work in real-time.' },
@@ -74,24 +85,44 @@ export const accordionList1 = [
     title: 'Respond to absenteeism and last-minute schedule changes',
     description:
       'When a van breaks down, or a painter calls-in sick, you need to be able to deploy other workers to finish the job. Instantly, Atto shows you which of your painters and decorators are nearby and available to work – without having to call around.',
+    image: {
+      src: imageOne,
+      imageWidth: '369',
+      imageHeight: '557',
+    },
   },
   {
     icon: <Icon iconClass="named-locations" fSize="2.2" />,
     title: 'Stop painters from clocking in until they’re ready to work',
     description:
       'If you’re reliant on paper timesheets, it’s hard to verify that your painters and decorators are turning up on-time. With Atto, you can set the location of any job site and restrict workers from clocking in until they’re physically present.',
+    image: {
+      src: StopCleaners,
+      imageWidth: '406',
+      imageHeight: '596',
+    },
   },
   {
     icon: <Icon iconClass="location-tracking" fSize="2" />,
     title: 'Track the locations of your workers and the progress of paint jobs in real-time',
     description:
       'When your painting crew is dealing with different jobs in different locations, it can be hard to keep track of what’s going on. With Atto, you can track the live locations of your entire workforce. Check how long your crew has been working on each job. And, get notifications to inform you of their latest work activity.',
+    image: {
+      src: WorkerLocations,
+      imageWidth: '418',
+      imageHeight: '498',
+    },
   },
   {
     icon: <Icon iconClass="movement-tracking" fSize="2.5" />,
     title: 'View a map-based timeline of your painters’ and decorators’ daily movements ',
     description:
       'Check how productive your painters’ are. Atto generates a map of each painter’s and decorator’s daily movements, providing a timeline of what they were up to while working. Use it to check how long was spent at each job, along with the routing they took while on the clock',
+    image: {
+      src: GetDailySummary,
+      imageWidth: '399',
+      imageHeight: '520',
+    },
   },
 ];
 
@@ -101,30 +132,55 @@ export const accordionList2 = [
     title: 'Avoid surprises by forecasting wages ahead of payday',
     description:
       'Add your painters’ and decorators’ pay rates and automatically estimate their pay based on the hours they track. Now, there’ll be no more payroll surprises at the end of the week!',
+    image: {
+      src: imageTwo,
+      imageWidth: '420',
+      imageHeight: '555',
+    },
   },
   {
     icon: <Icon iconClass="jobs" fSize="2.1" />,
     title: 'From painting to decorating, see how much work each team completed',
     description:
       'Want to check if a job is running to budget? Need to see how much your painters are costing you compared to your decorators? In a few taps, Atto generates timesheet summaries to show all the work done on a specific job, or by a specific team.',
+    image: {
+      src: CheckHowMuch,
+      imageWidth: '378',
+      imageHeight: '492',
+    },
   },
   {
     icon: <Icon iconClass="sand-clock" fSize="2.1" />,
     title: 'Eliminate “guesstimates” to bill your customers more accurately',
     description:
       'When you charge your customers for hourly labor costs, relying on “guesstimated” job time can be costly. Not only might you under/overcharge them, but if an invoice is challenged, it’s hard to verify who’s in the right. With Atto, time records are precise and verified with location data, so you can confidently bill customers for every minute spent on the job',
+    image: {
+      src: PreciseJobTimeTracking,
+      imageWidth: '402',
+      imageHeight: '412',
+    },
   },
   {
     icon: <AutomatedTimesheets />,
     title: 'Reduce the admin time taken to run your payroll',
     description:
       'To reduce admin time, Atto automatically emails you a timesheet report that coincides with your payroll period. Now all you need to do is input the data into your payroll system – saving hours from the process',
+    image: {
+      src: AdminAutomatedTimesheets,
+      imageWidth: '402',
+      imageHeight: '589',
+    },
   },
   {
     icon: <Icon iconClass="job-costing" fSize="2.2" weight="bold" />,
     title: 'Win high-value jobs with more competitive quotes',
     description:
       'Your ability to estimate your labor costs impacts whether your job quotes are profitable and competitive. With Atto, you can check the time your painters’ and decorators’ took to complete similar jobs, and use it to create more precise quotes in the future',
+    image: {
+      src: WinContracts,
+      imageWidth: '402',
+      imageHeight: '589',
+    },
   },
 ];
 

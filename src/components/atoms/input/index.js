@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { defaultInput, inputWrapper } from './input.module.scss';
 
-const Input = ({ type = 'text', placeholder = 'Enter here...' }) => (
+const Input = ({ type = 'text', name, placeholder = 'Enter here...' }) => (
   <div className={inputWrapper}>
-    <input type={type} placeholder={placeholder} className={defaultInput} />
+    <input type={type} name={name} placeholder={placeholder} className={defaultInput} />
   </div>
 );
 

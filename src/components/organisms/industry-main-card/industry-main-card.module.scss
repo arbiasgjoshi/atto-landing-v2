@@ -63,25 +63,6 @@
             margin-bottom: 2rem;
           }
 
-          > div:first-child {
-            width: 3rem;
-            height: 3rem;
-            margin-right: 1.7rem;
-
-            @include min(laptop) {
-              margin-right: 0;
-              width: 2.8rem;
-              height: 2.8rem;
-            }
-
-            > i {
-              width: 2.8rem;
-              height: 2.8rem;
-              margin-right: 1.4rem;
-              font-size: 1rem;
-            }
-          }
-
           &:last-child {
             @include max(tablet) {
               margin-bottom: 0;
@@ -91,6 +72,7 @@
 
         h5 {
           font-size: var(--body-style-three);
+          line-height: var(--body-style-three-line-height-size);
           font-weight: 400;
         }
       }
@@ -115,6 +97,10 @@
       @include min(tablet) {
         margin-top: 4rem;
         max-width: 48.2rem;
+
+        &.differentLocale {
+          max-width: 54rem;
+        }
       }
 
       > div {

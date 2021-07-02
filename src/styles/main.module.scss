@@ -61,6 +61,19 @@
   }
 }
 
+.imageWrapper {
+  @include min(desktop) {
+    width: calc(100% + 70px);
+    margin-left: -35px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include max(tablet) {
+    max-width: 100%;
+  }
+}
+
 .imageFormWrapper {
   @include flex-direction(column);
   align-items: center;
@@ -95,4 +108,14 @@
       margin: unset;
     }
   }
+}
+
+@include max(tablet) {
+  .formRotated {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.articleList {
 }

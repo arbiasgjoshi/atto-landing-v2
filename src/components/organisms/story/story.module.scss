@@ -82,7 +82,7 @@
 
       @include min(tablet) {
         width: 60rem;
-        height: 24rem;
+        min-height: 24rem;
         font-size: 5rem;
         line-height: 6rem;
         letter-spacing: -1px;

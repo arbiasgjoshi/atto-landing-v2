@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby-plugin-intl';
+import { useIntl, Link } from 'gatsby-plugin-react-intl';
 
 import Button from '@components/atoms/button';
 
@@ -15,20 +15,27 @@ const LearnMoreCard = ({
   imageHeight,
   path = '/',
   styling = '',
-}) => (
-  <div className={`${styles.container} ${styles[styling]}`}>
-    <div className={styles.iconWrapper}>
-      <img alt={`title${imageWidth}`} width={imageWidth} height={imageHeight} src={icon} />
+}) => {
+  const Intl = useIntl();
+
+  return (
+    <div className={`${styles.container} ${styles[styling]}`}>
+      <div className={styles.iconWrapper}>
+        <img alt={`title${imageWidth}`} width={imageWidth} height={imageHeight} src={icon} />
+      </div>
+      <div className={styles.textWrapper}>
+        <h5 className={styles.cardTitle}>{title}</h5>
+        <p className={styles.paragraphText}>{description}</p>
+      </div>
+      <Link to={path}>
+        <Button
+          btnStyle="wide"
+          btnText={btnText || Intl.formatMessage({ id: 'pages.miscellaneous.learnMore' })}
+        />
+      </Link>
     </div>
-    <div className={styles.textWrapper}>
-      <h5 className={styles.cardTitle}>{title}</h5>
-      <p className={styles.paragraphText}>{description}</p>
-    </div>
-    <Link to={path}>
-      <Button btnStyle="wide" btnText={btnText || 'Learn more'} />
-    </Link>
-  </div>
-);
+  );
+};
 
 LearnMoreCard.propTypes = {
   title: PropTypes.string.isRequired,

@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
+import { useIntl } from 'gatsby-plugin-react-intl';
 import { Formik } from 'formik';
 import Button from '@components/atoms/button';
 import * as yup from 'yup';
@@ -8,6 +7,7 @@ import * as yup from 'yup';
 import { formWrapper, formRow, formBtn, formMask } from './contact-form.module.scss';
 
 const ContactForm = () => {
+  const Intl = useIntl();
   const validationSchema = yup.object().shape({
     username: yup
       .string()
@@ -40,7 +40,7 @@ const ContactForm = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder={Intl.formatMessage({ id: 'pages.contact.name' })}
                 value={values.name}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -48,7 +48,7 @@ const ContactForm = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="E-mail"
+                placeholder={Intl.formatMessage({ id: 'pages.contact.email' })}
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -56,10 +56,17 @@ const ContactForm = () => {
             </div>
 
             <div className={formRow}>
-              <textarea name="email" placeholder="E-mail" />
+              <textarea
+                name="message"
+                placeholder={Intl.formatMessage({ id: 'pages.contact.message' })}
+              />
             </div>
             <div className={formBtn}>
-              <Button btnText="Send Message" btnStyle="formBtn" defaultBtn />
+              <Button
+                btnText={Intl.formatMessage({ id: 'pages.contact.sendMessage' })}
+                btnStyle="formBtn"
+                defaultBtn
+              />
               <span className={formMask} />
             </div>
           </form>

@@ -7,9 +7,8 @@
   font-size: 2rem;
   line-height: 2.8rem;
   font-weight: var(--medium);
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   text-align: center;
-  width: 100%;
   transition: ease all 0.15s;
 
   &:hover {
@@ -27,12 +26,12 @@
   }
 
   &.blackStyle {
-    width: 18rem;
+    min-width: 18rem;
     max-width: 100%;
   }
 
   &.tealStyle {
-    width: 13.6rem;
+    min-width: 13.6rem;
     max-width: 100%;
     background-color: var(--primary-color);
 

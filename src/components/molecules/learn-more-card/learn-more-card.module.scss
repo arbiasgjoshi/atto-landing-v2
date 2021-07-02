@@ -1,14 +1,21 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border: 2px solid var(--color-20);
   box-sizing: border-box;
+  border-radius: 4px;
+  padding-bottom: 5rem;
+
+  @include max(mobile) {
+    padding: 2rem 2rem 2.5rem;
+  }
 
   @include min(tablet) {
     width: 35rem;
-    height: 44rem;
+    min-height: 44rem;
+    height: 100%;
   }
 
   &:hover {
@@ -36,21 +43,18 @@
   }
 
   .textWrapper {
-    padding: 1rem;
+    padding: 1rem 1rem 0;
     text-align: center;
-
-    @include min(tablet) {
-    }
 
     .cardTitle {
       margin-bottom: 1.2rem;
     }
 
     .paragraphText {
+      margin: 0 auto 3rem;
       @include min(tablet) {
-        height: 12rem;
+        min-height: 12rem;
         width: 27rem;
-        margin-bottom: 4rem;
       }
     }
   }
@@ -61,22 +65,31 @@
     box-sizing: border-box;
     border: 2px solid #efefef;
     border-radius: 4px;
-    margin-bottom: 5rem;
     font-size: 2rem;
 
     @include max(mobile) {
       height: unset !important;
       width: 18rem !important;
       font-size: 2rem !important;
+      margin: 0 auto;
     }
+  }
+
+  > a {
+    margin-top: auto;
+    width: 22rem;
+    max-width: 100%;
+    // margin-bottom: auto;
   }
 
   &.smaller {
     width: 100%;
+    border-radius: 0;
 
     @include max(mobile) {
-      padding: 5rem 3.5rem 0;
+      padding: 3rem 3.5rem 3rem;
       margin-bottom: 2rem;
+      width: 85%;
 
       .textWrapper {
         margin-bottom: 3rem;

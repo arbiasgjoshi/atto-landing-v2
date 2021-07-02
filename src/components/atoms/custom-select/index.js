@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useIntl, changeLocale } from 'gatsby-plugin-intl';
+import { useIntl, changeLocale } from 'gatsby-plugin-react-intl';
 
 import ArrowDown from '@images/arrow-down.svg';
 import {
@@ -20,18 +20,22 @@ const CustomSelect = () => {
   const languages = [
     {
       id: 'en',
+      path: 'en',
       name: 'English',
     },
     {
       id: 'es',
+      path: 'es',
       name: 'Español',
     },
     {
       id: 'fr',
+      path: 'fr',
       name: 'Française',
     },
     {
       id: 'de',
+      path: 'de',
       name: 'Deutsch',
     },
   ];
@@ -73,7 +77,7 @@ const CustomSelect = () => {
         {languages.map((lang, ix) => (
           <button
             className={buttonClass(lang)}
-            onClick={() => changeLocale(lang.id)}
+            onClick={() => changeLocale(lang.path)}
             type="button"
             key={ix}
           >

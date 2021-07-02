@@ -1,15 +1,18 @@
 .learnMoreContainer {
   display: grid;
 
-  @include max(tablet) {
-    justify-content: center;
-    row-gap: 1.2rem;
-  }
-
   @include min(tablet) {
     margin-top: 6.5rem;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1.2rem;
+  }
+
+  @include max(laptop) {
+    display: flex;
+    grid-template-columns: unset;
+    justify-content: center;
+    row-gap: 1.2rem;
+    flex-wrap: wrap;
   }
 }
 

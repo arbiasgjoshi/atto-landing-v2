@@ -3,13 +3,17 @@ import React from 'react';
 import Icon from '@components/atoms/icon';
 import { HeartIcon, AutomatedTimesheets } from '@components/atoms/svg-icons';
 
-import WorkersDailySummary from '@images/accordion-images/get-a-daily-summary-of-each-worker’s-movements@2x.png';
-import TeamWorkAmmount from '@images/accordion-images/keep-tabs-on-how-much-work-each-team-has-done@2x.png';
-import PreciseJobTimeTracking from '@images/accordion-images/precise-job-bids-with-accurate-time-tracking@2x.png';
-import WorkerLocations from '@images/accordion-images/see-where-all-your-workers-are-in-real-time@2x.png';
-import AdminAutomatedTimesheets from '@images/accordion-images/spend-less-time-on-admin-with-automated-timesheets@2x.png';
-import TrackPTO from '@images/accordion-images/track-paid-time-off-and-see-who’s-ready to-work@2x.png';
-import TrustCrewLeaders from '@images/accordion-images/trust-crew-leaders-to-track-landscapers-time@2x.png';
+import GuaranteeCrew from '@images/construction/Guarantee your crew is on-site before they clock in@2x.png';
+import SoSimple from '@images/construction/So simple that your workers will want to use it@2x.png';
+import KeepProjectBudget from '@images/construction/Keep projects on budget with wage estimates@2x.png';
+
+import CheckHowMuch from '@images/accordion-images/Keep tabs on how much work each team has done@2x.png';
+import PreciseJobTimeTracking from '@images/accordion-images/Precise job bids with accurate time tracking@2x.png';
+import WorkerLocations from '@images/accordion-images/See where all your workers are in real-time@2x.png';
+import AdminAutomatedTimesheets from '@images/accordion-images/Spend less time on admin with automated timesheets@2x.png';
+import GetDailySummary from '@images/accordion-images/Get a daily summary of each worker’s movements@2x.png';
+import TrackPTO from '@images/accordion-images/Track paid time off and see who’s ready to work@2x.png';
+import TrustCrewLeaders from '@images/accordion-images/Trust crew leaders to track landscapers’ time@2x.png';
 
 export const checkList1 = [
   { title: 'Track your entire crew’s time and location in real-time.' },
@@ -25,9 +29,9 @@ export const accordionList1 = [
     description:
       'Atto is super simple to use. At the start of each workday, your crew clock in to begin logging their hours. During the day they can write notes, track breaks, and switch between jobs they’re working on. And when they enter or leave a job site, or at their normal start and end time, we’ll send them a reminder to clock in and out.',
     image: {
-      src: WorkersDailySummary,
-      imageWidth: '378',
-      imageHeight: '587',
+      src: SoSimple,
+      imageWidth: '400',
+      imageHeight: '474',
     },
   },
   {
@@ -61,9 +65,9 @@ export const accordionList2 = [
     description:
       'Ensure that only hours worked are accounted for. With Atto, you can set the locations of your job sites and restrict workers from clocking in unless they’re within the site perimeter.',
     image: {
-      src: TeamWorkAmmount,
-      imageWidth: '399',
-      imageHeight: '520',
+      src: GuaranteeCrew,
+      imageWidth: '365',
+      imageHeight: '428',
     },
   },
   {
@@ -83,7 +87,7 @@ export const accordionList2 = [
     description:
       'Want to check how productive your workers are? Need to see how much time was spent at each job site compared to on the road? With Atto, you can view a map of each worker’s movements, providing a daily timeline of what they were up to while on the job.',
     image: {
-      src: TeamWorkAmmount,
+      src: GetDailySummary,
       imageWidth: '399',
       imageHeight: '520',
     },
@@ -96,12 +100,22 @@ export const accordionList3 = [
     icon: <Icon iconClass="wage-estimates-bold" fSize="2.4" />,
     description:
       'Construction projects run on tight margins, so it’s important to keep control of your costs. With Atto, you can add individual pay rates to calculate each worker’s estimated wages based on the hours they track. What’s more, you can add more than one pay rate per worker, so that your estimates will still be accurate – even if their rate changes.',
+    image: {
+      src: KeepProjectBudget,
+      imageWidth: '400',
+      imageHeight: '527',
+    },
   },
   {
     title: 'Check how much each team and job is costing you',
     icon: <Icon iconClass="job-costing" fSize="2.2" weight="bold" />,
     description:
       'Want to check if a job is running profitably? In a few taps, Atto produces timesheet summaries that can be filtered to show all the work done on a specific job, or by a specific team (e.g. only bricklayers). ',
+    image: {
+      src: CheckHowMuch,
+      imageWidth: '378',
+      imageHeight: '492',
+    },
   },
   {
     title: 'Save hours on payroll admin with automated timesheets',
@@ -124,5 +138,26 @@ export const accordionList3 = [
       imageWidth: '402',
       imageHeight: '412',
     },
+  },
+];
+
+export const reviews = [
+  {
+    title: '"A must-have app for your company”',
+    rating: '5 / 5',
+    author: 'Julia Conner',
+    job: '',
+  },
+  {
+    title: '“Would highly recommend for keeping track of your staff’s time”',
+    rating: '5 / 5',
+    author: 'Frank Mason',
+    job: '',
+  },
+  {
+    title: '"So perfectly simplistic"',
+    rating: '5 / 5',
+    author: 'Rich Mathews',
+    job: '',
   },
 ];

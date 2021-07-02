@@ -9,13 +9,14 @@ import { container, listContainer } from './steps.module.scss';
 const Steps = ({ list }) => (
   <div className={container}>
     <div className={listContainer}>
-      {list?.map(({ image, title, width, height, description, imagePadding }) => (
+      {list?.map(({ image, title, width, height, description, imagePadding }, idx) => (
         <StepCard
           imagePadding={imagePadding}
           image={image}
           imageWidth={width}
           imageHeight={height}
           title={title}
+          key={idx}
           description={description}
         />
       ))}

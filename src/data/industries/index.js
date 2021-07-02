@@ -47,3 +47,193 @@ export const steps = [
     imagePadding: '',
   },
 ];
+
+export const landscapeSteps = [
+  {
+    image: step1,
+    width: 65,
+    height: 82,
+    title: '1. Download Atto',
+    description: 'Download Atto and create an account. Available on the web, iOS and Android.',
+    imagePadding: '',
+  },
+  {
+    image: step2,
+    width: 77,
+    height: 77,
+    title: '2. Invite team members',
+    description:
+      'Invite your crew-leaders, landscapers, and sub-contractors via email or invite link.',
+    imagePadding: '',
+  },
+  {
+    image: step3,
+    width: 80,
+    height: 89,
+    title: '3. Ready to go!',
+    description: 'Once they download Atto, you’re ready to go!',
+    imagePadding: '',
+  },
+];
+
+export const roofingSteps = [
+  {
+    image: step1,
+    width: 65,
+    height: 82,
+    title: '1. Download Atto',
+    description: 'Download Atto and create an account.',
+    imagePadding: '',
+  },
+  {
+    image: step2,
+    width: 77,
+    height: 77,
+    title: '2. Invite team members',
+    description: 'Invite your roofers via email or invite link.',
+    imagePadding: '',
+  },
+  {
+    image: step3,
+    width: 80,
+    height: 89,
+    title: '3. Ready to go!',
+    description: 'Once they download Atto, you’re ready to go!',
+    imagePadding: '',
+  },
+];
+
+export const painterSteps = [
+  {
+    image: step1,
+    width: 65,
+    height: 82,
+    title: '1. Download Atto',
+    description: 'Download Atto and create an account.',
+    imagePadding: '',
+  },
+  {
+    image: step2,
+    width: 77,
+    height: 77,
+    title: '2. Invite team members',
+    description: 'Invite your painters and decorators via email or invite link.',
+    imagePadding: '',
+  },
+  {
+    image: step3,
+    width: 80,
+    height: 89,
+    title: '3. Ready to go!',
+    description: 'Once they download Atto, you’re ready to go!',
+    imagePadding: '',
+  },
+];
+
+export const healthSteps = [
+  {
+    image: step1,
+    width: 65,
+    height: 82,
+    title: '1. Download Atto',
+    description: 'Download Atto and create an account.',
+    imagePadding: '',
+  },
+  {
+    image: step2,
+    width: 77,
+    height: 77,
+    title: '2. Invite team members',
+    description: 'Invite your caregivers via email or invite link',
+    imagePadding: '',
+  },
+  {
+    image: step3,
+    width: 80,
+    height: 89,
+    title: '3. Ready to go!',
+    description: 'Once they download Atto, you’re ready to go!',
+    imagePadding: '',
+  },
+];
+
+export const plumberSteps = [
+  {
+    image: step1,
+    width: 65,
+    height: 82,
+    title: '1. Download Atto',
+    description: 'Download Atto and create an account.',
+    imagePadding: '',
+  },
+  {
+    image: step2,
+    width: 77,
+    height: 77,
+    title: '2. Invite team members',
+    description: 'Invite your plumbers via email or invite link.',
+    imagePadding: '',
+  },
+  {
+    image: step3,
+    width: 80,
+    height: 89,
+    title: '3. Ready to go!',
+    description: 'Once they download Atto, you’re ready to go!',
+    imagePadding: '',
+  },
+];
+
+export const cleanersSteps = [
+  {
+    image: step1,
+    width: 65,
+    height: 82,
+    title: '1. Download Atto',
+    description: 'Download Atto and create an account.',
+    imagePadding: '',
+  },
+  {
+    image: step2,
+    width: 77,
+    height: 77,
+    title: '2. Invite team members',
+    description: 'Invite your cleaners via email or invite link',
+    imagePadding: '',
+  },
+  {
+    image: step3,
+    width: 80,
+    height: 89,
+    title: '3. Ready to go!',
+    description: 'Once they download Atto, you’re ready to go!',
+    imagePadding: '',
+  },
+];
+
+export const electricianSteps = [
+  {
+    image: step1,
+    width: 65,
+    height: 82,
+    title: '1. Download Atto',
+    description: 'Download Atto and create an account.',
+    imagePadding: '',
+  },
+  {
+    image: step2,
+    width: 77,
+    height: 77,
+    title: '2. Invite team members',
+    description: 'Invite your electricians via email or invite link.',
+    imagePadding: '',
+  },
+  {
+    image: step3,
+    width: 80,
+    height: 89,
+    title: '3. Ready to go!',
+    description: 'Once they download Atto, you’re ready to go!',
+    imagePadding: '',
+  },
+];

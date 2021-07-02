@@ -6,6 +6,11 @@
   .BrainhubCarouselItem {
     align-items: unset;
   }
+
+  @include max(mobile) {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+  }
 }
 
 .btnWrapper {

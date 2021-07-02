@@ -1,32 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
+import { useIntl } from 'gatsby-plugin-react-intl';
 
 import { container, swap, leftBox, iconWrapper, imageWrapper } from './cover.module.scss';
 
-const Cover = ({ isSwapped = false }) => (
-  <div className={`${container} ${isSwapped && swap}`}>
-    <div className={leftBox}>
-      <div className={iconWrapper}>
-        <StaticImage
-          quality={96}
-          width={48}
-          height={57}
-          src="../../../../images/verifiedShield.svg"
-        />
+const Cover = ({ isSwapped = false, titleValue }) => {
+  const Intl = useIntl();
+
+  return (
+    <div className={`${container} ${isSwapped && swap}`}>
+      <div className={leftBox}>
+        <div className={iconWrapper}>
+          <StaticImage
+            quality={96}
+            width={48}
+            height={57}
+            src="../../../../images/verifiedShield.svg"
+          />
+        </div>
+        <h4>{titleValue}</h4>
       </div>
-      <h4>Trusted by thousands of bussinesses across 50+ countries globally.</h4>
+      <StaticImage
+        className={imageWrapper}
+        width={746}
+        height={400}
+        quality={96}
+        placeholder="none"
+        src="../../../../images/en/gps-location-tracking/Trusted by thousands of businesses across 50+ countries globally@2x.png"
+      />
     </div>
-    <StaticImage
-      className={imageWrapper}
-      width={746}
-      height={400}
-      quality={96}
-      placeholder="none"
-      src="../../../../images/trusted-img@2x.png"
-    />
-  </div>
-);
+  );
+};
 
 Cover.propTypes = {
   isSwapped: PropTypes.bool,

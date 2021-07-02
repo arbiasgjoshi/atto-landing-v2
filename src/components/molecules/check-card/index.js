@@ -5,26 +5,36 @@ import Icon from '@components/atoms/icon';
 
 import * as styles from './check-card.module.scss';
 
-const CheckCard = ({ title, hasDescription, description, grey, style = '', hasCloseIcon }) => (
-  <div
-    className={`
-      ${styles.card}
-      ${styles[style]} 
-      ${hasDescription && styles.hasDescr}`}
-  >
+const CheckCard = ({
+  title,
+  hasDescription,
+  description,
+  grey,
+  insideTitle = false,
+  style = '',
+  hasCloseIcon,
+}) => {
+  return (
     <div
       className={`
-      ${styles.iconWrapper} 
-      ${grey ? styles.greyStyle : null} `}
+          ${styles.card}
+          ${styles[style]} 
+          ${hasDescription && styles.hasDescr}`}
     >
-      <Icon iconClass={!hasCloseIcon ? 'tick' : 'close'} fSize={hasCloseIcon ? 1 : null} />
+      <div className={`${styles.textWrapper} ${insideTitle && styles.insideTitle}`}>
+        {title && (
+          <div className={styles.titleWrap}>
+            <div className={`${styles.iconWrapper} ${grey ? styles.greyStyle : null} `}>
+              <Icon iconClass={!hasCloseIcon ? 'tick' : 'close'} fSize={hasCloseIcon ? 1 : null} />
+            </div>
+            <h5 className={`${styles.cardTitle}`}>{title}</h5>
+          </div>
+        )}
+        {hasDescription && <p className={styles.paragraph}>{description}</p>}
+      </div>
     </div>
-    <div className={styles.textWrapper}>
-      <h5 className={`${styles.cardTitle}`}>{title}</h5>
-      {hasDescription && <p className={styles.paragraph}>{description}</p>}
-    </div>
-  </div>
-);
+  );
+};
 
 CheckCard.propTypes = {
   title: PropTypes.string,

@@ -52,10 +52,11 @@
 
     .ticksWrapper {
       display: flex;
-      margin: 2rem 0 4.2rem 0rem;
+      justify-content: center;
+      margin: 2rem 0 0 0rem;
 
       @include min(tablet) {
-        margin: 1rem 3.4rem 0 2.5rem;
+        margin: 1rem 0 0 0;
       }
 
       .tickItem {
@@ -104,18 +105,20 @@
         margin-bottom: 2rem;
       }
 
-      > div:first-child {
-        margin-top: 0;
-        margin: 0 1rem 0 0;
+      > div {
+        > div div:first-child {
+          margin-top: 0;
+          margin: 0 1rem 0 0;
 
-        @include max(tablet) {
-          border-radius: 50%;
-          background-color: rgba(0, 185, 203, 0.1);
-          margin: 0 1.7rem 0 0;
-        }
+          @include max(tablet) {
+            border-radius: 50%;
+            background-color: rgba(0, 185, 203, 0.1);
+            margin: 0 1.7rem 0 0;
+          }
 
-        i {
-          background-color: transparent;
+          i {
+            background-color: transparent;
+          }
         }
       }
 

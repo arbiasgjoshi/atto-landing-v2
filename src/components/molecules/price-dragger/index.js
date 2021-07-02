@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useIntl } from 'gatsby-plugin-react-intl';
 import Slider from 'rc-slider';
 import Draggable from 'react-draggable';
 
@@ -15,6 +16,7 @@ import '@styles/utils/_rcslider.scss';
 
 const PriceDragger = () => {
   const [val, setVal] = useState(1);
+  const Intl = useIntl();
 
   const onDrag = (value) => {
     setVal(value);
@@ -43,25 +45,27 @@ const PriceDragger = () => {
         onDrag={(event, info) => handleDrag(event, info)}
       >
         <div className={draggerResults}>
-          <h5>{val} Users</h5>
+          <h5>
+            {val} {Intl.formatMessage({ id: 'pages.miscellaneous.users' })}
+          </h5>
         </div>
       </Draggable>
       <Slider min={1} max={100} value={val} onChange={(v) => onDrag(v)} />
       <div className={plansWrapper}>
         <div className={planCard}>
-          <h6>Monthly Plan</h6>
+          <h6>{Intl.formatMessage({ id: 'pages.miscellaneous.monthlyPlan' })}</h6>
           <div className={pricingValue}>
             <p className={currency}>$</p>
             <h2>{val * 7}</h2>
-            <p className={plan}>/ month</p>
+            <p className={plan}>{Intl.formatMessage({ id: 'pages.miscellaneous.perMonth' })}</p>
           </div>
         </div>
         <div className={planCard}>
-          <h6>Annual Plan &middot; Save 29%</h6>
+          <h6>{Intl.formatMessage({ id: 'pages.miscellaneous.annualPlan' })}</h6>
           <div className={pricingValue}>
             <p className={currency}>$</p>
             <h2>{val * 5}</h2>
-            <p className={plan}>/ annual</p>
+            <p className={plan}>{Intl.formatMessage({ id: 'pages.miscellaneous.perMonth' })}</p>
           </div>
         </div>
       </div>

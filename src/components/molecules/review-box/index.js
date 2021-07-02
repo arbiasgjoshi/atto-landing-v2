@@ -8,11 +8,11 @@ const ReviewCard = ({ title, author, job, rating }) => (
     <div className={topBox}>
       <h4>{title}</h4>
       <StaticImage src="../../../images/stars.png" placeholder="none" quality={95} />
-      <p>{rating}</p>
+      {rating && <p>{rating}</p>}
     </div>
     <div className={authorBox}>
-      <h5>{author}</h5>
-      <p>{job}</p>
+      {author && <h5>{author}</h5>}
+      {job && <p>{job}</p>}
     </div>
   </div>
 );

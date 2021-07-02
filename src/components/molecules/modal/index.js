@@ -1,19 +1,14 @@
 import React from 'react';
-import { Dialog, DialogOverlay, DialogContent } from '@reach/dialog';
+import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 import EmailForm from '../../atoms/email-form';
-import Button from '@components/atoms/button';
+import { useIntl } from 'gatsby-plugin-react-intl';
 
-import {
-  dialogContainer,
-  textContainer,
-  confirmEmailContainer,
-  iconContainer,
-  emailTextContainer,
-} from './modal.module.scss';
-import { StaticImage } from 'gatsby-plugin-image';
+import { dialogContainer, textContainer } from './modal.module.scss';
 
 function Example({ showDialog, close }) {
+  const Intl = useIntl();
+
   return (
     <div>
       <Dialog className={dialogContainer} isOpen={showDialog} onDismiss={close}>
@@ -22,10 +17,10 @@ function Example({ showDialog, close }) {
           <p>There's no time to waste!</p>
         </div>
         <EmailForm
-          placeholder="Type your email"
-          checkItemOne="No credit card required"
-          checkItemTwo="14 day free trial"
-          checkItemThree="Cancel anytime"
+          placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
+          checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
+          checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
+          checkItemThree={Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}
           style="homepage"
         />
       </Dialog>

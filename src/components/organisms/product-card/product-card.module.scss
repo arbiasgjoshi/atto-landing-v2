@@ -13,7 +13,7 @@
 }
 
 .container {
-  @include flex-direction(column-reverse);
+  @include flex-direction(column);
 
   @include min(tablet) {
     flex-direction: row;
@@ -22,7 +22,7 @@
   @include max(mobile) {
     .secondWrapper {
       order: -1;
-      margin-top: 4rem;
+      margin-bottom: 4rem;
     }
   }
 
@@ -40,6 +40,7 @@
         font-weight: var(--regular);
         color: var(--primary-color);
         margin-bottom: 1.2rem;
+        text-transform: uppercase;
       }
 
       h2 {
@@ -113,6 +114,9 @@
 
       > div {
         align-items: flex-start;
+        > div > div {
+          align-items: center;
+        }
 
         @include min(tablet) {
           margin: 4rem 0;
@@ -133,6 +137,7 @@
 
         p {
           height: initial;
+          max-width: unset !important;
         }
       }
     }
@@ -163,7 +168,7 @@
   }
 
   &.swapped {
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     @include min(tablet) {
       flex-direction: row-reverse;

@@ -1,26 +1,10 @@
 .timeTrackingContainer {
-  .learnMoreContainer {
-    margin-top: -1.5rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    @include max(tablet) {
-      max-width: 90%;
-      margin: 0 auto;
-      justify-content: center;
-      > div {
-        margin-bottom: 3rem;
-      }
-    }
-  }
-
   .workListContainer {
     width: 100%;
     margin: 5rem auto 0;
 
     > div {
-      margin-bottom: 3rem;
+      margin-bottom: 6rem;
     }
 
     @include max(mobile) {
@@ -44,7 +28,6 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       column-gap: 0.3rem;
-      margin-left: 2rem;
       width: 100%;
 
       > div {

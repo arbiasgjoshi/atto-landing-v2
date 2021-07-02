@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 import HeaderComponent from '@components/molecules/header';
-import SEO from '@components/molecules/seo';
-import { Link } from 'gatsby-plugin-intl';
-import { FooterLinks } from '@locale/en.js';
+import Seo from '@components/molecules/seo';
+import { useIntl } from 'gatsby-plugin-react-intl';
+import { Link } from 'gatsby-plugin-react-intl';
+// import { FooterLinks } from '@locale/en.js';
 import Button from '@components/atoms/button';
 import Divider from '@components/atoms/divider';
 import SubscribeBanner from '@components/molecules/subscribe-banner';
@@ -15,7 +16,7 @@ import FeaturesList from '@components/organisms/features-list';
 import PriceDragger from '@components/molecules/price-dragger';
 
 import { container } from '@styles/main.module.scss';
-import authorImage2 from '@images/authorImage2.png';
+import authorImage2 from '@images/time-tracking-app-review.png';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import TimesheetIcon from '@images/timesheets.svg';
@@ -40,133 +41,261 @@ import {
 } from './pricing.module.scss';
 
 const Pricing = () => {
-  const [active, setActive] = useState('monthly');
+  const Intl = useIntl();
+  const [active, setActive] = useState('annually');
+
   const checkList = [
-    { title: 'Time Tracking', noStyle: false },
-    { title: 'GPS Location Tracking', noStyle: false },
-    { title: 'Team Activit Insights', noStyle: false },
-    { title: 'Timesheets', noStyle: false },
-    { title: 'Mobile Time Clock', noStyle: false },
-    { title: 'Job Codes, Breaks, Notes', noStyle: false },
-    { title: 'Time Off Tracking', noStyle: false },
-    { title: 'Wage Estimates and Pay Rates', noStyle: false },
-    { title: 'Payroll Integrations', noStyle: false },
-    { title: 'Unlimited Support', noStyle: false },
-    { title: '30+ More Features', noStyle: true },
+    {
+      title: Intl.formatMessage({
+        id: 'header.menu.timeTrackingLabel',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'header.menu.locationTrackingLabel',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureThreeTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'header.menu.timesheetsTrackingLabel',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.mobileTimeClockFeatureTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.jobsBreaksNotes',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.timeOffTrackingFeatureTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.wageEstimatesFeatureTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.payrolIntegrationsFeatureTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.unlimitedSupportFeatureTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.30moreFeatureTitle',
+      }),
+      noStyle: true,
+    },
   ];
 
   const checkList2 = [
-    { title: 'Priority Support', noStyle: false },
-    { title: 'Concierge Onboarding', noStyle: false },
-    { title: 'Custom Implementation', noStyle: false },
-    { title: 'Custom Roles & Permissions', noStyle: false },
-    { title: 'Custom Integrations', noStyle: false },
-    { title: 'Api Access', noStyle: false },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.prioritySupportFeatureTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.conciergeOnboardingFeatureTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.customImplementationsFeatureTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.customRolesFeatureTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.customIntegrationsFeatureTitle',
+      }),
+      noStyle: false,
+    },
+    {
+      title: Intl.formatMessage({
+        id: 'pages.pricing.apiAccessFeatureTitle',
+      }),
+      noStyle: false,
+    },
   ];
 
   const featureList = [
     {
-      title: 'Easy Time Tracking',
-      description:
-        'Enjoy highly accurate, easy-to-use, and trustworthy time tracking, anytime and from anywhere.',
-      alt: 'Clock logo',
+      title: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureOneTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureOneDesc',
+      }),
       logo: <TimeTrackingIcon />,
     },
     {
-      title: 'GPS Location Tracking',
-      description: `Increase the accountability and transparency of your team with real-time updates on their location.`,
-      alt: 'GPS icon',
+      title: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureTwoTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureTwoDesc',
+      }),
       logo: <LocationIcon />,
     },
     {
-      title: 'Team Activity Insights',
-      description: `See where your team is, and what they’re working on – without back and forth phone calls.`,
-      alt: 'profile pic',
+      title: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureThreeTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureThreeDesc',
+      }),
       logo: <ProfileIcon />,
     },
     {
-      title: 'Automated Timesheets',
-      description: `Spend more time on the things that matter with timesheets filled painlessly and on-time.`,
-      alt: '',
+      title: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureFourTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureFourDesc',
+      }),
       logo: <TimesheetIcon />,
     },
     {
-      title: 'Simplified Payroll',
-      description: `Save hours from the payroll process with built-in integrations and automated email reports.`,
-      alt: '',
+      title: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureFiveTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureFiveDesc',
+      }),
       logo: <WageEstimateIcon />,
     },
     {
-      title: 'Professional Reports',
-      description: `Download and share insightful custom reports into your team’s activity on the clock.`,
-      alt: '',
+      title: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureSixTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureSixDesc',
+      }),
       logo: <JobCostIcon />,
     },
     {
-      title: 'Simple Time Clock',
-      description: `Track time wherever your team is. In the office, at a job site, or on the go through Mobile, Web, and Kiosk Apps.`,
-      alt: '',
+      title: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureSevenTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureSevenDesc',
+      }),
       logo: <MobileTimeTracking />,
     },
     {
-      title: 'Jobs, Breaks, Notes',
-      description: `Get more data on what your employees are up to with job codes, break hours, insightful notes, and more.`,
-      alt: '',
+      title: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureEightTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureEightDesc',
+      }),
       logo: <TenderIcon />,
     },
     {
-      title: 'Unlimited Support',
-      description: `Get free unlimited help from our support team whenever you need it.`,
-      alt: '',
+      title: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureNineTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.pricingFeatureNineDesc',
+      }),
       logo: <SupportIcon />,
     },
   ];
 
   const faqList = [
     {
-      title: 'What happens at the end of my free trial?',
-      paragraph:
-        'After your 14-day free trial ends, you’ll be asked to purchase a subscription in order to continue using Atto. As we don’t require a credit card to sign up for our free trial, you won’t be charged unless you actively choose to subscribe.',
-      toggled: true,
+      title: Intl.formatMessage({
+        id: 'pages.pricing.faqOneTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.faqOneDesc',
+      }),
     },
     {
-      title: 'Are there any usage limits or add-on charges?',
-      paragraph:
-        'After your 14-day free trial ends, you’ll be asked to purchase a subscription in order to continue using Atto. As we don’t require a credit card to sign up for our free trial, you won’t be charged unless you actively choose to subscribe.',
-      toggled: false,
+      title: Intl.formatMessage({
+        id: 'pages.pricing.faqTwoTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.faqTwoDesc',
+      }),
     },
     {
-      title: 'What payment options do you accept?',
-      paragraph:
-        'After your 14-day free trial ends, you’ll be asked to purchase a subscription in order to continue using Atto. As we don’t require a credit card to sign up for our free trial, you won’t be charged unless you actively choose to subscribe.',
-      toggled: false,
+      title: Intl.formatMessage({
+        id: 'pages.pricing.faqThreeTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.faqThreeDesc',
+      }),
     },
     {
-      title: 'I have a question that isn’t answered',
-      paragraph:
-        'After your 14-day free trial ends, you’ll be asked to purchase a subscription in order to continue using Atto. As we don’t require a credit card to sign up for our free trial, you won’t be charged unless you actively choose to subscribe.',
-      toggled: false,
+      title: Intl.formatMessage({
+        id: 'pages.pricing.faqFourTitle',
+      }),
+      description: Intl.formatMessage({
+        id: 'pages.pricing.faqFourDesc',
+      }),
     },
   ];
 
   return (
     <div className={container}>
-      <SEO title="Pricing" />
+      <Seo
+        title={Intl.formatMessage({ id: 'pages.pricing.metaTitle' })}
+        description={Intl.formatMessage({ id: 'pages.pricing.metaDescription' })}
+      />
       <HeaderComponent headerStyle="pricingHeader" />
       <span className={behindMask} />
       <div className={priceHeader}>
-        <h1>Pay-as-you-grow pricing</h1>
+        <h1>
+          {Intl.formatMessage({
+            id: 'pages.pricing.bannerTitle',
+          })}
+        </h1>
         <div className={rightSide}>
           <div className={buttonContainer}>
             <Button
-              btnText="Monthly"
+              btnText={Intl.formatMessage({ id: 'pages.miscellaneous.monthly' })}
               btnStyle="round"
               pricing
               activeClass={active === 'monthly'}
               onBtnClick={() => setActive('monthly')}
             />
             <Button
-              btnText="Annually"
+              btnText={Intl.formatMessage({ id: 'pages.miscellaneous.annually' })}
               btnStyle="round"
               pricing
               activeClass={active === 'annually'}
@@ -174,38 +303,45 @@ const Pricing = () => {
             />
           </div>
         </div>
+        {active === 'annually' ? (
+          <p className={discount}>{Intl.formatMessage({ id: 'pages.miscellaneous.Save29' })}</p>
+        ) : (
+          <p className={discount}>&nbsp; </p>
+        )}
       </div>
-      {active === 'annually' ? (
-        <p className={discount}>Save 29%</p>
-      ) : (
-        <p className={discount}>&nbsp; </p>
-      )}
-      {/* <Divider className="style2" /> */}
       <div className={packageWrapper}>
         <PackageCard
-          title="Premium"
-          price={active === 'annually' ? 4 : 5}
+          title={Intl.formatMessage({ id: 'pages.miscellaneous.premium' })}
+          price={active === 'annually' ? 5 : 7}
           list={checkList}
-          listTitle="Includes"
-          contentText="/ user / month"
-          usersText="1-99 users"
+          listTitle={Intl.formatMessage({
+            id: 'pages.pricing.includesLabel',
+          })}
+          contentText={Intl.formatMessage({ id: 'pages.miscellaneous.userPerMonth' })}
+          usersText={`1-99 ${Intl.formatMessage({ id: 'pages.miscellaneous.users' })}`}
           hasGreyBg={false}
-          btnText="Start 14-day Free Trial"
+          btnText={Intl.formatMessage({ id: 'pages.miscellaneous.start14Days' })}
         />
         <PackageCard
-          title="Enterprise"
-          listTitle="Everything in Premium, plus"
+          title={Intl.formatMessage({ id: 'pages.miscellaneous.enterprise' })}
+          listTitle={Intl.formatMessage({ id: 'pages.miscellaneous.everythingInPremium' })}
           list={checkList2}
           hasGreyBg
-          contentText="Contact our sales team for a custom plan"
-          usersText="100+ users"
-          btnText="Contact Sales"
+          contentText={Intl.formatMessage({
+            id: 'pages.pricing.contactTeam',
+          })}
+          usersText={`100+ ${Intl.formatMessage({ id: 'pages.miscellaneous.users' })}`}
+          btnText={Intl.formatMessage({ id: 'pages.miscellaneous.contactSales' })}
         />
       </div>
       <Divider className="medium" />
       <Title
-        title="That's not all!"
-        description="30+ more features included in our Premium & Enterprise Plans"
+        title={Intl.formatMessage({
+          id: 'pages.pricing.secondSectionTitle',
+        })}
+        description={Intl.formatMessage({
+          id: 'pages.pricing.secondSectionDesc',
+        })}
       />
       <Divider className="style5" />
       <div className={featuresBanner}>
@@ -217,13 +353,22 @@ const Pricing = () => {
           placeholder="none"
         />
         <Link to="/all-features">
-          <Button btnText="View All Features" btnStyle="big" />
+          <Button
+            btnText={Intl.formatMessage({
+              id: 'pages.pricing.viewAllFeaturesLabel',
+            })}
+            btnStyle="big"
+          />
         </Link>
       </div>
       <Divider className="medium" />
       <Title
-        title="Calculate your total team cost"
-        description="Simple pricing based on the number of users in your account"
+        title={Intl.formatMessage({
+          id: 'pages.pricing.thirdSectionTitle',
+        })}
+        description={Intl.formatMessage({
+          id: 'pages.pricing.thirdSectionDesc',
+        })}
         maxWidth={900}
         maxDescriptionwidth={900}
       />
@@ -231,18 +376,25 @@ const Pricing = () => {
       <Divider />
       <Story
         img={authorImage2}
-        paragraph="“Quote from an Enterprise level customer about how amazing Atto is and how it helps improve their business”"
-        author="Andrew Platonic, CEO, Scuable Inc."
+        paragraph={Intl.formatMessage({
+          id: 'pages.pricing.review',
+        })}
+        author="Jack Thomas – Vision Building & Development"
       />
       <Divider />
-      <Title title="All our main features, included in one simple plan" maxWidth={900} />
+      <Title
+        title={Intl.formatMessage({
+          id: 'pages.pricing.fourthSectionTitle',
+        })}
+        maxWidth={900}
+      />
       <Divider className="style3" />
       <FeaturesList isLeftAligned list={featureList} style="pricing" />
       <Divider />
       <StaticImage
-        src="../../images/time-tracking-for-field-workers@2x.png"
+        src="../../images/pricing-time-tracking-for-field-workers.png"
         width={1140}
-        quality={100}
+        quality={96}
         placeholder="none"
         height={460}
       />
@@ -250,15 +402,15 @@ const Pricing = () => {
       <Faq list={faqList} />
       <SubscribeBanner
         bannerImage
-        title="There’s no time to waste!"
-        subtitle="Try Atto, free for 14 days"
-        placeholder="Type your email"
-        checkItemOne="No credit card required"
-        checkItemTwo="14 day free trial"
-        checkItemThree="Cancel anytime"
+        title={Intl.formatMessage({ id: 'pages.pricing.subscribeBanner' })}
+        subtitle={Intl.formatMessage({ id: 'pages.pricing.subscribeBannerDesc' })}
+        placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
+        checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
+        checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
+        checkItemThree={Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}
         style="pricing"
       />
-      <FooterComponent FooterLinks={FooterLinks} />
+      <FooterComponent />
     </div>
   );
 };

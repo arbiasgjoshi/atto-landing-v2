@@ -34,6 +34,15 @@
     height: 6rem;
     max-width: 19rem;
     width: calc(50% + 6.4rem);
+
+    @include max(tablet) {
+      width: auto;
+      h5 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        letter-spacing: -0.05rem;
+      }
+    }
   }
 
   .arrowContainer {

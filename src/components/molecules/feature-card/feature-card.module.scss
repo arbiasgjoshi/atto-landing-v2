@@ -29,15 +29,30 @@
         margin-right: 0;
       }
 
+      @include max(mobile) {
+        font-size: var(--h4-mobile-size);
+        line-height: var(--h4-mobile-line-height-size);
+        letter-spacing: var(--h4-mobile-letter-spacing);
+      }
+
       @include min(tablet) {
-        margin-right: 4rem;
+        // margin-right: 4rem;
       }
     }
+  }
+
+  span {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin-top: 0.8rem;
+    color: #999;
+    font-family: 'Calibre', sans-serif;
+    display: inline-flex;
   }
 }
 
 .container {
-  margin: 2rem auto;
+  margin: 4rem auto;
   width: 80%;
 
   @include min(tablet) {
@@ -86,6 +101,15 @@
     h5 {
       margin-top: 2.4rem;
       margin-bottom: 0.8rem;
+    }
+
+    span {
+      font-size: 1.8rem;
+      line-height: 3rem;
+      margin-top: 0.8rem;
+      color: #999;
+      font-family: 'Calibre', sans-serif;
+      display: inline-flex;
     }
   }
 

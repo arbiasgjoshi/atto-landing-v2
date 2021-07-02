@@ -10,12 +10,18 @@
 }
 
 .dialogContainer {
-  padding: 8.3rem 10rem;
-  height: 40rem;
+  // padding: 4rem ​1.5rem 1rem;
+  padding: 4rem 2rem 1rem;
   width: 80rem;
+  max-width: calc(100% - 2rem);
   border-radius: 0.4rem;
   background-color: #ffffff;
   box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.2);
+
+  @include min(desktop) {
+    padding: 8.3rem 4rem;
+    height: 40rem;
+  }
 
   .textContainer {
     @include flex-align(center, center);

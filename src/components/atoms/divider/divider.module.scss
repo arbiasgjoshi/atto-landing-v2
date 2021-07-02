@@ -9,36 +9,45 @@
     margin: 1rem 0;
   }
 
-  &.style1 {
-    margin: 1.8rem 0;
-  }
-
   &.style00 {
     margin: 1.4rem 0;
   }
 
-  &.style010 {
-    margin: 2rem 0;
+  &.style1 {
+    margin: 1.8rem 0;
   }
 
   &.style2 {
     margin: 1.1rem 0;
   }
 
-  &.style3 {
-    margin: 1.4rem 0;
+  &.style010 {
+    margin: 2rem 0;
   }
 
-  &.style8 {
-    margin: 1rem 0;
+  &.style3 {
+    margin: 2.2rem 0;
+  }
+
+  &.style43 {
+    margin: 3rem 0;
+  }
+
+  &.style51 {
+    margin: 0;
+    height: 0;
   }
 
   &.style5 {
     margin: 2rem 0;
   }
 
-  &.style43 {
-    margin: 3rem 0;
+  &.style7 {
+    margin: 1.4rem 0;
+  }
+
+  &.style8 {
+    margin: 1rem 0;
   }
 
   @include min(laptop) {
@@ -82,6 +91,10 @@
 
     &.style4 {
       margin: 7.4rem 0;
+    }
+
+    &.style51 {
+      margin: 2rem 0;
     }
 
     &.style41 {

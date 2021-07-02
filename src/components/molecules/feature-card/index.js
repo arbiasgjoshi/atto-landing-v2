@@ -1,4 +1,5 @@
 import React from 'react';
+import { useIntl } from 'gatsby-plugin-react-intl';
 import PropTypes from 'prop-types';
 
 import {
@@ -20,8 +21,10 @@ const FeatureCard = ({
   higherMargin = false,
   imagePadding,
   isWorkCard = false,
+  comingSoon = false,
   style = '',
 }) => {
+  const Intl = useIntl();
   const render = () => {
     switch (style) {
       case 'all-features':
@@ -51,6 +54,9 @@ const FeatureCard = ({
             <div className={textContainer}>
               <h5 className={higherMargin && titlePush}>{title}</h5>
               <p>{description}</p>
+              {comingSoon && (
+                <span>{Intl.formatMessage({ id: 'pages.miscellaneous.comingSoon' })}</span>
+              )}
             </div>
           </div>
         );

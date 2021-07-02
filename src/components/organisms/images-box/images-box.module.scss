@@ -87,14 +87,10 @@
     }
 
     .imageBox2 {
-      width: 66.4rem;
+      width: 72.7rem;
       position: relative;
       @include flex-direction(row);
       justify-content: space-between;
-
-      // @include min(tablet) {
-      //   margin-top: 15.2rem;
-      // }
 
       @include max(tablet) {
         display: none;
@@ -108,7 +104,7 @@
         margin-top: 2rem;
         @include min(desktop) {
           margin-top: 0;
-          @include absolute(right 0 top -24.9rem);
+          @include absolute(right 0 top -16rem);
         }
       }
     }
