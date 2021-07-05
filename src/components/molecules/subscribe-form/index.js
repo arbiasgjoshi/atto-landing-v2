@@ -16,8 +16,6 @@ const SubscribeForm = ({ placeholder }) => {
     email: yup.string().email('This field must be a valid email'),
   });
 
-  // const submitRequest = (val) => {};
-
   const signUpTrial = (val) => {
     const requestOptions = {
       method: 'POST',
