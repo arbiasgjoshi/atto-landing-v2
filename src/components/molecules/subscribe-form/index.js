@@ -4,7 +4,6 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 
 import { inputWrapper, defaultInput } from '@components/atoms/input/input.module.scss';
-import { Api } from '../../../helpers/api';
 import Button from '@components/atoms/button';
 import { useIntl } from 'gatsby-plugin-react-intl';
 
