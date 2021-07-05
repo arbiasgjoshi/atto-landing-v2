@@ -27,7 +27,7 @@ const SubscribeForm = ({ placeholder }) => {
       },
       body: JSON.stringify({ email: val }),
     };
-    fetch('https://attoime.com/api/v2/signup', requestOptions)
+    fetch('/confirmation', requestOptions)
       .then((response) => response.json())
       .then((data) => console.log(data));
   };
