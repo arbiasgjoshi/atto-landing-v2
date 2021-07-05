@@ -19,20 +19,30 @@ const ContactForm = () => {
       .required('Password is a required field'),
   });
 
+  const contactUs = (val) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: val.email, name: val.name, text: val.text }),  
+    };
+    fetch('/send-email', requestOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div className={formWrapper}>
       <Formik
         initialValues={{
           name: '',
           email: '',
-          message: '',
+          text: '',
         }}
         validationSchema={validationSchema}
         autoComplete="off"
-        onSubmit={(values) => {
-          console.log(values);
-          //   send({ type: 'SUBMIT', data: values });
-        }}
+        onSubmit={(values) => contactUs(values)}
       >
         {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
           <form method="POST" onSubmit={handleSubmit}>
@@ -57,7 +67,7 @@ const ContactForm = () => {
 
             <div className={formRow}>
               <textarea
-                name="message"
+                name="text"
                 placeholder={Intl.formatMessage({ id: 'pages.contact.message' })}
               />
             </div>
