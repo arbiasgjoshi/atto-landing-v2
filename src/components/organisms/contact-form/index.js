@@ -25,7 +25,7 @@ const ContactForm = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email: val.email, name: val.name, text: val.text }),  
+      body: JSON.stringify({ email: val.email, name: val.name, text: val.text }),
     };
     fetch('/send-email', requestOptions)
       .then((response) => response.json())
