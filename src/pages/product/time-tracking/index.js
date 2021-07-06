@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { StaticImage } from 'gatsby-plugin-image';
 import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
+import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Header from '@components/molecules/header';
 import Footer from '@components/molecules/footer';
@@ -54,9 +55,10 @@ import icon3 from '@images/trustworthy.png';
 // import icon8 from '@images/switch-between-jobs.png';
 // import icon9 from '@images/add-time-off.png';
 
-import icon22 from '@images/en/time-tracking/Employees forget to track their time_@2x.png';
-import icon23 from '@images/en/time-tracking/What if phone ran out of battery_@2x.png';
-import icon24 from '@images/en/time-tracking/Not sure if employees are where they’re supposed to_@2x.png';
+// import icon22 from '@images/en/time-tracking/Employees forget to track their time_@2x.png';
+// import icon23 from '@images/en/time-tracking/What if phone ran out of battery_@2x.png';
+// import icon24 from '@images/en/time-tracking/Not sure if employees are where they’re supposed to_@2x.png';
+
 import icon32 from '@images/location@1x.png';
 import icon33 from '@images/profile@1x.png';
 import icon34 from '@images/timesheets@1x.png';
@@ -119,6 +121,10 @@ import {
 
 const TimeTracking = () => {
   const Intl = useIntl();
+
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
 
   const timeTrackingTitleList = [
     {
@@ -756,6 +762,7 @@ const TimeTracking = () => {
 
   return (
     <div className={`${container} ${timeTrackingContainer} ${teamActivityContainer}`}>
+      <Modal close={closeModal} showDialog={showDialog} />
       <Seo
         title={Intl.formatMessage({ id: 'pages.productTimeTracking.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.productTimeTracking.metaDescription' })}

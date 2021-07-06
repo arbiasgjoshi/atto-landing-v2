@@ -1,10 +1,10 @@
-import React from 'react';
-// import { FooterLinks } from '@locale/en.js';
+import React, { useState } from 'react';
 import { container, imageWrapper } from '@styles/main.module.scss';
 
 import Divider from '@components/atoms/divider';
 import { StaticImage } from 'gatsby-plugin-image';
 import Seo from '@components/molecules/seo';
+import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Title from '@components/molecules/title';
 import Header from '@components/molecules/header';
@@ -74,6 +74,10 @@ import {
 
 const Timesheets = () => {
   const Intl = useIntl();
+
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
 
   const checkLists = [
     { title: Intl.formatMessage({ id: 'pages.productTimesheets.checkListItemZero' }) },
@@ -322,6 +326,7 @@ const Timesheets = () => {
 
   return (
     <div className={`${container} ${teamActivityContainer}`}>
+      <Modal close={closeModal} showDialog={showDialog} />
       <Seo
         title={Intl.formatMessage({ id: 'pages.productTimesheets.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.productTimesheets.metaDescription' })}

@@ -3,6 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
+import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Title from '@components/molecules/title';
 import Header from '@components/molecules/header';

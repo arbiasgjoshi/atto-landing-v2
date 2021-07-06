@@ -9,6 +9,7 @@ import EmailForm from '@components/atoms/email-form';
 import Number from '@components/atoms/number-card';
 import HeaderComponent from '@components/molecules/header';
 import Seo from '@components/molecules/seo';
+import Modal from '@components/molecules/modal';
 import FooterComponent from '@components/molecules/footer';
 import Title from '@components/molecules/title';
 import MainTitle from '@components/molecules/main-title-card';

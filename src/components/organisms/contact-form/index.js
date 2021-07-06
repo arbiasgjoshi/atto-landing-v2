@@ -15,33 +15,20 @@ const ContactForm = () => {
       .required('Email is a required field'),
   });
 
-  const contactUs = (val) => {
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email: val.email, name: val.name, text: val.text }),
-    };
-    fetch('/send-email', requestOptions)
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  };
-
   return (
     <div className={formWrapper}>
       <Formik
         initialValues={{
           name: '',
           email: '',
-          text: '',
+          message: '',
         }}
         validationSchema={validationSchema}
         autoComplete="off"
-        onSubmit={(values) => contactUs(values)}
+        onSubmit={(values) => console.log(values)}
       >
         {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
-          <form method="POST" onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className={formRow}>
               <input
                 type="text"
@@ -63,16 +50,17 @@ const ContactForm = () => {
 
             <div className={formRow}>
               <textarea
-                name="text"
+                name="message"
                 placeholder={Intl.formatMessage({ id: 'pages.contact.message' })}
               />
             </div>
             <div className={formBtn}>
-              <Button
+              {/* <Button
                 btnText={Intl.formatMessage({ id: 'pages.contact.sendMessage' })}
                 btnStyle="formBtn"
                 defaultBtn
-              />
+              /> */}
+              <button type="submit">Submit</button>
               <span className={formMask} />
             </div>
           </form>

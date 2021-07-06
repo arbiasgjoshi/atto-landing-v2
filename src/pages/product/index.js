@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import HeaderComponent from '@components/molecules/header';
 import MainTitleCard from '@components/molecules/main-title-card';
 import Seo from '@components/molecules/seo';
+import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
 import Divider from '@components/atoms/divider';
@@ -52,6 +53,10 @@ import { productContainer } from './product.module.scss';
 
 const Product = () => {
   const Intl = useIntl();
+
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
 
   const firstList = [
     {
@@ -267,6 +272,7 @@ const Product = () => {
 
   return (
     <div className={`${container} ${productContainer}`}>
+      <Modal close={closeModal} showDialog={showDialog} />
       <Seo
         title={Intl.formatMessage({ id: 'pages.productOverview.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.productOverview.metaDescription' })}

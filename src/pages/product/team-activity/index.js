@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
+import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Header from '@components/molecules/header';
 import Footer from '@components/molecules/footer';
@@ -66,6 +67,10 @@ import { featuresStyle } from './team-activity.module.scss';
 
 const TeamActivity = () => {
   const Intl = useIntl();
+
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
 
   const titleList2 = [
     { title: Intl.formatMessage({ id: 'pages.productTeamActivity.checkListItemZero' }) },
@@ -223,6 +228,7 @@ const TeamActivity = () => {
 
   return (
     <div className={`${teamActivityContainer} ${container}`}>
+      <Modal close={closeModal} showDialog={showDialog} />
       <Seo
         title={Intl.formatMessage({ id: 'pages.productTeamActivity.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.productTeamActivity.metaDescription' })}

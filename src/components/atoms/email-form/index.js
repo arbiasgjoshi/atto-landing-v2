@@ -6,9 +6,16 @@ import Icon from '@components/atoms/icon';
 
 import * as styles from './email-form.module.scss';
 
-const EmailForm = ({ placeholder, checkItemOne, checkItemTwo, checkItemThree, style }) => (
+const EmailForm = ({
+  placeholder,
+  checkItemOne,
+  checkItemTwo,
+  checkItemThree,
+  style,
+  changeModal,
+}) => (
   <div className={`${styles.container} ${style ? styles[style] : ''}`}>
-    <SubscribeForm placeholder={placeholder} />
+    <SubscribeForm placeholder={placeholder} onSuccessRes={(val) => changeModal(val)} />
     <div className={styles.checkItems}>
       <div className={styles.itemWrapper}>
         <Icon iconClass="tick" />
@@ -32,6 +39,7 @@ EmailForm.propTypes = {
   checkItemTwo: PropTypes.string,
   checkItemThree: PropTypes.string,
   style: PropTypes.string,
+  changeModal: PropTypes.func,
 };
 
 export default EmailForm;
