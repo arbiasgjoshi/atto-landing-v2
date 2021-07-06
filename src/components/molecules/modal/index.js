@@ -59,8 +59,9 @@ function ModalDialog({ showDialog, close, value = 'random@email.com' }) {
 
   return (
     <div>
-      {renderModalTypes(type)}
-      <Dialog className={dialogContainer} isOpen={showDialog} onDismiss={close}></Dialog>
+      <Dialog className={dialogContainer} isOpen={showDialog} onDismiss={close}>
+        {renderModalTypes(type)}
+      </Dialog>
     </div>
   );
 }
