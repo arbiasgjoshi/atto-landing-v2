@@ -50,7 +50,7 @@ function ModalDialog({ showDialog, close, value = 'random@email.com' }) {
           checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
           checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
           checkItemThree={Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}
-          onSuccessChange={(val) => setValue(val)}
+          onSuccessChange={(val) => setType(val)}
           style="homepage"
         />
       </>
