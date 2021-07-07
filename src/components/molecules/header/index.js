@@ -425,7 +425,7 @@ const HeaderComponent = ({ headerStyle }) => {
     fetch('/confirmation', requestOptions)
       .then((response) => response.json())
       .then((res) => {
-        setHasValues(res);
+        setValues(res);
         setShowDialog(true);
       });
   };

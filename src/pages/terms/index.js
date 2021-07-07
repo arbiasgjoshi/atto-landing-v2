@@ -12,16 +12,16 @@ import { container } from '@styles/main.module.scss';
 // import { FooterLinks } from '@locale/en.js';
 
 const Terms = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query MyQuery {
-        iubendaDocument(documentId: { eq: "77119290" }) {
-          documentId
-          termsAndConditions
-        }
-      }
-    `
-  );
+  // const { site } = useStaticQuery(
+  //   graphql`
+  //     query MyQuery {
+  //       iubendaDocument(documentId: { eq: "77119290" }) {
+  //         documentId
+  //         termsAndConditions
+  //       }
+  //     }
+  //   `
+  // );
 
   const Intl = useIntl();
   return (
@@ -38,7 +38,7 @@ const Terms = () => {
           checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
           checkItemThree={Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}
         />
-        <div dangerouslySetInnerHTML={{ __html: data.iubendaDocument.privacyPolicy }} />
+        {/* <div dangerouslySetInnerHTML={{ __html: data.iubendaDocument.privacyPolicy }} /> */}
         <Footer />
       </div>
     </>

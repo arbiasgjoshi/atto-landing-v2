@@ -189,6 +189,31 @@ const Home = () => {
     );
   };
 
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/confirmation', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        setShowDialog(true);
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
+
   useEffect(() => {
     if (window.innerWidth < 768) {
       setSettings({
