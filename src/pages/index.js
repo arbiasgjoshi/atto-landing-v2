@@ -56,6 +56,10 @@ const SamplePrevArrow = (props) => {
 
 const Home = () => {
   const Intl = useIntl();
+  const [showDialog, setShowDialog] = useState(false);
+  const [values, setValues] = useState({});
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
 
   const [settings, setSettings] = useState({
     dots: false,
@@ -215,12 +219,19 @@ const Home = () => {
         description={Intl.formatMessage({ id: 'pages.homepage.metaDescription' })}
       />
       <HeaderComponent />
+      <Modal
+        close={closeModal}
+        showDialog={showDialog}
+        hasValues={values}
+        setFormValues={(formValues) => formSuccessState(formValues)}
+      />
       <MainTitle
         title={Intl.formatMessage({ id: 'pages.homepage.title' })}
         subtitle={Intl.formatMessage({ id: 'pages.homepage.description' })}
       />
       <div className={formRotated}>
         <EmailForm
+          changeModal={(val) => console.log(val)}
           placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
           checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
           checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}

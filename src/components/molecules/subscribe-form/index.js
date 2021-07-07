@@ -27,13 +27,13 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
     fetch('/confirmation', requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        if (data.message === 'invited') {
-          console.log('data');
-          onSuccessRes(data);
-          // add token paramter to app.attotime.com/sign-up + data.token
-          // toggle secondary modal
-          //
-        }
+        const parsedData = {
+          data,
+          email: val,
+        };
+
+        onSuccessRes(parsedData);
+        console.log(data);
       });
   };
 

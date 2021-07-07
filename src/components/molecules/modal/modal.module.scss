@@ -27,6 +27,25 @@
     @include flex-align(center, center);
     flex-direction: column;
     margin-bottom: 5rem;
+
+    h4 {
+      margin-bottom: 0.8rem;
+    }
+
+    .textPush {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+
+  > a,
+  > button {
+    margin: 1.5rem auto;
   }
 }
 

@@ -2,42 +2,80 @@ import React, { useEffect, useState } from 'react';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 import EmailForm from '../../atoms/email-form';
+import Button from '../../atoms/button';
 import { useIntl } from 'gatsby-plugin-react-intl';
 
-import { dialogContainer, textContainer } from './modal.module.scss';
+import { dialogContainer, textContainer, textPush } from './modal.module.scss';
 
-function ModalDialog({ showDialog, close, value = 'random@email.com' }) {
+function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
   const Intl = useIntl();
-  const [type, setType] = useState('default');
+
+  const stateSucceeded = (val) => {
+    setFormValues(val);
+  };
+
+  // const deleteInvite = (val) => {
+  //   const requestOptions = {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ email: val }),
+  //   };
+  //   fetch('/delete-invite', requestOptions)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       const parsedData = {
+  //         data,
+  //         email: val,
+  //       };
+
+  //       onSuccessRes(parsedData);
+  //     });
+  // };
+
+  const deleteInvite = (obj) => {
+    setFormValues(obj);
+  };
 
   const renderModalTypes = (data) => {
-    if (data.message === 'success') {
+    if (data?.data?.message === 'Signup Succeeded') {
       return (
         <>
           <div className={textContainer}>
             <h4>Confirm your email</h4>
             <p>
-              {`A confirmation email has been sent to '${value}'. Click on the confirmation link
+              {`A confirmation email has been sent to <span>'${data.email}'</span>. Click on the confirmation link
               in the email to activate your account.`}
             </p>
+          </div>
+          <Button btnStyle="teal" btnText="Continue" onBtnClick={() => close()} />
+        </>
+      );
+    }
+
+    if (data?.data?.message === 'invited') {
+      return (
+        <>
+          <div className={textContainer}>
+            <h4>Account Setup</h4>
+            <p className={textPush}>
+              {`<span>${data.data.name}</span> has invited you to join <span>'${data.data.company}</span>'. Join the rest of the team today`}
+            </p>
+            <a href={`https://app.attotime.com/signup/${data.data.token}`}>
+              <Button btnStyle="teal" btnText="Join Team" />
+            </a>
+            <p>or</p>
+            <Button
+              btnStyle="black"
+              btnText="Setup new Account"
+              onBtnClick={() => deleteInvite({ email: data?.data?.email, action: 'delete' })}
+            />
           </div>
         </>
       );
     }
 
-    if (data.message === 'invited') {
-      return (
-        <>
-          <div className={textContainer}>
-            <h4>You were invited</h4>
-            <p>
-              {`A confirmation email has been sent to '${value}'. Click on the confirmation link
-              in the email to activate your account.`}
-            </p>
-          </div>
-        </>
-      );
-    }
     return (
       <>
         <div className={textContainer}>
@@ -45,12 +83,11 @@ function ModalDialog({ showDialog, close, value = 'random@email.com' }) {
           <p>There's no time to waste!</p>
         </div>
         <EmailForm
-          changeModal={(val) => setType(val)}
+          changeModal={(val) => stateSucceeded(val)}
           placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
           checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
           checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
           checkItemThree={Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}
-          onSuccessChange={(val) => setType(val)}
           style="homepage"
         />
       </>
@@ -60,7 +97,7 @@ function ModalDialog({ showDialog, close, value = 'random@email.com' }) {
   return (
     <div>
       <Dialog className={dialogContainer} isOpen={showDialog} onDismiss={close}>
-        {renderModalTypes(type)}
+        {renderModalTypes(hasValues)}
       </Dialog>
     </div>
   );

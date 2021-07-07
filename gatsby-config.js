@@ -93,6 +93,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-iubenda-documents`,
+      options: {
+        documentIds: [`77119290`, `47240763`, `85558244`, `97533579`],
+      },
+    },
+    {
       resolve: `gatsby-plugin-react-intl`,
       options: {
         // language JSON resource path

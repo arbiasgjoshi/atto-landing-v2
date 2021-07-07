@@ -79,6 +79,7 @@ const HeaderComponent = ({ headerStyle }) => {
   const [activeItem, setActiveItem] = useState(null);
 
   const [showDialog, setShowDialog] = useState(false);
+  const [values, setValues] = useState({});
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
 
@@ -413,6 +414,42 @@ const HeaderComponent = ({ headerStyle }) => {
     },
   ];
 
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/confirmation', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setHasValues(res);
+        setShowDialog(true);
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
+
+  useEffect(() => {
+    if (values) {
+      console.log('At the header, we are showing these values:', values);
+
+      setTimeout(() => {
+        // console.log('After all, the modal will show now');
+        setShowDialog(true);
+      }, 1500);
+    }
+  }, [values]);
+
   useEffect(() => {
     menuStateConfig();
   }, [overMenu, aboveLinks]);
@@ -421,7 +458,13 @@ const HeaderComponent = ({ headerStyle }) => {
     <header
       className={`${headerWrapper} ${headerStyle && pricingStyle} ${shadow && onScrollStyle}`}
     >
-      <Modal close={closeModal} showDialog={showDialog} />
+      <Modal
+        close={closeModal}
+        showDialog={showDialog}
+        hasValues={values}
+        onDelete={toggleDeleteInvite}
+        setFormValues={(formValues) => formSuccessState(formValues)}
+      />
       <div className={container}>
         <div className={leftNav}>
           <Link to="/">
