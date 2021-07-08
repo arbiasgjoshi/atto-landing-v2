@@ -125,6 +125,32 @@ const TimeTracking = () => {
   const [showDialog, setShowDialog] = useState(false);
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
+  const [values, setValues] = useState(null);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
 
   const timeTrackingTitleList = [
     {
@@ -762,7 +788,13 @@ const TimeTracking = () => {
 
   return (
     <div className={`${container} ${timeTrackingContainer} ${teamActivityContainer}`}>
-      <Modal close={closeModal} showDialog={showDialog} />
+      <Modal
+        close={closeModal}
+        showDialog={showDialog}
+        hasValues={values}
+        onDelete={toggleDeleteInvite}
+        setFormValues={(formValues) => formSuccessState(formValues)}
+      />
       <Seo
         title={Intl.formatMessage({ id: 'pages.productTimeTracking.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.productTimeTracking.metaDescription' })}
@@ -771,6 +803,7 @@ const TimeTracking = () => {
       <MainTitleCard
         hasParagraph
         showButton
+        toggleModal={() => openModal()}
         paragraph={Intl.formatMessage({ id: 'pages.productTimeTracking.name' })}
         title={Intl.formatMessage({ id: 'pages.productTimeTracking.bannerTitle' })}
         subtitle={Intl.formatMessage({ id: 'pages.productTimeTracking.bannerDescription' })}

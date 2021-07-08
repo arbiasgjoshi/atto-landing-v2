@@ -11,16 +11,20 @@
 
 .dialogContainer {
   // padding: 4rem ​1.5rem 1rem;
-  padding: 4rem 2rem 1rem;
+  padding: 4rem;
   width: 80rem;
   max-width: calc(100% - 2rem);
   border-radius: 0.4rem;
   background-color: #ffffff;
   box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.2);
 
+  @include max(mobile) {
+    padding: 4rem 2rem 3rem;
+  }
+
   @include min(desktop) {
-    padding: 8.3rem 4rem;
-    height: 40rem;
+    padding: 8.3rem 10rem;
+    min-height: 40rem;
   }
 
   .textContainer {
@@ -28,24 +32,54 @@
     flex-direction: column;
     margin-bottom: 5rem;
 
+    &.noMargin {
+      margin-bottom: 0;
+    }
+
+    .greenArrow {
+      width: 4rem;
+      height: 4rem;
+      margin: 0 auto 1.6rem;
+      background: url('@images/green-confirm-arrow.png');
+      background-size: contain;
+      background-position: center;
+    }
+
+    &.pushButton {
+      > button {
+        margin-top: 4rem !important;
+        margin-bottom: 0;
+      }
+    }
+
     h4 {
       margin-bottom: 0.8rem;
     }
 
     .textPush {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .pushAround {
+      text-align: center;
+      margin: 2rem 0;
     }
 
     p {
+      text-align: center;
+      strong,
       span {
         font-weight: 500;
       }
     }
-  }
 
-  > a,
-  > button {
-    margin: 1.5rem auto;
+    a,
+    button {
+      margin: 0.5rem auto;
+      min-width: 19.5rem;
+      max-width: 20rem;
+    }
   }
 }
 

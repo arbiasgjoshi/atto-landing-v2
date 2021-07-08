@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Seo from '@components/molecules/seo';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Divider from '@components/atoms/divider';
+import Modal from '@components/molecules/modal';
 import Button from '@components/atoms/button';
 import Header from '@components/molecules/header';
 import Title from '@components/molecules/title';
@@ -56,9 +57,45 @@ import {
 
 const TimeCardApp = () => {
   const Intl = useIntl();
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
+  const [values, setValues] = useState(null);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
 
   return (
     <div className={`${container}`}>
+      <Modal
+        close={closeModal}
+        showDialog={showDialog}
+        hasValues={values}
+        onDelete={toggleDeleteInvite}
+        setFormValues={(formValues) => formSuccessState(formValues)}
+      />
       <Seo
         title="Time Card App for Teams | Simplified Timesheets"
         description="Track your employees' hours with Atto's simple time card app. Clock in and out, track time on the job, and turn employee time card data into insightful reports."

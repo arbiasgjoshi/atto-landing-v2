@@ -1,11 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 import EmailForm from '../../atoms/email-form';
 import Button from '../../atoms/button';
 import { useIntl } from 'gatsby-plugin-react-intl';
 
-import { dialogContainer, textContainer, textPush } from './modal.module.scss';
+import {
+  dialogContainer,
+  textContainer,
+  textPush,
+  greenArrow,
+  noMargin,
+  pushButton,
+  pushAround,
+} from './modal.module.scss';
 
 function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
   const Intl = useIntl();
@@ -14,62 +22,187 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
     setFormValues(val);
   };
 
-  // const deleteInvite = (val) => {
-  //   const requestOptions = {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ email: val }),
-  //   };
-  //   fetch('/delete-invite', requestOptions)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       const parsedData = {
-  //         data,
-  //         email: val,
-  //       };
-
-  //       onSuccessRes(parsedData);
-  //     });
-  // };
-
   const deleteInvite = (obj) => {
     setFormValues(obj);
   };
 
+  const confirmLabel = (lang) => {
+    if (lang === 'fr') {
+      return 'Confirmez votre e-mail';
+    }
+    if (lang === 'de') {
+      return 'Bestätigen Sie Ihre E-Mail-Adresse';
+    }
+    if (lang === 'es') {
+      return 'Confirme su correo electrónico';
+    }
+    return 'Confirm your email';
+  };
+
+  const confirmDesc = (lang, data) => {
+    if (lang === 'fr') {
+      return (
+        <p>
+          Un e-mail de confirmation a été envoyé à <span>{data.email}</span>. Cliquez sur le lien de
+          confirmation qu’il contient pour activer votre compte.
+        </p>
+      );
+    }
+    if (lang === 'de') {
+      return (
+        <p>
+          Eine Bestätigungs-E-Mail wurde an <span>{data.email}</span> gesendet. Klicken Sie auf den
+          Bestätigungslink in der E-Mail, um Ihr Konto zu aktivieren
+        </p>
+      );
+    }
+    if (lang === 'es') {
+      return (
+        <p>
+          Se ha enviado un correo electrónico de confirmación a <span>{data.email}</span>. Haga clic
+          en el enlace de confirmación del correo electrónico para activar su cuenta.
+        </p>
+      );
+    }
+    return (
+      <p>
+        A confirmation email has been sent to <span>{data.email}</span>. Click on the confirmation
+        link in the email to activate your account.
+      </p>
+    );
+  };
+
+  const confirmButton = (lang) => {
+    if (lang === 'fr') {
+      return 'Poursuivre';
+    }
+    if (lang === 'de') {
+      return 'Weiter';
+    }
+    if (lang === 'es') {
+      return 'Continuar';
+    }
+    return 'Continue';
+  };
+
+  const accountLabel = (lang) => {
+    if (lang === 'fr') {
+      return 'Configuration du compte';
+    }
+    if (lang === 'de') {
+      return 'Kontoeinrichtung';
+    }
+    if (lang === 'es') {
+      return 'Configuración de la cuenta';
+    }
+    return 'Account Setup';
+  };
+
+  const accountText = (lang, data) => {
+    if (lang === 'fr') {
+      return (
+        <span>
+          <strong>{data.name}</strong> vous a invité(e) à rejoindre <strong>{data.company}</strong>{' '}
+          le compte de société. Rejoignez le reste de l’équipe dès aujourd’hui
+        </span>
+      );
+    }
+    if (lang === 'de') {
+      return (
+        <span>
+          <strong>{data.name}</strong> hat Sie eingeladen, sich dem Firmenkonto von{' '}
+          <strong>{data.company}</strong> anzuschließen. Schließen Sie sich noch heute dem Rest des
+          Teams an
+        </span>
+      );
+    }
+    if (lang === 'es') {
+      return (
+        <span>
+          <strong>{data.name}</strong> le ha invitado a unirse a <strong>{data.company}</strong> la
+          cuenta de la empresa. Únase hoy al resto del equipo
+        </span>
+      );
+    }
+    return (
+      <span>
+        <strong>{data.name}</strong> has invited you to join <strong>{data.company}</strong> company
+        account. Join the rest of the team today
+      </span>
+    );
+  };
+
+  const orLabel = (lang) => {
+    if (lang === 'fr') {
+      return 'ou';
+    }
+    if (lang === 'es') {
+      return 'o';
+    }
+    if (lang === 'de') {
+      return 'oder';
+    }
+    return 'or';
+  };
+
+  const buttonLabelOne = (lang) => {
+    if (lang === 'fr') {
+      return 'Rejoindre l’équipe';
+    }
+    if (lang === 'es') {
+      return 'Unirse al equipo';
+    }
+    if (lang === 'de') {
+      return 'Beitritt zum Team';
+    }
+    return 'Join Team';
+  };
+
+  const buttonLabelTwo = (lang) => {
+    if (lang === 'fr') {
+      return 'Configurer un nouveau compte';
+    }
+    if (lang === 'es') {
+      return 'Configurar una nueva cuenta';
+    }
+    if (lang === 'de') {
+      return 'Neues Konto einrichten';
+    }
+    return 'Setup New Account';
+  };
+
   const renderModalTypes = (data) => {
-    if (data?.data?.message === 'Signup Succeeded') {
+    if (data?.message === 'Signup Succeeded') {
       return (
         <>
-          <div className={textContainer}>
-            <h4>Confirm your email</h4>
-            <p>
-              {`A confirmation email has been sent to <span>'${data.email}'</span>. Click on the confirmation link
-              in the email to activate your account.`}
-            </p>
+          <div className={`${textContainer} ${pushButton} ${noMargin}`}>
+            <span className={greenArrow} />
+            <h4>{confirmLabel(Intl.locale)}</h4>
+            <p>{confirmDesc(Intl.locale, data)}</p>
+            <Button
+              btnStyle="gray"
+              btnText={confirmButton(Intl.locale)}
+              onBtnClick={() => close()}
+            />
           </div>
-          <Button btnStyle="teal" btnText="Continue" onBtnClick={() => close()} />
         </>
       );
     }
 
-    if (data?.data?.message === 'invited') {
+    if (data?.message === 'invited') {
       return (
         <>
-          <div className={textContainer}>
-            <h4>Account Setup</h4>
-            <p className={textPush}>
-              {`<span>${data.data.name}</span> has invited you to join <span>'${data.data.company}</span>'. Join the rest of the team today`}
-            </p>
-            <a href={`https://app.attotime.com/signup/${data.data.token}`}>
-              <Button btnStyle="teal" btnText="Join Team" />
+          <div className={`${textContainer} ${noMargin}`}>
+            <h4>{accountLabel(Intl.locale)}</h4>
+            <p className={textPush}>{accountText(Intl.locale, data)}</p>
+            <a href={`https://app.attotime.com/signup/${data.token}`}>
+              <Button btnStyle="teal" btnText={buttonLabelOne(Intl.locale)} />
             </a>
-            <p>or</p>
+            <p className={pushAround}>{orLabel(Intl.locale)}</p>
             <Button
-              btnStyle="black"
-              btnText="Setup new Account"
-              onBtnClick={() => deleteInvite({ email: data?.data?.email, action: 'delete' })}
+              btnStyle="gray"
+              btnText={buttonLabelTwo(Intl.locale)}
+              onBtnClick={() => deleteInvite({ email: data?.email, action: 'delete' })}
             />
           </div>
         </>
@@ -80,7 +213,7 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
       <>
         <div className={textContainer}>
           <h3>Sign up for a 14-day free trial</h3>
-          <p>There's no time to waste!</p>
+          <p>{Intl.formatMessage({ id: 'pages.pricing.subscribeBanner' })}</p>
         </div>
         <EmailForm
           changeModal={(val) => stateSucceeded(val)}

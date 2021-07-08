@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Input from '@components/atoms/input';
+import { defaultInput, inputWrapper } from '@components/atoms/input/input.module.scss';
+import { formWrapper } from '@components/molecules/subscribe-form/form.module.scss';
 import Button from '@components/atoms/button';
 import Icon from '@components/atoms/icon';
 import CheckCard from '@components/molecules/check-card';
 import { useIntl } from 'gatsby-plugin-react-intl';
+import { Formik } from 'formik';
+import * as yup from 'yup';
 
 import {
   container,
@@ -16,8 +19,27 @@ import {
   mobileOnly,
 } from './free-trial.module.scss';
 
-const FreeTrial = ({ title, description, list = [] }) => {
+const FreeTrial = ({ title, description, list = [], onSuccessRes }) => {
   const Intl = useIntl();
+
+  const validationSchema = yup.object().shape({
+    email: yup.string().email('This field must be a valid email'),
+  });
+
+  const signUpTrial = (val) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: val }),
+    };
+    fetch('/confirmation', requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        onSuccessRes(data);
+      });
+  };
 
   return (
     <>
@@ -26,12 +48,38 @@ const FreeTrial = ({ title, description, list = [] }) => {
         <div className={firstBox}>
           <h3>{title}</h3>
           <h4>{description}</h4>
-          <Input placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })} />
-          <Button
-            btnText={Intl.formatMessage({ id: 'pages.miscellaneous.freeTrial14Days' })}
-            btnMobileText={Intl.formatMessage({ id: 'pages.miscellaneous.start14Days' })}
-            btnStyle="black"
-          />
+          <Formik
+            initialValues={{
+              email: '',
+            }}
+            validationSchema={validationSchema}
+            autoComplete="off"
+            onSubmit={(values) => {
+              signUpTrial(values.email);
+            }}
+          >
+            {({ values, handleSubmit, handleChange, handleBlur, errors }) => (
+              <form method="POST" onSubmit={handleSubmit}>
+                <div className={inputWrapper}>
+                  <input
+                    placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
+                    className={defaultInput}
+                    name="email"
+                    type="email"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                </div>
+                <Button
+                  btnText={Intl.formatMessage({ id: 'pages.miscellaneous.freeTrial14Days' })}
+                  btnMobileText={Intl.formatMessage({ id: 'pages.miscellaneous.start14Days' })}
+                  btnStyle="black"
+                />
+              </form>
+            )}
+          </Formik>
+          {/* <Input placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })} /> */}
           <div className={ticksWrapper}>
             <div className={tickItem}>
               <Icon iconClass="tick" />

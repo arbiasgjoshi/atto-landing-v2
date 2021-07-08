@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import HeaderComponent from '@components/molecules/header';
 import Seo from '@components/molecules/seo';
+import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { Link } from 'gatsby-plugin-react-intl';
 // import { FooterLinks } from '@locale/en.js';
@@ -43,6 +44,36 @@ import {
 const Pricing = () => {
   const Intl = useIntl();
   const [active, setActive] = useState('annually');
+
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
+  const [values, setValues] = useState(null);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
 
   const checkList = [
     {
@@ -273,6 +304,13 @@ const Pricing = () => {
 
   return (
     <div className={container}>
+      <Modal
+        close={closeModal}
+        showDialog={showDialog}
+        hasValues={values}
+        onDelete={toggleDeleteInvite}
+        setFormValues={(formValues) => formSuccessState(formValues)}
+      />
       <Seo
         title={Intl.formatMessage({ id: 'pages.pricing.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.pricing.metaDescription' })}

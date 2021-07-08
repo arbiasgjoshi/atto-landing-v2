@@ -27,13 +27,8 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
     fetch('/confirmation', requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        const parsedData = {
-          data,
-          email: val,
-        };
-
-        onSuccessRes(parsedData);
-        console.log(data);
+        console.log('success data is:', data);
+        onSuccessRes(data);
       });
   };
 
@@ -59,8 +54,6 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
-              // onChange={handleChange}
-              // onBlur={handleBlur}
             />
           </div>
           <Button
@@ -75,6 +68,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
 
 SubscribeForm.propTypes = {
   placeholder: PropTypes.string,
+  onSuccessRes: PropTypes.func,
 };
 
 export default SubscribeForm;

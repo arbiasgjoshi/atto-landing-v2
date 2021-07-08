@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Seo from '@components/molecules/seo';
+import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Divider from '@components/atoms/divider';
 import Button from '@components/atoms/button';
@@ -55,9 +56,45 @@ import { buttonContainer, learnMoreContainer } from './work-hours-tracker.module
 
 const WorkHoursTracker = () => {
   const Intl = useIntl();
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
+  const [values, setValues] = useState(null);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
 
   return (
     <div className={`${container}`}>
+      <Modal
+        close={closeModal}
+        showDialog={showDialog}
+        hasValues={values}
+        onDelete={toggleDeleteInvite}
+        setFormValues={(formValues) => formSuccessState(formValues)}
+      />
       <Seo
         title="Employee Work Hours Tracker | Web & Mobile "
         description="Keep track of your employees with Atto's work hours tracker. Includes time tracking, location tracking, wage estimates, and instantly available timesheet reports."

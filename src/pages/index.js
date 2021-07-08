@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import { useIntl } from 'gatsby-plugin-react-intl';
 
 import Icon from '@components/atoms/icon';
+import Button from '@components/atoms/button';
 import Divider from '@components/atoms/divider';
 import EmailForm from '@components/atoms/email-form';
 import Number from '@components/atoms/number-card';
@@ -197,11 +198,11 @@ const Home = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('/confirmation', requestOptions)
+    fetch('/delete-invite', requestOptions)
       .then((response) => response.json())
       .then((res) => {
         setValues(res);
-        setShowDialog(true);
+        openModal();
       });
   };
 
@@ -209,6 +210,9 @@ const Home = () => {
     closeModal();
     if (val?.action !== 'delete') {
       setValues(val);
+      setTimeout(() => {
+        openModal();
+      }, 500);
     } else {
       toggleDeleteInvite(val);
     }
@@ -250,13 +254,14 @@ const Home = () => {
         hasValues={values}
         setFormValues={(formValues) => formSuccessState(formValues)}
       />
+
       <MainTitle
         title={Intl.formatMessage({ id: 'pages.homepage.title' })}
         subtitle={Intl.formatMessage({ id: 'pages.homepage.description' })}
       />
       <div className={formRotated}>
         <EmailForm
-          changeModal={(val) => console.log(val)}
+          changeModal={(val) => formSuccessState(val)}
           placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
           checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
           checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
@@ -267,6 +272,7 @@ const Home = () => {
         {imageOneLocale(Intl.locale)}
         {mobileLocale(Intl.locale)}
       </div>
+
       <Divider className="style4" />
       <div className={sliderWrapper}>
         <Slider {...settings} className={carouselWrapper} width={960}>
@@ -365,6 +371,10 @@ const Home = () => {
         title={Intl.formatMessage({ id: 'pages.homepage.subscribeTitle' })}
         description={Intl.formatMessage({ id: 'pages.homepage.subscribeDesc' })}
         list={checkList}
+        onSuccessRes={(val) => {
+          setValues(val);
+          showDialog();
+        }}
       />
       <FooterComponent />
     </div>

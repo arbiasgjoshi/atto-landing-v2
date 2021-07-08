@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import Divider from '@components/atoms/divider';
@@ -51,6 +51,36 @@ import { privacyContainer, imageContainer } from './gps-location-tracking.module
 
 const LocationTracking = () => {
   const Intl = useIntl();
+
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
+  const [values, setValues] = useState(null);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
 
   const checkList1 = [
     { title: Intl.formatMessage({ id: 'pages.productLocationTracking.checkListItemZero' }) },
@@ -307,6 +337,13 @@ const LocationTracking = () => {
 
   return (
     <div className={`${container} ${teamActivityContainer}`}>
+      <Modal
+        close={closeModal}
+        showDialog={showDialog}
+        hasValues={values}
+        onDelete={toggleDeleteInvite}
+        setFormValues={(formValues) => formSuccessState(formValues)}
+      />
       <Seo
         title={Intl.formatMessage({ id: 'pages.productLocationTracking.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.productLocationTracking.metaDescription' })}
@@ -317,6 +354,7 @@ const LocationTracking = () => {
         title={Intl.formatMessage({ id: 'pages.productLocationTracking.bannerTitle' })}
         subtitle={Intl.formatMessage({ id: 'pages.productLocationTracking.bannerDescription' })}
         hasParagraph
+        toggleModal={() => openModal()}
         showButton
       />
       <Divider className="style2" />

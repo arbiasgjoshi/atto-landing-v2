@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
+import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Title from '@components/molecules/title';
 import Header from '@components/molecules/header';
@@ -59,9 +60,46 @@ import {
 const Roofing = () => {
   const Intl = useIntl();
 
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
+  const [values, setValues] = useState(null);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
+
   return (
     <>
       <div className={`${container} ${industryPadding}`}>
+        <Modal
+          close={closeModal}
+          showDialog={showDialog}
+          hasValues={values}
+          onDelete={toggleDeleteInvite}
+          setFormValues={(formValues) => formSuccessState(formValues)}
+        />
         <Seo
           title="Time Tracking for Roofing Companies | Timesheet Software"
           description="Keep accurate time records while working outdoors. Track your roofers’ time and location in real-time. Save endless hours on admin and payroll. Sign up today!"

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
 
@@ -19,6 +20,40 @@ const SubscribeBanner = ({
   style = '',
 }) => {
   const Intl = useIntl();
+
+  const [showDialog, setShowDialog] = useState(false);
+  const [values, setValues] = useState(null);
+
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+      setTimeout(() => {
+        openModal();
+      }, 500);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
 
   const subscribeBanner = () => {
     if (Intl.locale === 'en') {
@@ -71,19 +106,32 @@ const SubscribeBanner = ({
     }
   };
   return (
-    <div className={`${bannerWrapper} ${bannerImage && hasImage}`} style={{ padding: formPadding }}>
-      {bannerImage && <div className={imgWrap}>{subscribeBanner()}</div>}
-      <div className={textWrapper}>
-        {style === 'pricing' ? <h2>{title}</h2> : <h3>{title}</h3>}
-        {subtitle && <p>{subtitle}</p>}
-      </div>
-      <EmailForm
-        placeholder={placeholder}
-        checkItemOne={checkItemOne}
-        checkItemTwo={checkItemTwo}
-        checkItemThree={checkItemThree}
+    <>
+      <Modal
+        close={closeModal}
+        showDialog={showDialog}
+        hasValues={values}
+        onDelete={toggleDeleteInvite}
+        setFormValues={(formValues) => formSuccessState(formValues)}
       />
-    </div>
+      <div
+        className={`${bannerWrapper} ${bannerImage && hasImage}`}
+        style={{ padding: formPadding }}
+      >
+        {bannerImage && <div className={imgWrap}>{subscribeBanner()}</div>}
+        <div className={textWrapper}>
+          {style === 'pricing' ? <h2>{title}</h2> : <h3>{title}</h3>}
+          {subtitle && <p>{subtitle}</p>}
+        </div>
+        <EmailForm
+          changeModal={(val) => formSuccessState(val)}
+          placeholder={placeholder}
+          checkItemOne={checkItemOne}
+          checkItemTwo={checkItemTwo}
+          checkItemThree={checkItemThree}
+        />
+      </div>
+    </>
   );
 };
 

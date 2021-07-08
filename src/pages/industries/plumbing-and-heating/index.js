@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import Divider from '@components/atoms/divider';
+import Modal from '@components/molecules/modal';
 import Seo from '@components/molecules/seo';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Header from '@components/molecules/header';
@@ -59,9 +60,46 @@ import BannerImage from '@images/plumbing/Time Tracking for Plumbing and Heating
 const PlumbingAndHeating = () => {
   const Intl = useIntl();
 
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
+  const [values, setValues] = useState(null);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
+
   return (
     <>
       <div className={`${container} ${industryPadding}`}>
+        <Modal
+          close={closeModal}
+          showDialog={showDialog}
+          hasValues={values}
+          onDelete={toggleDeleteInvite}
+          setFormValues={(formValues) => formSuccessState(formValues)}
+        />
         <Seo
           title="Time Tracking for Plumbing and Heating Companies"
           description="Track all your plumbers' time and locations throughout their workday. Save endless hours on admin and payroll. And, respond faster to emergency call-outs."

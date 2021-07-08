@@ -18,6 +18,7 @@ const MainTitleCard = ({
   title,
   subtitle,
   paragraph,
+  toggleModal,
   hasParagraph = false,
   showButton = false,
   maxParagraphWidth = null,
@@ -47,6 +48,7 @@ const MainTitleCard = ({
         <Button
           btnText={Intl.formatMessage({ id: 'pages.miscellaneous.startFreeTrial' })}
           btnStyle="black"
+          onBtnClick={() => toggleModal()}
         />
       )}
     </div>

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import HeaderComponent from '@components/molecules/header';
 import Seo from '@components/molecules/seo';
+import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Title from '@components/molecules/title';
 import Divider from '@components/atoms/divider';
@@ -64,6 +65,35 @@ import {
 
 const AllFeaturesPage = () => {
   const Intl = useIntl();
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
+  const [values, setValues] = useState(null);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
 
   const timeTrackingCards = [
     {
@@ -416,6 +446,13 @@ const AllFeaturesPage = () => {
 
   return (
     <>
+      <Modal
+        close={closeModal}
+        showDialog={showDialog}
+        hasValues={values}
+        onDelete={toggleDeleteInvite}
+        setFormValues={(formValues) => formSuccessState(formValues)}
+      />
       <span className={behindMask} />
       <div className={container}>
         <Seo

@@ -71,6 +71,32 @@ const TeamActivity = () => {
   const [showDialog, setShowDialog] = useState(false);
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
+  const [values, setValues] = useState(null);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
 
   const titleList2 = [
     { title: Intl.formatMessage({ id: 'pages.productTeamActivity.checkListItemZero' }) },
@@ -237,6 +263,7 @@ const TeamActivity = () => {
       <MainTitleCard
         hasParagraph
         showButton
+        toggleModal={() => openModal()}
         paragraph={Intl.formatMessage({ id: 'pages.productTeamActivity.name' })}
         title={Intl.formatMessage({ id: 'pages.productTeamActivity.bannerTitle' })}
       />

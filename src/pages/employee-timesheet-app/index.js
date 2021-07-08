@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Seo from '@components/molecules/seo';
 import Modal from '@components/molecules/modal';
@@ -55,8 +55,45 @@ import { rndContainer, learnMoreContainer } from './employee.module.scss';
 
 const EmployeeTimesheetApp = () => {
   const Intl = useIntl();
+  const [showDialog, setShowDialog] = useState(false);
+  const openModal = () => setShowDialog(true);
+  const closeModal = () => setShowDialog(false);
+  const [values, setValues] = useState(null);
+
+  const toggleDeleteInvite = (data) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: data.email }),
+    };
+    fetch('/delete-invite', requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setValues(res);
+        openModal();
+      });
+  };
+
+  const formSuccessState = (val) => {
+    closeModal();
+    if (val?.action !== 'delete') {
+      setValues(val);
+    } else {
+      toggleDeleteInvite(val);
+    }
+  };
+
   return (
     <div className={`${container}`}>
+      <Modal
+        close={closeModal}
+        showDialog={showDialog}
+        hasValues={values}
+        onDelete={toggleDeleteInvite}
+        setFormValues={(formValues) => formSuccessState(formValues)}
+      />
       <Seo
         title="Accurate Timesheet, Payroll & Job Code Reports"
         description="Relax with timesheets on time, every time! Atto instantly generates timesheets for you so you never stress over misplaced, late, or inaccurate timesheets again."

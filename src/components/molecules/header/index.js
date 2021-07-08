@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { StaticImage } from 'gatsby-plugin-image';
+// import { StaticImage } from 'gatsby-plugin-image';
 import { Link, useIntl } from 'gatsby-plugin-react-intl';
 
 import Button from '@components/atoms/button';
@@ -79,7 +79,7 @@ const HeaderComponent = ({ headerStyle }) => {
   const [activeItem, setActiveItem] = useState(null);
 
   const [showDialog, setShowDialog] = useState(false);
-  const [values, setValues] = useState({});
+  const [values, setValues] = useState(null);
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
 
@@ -309,7 +309,7 @@ const HeaderComponent = ({ headerStyle }) => {
   const resourceSection = () => (
     <div className={`${menuSection} ${resourcesMenu} ${contentPadding}`}>
       <div className={menuItems}>
-        <Link className={menuItem} activeClassName={activeMenuItem} to="/help-center">
+        <a className={menuItem} activeClassName={activeMenuItem} href="https://help.attotime.com/">
           <div className={menuIcon}>
             <HelpCenterLogo />
           </div>
@@ -317,7 +317,7 @@ const HeaderComponent = ({ headerStyle }) => {
             <h6>{Intl.formatMessage({ id: 'header.menu.helpCenterLabel' })}</h6>
             <p>{Intl.formatMessage({ id: 'header.menu.helpCenterDesc' })}</p>
           </div>
-        </Link>
+        </a>
         <Link className={menuItem} activeClassName={activeMenuItem} to="/blog">
           <div className={menuIcon}>
             <BlogLogo />
@@ -361,15 +361,6 @@ const HeaderComponent = ({ headerStyle }) => {
 
     return menuClass;
   };
-
-  // const checkMenuStatus = () => {};
-
-  // const triggerItem = (val) => (
-  //   <div className={triggerItemWrap}>
-  //     <h5>{val}</h5>
-  //     <Icon iconClass="arrow-down" />
-  //   </div>
-  // );
 
   const toggleMenu = () => {
     setOpenMobile(!openMobile);
@@ -422,11 +413,11 @@ const HeaderComponent = ({ headerStyle }) => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('/confirmation', requestOptions)
+    fetch('/delete-invite', requestOptions)
       .then((response) => response.json())
       .then((res) => {
         setValues(res);
-        setShowDialog(true);
+        openModal();
       });
   };
 
@@ -441,10 +432,7 @@ const HeaderComponent = ({ headerStyle }) => {
 
   useEffect(() => {
     if (values) {
-      console.log('At the header, we are showing these values:', values);
-
       setTimeout(() => {
-        // console.log('After all, the modal will show now');
         setShowDialog(true);
       }, 1500);
     }
