@@ -1,0 +1,65 @@
+.privacyPolicyStyle {
+  padding: 0 2rem;
+  p,
+  ul li,
+  ol li {
+    font-size: 2.2rem;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color-11);
+  }
+
+  p a {
+    text-decoration: underline;
+    color: var(--primary-color);
+  }
+
+  ul,
+  ol {
+    list-style: inherit;
+    margin: 3rem 2rem 2rem 3rem;
+  }
+
+  ul li,
+  ol li {
+    margin-left: 2rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+    color: #262626;
+  }
+
+  h4 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #262626;
+  }
+
+  h5 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #262626;
+  }
+
+  h1 {
+    font-size: var(--h2-size);
+    line-height: var(--h2-line-height-size);
+    letter-spacing: var(--h2-letter-spacing);
+  }
+
+  h2 {
+    font-size: var(--h3-size);
+    line-height: var(--h3-line-height-size);
+    letter-spacing: var(--h3-letter-spacing);
+  }
+
+  h3 {
+    font-size: var(--h4-size);
+    line-height: var(--h4-line-height-size);
+    letter-spacing: var(--h4-letter-spacing);
+  }
+}

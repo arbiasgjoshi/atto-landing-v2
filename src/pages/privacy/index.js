@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { graphql } from 'gatsby';
+
 import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
 import { useIntl } from 'gatsby-plugin-react-intl';
@@ -8,17 +10,50 @@ import Footer from '@components/molecules/footer';
 import SubscribeBanner from '@components/molecules/subscribe-banner';
 
 import { container } from '@styles/main.module.scss';
-// import { FooterLinks } from '@locale/en.js';
+import { privacyPolicyStyle } from './privacy.module.scss';
 
-const Terms = () => {
+const Privacy = ({ data }) => {
   const Intl = useIntl();
+
+  const renderPrivacyPolicy = (lang) => {
+    if (lang === 'fr') {
+      return (
+        <div
+          className={privacyPolicyStyle}
+          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[1].privacyPolicy }}
+        />
+      );
+    }
+    if (lang === 'es') {
+      return (
+        <div
+          className={privacyPolicyStyle}
+          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[2].privacyPolicy }}
+        />
+      );
+    }
+    if (lang === 'de') {
+      return (
+        <div
+          className={privacyPolicyStyle}
+          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[3].privacyPolicy }}
+        />
+      );
+    }
+    return (
+      <div
+        className={privacyPolicyStyle}
+        dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[0].privacyPolicy }}
+      />
+    );
+  };
 
   return (
     <>
       <div className={`${container}`}>
         <Seo title="Privacy" />
         <Header />
-        <Divider className="style12" />
+        {renderPrivacyPolicy(Intl.locale)}
         <SubscribeBanner
           title="Ready to put Atto to work on your construction sites?"
           placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
@@ -32,4 +67,15 @@ const Terms = () => {
   );
 };
 
-export default Terms;
+export const query = graphql`
+  query PrivacyQuery {
+    allIubendaDocument {
+      nodes {
+        documentId
+        privacyPolicy
+      }
+    }
+  }
+`;
+
+export default Privacy;

@@ -9,28 +9,49 @@ import Footer from '@components/molecules/footer';
 import SubscribeBanner from '@components/molecules/subscribe-banner';
 
 import { container } from '@styles/main.module.scss';
-// import { FooterLinks } from '@locale/en.js';
+import { privacyPolicyStyle } from '../privacy/privacy.module.scss';
 
-const Terms = () => {
-  // const { site } = useStaticQuery(
-  //   graphql`
-  //     query MyQuery {
-  //       iubendaDocument(documentId: { eq: "77119290" }) {
-  //         documentId
-  //         termsAndConditions
-  //       }
-  //     }
-  //   `
-  // );
-
+const Terms = ({ data }) => {
   const Intl = useIntl();
+
+  const renderPrivacyPolicy = (lang) => {
+    if (lang === 'fr') {
+      return (
+        <div
+          className={privacyPolicyStyle}
+          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[1].termsAndConditions }}
+        />
+      );
+    }
+    if (lang === 'es') {
+      return (
+        <div
+          className={privacyPolicyStyle}
+          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[2].termsAndConditions }}
+        />
+      );
+    }
+    if (lang === 'de') {
+      return (
+        <div
+          className={privacyPolicyStyle}
+          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[3].termsAndConditions }}
+        />
+      );
+    }
+    return (
+      <div
+        className={privacyPolicyStyle}
+        dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[0].termsAndConditions }}
+      />
+    );
+  };
   return (
     <>
       <div className={`${container}`}>
         <Seo title="Terms & Conditions" />
         <Header />
-        <Divider className="style12" />
-        <div></div>
+        {renderPrivacyPolicy(Intl.locale)}
         <SubscribeBanner
           title="Ready to put Atto to work on your construction sites?"
           placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
@@ -38,11 +59,21 @@ const Terms = () => {
           checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
           checkItemThree={Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}
         />
-        {/* <div dangerouslySetInnerHTML={{ __html: data.iubendaDocument.privacyPolicy }} /> */}
         <Footer />
       </div>
     </>
   );
 };
+
+export const query = graphql`
+  query TermsQuery {
+    allIubendaDocument {
+      nodes {
+        documentId
+        termsAndConditions
+      }
+    }
+  }
+`;
 
 export default Terms;
