@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { defaultInput, inputWrapper } from '@components/atoms/input/input.module.scss';
-import { formWrapper } from '@components/molecules/subscribe-form/form.module.scss';
+// import { formWrapper } from '@components/molecules/subscribe-form/form.module.scss';
 import Button from '@components/atoms/button';
 import Icon from '@components/atoms/icon';
 import CheckCard from '@components/molecules/check-card';
@@ -23,7 +23,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes }) => {
   const Intl = useIntl();
 
   const validationSchema = yup.object().shape({
-    email: yup.string().email('This field must be a valid email'),
+    email: yup.string().email('This field must be a valid email').required('Required'),
   });
 
   const signUpTrial = (val) => {
@@ -72,8 +72,8 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes }) => {
                   />
                 </div>
                 <Button
-                  btnText={Intl.formatMessage({ id: 'pages.miscellaneous.freeTrial14Days' })}
                   btnMobileText={Intl.formatMessage({ id: 'pages.miscellaneous.start14Days' })}
+                  btnText={Intl.formatMessage({ id: 'pages.miscellaneous.freeTrial14Days' })}
                   btnStyle="black"
                 />
               </form>

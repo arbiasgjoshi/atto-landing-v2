@@ -13,7 +13,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
   const Intl = useIntl();
 
   const validationSchema = yup.object().shape({
-    email: yup.string().email('This field must be a valid email'),
+    email: yup.string().email('This field must be a valid email').required('Required'),
   });
 
   const signUpTrial = (val) => {

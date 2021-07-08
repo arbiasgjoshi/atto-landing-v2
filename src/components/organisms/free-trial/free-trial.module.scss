@@ -31,7 +31,7 @@
       font-weight: var(--regular);
     }
 
-    > div:not(.ticksWrapper) {
+    > form div:not(.ticksWrapper) {
       width: 100%;
       margin-bottom: 2rem;
 
@@ -46,7 +46,7 @@
       }
     }
 
-    > button {
+    > form button {
       width: 100%;
     }
 
