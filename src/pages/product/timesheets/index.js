@@ -22,7 +22,6 @@ import VideoCheckList from '@components/organisms/video-checklist';
 import Services from '@components/organisms/services';
 
 // import imgOne from '@images/en/timesheets/Estimate your Employees’ Wages@2x.png';
-// import ProductOverviewBanner from '@images/product-overview-banner-image.svg';
 // import imgThree from '@images/timesheets-inbox2x.png';
 import imgTwo from '@images/en/timesheets/Sync with Payroll and Accounting Software@2x.png';
 
@@ -374,7 +373,12 @@ const Timesheets = () => {
         subtitle={Intl.formatMessage({ id: 'pages.productTimesheets.bannerDescription' })}
       />
       <Divider className="style2" />
-      <VideoCheckList list={checkLists} placeholder="timesheets" cardStyle="centerAligned" />
+      <VideoCheckList
+        list={checkLists}
+        videoUrl="https://player.vimeo.com/video/563717896?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        placeholder="timesheets"
+        cardStyle="centerAligned"
+      />
       <Divider />
       <div className={readyMadeTitle}>
         <Title

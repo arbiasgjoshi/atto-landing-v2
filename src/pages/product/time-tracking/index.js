@@ -47,18 +47,6 @@ import icon from '@images/easy-to-use.png';
 import icon2 from '@images/accurate.png';
 import icon3 from '@images/trustworthy.png';
 
-// import noImage from '@images/no-image.png';
-// import icon4 from '@images/clock-in-out.png';
-// import icon5 from '@images/write-notes.png';
-// import icon6 from '@images/track-breaks.png';
-// import icon7 from '@images/manage-overtime.png';
-// import icon8 from '@images/switch-between-jobs.png';
-// import icon9 from '@images/add-time-off.png';
-
-// import icon22 from '@images/en/time-tracking/Employees forget to track their time_@2x.png';
-// import icon23 from '@images/en/time-tracking/What if phone ran out of battery_@2x.png';
-// import icon24 from '@images/en/time-tracking/Not sure if employees are where they’re supposed to_@2x.png';
-
 import icon32 from '@images/location@1x.png';
 import icon33 from '@images/profile@1x.png';
 import icon34 from '@images/timesheets@1x.png';
@@ -813,7 +801,7 @@ const TimeTracking = () => {
         list={timeTrackingTitleList}
         placeholder="time-tracking"
         cardStyle="centerAligned"
-        videoUrl="https://www.youtube.com/watch?v=DTvS9lvRxZ8"
+        videoUrl="https://player.vimeo.com/video/563701840?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
       />
       <Divider />
       {featuredIageLocale(Intl.locale)}

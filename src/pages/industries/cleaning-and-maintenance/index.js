@@ -34,18 +34,6 @@ import {
 } from '@data/industries/cleaning.js';
 import { oldList, newList, cleanersSteps } from '@data/industries';
 
-// import authorImage from '@images/cleaning-author@2x.png';
-// import image2 from '@images/time-tracking-cleaning@2x.png';
-// import image3 from '@images/cleaning-accordion1.png';
-// import image4 from '@images/cleaning-accordion2.png';
-// import image5 from '@images/cleaning-accordion3.png';
-// import image6 from '@images/cleaning-accordion4.png';
-
-// import boxImage1 from '@images/cleaning-box-one@2x.png';
-// import boxImage2 from '@images/cleaning-box-two@2x.png';
-// import boxImage3 from '@images/cleaning-box-three@2x.png';
-// import boxImage4 from '@images/cleaning-box-four@2x.png';
-
 import bannerImage from '@images/cleaning/Time Tracking for Cleaning Companies@2x.png';
 import reviewImage from '@images/cleaning/Cleaners review@2x.png';
 
@@ -134,21 +122,17 @@ const Cleaning = () => {
         <Article
           title="Get helpful reminders so your cleaners never forget to clock in!"
           description="Keep better track of your time with Atto’s helpful reminders. When your cleaners enter or leave a job site, and at their normal start and end time, we’ll notify them to clock in and out. And if they happen to forget, they can still add a manual time entry for you to review later."
-          image={image3}
+          image="cleaning-one"
           maxWidth={500}
           imagePadding="6rem 0"
-          imageWidth={550}
-          // imageHeight={354}
         />
         <Divider className="style3" />
         <Article
           title="Entrust managers to track your cleaners’ time"
           description="Dealing with commercial or industrial cleaning jobs that require lots of cleaners? Instead of having each cleaner track their time individually, your on-the-job manager can clock in and out on your cleaner’s behalf."
-          image={image4}
+          image="cleaning-two"
           isSwapped
-          maxWidth={500}
           imagePadding="2rem 2rem 6rem 0"
-          imageWidth={530}
         />
         <Divider className="style3" />
         <Title

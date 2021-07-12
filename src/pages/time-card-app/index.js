@@ -20,34 +20,19 @@ import CommonQuestions from '@components/organisms/common-questions';
 import Services from '@components/organisms/services';
 import { StaticImage } from 'gatsby-plugin-image';
 
-// import ProductOverviewBanner from '@images/product-overview-banner-image.svg';
-// import noImage from '@images/no-image.png';
-// import authorImage from '@images/construction-minds@2x.png';
-// import image1 from '@images/time-clock-mobile@2x.png';
-// import image2 from '@images/time-tracking-any-device.png';
-// import GetWageEstimates from '@images/get-wage-estimates-from-your-employees@2x.png';
-// import TimeCardSummaries from '@images/see-time-card-summaries-per-employee-team-or-project@2x.png';
-// import ViewTimeCard from '@images/view-time-card-data@2x.png';
-
 import authorImage from '@images/time-card-app/Time card app review@2x.png';
 import image1 from '@images/time-card-app/A highly accurate time tracking solution@2x.png';
 import image2 from '@images/time-card-app/Time card options to suit the needs of any business@2x.png';
-
-import GetWageEstimates from '@images/time-card-app/Get wage estimates from your employees’ time cards@2x.png';
-import TimeCardSummaries from '@images/time-card-app/See time card summaries per employee, team, or project@2x.png';
-import ViewTimeCard from '@images/time-card-app/View time card data as a daily map-based timeline@2x.png';
 
 import icon32 from '@images/location@1x.png';
 import icon33 from '@images/profile@1x.png';
 import icon34 from '@images/timesheets@1x.png';
 import icon35 from '@images/time-tracking-clock@1x.png';
 
-// import { FooterLinks } from '@locale/en.js';
 import { container, imageFormWrapper, imageWrapper } from '@styles/main.module.scss';
 
 import { learnMoreContainer, buttonContainer } from './time-card-app.module.scss';
 
-// import localeData from '@locale/en';
 import {
   checkList,
   commonQuestionsList,
@@ -157,14 +142,14 @@ const TimeCardApp = () => {
       <Article
         title="Get wage estimates from your employees’ time cards"
         description="Keep your company’s finances on track. After adding your employees’ pay rates, Atto automatically estimates your wage bill based on the hours on their time cards. What’s more, you can add more than one pay rate per employee so that your estimates remain accurate even if their rate changes."
-        image={GetWageEstimates}
+        image="timecardapp-estimates"
         imagePadding="10.4rem 4rem 12.3rem 0.1rem"
       />
       <Divider />
       <Article
         title="See time card summaries per employee, team, or job code"
         description="Get insights into how productive each part of your business is. In a few taps, Atto produces time card summaries to show all the work done by each employee, team, or towards a specific category of job."
-        image={TimeCardSummaries}
+        image="timecardapp-summaries"
         isSwapped
         imagePadding="1.4rem 2.6rem 3.7rem 3.5rem"
       />
@@ -172,7 +157,7 @@ const TimeCardApp = () => {
       <Article
         title="View time card data as a daily map-based timeline"
         description="If your employees work in the field, it can be useful to see how long they spend at each job, and the routes they take throughout their day. Atto uses GPS tracking in conjunction with data from your employees’ time cards to produce visual timelines of their daily movements."
-        image={ViewTimeCard}
+        image="timecardapp-viewtimecard"
         imagePadding="6rem 1.8rem 6rem"
         imageHeight="383"
       />

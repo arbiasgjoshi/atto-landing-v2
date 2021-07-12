@@ -20,22 +20,11 @@ import LearnMoreCard from '@components/molecules/learn-more-card';
 import Services from '@components/organisms/services';
 import { StaticImage } from 'gatsby-plugin-image';
 
-// import authorImage from '@images/construction-minds@2x.png';
-// import ProductOverviewBanner from '@images/product-overview-banner-image.svg';
-// import EstimatesEmployee from '@images/estimates-employees-timesheets@2x.png';
-// import TimeCardSummaries from '@images/see-time-card-summaries-per-employee-team-or-project@2x.png';
-// import ViewTimeCard from '@images/view-time-card-data@2x.png';
-
-// import AutomaticReports from '@images/automatic-email-reports@2x.png';
-// import ExportTimesheet from '@images/export-timesheet-and-timesheet-data@2x.png';
-// import AccountingIntegrations from '@images/accounting-integrations@2x.png';
-// import image1 from '@images/streamline-your-payroll-with-our-simple-employee-timesheet-app@2x.png';
 import authorImage from '@images/timesheets/Timesheet app review@2x.png';
 import image1 from '@images/timesheets/Streamline your payroll with our simple employee timesheet app@2x.png';
-// import ProductOverviewBanner from '@images/product-overview-banner-image.svg';
-import EstimatesEmployee from '@images/timesheets/Get wage estimates from your employees’ timesheets@2x.png';
-import TimeCardSummaries from '@images/timesheets/See timesheet summaries per employee, team, or project@2x.png';
-import ViewTimeCard from '@images/timesheets/View timesheets as a daily map-based timeline@2x.png';
+// import EstimatesEmployee from '@images/timesheets/Get wage estimates from your employees’ timesheets@2x.png';
+// import TimeCardSummaries from '@images/timesheets/See timesheet summaries per employee, team, or project@2x.png';
+// import ViewTimeCard from '@images/timesheets/View timesheets as a daily map-based timeline@2x.png';
 
 import AutomaticReports from '@images/automatic-email-reports@2x.png';
 import ExportTimesheet from '@images/export-timesheet-and-timesheet-data@2x.png';
@@ -47,7 +36,7 @@ import icon34 from '@images/work-hours-tracker@2x.png';
 import icon35 from '@images/time-tracking-clock@1x.png';
 
 import { container, imageWrapper } from '@styles/main.module.scss';
-// import { FooterLinks } from '@locale/en.js';
+
 import { oldList, newList } from '@data/industries';
 import { checkList, cardList, commonQuestionsList } from '@data/third-phase/employee-timesheet-app';
 import { firstList } from '@data/third-phase/time-tracking-app';
@@ -150,14 +139,14 @@ const EmployeeTimesheetApp = () => {
       <Article
         title="Get wage estimates from your employees’ timesheets"
         description="Add your employees’ pay rates, and Atto will estimate your payroll costs based on the hours tracked. What’s more, you can add more than one pay rate per employee so that your estimates remain accurate even if their rate changes."
-        image={EstimatesEmployee}
+        image="timesheet-estimates"
         imagePadding="10.4rem 4rem 12.3rem 0.1rem"
       />
       <Divider className="style3" />
       <Article
         title="See timesheet summaries per employee, team, or job code"
         description="Get insights into how productive each part of your business is. In a few taps, Atto generates timesheet reports that show all the work done by each employee, team, or towards a specific job."
-        image={TimeCardSummaries}
+        image="timesheet-summaries"
         imagePadding="1.4rem 2.6rem 3.7rem 3.5rem"
         isSwapped
       />
@@ -165,7 +154,7 @@ const EmployeeTimesheetApp = () => {
       <Article
         title="View timesheets as a daily map-based timeline"
         description="If your employees work in the field, it can be useful to see how long they spend at each job, and the routes they take throughout their day. Atto uses GPS tracking in conjunction with your employees’ timesheets to provide you a visual timeline of their daily movements."
-        image={ViewTimeCard}
+        image="timesheet-viewtimecard"
         imagePadding="6rem 1.8rem 6rem"
         imageHeight="383"
       />

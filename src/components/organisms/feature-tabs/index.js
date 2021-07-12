@@ -4,11 +4,6 @@ import { useIntl } from 'gatsby-plugin-react-intl';
 import ProductCard from '../product-card';
 import Tabs from './tabs';
 
-// import image1 from '../../../images/time-tracking-fingertips@2x.png';
-// import image2 from '../../../images/know-where-is-team.png';
-// import image3 from '../../../images/spend-less-time-on-admin-with-automated-timesheets@2x.png';
-// import image4 from '../../../images/stay-in-loop.png';
-
 import imgLocaleOneEn from '@images/en/overview/Atto - time and location tracking app generating timesheets@2x.png';
 import imgLocaleOneDe from '@images/de/overview/DE_Atto - time and location tracking app generating timesheet@2x.png';
 import imgLocaleOneEs from '@images/es/overview/ES_Atto - time and location tracking app generating timesheets@2x.png';

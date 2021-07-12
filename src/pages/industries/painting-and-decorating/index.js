@@ -137,9 +137,7 @@ const Painting = () => {
           description="When your workers are in the middle of a paint job, it can be easy to lose track of time. That’s why whenever they enter or leave a job site, and at their normal start and end time, we’ll remind them to clock-in and out. And if they happen to forget, they can add a manual time entry for you to review later."
           maxWidth={500}
           imagePadding="5rem 0"
-          imageWidth={550}
-          imageHeight={380}
-          image={image3}
+          image="painting-one"
         />
         <Divider className="style3" />
         <Article
@@ -148,8 +146,7 @@ const Painting = () => {
           isSwapped
           maxWidth={500}
           imagePadding="3rem 0 4rem"
-          imageWidth={550}
-          image={image4}
+          image="painting-two"
         />
         <Divider className="style4" />
         <Title

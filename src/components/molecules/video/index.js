@@ -22,14 +22,12 @@ import {
   watchButton,
 } from './video.module.scss';
 
-const Video = ({ placeholder }) => {
+const Video = ({ placeholder, videoUrl }) => {
   const [play, setPlay] = useState(false);
-  const [videoUrl, setVideoUrl] = useState(
-    'https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
-  );
+  const [url, setVideoUrl] = useState(videoUrl);
 
-  const srcUrl =
-    'https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;&amp;player_id=0&amp;app_id=58479';
+  // const srcUrl =
+  //   'https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;&amp;player_id=0&amp;app_id=58479';
 
   const switchPlaceholder = (val) => {
     if (val === 'location-tracking') {
@@ -103,13 +101,9 @@ const Video = ({ placeholder }) => {
 
   useEffect(() => {
     if (play) {
-      setVideoUrl(
-        'https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479'
-      );
+      setVideoUrl(`${videoUrl}&amp;autoplay=1`);
     } else {
-      setVideoUrl(
-        'https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
-      );
+      setVideoUrl(`${videoUrl}`);
     }
   }, [play]);
 
@@ -122,6 +116,7 @@ const Video = ({ placeholder }) => {
           initial="open"
           animate="collapsed"
           exit="open"
+          onClick={() => setPlay(true)}
           variants={{
             open: { opacity: 0 },
             collapsed: { opacity: 1 },
@@ -133,11 +128,11 @@ const Video = ({ placeholder }) => {
           <span className={`${videoBackground} ${leftAligned}`} />
           {switchPlaceholder(placeholder)}
           <span className={`${videoBackground} ${rightAligned}`} />
-          <div className={playIcon} onClick={() => setPlay(true)} role="button" tabIndex="-1">
+          <div className={playIcon} role="button" tabIndex="-1">
             <Icon iconClass="play" fSize={11} />
           </div>
           <div className={watchButton}>
-            <Button btnText="Watch Video" btnStyle="round" onBtnClick={() => setPlay(true)} />
+            <Button btnText="Watch Video" btnStyle="round" />
           </div>
         </motion.div>
       )}
@@ -145,7 +140,7 @@ const Video = ({ placeholder }) => {
         <div className={`${playerIframe}`}>
           {play && (
             <iframe
-              src={videoUrl}
+              src={url}
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen

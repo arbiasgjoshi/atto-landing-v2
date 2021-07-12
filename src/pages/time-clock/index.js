@@ -17,8 +17,6 @@ import LearnMoreCard from '@components/molecules/learn-more-card';
 import { StaticImage } from 'gatsby-plugin-image';
 import { container } from '@styles/main.module.scss';
 
-// import noImage from '@images/no-image.png';
-// import authorImage from '@images/construction-minds@2x.png';
 import authorImage from '@images/time-clock/Time clock app review@2x.png';
 
 import WebTracking from '@images/web-time-tracking.svg';
@@ -27,28 +25,9 @@ import KioskTracking from '@images/kiosk-time-tracking.svg';
 import ImagesBox from '@components/organisms/images-box';
 import CommonQuestions from '@components/organisms/common-questions';
 
-// import image1 from '@images/time-clock-mobile@2x.png';
-// import image2 from '@images/give-managers-power@2x.png';
-
-// import addNotesImage from '@images/add-notes-track breaks-assign job@2x.png';
-// import ensureEmployees from '@images/ensure-employees-are-ready@2x.png';
-// import getNotifications from '@images/get-handy-notifications-of-time-clock-activity@2x.png';
-// import recordPto from '@images/record-paid-time-off@2x.png';
-// import seeEmployees from '@images/see-employees@2x.png';
-
 import image1 from '@images/time-clock/A highly accurate time tracking solution@2x.png';
-import image2 from '@images/time-clock/Give managers the power to track employee time@2x.png';
-import addNotesImage from '@images/time-clock/Add notes, track breaks, assign job codes, and more@2x.png';
-import ensureEmployees from '@images/time-clock/Ensure employees are ready to work before they clock-in@2x.png';
-import getNotifications from '@images/time-clock/Get handy notifications of time clock activity@2x.png';
-import recordPto from '@images/time-clock/Record paid time off for complete payroll data@2x.png';
-import seeEmployees from '@images/time-clock/See what your employees have been up to@2x.png';
 
-// import boxImage1 from '@images/construction-daily-timeline@2x.png';
-// import boxImage2 from '@images/time-clock-boximage1.png';
-// import boxImage3 from '@images/time-clock-boximage2.png';
-// import boxImage4 from '@images/time-clock-boximage3.png';
-// import boxImage5 from '@images/time-clock-boximage4.png';
+// import seeEmployees from '@images/time-clock/See what your employees have been up to@2x.png';
 
 import boxImage1 from '@images/construction/Construction Daily Timeline@2x.png';
 import boxImage2 from '@images/time-clock/Real time location tracking@2x.png';
@@ -56,7 +35,6 @@ import boxImage3 from '@images/time-clock/Team activity updates@2x.png';
 import boxImage4 from '@images/time-clock/Mobile time tracking app@2x.png';
 import boxImage5 from '@images/time-clock/Location tracking@2x.png';
 
-// import { FooterLinks } from '@locale/en.js';
 import icon1 from '@images/location@1x.png';
 import icon2 from '@images/time-tracking-clock@1x.png';
 import icon3 from '@images/profile@1x.png';
@@ -207,7 +185,7 @@ const TimeClock = () => {
       <Article
         title="Add notes, track breaks, assign jobs, and more!"
         description="Get more data on what your employees are up to with Atto’s time clock. Employees can add notes and keep a work diary. Track their breaks and categorize them as paid or unpaid. And, use job codes to categorize time tracked towards specific purposes."
-        image={addNotesImage}
+        image="add-notes"
         maxWidth={500}
         imageWidth="550"
         imageHeight="455"
@@ -218,27 +196,23 @@ const TimeClock = () => {
         title="Give managers the power to track employee time"
         description="Give managers the power to enforce accurate time-keeping. Using Atto, managers can clock in and out on behalf of employees – perfect for teams that start and finish at similar times. Plus, if a worker forgets their phone or it runs out of battery, managers can add manual time entries that are flagged for review."
         maxWidth={500}
-        image={image2}
+        image="give-managers"
         isSwapped
       />
       <Divider />
       <Article
         title="Ensure employees are ready to work before they clock in"
         description="Increase employee accountability and transparency. Set the location of any job site and restrict workers from clocking in unless their GPS shows they’re within the job site’s perimeter."
-        image={ensureEmployees}
+        image="ensure-employees"
         maxWidth={500}
-        imageWidth="532"
-        imageHeight="478"
         imagePadding="1.1rem 0 1.1rem 1.8rem"
       />
       <Divider />
       <Article
         title="Get handy notifications of time clock activity"
         description="Real-time notifications help employees keep better track of their time. As soon as an employee enters or leaves a job site, or at their normal start and end time, we’ll send a reminder to clock-in and out. What’s more, with work activity alerts, you’ll be alerted when employees clock in and out every day."
-        image={getNotifications}
+        image="get-notification"
         maxWidth={500}
-        imageWidth="380"
-        imageHeight="456"
         imagePadding="2.2rem 8.5rem"
         isSwapped
       />
@@ -246,19 +220,15 @@ const TimeClock = () => {
       <Article
         title="Record time off for complete payroll data"
         description="In addition to work hours, employees can record paid or unpaid time off such as sickness and vacations. This means that you can rely on Atto to provide all the data you need to run your payroll error-free."
-        image={recordPto}
+        image="record-pto"
         maxWidth={500}
-        imageWidth="452"
-        imageHeight="462"
         imagePadding="1.9rem 4.9rem"
       />
       <Divider />
       <Article
         title="See what your employees have been up to"
         description="See how productive your employees are. At any time, you can check each employee’s real-time location and status. Additionally, Atto generates a map-based timeline to summarize each worker’s daily movements."
-        image={seeEmployees}
-        imageWidth="510"
-        imageHeight="498"
+        image="see-employees"
         imagePadding="0.1rem 2rem"
         isSwapped
       />

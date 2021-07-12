@@ -269,26 +269,73 @@ const LocationTracking = () => {
     },
   ];
 
-  const imageTwoLocale = (loc) => {
-    if (loc === 'en') {
-      return verifyTeamEn;
-    }
-    if (loc === 'de') {
-      return verifyTeamDe;
-    }
-    if (loc === 'fr') {
-      return verifyTeamFr;
-    }
-    if (loc === 'es') {
-      return verifyTeamEs;
-    }
-  };
+  const imageOneLocale = () => (
+    <StaticImage
+      src="../../../images/en/gps-location-tracking/Keep track of your team’s daily movements@2x.png"
+      alt="Keep track of your team’s daily movements@2x.png"
+      width={500}
+      height={600}
+      quality={95}
+      placeholder="none"
+    />
+  );
 
-  const imageOneLocale = (loc) => {
+  const imageTwoLocale = (loc) => {
     if (loc === 'en') {
       return (
         <StaticImage
-          src="../../../images/en/gps-location-tracking/Track the locations of your entire team in real-time@2x.png"
+          src="../../../images/en/gps-location-tracking/Verify your team are working where they should be@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
+          width={500}
+          height={600}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (loc === 'de') {
+      return (
+        <StaticImage
+          src="../../../images/de/gps-location-tracking/DE_Verify your team are working where they should be@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
+          width={500}
+          height={600}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (loc === 'fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/gps-location-tracking/FR_Verify your team are working where they should be@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
+          width={500}
+          height={600}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (loc === 'es') {
+      return (
+        <StaticImage
+          src="../../../images/es/gps-location-tracking/ES_Verify your team are working where they should be@2x.png"
+          alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
+          width={500}
+          height={600}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+  };
+
+  const imageBannerLocale = (loc) => {
+    if (loc === 'en') {
+      return (
+        <StaticImage
+          src="../../../images/en/gps-location-tracking/Verify your team are working where they should be@2x.png"
           alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
           width={1140}
           height={340}
@@ -358,14 +405,19 @@ const LocationTracking = () => {
         showButton
       />
       <Divider className="style2" />
-      <VideoCheckList list={checkList1} placeholder="location-tracking" cardStyle="centerAligned" />
+      <VideoCheckList
+        list={checkList1}
+        videoUrl="https://player.vimeo.com/video/563712211?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        placeholder="location-tracking"
+        cardStyle="centerAligned"
+      />
       <Divider />
       <Title
         maxWidth={920}
         title={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
       />
       <Divider className="style5" />
-      {imageOneLocale(Intl.locale)}
+      {imageBannerLocale(Intl.locale)}
       <Divider className="style2" />
       <IconCardList noImage cardList={cardList} />
       <Divider />
@@ -379,7 +431,7 @@ const LocationTracking = () => {
         list={checkLists2}
         imageWidth="500"
         imageHeight="600"
-        image={movements}
+        image={imageOneLocale()}
       />
       <Divider />
       <ListArticle

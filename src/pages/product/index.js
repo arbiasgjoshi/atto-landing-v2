@@ -17,12 +17,6 @@ import FooterComponent from '@components/molecules/footer';
 
 import { container, imageFormWrapper, imageWrapper } from '@styles/main.module.scss';
 
-// import ProductOverviewBanner from '@images/product-overview-banner-image.svg';
-// import image1 from '@images/time-tracking-fingertips@2x.png';
-// import image2 from '@images/know-where-is-team.png';
-// import image3 from '@images/stay-in-loop.png';
-// import image4 from '@images/relax-with-timesheets@2x.png';
-
 import authorImage from '@images/en/overview/Time tracking app review@2x.png';
 
 import icon from '@images/easy-to-use.png';
@@ -179,82 +173,65 @@ const Product = () => {
 
   const imageLocaleOne = (loc) => {
     if (loc === 'en') {
-      //
-      return imgLocaleOneEn;
+      return 'img-one-locale-en';
     }
     if (loc === 'es') {
-      //
-      return imgLocaleOneEs;
+      return 'img-one-locale-es';
     }
     if (loc === 'fr') {
-      //
-      return imgLocaleOneFr;
+      return 'img-one-locale-fr';
     }
     if (loc === 'de') {
-      //
-      return imgLocaleOneDe;
+      return 'img-one-locale-de';
     }
   };
 
   const imageLocaleTwo = (loc) => {
     if (loc === 'en') {
-      //
-      return imgLocaleTwoEn;
+      return 'img-two-locale-en';
     }
     if (loc === 'es') {
-      //
-      return imgLocaleTwoEs;
+      return 'img-two-locale-es';
     }
     if (loc === 'fr') {
-      //
-      return imgLocaleTwoFr;
+      return 'img-two-locale-fr';
     }
     if (loc === 'de') {
-      //
-      return imgLocaleTwoDe;
+      return 'img-two-locale-de';
     }
   };
 
   const imageLocaleThree = (loc) => {
     if (loc === 'en') {
-      //
-      return imgLocaleThreeEn;
+      return 'img-three-locale-en';
     }
     if (loc === 'es') {
-      //
-      return imgLocaleThreeEs;
+      return 'img-three-locale-es';
     }
     if (loc === 'fr') {
-      //
-      return imgLocaleThreeFr;
+      return 'img-three-locale-fr';
     }
     if (loc === 'de') {
-      //
-      return imgLocaleThreeDe;
+      return 'img-three-locale-de';
     }
   };
 
   const imageLocaleFour = (loc) => {
     if (loc === 'en') {
-      //
-      return imgLocaleFourEn;
+      return 'img-four-locale-en';
     }
     if (loc === 'es') {
-      //
-      return imgLocaleFourEs;
+      return 'img-four-locale-es';
     }
     if (loc === 'fr') {
-      //
-      return imgLocaleFourFr;
+      return 'img-four-locale-fr';
     }
     if (loc === 'de') {
-      //
-      return imgLocaleFourDe;
+      return 'img-four-locale-de';
     }
   };
 
   const bannerImage = (loc) => {
-    console.log(loc);
     if (loc === 'de') {
       return (
         <StaticImage

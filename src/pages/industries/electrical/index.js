@@ -18,20 +18,10 @@ import OldVsNew from '@components/organisms/old-vs-new';
 import Steps from '@components/organisms/steps';
 import ImagesBox from '@components/organisms/images-box';
 
-// import authorImage from '@images/electrician-author@2x.png';
-// import image3 from '@images/electrician-accordion1.png';
-// import image4 from '@images/electrician-accordion2.png';
-// import image5 from '@images/electrician-accordion3.png';
-// import image6 from '@images/electrician-accordion4.png';
-// import boxImage1 from '@images/electrician-box-one@2x.png';
-// import boxImage2 from '@images/electrician-box-two@2x.png';
-// import boxImage3 from '@images/electrician-box-three@2x.png';
-// import boxImage4 from '@images/electrician-box-four@2x.png';
-
 import authorImage from '@images/electric/Electricians review@2x.png';
 
-import image3 from '@images/electric/Buzz your electricians with helpful reminders so they don’t forget to clock-in@2x.png';
-import image4 from '@images/electric/Give on-site supervisors the power to track your electricians’ time@2x.png';
+// import image3 from '@images/electric/Buzz your electricians with helpful reminders so they don’t forget to clock-in@2x.png';
+// import image4 from '@images/electric/Give on-site supervisors the power to track your electricians’ time@2x.png';
 import image5 from '@images/electric/Despatch electricians to emergency call-outs faster@2x.png';
 import image6 from '@images/electric/Avoid a nasty shock by forecasting wages ahead of payday@2x.png';
 
@@ -40,11 +30,8 @@ import boxImage2 from '@images/electric/Electricians location tracking@2x.png';
 import boxImage3 from '@images/electric/Electricians timesheets@2x.png';
 import boxImage4 from '@images/electric/Electricians time tracking@2x.png';
 
-// import image1 from '@images/no-image.png';
-// import image2 from '@images/time-tracking-electricians@2x.png';
 import BannerImage from '@images/electric/Time Tracking for Electricians@2x.png';
 
-// import { FooterLinks } from '@locale/en.js';
 import {
   firstList,
   checkList1,
@@ -59,8 +46,6 @@ import {
   background,
   oldVsNewGradient,
 } from '@styles/main.module.scss';
-
-// import localeData from '@locale/en';
 
 const Electrician = () => {
   const Intl = useIntl();
@@ -136,22 +121,18 @@ const Electrician = () => {
           title="Buzz your electricians with helpful reminders so they don’t forget to clock in!"
           description="Handling electricity requires full focus and concentration, so it’s easy to lose track of time. That’s why whenever your electricians enter or leave a job site, and at their normal start and end time, we’ll remind them to clock in and out. 
         And if they do happen to forget, they can add a manual time entry for you to review later."
-          image={image3}
+          image="electrical-one"
           maxWidth={500}
           imagePadding="6rem 0"
-          imageWidth={550}
-          // imageHeight={354}
         />
         <Divider className="style3" />
         <Article
           title="Give on-site supervisors the power to track your electricians’ time"
           description="Wiring an entire building? Dealing with a commercial job that requires multiple electricians on-site? Instead of having each of them track their time individually, your on-site supervisor can clock-in and out on all of your electricians’ behalf."
-          image={image4}
+          image="electrical-two"
           isSwapped
           maxWidth={500}
           imagePadding="4rem 0"
-          imageWidth={550}
-          // imageHeight={354}
         />
         <Divider className="style3" />
         <Title

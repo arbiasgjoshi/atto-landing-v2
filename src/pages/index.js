@@ -312,7 +312,7 @@ const Home = () => {
       <Divider className="style3" />
       <VideoCheckList
         list={titleList}
-        videoUrl="https://vimeo.com/704266"
+        videoUrl="https://player.vimeo.com/video/563701840?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
         placeholder="home"
         cardStyle="centerAligned"
       />

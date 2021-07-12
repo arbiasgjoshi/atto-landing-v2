@@ -131,7 +131,7 @@ const PlumbingAndHeating = () => {
         <Article
           title="Get helpful reminders so your plumbers never forget to clock in!"
           description="When dealing with burst pipes and emergency call-outs, it’s easy to lose track of time. That’s why when your plumbers enter or leave a job site, and at their normal start and end time, we’ll remind them to clock in and out. And if they happen to forget, they can add a manual time entry for you to review later."
-          image={image3}
+          image="plumbing-one"
           maxWidth={500}
           imagePadding="6rem 0"
           imageWidth={550}
@@ -141,7 +141,7 @@ const PlumbingAndHeating = () => {
         <Article
           title="Entrust your on-site manager to track your plumbers’ time"
           description="Dealing with commercial or industrial plumbing jobs that require multiple plumbers on-site? Instead of having each plumber track their time individually, your on-the-job manager can clock in and out on all of your plumbers’ behalf."
-          image={image4}
+          image="plumbing-two"
           isSwapped
           maxWidth={500}
           imagePadding="6rem 17rem 6rem 0"

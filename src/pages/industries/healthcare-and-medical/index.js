@@ -38,8 +38,8 @@ import boxImage4 from '@images/healthcare/Healthcare time tracking@2x.png';
 import authorImage from '@images/healthcare/Healthcare reviews@2x.png';
 
 import image2 from '@images/healthcare/Time Tracking Software for Home Healthcare Providers@2x.png';
-import image3 from '@images/healthcare/Get helpful reminders so your caregivers never forget to clock-in@2x.png';
-import image4 from '@images/healthcare/Allow your senior caregivers to track everyone’s time @2x.png';
+// import image3 from '@images/healthcare/Get helpful reminders so your caregivers never forget to clock-in@2x.png';
+// import image4 from '@images/healthcare/Allow your senior caregivers to track everyone’s time @2x.png';
 import image5 from '@images/healthcare/Adjust quickly to employee sickness and absence @2x.png';
 import image6 from '@images/healthcare/Forecast your payroll costs ahead of payday to avoid unwanted surprises@2x.png';
 
@@ -135,7 +135,7 @@ const HomeHealthcare = () => {
         <Article
           title="Get helpful reminders so your caregivers never forget to clock in!"
           description="When caregivers are nursing patients, it can be easy to lose track of time. That’s why whenever they enter or leave a patient’s home, and at their normal start and end time, we’ll remind them to clock in and out. And if they still happen to forget, they can add a manual time entry for you to review later."
-          image={image3}
+          image="healthcare-one"
           maxWidth={500}
           imagePadding="7.3rem 0"
           imageWidth={550}
@@ -145,7 +145,7 @@ const HomeHealthcare = () => {
         <Article
           title="Entrust your senior caregivers to track everyone’s time"
           description="Some patients with complex needs, or larger caring jobs may require multiple caregivers to work together in the same home. Instead of having each caregiver track their time individually, your senior caregiver can use Atto to clock in and out on all of their behalfs."
-          image={image4}
+          image="healthcare-two"
           isSwapped
           maxWidth={500}
           imagePadding="6rem 7rem 4.5rem 0"

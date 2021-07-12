@@ -17,11 +17,6 @@ import Services from '@components/organisms/services';
 import Story from '@components/organisms/story';
 import VideoCheckList from '@components/organisms/video-checklist';
 
-// import image1 from '@images/team-management-departments.png';
-// import image2 from '@images/find-out.png';
-// import image3 from '@images/eliminate-checks.png';
-// import image4 from '@images/activity-updates@2x.png';
-// import { FooterLinks } from '@locale/en.js';
 import authorImage from '@images/en/team-activity/Time tracking app review@2x.png';
 import Team from '@images/team.svg';
 import Timeline from '@images/timeline.svg';
@@ -268,7 +263,12 @@ const TeamActivity = () => {
         title={Intl.formatMessage({ id: 'pages.productTeamActivity.bannerTitle' })}
       />
       <Divider className="style2" />
-      <VideoCheckList list={titleList2} placeholder="team-activity" cardStyle="centerAligned" />
+      <VideoCheckList
+        list={titleList2}
+        videoUrl="https://player.vimeo.com/video/563716240?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        placeholder="team-activity"
+        cardStyle="centerAligned"
+      />
       <Divider />
       <Title
         maxWidth={900}

@@ -131,7 +131,7 @@ const Roofing = () => {
         <Article
           title="Get helpful reminders so your roofers never forget to clock in!"
           description="When your roofers are in the middle of a job, it can be easy to lose track of time. That’s why whenever they enter or leave a job site, and at their normal start and end time, we’ll remind them to clock in and out. And if they happen to forget, they can add a manual time entry for you to review later."
-          image={image3}
+          image="roofing-one"
           maxWidth={500}
           imagePadding="6rem 0"
           imageWidth={550}
@@ -140,7 +140,7 @@ const Roofing = () => {
         <Article
           title="Entrust your supervisor to track your roofing crew’s time"
           description="Tiling large buildings or doing commercial and industrial roofing jobs require lots of your roofers to work together. Instead of having each contractor track their time individually, your on-the-job supervisor can use Atto to clock-in and out on their behalf."
-          image={image4}
+          image="roofing-two"
           isSwapped
           maxWidth={500}
           imagePadding="3.8rem 2.8rem 6rem 0"

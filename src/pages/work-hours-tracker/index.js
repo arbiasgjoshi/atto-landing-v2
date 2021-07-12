@@ -25,8 +25,6 @@ import Services from '@components/organisms/services';
 // import TrackMore from '@images/track-more-than-just-work-hours@2x.png';
 // import authorImage from '@images/construction-minds@2x.png';
 // import image2 from '@images/time-tracking-any-device.png';
-// import ProductOverviewBanner from '@images/product-overview-banner-image.svg';
-// import ProductOverviewBanner from '@images/work-hours-tracker/product-overview-banner-image.svg';
 
 import image1 from '@images/work-hours-tracker/A highly accurate time tracking solution@2x.png';
 import TrackMore from '@images/work-hours-tracker/Track more than just work hours@2x.png';
