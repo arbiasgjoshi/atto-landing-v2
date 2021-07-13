@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'ATTO',
+    title: 'Atto',
     description: `Atto is a simple, all-in-one solution that accurately tracks your employees’ time and automates timesheets. Join 10,000+ businesses that trust Atto. Sign up now!`,
     author: `Zetta Technologies`,
     siteUrl: 'https://attotime.com',
