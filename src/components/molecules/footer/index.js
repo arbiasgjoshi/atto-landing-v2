@@ -346,10 +346,11 @@ const Footer = () => {
       <noscript>
         <iframe
           src="https://www.googletagmanager.com/ns.html?id=GTM-NV2DTP3"
+          title="null"
           height="0"
           width="0"
-          style="display:none;visibility:hidden"
-        ></iframe>
+          style={{ display: 'none', visibility: 'hidden' }}
+        />
       </noscript>
 
       {/* <!-- Helpscout --> */}
