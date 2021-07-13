@@ -154,96 +154,76 @@ const TeamActivity = () => {
 
   const teamActivityImgOne = (loc) => {
     if (loc === 'en') {
-      //
-      return featureImgLocaleOneEn;
+      return 'team-activity-img-one-en';
     }
     if (loc === 'es') {
-      //
-      return featureImgLocaleOneEs;
+      return 'team-activity-img-one-es';
     }
     if (loc === 'de') {
-      //
-      return featureImgLocaleOneDe;
+      return 'team-activity-img-one-de';
     }
     if (loc === 'fr') {
-      //
-      return featureImgLocaleOneFr;
+      return 'team-activity-img-one-fr';
     }
   };
 
   const teamActivityImgTwo = (loc) => {
     if (loc === 'en') {
-      //
-      return featureImgLocaleTwoEn;
+      return 'team-activity-img-two-en';
     }
     if (loc === 'es') {
-      //
-      return featureImgLocaleTwoEs;
+      return 'team-activity-img-two-es';
     }
     if (loc === 'de') {
-      //
-      return featureImgLocaleTwoDe;
+      return 'team-activity-img-two-de';
     }
     if (loc === 'fr') {
-      //
-      return featureImgLocaleTwoFr;
+      return 'team-activity-img-two-fr';
     }
   };
 
   const teamActivityImgThree = (loc) => {
     if (loc === 'en') {
-      //
-      return featureImgLocaleThreeEn;
+      return 'team-activity-img-three-en';
     }
     if (loc === 'es') {
-      //
-      return featureImgLocaleThreeEs;
+      return 'team-activity-img-three-es';
     }
     if (loc === 'de') {
-      //
-      return featureImgLocaleThreeDe;
+      return 'team-activity-img-three-de';
     }
     if (loc === 'fr') {
-      //
-      return featureImgLocaleThreeFr;
+      return 'team-activity-img-three-fr';
     }
   };
 
   const teamActivityImgFour = (loc) => {
     if (loc === 'en') {
-      //
-      return featureImgLocaleFourEn;
+      return 'team-activity-img-four-en';
     }
     if (loc === 'es') {
-      //
-      return featureImgLocaleFourEs;
+      return 'team-activity-img-four-es';
     }
     if (loc === 'de') {
-      //
-      return featureImgLocaleFourDe;
+      return 'team-activity-img-four-de';
     }
     if (loc === 'fr') {
-      //
-      return featureImgLocaleFourFr;
+      return 'team-activity-img-four-fr';
     }
   };
 
   const teamActivityImgFive = (loc) => {
     if (loc === 'en') {
-      //
-      return featureImgLocaleFiveEn;
+      return 'team-activity-img-five-en';
     }
     if (loc === 'es') {
-      //
-      return featureImgLocaleFiveEs;
+      return 'team-activity-img-five-es';
     }
     if (loc === 'de') {
-      //
-      return featureImgLocaleFiveDe;
+      return 'team-activity-img-five-de';
     }
     if (loc === 'fr') {
-      //
-      return featureImgLocaleFiveFr;
+      return 'team-activity-img-five-fr';
     }
   };
 

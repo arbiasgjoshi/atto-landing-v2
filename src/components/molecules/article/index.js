@@ -4,25 +4,6 @@ import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
 // Team Activity
-import teamActivityArticleLocaleOneEn from '@images/en/team-activity/Never feel in the dark again with team activity updates@2x.png';
-import teamActivityArticleLocaleOneDe from '@images/de/team-activity/DE_Never feel in the dark again with team activity updates@2x.png';
-import teamActivityArticleLocaleOneEs from '@images/es/team-activity/ES_Never feel in the dark again with team activity updates@2x.png';
-import teamActivityArticleLocaleOneFr from '@images/fr/team-activity/FR_Never feel in the dark again with team activity updates@2x.png';
-
-import teamActivityArticleLocaleTwoEn from '@images/en/team-activity/Simplify team management with departments@2x.png';
-import teamActivityArticleLocaleTwoDe from '@images/de/team-activity/DE_Simplify team management with departments@2x.png';
-import teamActivityArticleLocaleTwoEs from '@images/es/team-activity/ES_Simplify team management with departments@2x.png';
-import teamActivityArticleLocaleTwoFr from '@images/fr/team-activity/FR_Simplify team management with departments@2x.png';
-
-import teamActivityArticleLocaleThreeEn from '@images/en/team-activity/Find out what any employee is up to in seconds@2x.png';
-import teamActivityArticleLocaleThreeDe from '@images/de/team-activity/DE_Find out what any employee is up to in seconds@2x.png';
-import teamActivityArticleLocaleThreeEs from '@images/es/team-activity/ES_Find out what any employee is up to in seconds@2x.png';
-import teamActivityArticleLocaleThreeFr from '@images/fr/team-activity/FR_Find out what any employee is up to in seconds@2x.png';
-
-import teamActivityArticleLocaleFourEn from '@images/en/team-activity/Eliminate back and forth phone calls and constant check-ins@2x.png';
-import teamActivityArticleLocaleFourDe from '@images/de/team-activity/DE_Eliminate back and forth phone calls and constant check-ins@2x.png';
-import teamActivityArticleLocaleFourEs from '@images/es/team-activity/ES_Eliminate back and forth phone calls and constant check-ins@2x.png';
-import teamActivityArticleLocaleFourFr from '@images/fr/team-activity/FR_Eliminate back and forth phone calls and constant check-ins@2x.png';
 
 import teamActivityArticleLocaleFiveEn from '@images/en/team-activity/See your team’s progress at the end of each day@2x.png';
 import teamActivityArticleLocaleFiveDe from '@images/de/team-activity/DE_See your team’s progress at the end of each day@2x.png';
@@ -394,6 +375,256 @@ const Article = ({
           width="543"
           height="383"
           alt="View time card data as a daily map-based timeline"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+
+    // Team Activity One
+    if (val === 'team-activity-img-one-en') {
+      return (
+        <StaticImage
+          src="../../../images/en/team-activity/Never feel in the dark again with team activity updates@2x.png"
+          width="460"
+          height="383"
+          alt="Never feel in the dark again with team activity updates"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-one-de') {
+      return (
+        <StaticImage
+          src="../../../images/de/team-activity/DE_Never feel in the dark again with team activity updates@2x.png"
+          width="460"
+          height="383"
+          alt="Never feel in the dark again with team activity updates"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-one-es') {
+      return (
+        <StaticImage
+          src="../../../images/es/team-activity/ES_Never feel in the dark again with team activity updates@2x.png"
+          width="460"
+          height="383"
+          alt="Never feel in the dark again with team activity updates"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-one-fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/team-activity/FR_Never feel in the dark again with team activity updates@2x.png"
+          width="460"
+          height="383"
+          alt="Never feel in the dark again with team activity updates"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+
+    // Team Activity Two
+    if (val === 'team-activity-img-two-en') {
+      return (
+        <StaticImage
+          src="../../../images/en/team-activity/Simplify team management with departments@2x.png"
+          width="448"
+          height="473"
+          alt="Simplify team management with departments"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-two-de') {
+      return (
+        <StaticImage
+          src="../../../images/de/team-activity/DE_Simplify team management with departments@2x.png"
+          width="448"
+          height="473"
+          alt="Simplify team management with departments"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-two-es') {
+      return (
+        <StaticImage
+          src="../../../images/es/team-activity/ES_Simplify team management with departments@2x.png"
+          width="448"
+          height="473"
+          alt="Simplify team management with departments"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-two-fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/team-activity/FR_Simplify team management with departments@2x.png"
+          width="448"
+          height="473"
+          alt="Simplify team management with departments"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+
+    // Team Activity Three
+    if (val === 'team-activity-img-three-en') {
+      return (
+        <StaticImage
+          src="../../../images/en/team-activity/Find out what any employee is up to in seconds@2x.png"
+          width="401"
+          height="503"
+          alt="Find out what any employee is up to in seconds"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-three-de') {
+      return (
+        <StaticImage
+          src="../../../images/de/team-activity/DE_Find out what any employee is up to in seconds@2x.png"
+          width="401"
+          height="503"
+          alt="Find out what any employee is up to in seconds"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-three-es') {
+      return (
+        <StaticImage
+          src="../../../images/es/team-activity/ES_Find out what any employee is up to in seconds@2x.png"
+          width="401"
+          height="503"
+          alt="Find out what any employee is up to in seconds"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-three-fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/team-activity/FR_Find out what any employee is up to in seconds@2x.png"
+          width="401"
+          height="503"
+          alt="Find out what any employee is up to in seconds"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+
+    // Team Activity Four
+    if (val === 'team-activity-img-four-en') {
+      return (
+        <StaticImage
+          src="../../../images/en/team-activity/Eliminate back and forth phone calls and constant check-ins@2x.png"
+          width="440"
+          height="428"
+          alt="Eliminate back and forth phone calls and constant check-ins"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-four-de') {
+      return (
+        <StaticImage
+          src="../../../images/de/team-activity/DE_Eliminate back and forth phone calls and constant check-ins@2x.png"
+          width="440"
+          height="428"
+          alt="Eliminate back and forth phone calls and constant check-ins"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-four-es') {
+      return (
+        <StaticImage
+          src="../../../images/es/team-activity/ES_Eliminate back and forth phone calls and constant check-ins@2x.png"
+          width="440"
+          height="428"
+          alt="Eliminate back and forth phone calls and constant check-ins"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-four-fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/team-activity/FR_Eliminate back and forth phone calls and constant check-ins@2x.png"
+          width="440"
+          height="428"
+          alt="Eliminate back and forth phone calls and constant check-ins"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+
+    // Team Activity Five
+    if (val === 'team-activity-img-five-en') {
+      return (
+        <StaticImage
+          src="../../../images/en/team-activity/See your team’s progress at the end of each day@2x.png"
+          width="460"
+          height="489"
+          alt="See your team’s progress at the end of each day"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-five-de') {
+      return (
+        <StaticImage
+          src="../../../images/de/team-activity/DE_See your team’s progress at the end of each day@2x.png"
+          width="460"
+          height="489"
+          alt="See your team’s progress at the end of each day"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-five-es') {
+      return (
+        <StaticImage
+          src="../../../images/es/team-activity/ES_See your team’s progress at the end of each day@2x.png"
+          width="460"
+          height="489"
+          alt="See your team’s progress at the end of each day"
+          quality={96}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'team-activity-img-five-fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/team-activity/FR_See your team’s progress at the end of each day@2x.png"
+          width="460"
+          height="489"
+          alt="See your team’s progress at the end of each day"
           quality={96}
           placeholder="none"
         />

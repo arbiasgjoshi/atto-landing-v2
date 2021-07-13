@@ -244,6 +244,7 @@ const Home = () => {
   return (
     <div className={container}>
       <Seo
+        noTemplate
         title={Intl.formatMessage({ id: 'pages.homepage.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.homepage.metaDescription' })}
       />
@@ -312,7 +313,7 @@ const Home = () => {
       <Divider className="style3" />
       <VideoCheckList
         list={titleList}
-        videoUrl="https://player.vimeo.com/video/563701840?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        videoUrl="https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
         placeholder="home"
         cardStyle="centerAligned"
       />

@@ -101,34 +101,34 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
   const accountText = (lang, data) => {
     if (lang === 'fr') {
       return (
-        <span>
-          <strong>{data.name}</strong> vous a invité(e) à rejoindre <strong>{data.company}</strong>{' '}
-          le compte de société. Rejoignez le reste de l’équipe dès aujourd’hui
-        </span>
+        <p className={textPush}>
+          <span>{data.name}</span> vous a invité(e) à rejoindre <span>{data.company}</span> le
+          compte de société. Rejoignez le reste de l’équipe dès aujourd’hui
+        </p>
       );
     }
     if (lang === 'de') {
       return (
-        <span>
-          <strong>{data.name}</strong> hat Sie eingeladen, sich dem Firmenkonto von{' '}
-          <strong>{data.company}</strong> anzuschließen. Schließen Sie sich noch heute dem Rest des
+        <p className={textPush}>
+          <span>{data.name}</span> hat Sie eingeladen, sich dem Firmenkonto von{' '}
+          <span>{data.company}</span> anzuschließen. Schließen Sie sich noch heute dem Rest des
           Teams an
-        </span>
+        </p>
       );
     }
     if (lang === 'es') {
       return (
-        <span>
-          <strong>{data.name}</strong> le ha invitado a unirse a <strong>{data.company}</strong> la
-          cuenta de la empresa. Únase hoy al resto del equipo
-        </span>
+        <p className={textPush}>
+          <span>{data.name}</span> le ha invitado a unirse a <span>{data.company}</span> la cuenta
+          de la empresa. Únase hoy al resto del equipo
+        </p>
       );
     }
     return (
-      <span>
-        <strong>{data.name}</strong> has invited you to join <strong>{data.company}</strong> company
+      <p className={textPush}>
+        <span>{data.name}</span> has invited you to join <span>{data.company}</span> company
         account. Join the rest of the team today
-      </span>
+      </p>
     );
   };
 
@@ -172,7 +172,7 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
   };
 
   const renderModalTypes = (data) => {
-    if (data?.message === 'Signup Succeeded') {
+    if (data?.message === 'Signup Succeeded' || data?.message === '__Signup Succeeded') {
       return (
         <>
           <div className={`${textContainer} ${pushButton} ${noMargin}`}>
@@ -194,7 +194,7 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
         <>
           <div className={`${textContainer} ${noMargin}`}>
             <h4>{accountLabel(Intl.locale)}</h4>
-            <p className={textPush}>{accountText(Intl.locale, data)}</p>
+            {accountText(Intl.locale, data)}
             <a href={`https://app.attotime.com/signup/${data.token}`}>
               <Button btnStyle="teal" btnText={buttonLabelOne(Intl.locale)} />
             </a>

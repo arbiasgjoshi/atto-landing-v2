@@ -23,9 +23,7 @@ const AccordionArticle = ({
   imageHeight,
   boxHeight,
 }) => {
-  // const [clicked, setClicked] = useState(0);
   const [articleImage, setArticleImage] = useState(image);
-  const [changedImage, setChanged] = useState(false);
   const [imgWidth, setImgWidth] = useState(imageWidth);
   const [imgHeight, setImgHeight] = useState(imageHeight);
 

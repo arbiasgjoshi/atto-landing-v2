@@ -65,7 +65,7 @@ export const serviceList = [
   },
   { title: 'Electrical', url: '/industries/electrical', icon: <ElectrianLogo /> },
   { title: 'Plumbing & Heating', url: '/industries/plumbing-and-heating', icon: <PlumbingLogo /> },
-  { title: 'Other industries', url: '/industries/electrical', icon: <ThreeDots /> },
+  { title: 'Other industries', url: '/product', icon: <ThreeDots /> },
 ];
 
 export const checkList = [

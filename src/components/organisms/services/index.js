@@ -61,7 +61,7 @@ const Services = () => {
     },
     {
       title: Intl.formatMessage({ id: 'pages.industries.otherIndustriesLabel' }),
-      url: '/industries/electrical',
+      url: '/product',
       icon: <ThreeDots />,
     },
   ];

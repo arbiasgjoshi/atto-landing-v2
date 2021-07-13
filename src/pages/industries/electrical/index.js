@@ -20,17 +20,8 @@ import ImagesBox from '@components/organisms/images-box';
 
 import authorImage from '@images/electric/Electricians review@2x.png';
 
-// import image3 from '@images/electric/Buzz your electricians with helpful reminders so they don’t forget to clock-in@2x.png';
-// import image4 from '@images/electric/Give on-site supervisors the power to track your electricians’ time@2x.png';
 import image5 from '@images/electric/Despatch electricians to emergency call-outs faster@2x.png';
 import image6 from '@images/electric/Avoid a nasty shock by forecasting wages ahead of payday@2x.png';
-
-import boxImage1 from '@images/electric/Electricians daily timeline@2x.png';
-import boxImage2 from '@images/electric/Electricians location tracking@2x.png';
-import boxImage3 from '@images/electric/Electricians timesheets@2x.png';
-import boxImage4 from '@images/electric/Electricians time tracking@2x.png';
-
-import BannerImage from '@images/electric/Time Tracking for Electricians@2x.png';
 
 import {
   firstList,
@@ -98,7 +89,7 @@ const Electrician = () => {
           smallTitle="ATTO FOR ELECTRICIANS"
           title="Time Tracking for Electricians"
           list={checkList1}
-          image={BannerImage}
+          image="electrical-banner"
         />
         <Divider className="style4" />
         <Story
@@ -180,10 +171,7 @@ const Electrician = () => {
           />
           <Divider className="style3" />
           <ImagesBox
-            image1={boxImage1}
-            image2={boxImage2}
-            image3={boxImage3}
-            image4={boxImage4}
+            imageType="electrical-boxes"
             title="Trusted by thousands of electrical businesses across 50+ countries"
           />
         </div>
@@ -198,7 +186,7 @@ const Electrician = () => {
           maxDescriptionWidth={750}
         />
         <Divider className="style1" />
-        <Steps list={electricianSteps} />
+        <Steps list={electricianSteps} toggleModal={() => openModal()} />
         <Divider className="style4" />
         <SubscribeBanner
           title="Keep track of all your electricians in the field with Atto"

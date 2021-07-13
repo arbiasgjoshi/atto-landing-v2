@@ -16,32 +16,11 @@ import AccordionArticle from '@components/organisms/accordion-article';
 import OldVsNew from '@components/organisms/old-vs-new';
 import SubscribeBanner from '@components/molecules/subscribe-banner';
 import ImagesBox from '@components/organisms/images-box';
-
-// import authorImage from '@images/landscaping-author@2x.png';
-
-// import image2 from '@images/time-tracking-landscaping@2x.png';
-// import boxImage1 from '@images/landscaping-box-one@2x.png';
-// import boxImage2 from '@images/landscaping-box-two@2x.png';
-// import boxImage3 from '@images/landscaping-box-three@2x.png';
-// import boxImage4 from '@images/landscaping-box-four@2x.png';
-
-// import image3 from '@images/landscaping-accordion1.png';
-// import image4 from '@images/landscaping-accordion2.png';
-// import image5 from '@images/landscaping-accordion3.png';
-
 import authorImage from '@images/landscaping/Built with landscaping companies in mind@2x.png';
-import BannerImage from '@images/landscaping/Time Tracking for Landscaping Companies@2x.png';
 
 import image3 from '@images/landscaping/Atto is completely mobile – just like your crew@2x.png';
 import image4 from '@images/landscaping/Make sure your crew are about to get their hands dirty before they clock in@2x.png';
 import image5 from '@images/landscaping/Prune your costs and keep jobs on budget with wage estimates@2x.png';
-
-import boxImage1 from '@images/landscaping/Landscaping daily timeline@2x.png';
-import boxImage2 from '@images/landscaping/Landscaping location tracking@2x.png';
-import boxImage3 from '@images/landscaping/Landscaping timesheets@2x.png';
-import boxImage4 from '@images/landscaping/The grass is always greener with Atto@2x.png';
-
-// import { FooterLinks } from '@locale/en.js';
 import {
   checkList1,
   accordionList1,
@@ -108,7 +87,7 @@ const Landscaping = () => {
           smallTitle="ATTO FOR LANDSCAPING"
           title="Time Tracking for Landscaping Companies"
           list={checkList1}
-          image={BannerImage}
+          image="landscaping-banner"
         />
         <Divider className="style4" />
         <ReviewCards />
@@ -137,10 +116,7 @@ const Landscaping = () => {
           />
           <Divider className="style3" />
           <ImagesBox
-            image1={boxImage1}
-            image2={boxImage2}
-            image3={boxImage3}
-            image4={boxImage4}
+            imageType="landscape-boxes"
             title="Trusted by thousands of landscaping businesses across 50+ countries"
           />
         </div>
@@ -201,7 +177,7 @@ const Landscaping = () => {
           maxDescriptionWidth={750}
         />
         <Divider className="style1" />
-        <Steps list={landscapeSteps} />
+        <Steps list={landscapeSteps} toggleModal={() => openModal()} />
         <Divider className="style4" />
         <StaticImage
           quality={96}

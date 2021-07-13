@@ -15,6 +15,7 @@ import Title from '@components/molecules/title';
 import Story from '@components/organisms/story';
 import FeaturesList from '@components/organisms/features-list';
 import PriceDragger from '@components/molecules/price-dragger';
+import { navigate } from '@reach/router';
 
 import { container } from '@styles/main.module.scss';
 import authorImage2 from '@images/time-tracking-app-review.png';
@@ -312,6 +313,7 @@ const Pricing = () => {
         setFormValues={(formValues) => formSuccessState(formValues)}
       />
       <Seo
+        noTemplate
         title={Intl.formatMessage({ id: 'pages.pricing.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.pricing.metaDescription' })}
       />
@@ -355,6 +357,7 @@ const Pricing = () => {
           listTitle={Intl.formatMessage({
             id: 'pages.pricing.includesLabel',
           })}
+          goToSection={() => openModal()}
           contentText={Intl.formatMessage({ id: 'pages.miscellaneous.userPerMonth' })}
           usersText={`1-99 ${Intl.formatMessage({ id: 'pages.miscellaneous.users' })}`}
           hasGreyBg={false}
@@ -365,6 +368,7 @@ const Pricing = () => {
           listTitle={Intl.formatMessage({ id: 'pages.miscellaneous.everythingInPremium' })}
           list={checkList2}
           hasGreyBg
+          goToSection={() => navigate('/contact')}
           contentText={Intl.formatMessage({
             id: 'pages.pricing.contactTeam',
           })}

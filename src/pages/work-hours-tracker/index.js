@@ -21,12 +21,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import CommonQuestions from '@components/organisms/common-questions';
 import Services from '@components/organisms/services';
 
-// import image1 from '@images/time-clock-mobile@2x.png';
-// import TrackMore from '@images/track-more-than-just-work-hours@2x.png';
-// import authorImage from '@images/construction-minds@2x.png';
-// import image2 from '@images/time-tracking-any-device.png';
-
-import image1 from '@images/work-hours-tracker/A highly accurate time tracking solution@2x.png';
 import TrackMore from '@images/work-hours-tracker/Track more than just work hours@2x.png';
 import authorImage from '@images/work-hours-tracker/Work hours tracker review@2x.png';
 import image2 from '@images/work-hours-tracker/A work hours tracker for every device, and every purpose@2x.png';
@@ -38,7 +32,6 @@ import icon35 from '@images/time-tracking-clock@1x.png';
 
 import { container, imageFormWrapper, imageWrapper } from '@styles/main.module.scss';
 
-// import { FooterLinks } from '@locale/en.js';
 import { firstList } from '@data/third-phase/time-tracking-app.js';
 
 import {
@@ -102,7 +95,7 @@ const WorkHoursTracker = () => {
         smallTitle="WORK HOURS TRACKER"
         title="Keep track of your employees with our work hours tracker"
         description="With time tracking, location tracking, wage estimates, and instantly available timesheet reports."
-        image={image1}
+        image="workhours-banner"
         imageHeight="614"
         imageWidth="438"
         styling="other"

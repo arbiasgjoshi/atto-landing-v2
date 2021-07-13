@@ -25,16 +25,6 @@ import KioskTracking from '@images/kiosk-time-tracking.svg';
 import ImagesBox from '@components/organisms/images-box';
 import CommonQuestions from '@components/organisms/common-questions';
 
-import image1 from '@images/time-clock/A highly accurate time tracking solution@2x.png';
-
-// import seeEmployees from '@images/time-clock/See what your employees have been up to@2x.png';
-
-import boxImage1 from '@images/construction/Construction Daily Timeline@2x.png';
-import boxImage2 from '@images/time-clock/Real time location tracking@2x.png';
-import boxImage3 from '@images/time-clock/Team activity updates@2x.png';
-import boxImage4 from '@images/time-clock/Mobile time tracking app@2x.png';
-import boxImage5 from '@images/time-clock/Location tracking@2x.png';
-
 import icon1 from '@images/location@1x.png';
 import icon2 from '@images/time-tracking-clock@1x.png';
 import icon3 from '@images/profile@1x.png';
@@ -99,7 +89,7 @@ const TimeClock = () => {
       <IndustryMainCard
         smallTitle="TIME CLOCK"
         title="A simple time clock app for accurate time tracking"
-        image={image1}
+        image="timeclock-banner"
         imageHeight="614"
         imageWidth="438"
         description="With Atto’s time clock, you can track time from any device, from absolutely anywhere."
@@ -235,11 +225,7 @@ const TimeClock = () => {
       <Divider />
       <ImagesBox
         title="Trusted by 10,000+ businesses across 50+ countries around the globe"
-        image1={boxImage1}
-        image2={boxImage2}
-        image3={boxImage3}
-        image4={boxImage4}
-        image5={boxImage5}
+        imageType="timeclock-boxes"
         styling="nonIndustry"
       />
       <Divider />

@@ -39,6 +39,7 @@ import {
   featureCardsList,
   cardList,
 } from '../../data/third-phase/time-card-app';
+import { navigate } from '@reach/router';
 
 const TimeCardApp = () => {
   const Intl = useIntl();
@@ -89,7 +90,7 @@ const TimeCardApp = () => {
       <IndustryMainCard
         smallTitle="TIME CARD APP"
         title="Track your employees hours with our simple time card app"
-        image={image1}
+        image="timecard-app-banner"
         styling="other"
         imageHeight="614"
         imageWidth="438"
@@ -136,7 +137,7 @@ const TimeCardApp = () => {
       <IconCardList cardList={cardList} style="timeCard" />
       <Divider className="style4" />
       <div className={buttonContainer}>
-        <Button btnText="Find out more" />
+        <Button btnText="Find out more" onBtnClick={() => navigate('/product/timesheets')} />
       </div>
       <Divider />
       <Article

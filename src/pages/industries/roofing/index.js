@@ -18,31 +18,10 @@ import OldVsNew from '@components/organisms/old-vs-new';
 import Steps from '@components/organisms/steps';
 import ImagesBox from '@components/organisms/images-box';
 
-// import image2 from '@images/time-tracking-roofing@2x.png';
-// import authorImage from '@images/roofing-author@2x.png';
-
-// import image3 from '@images/roofing-accordion1.png';
-// import image4 from '@images/roofing-accordion2.png';
-// import image5 from '@images/roofing-accordion3.png';
-// import image6 from '@images/roofing-accordion4.png';
-
-// import boxImage1 from '@images/roofing-box-one@2x.png';
-// import boxImage2 from '@images/roofing-box-two@2x.png';
-// import boxImage3 from '@images/roofing-box-three@2x.png';
-// import boxImage4 from '@images/roofing-box-four@2x.png';
-
-import bannerImage from '@images/roofing/Time Tracking for Roofing Companies@2x.png';
 import authorImage from '@images/roofing/Roofing reviews@2x.png';
 
-import image3 from '@images/roofing/Get helpful reminders so your roofers never forget to clock-in@2x.png';
-import image4 from '@images/roofing/Allow your supervisor to track your roofing crew’s time @2x.png';
 import image5 from '@images/roofing/Respond quickly to weather changes and employee absences @2x.png';
 import image6 from '@images/roofing/Forecast your wage bill ahead of payday to avoid unwanted surprises@2x.png';
-
-import boxImage1 from '@images/roofing/Roofers daily timeline@2x.png';
-import boxImage2 from '@images/roofing/Roofers location tracking@2x.png';
-import boxImage3 from '@images/roofing/Roofers timesheets@2x.png';
-import boxImage4 from '@images/roofing/Roofers time tracking@2x.png';
 
 import { oldList, newList, roofingSteps } from '@data/industries';
 import { checkList1, firstList, accordionList1, accordionList2 } from '@data/industries/roofing.js';
@@ -109,7 +88,7 @@ const Roofing = () => {
           smallTitle="ATTO FOR ROOFING"
           title="Time Tracking for Roofing Companies"
           list={checkList1}
-          image={bannerImage}
+          image="roofing-banner"
         />
         <Divider className="style4" />
         <Story
@@ -187,10 +166,7 @@ const Roofing = () => {
           />
           <Divider className="style3" />
           <ImagesBox
-            image1={boxImage1}
-            image2={boxImage2}
-            image3={boxImage3}
-            image4={boxImage4}
+            imageType="roofing-boxes"
             title="Trusted by thousands of roofing companies accross 50+ countries."
           />
         </div>
@@ -205,7 +181,7 @@ const Roofing = () => {
           maxDescriptionWidth={750}
         />
         <Divider className="style1" />
-        <Steps list={roofingSteps} />
+        <Steps list={roofingSteps} toggleModal={() => openModal()} />
         <Divider className="style4" />
         <SubscribeBanner
           title="Time tracking for roofing companies? We’re on top of it!"

@@ -22,11 +22,6 @@ import reviewImage from '@images/time-tracking/Time tracking app review@2x.png';
 import bannerImage from '@images/time-tracking/A highly accurate time tracking solution@2x.png';
 import anyDevice from '@images/time-tracking/Time tracking from any device – offline, online, or on the go@2x.png';
 
-import NeverForget from '@images/time-tracking/Never forget to start tracking time again@2x.png';
-import MobileWorkers from '@images/time-tracking/Time tracking for mobile workers @2x.png';
-import EmployeesWorkingTogether from '@images/time-tracking/Time tracking for teams of employees working together@2x.png';
-import OfficeWorkers from '@images/time-tracking/Time tracking for office workers@2x.png';
-
 import icon32 from '@images/location@1x.png';
 import icon33 from '@images/profile@1x.png';
 import icon34 from '@images/timesheets@1x.png';
@@ -91,7 +86,7 @@ const TimeTrackingApp = () => {
         smallTitle="TIME TRACKING APP"
         title="A highly accurate time tracking solution for any company"
         description="Clock in and out, keep notes, track breaks, assign job codes, add time off, and more!"
-        image={bannerImage}
+        image="mobile-time-tracking-banner"
         imageHeight="614"
         imageWidth="438"
         styling="other"

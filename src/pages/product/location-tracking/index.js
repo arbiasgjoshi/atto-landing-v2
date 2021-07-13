@@ -335,7 +335,7 @@ const LocationTracking = () => {
     if (loc === 'en') {
       return (
         <StaticImage
-          src="../../../images/en/gps-location-tracking/Verify your team are working where they should be@2x.png"
+          src="../../../images/en/gps-location-tracking/Track the locations of your entire team in real-time@2x.png"
           alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
           width={1140}
           height={340}

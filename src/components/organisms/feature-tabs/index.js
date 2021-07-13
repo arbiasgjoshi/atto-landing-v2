@@ -38,77 +38,61 @@ const FeatureTabs = () => {
 
   const imageLocaleOne = (loc) => {
     if (loc === 'en') {
-      //
-      return imgLocaleOneEn;
+      return 'img-one-locale-en';
     }
     if (loc === 'es') {
-      //
-      return imgLocaleOneEs;
+      return 'img-one-locale-es';
     }
     if (loc === 'fr') {
-      //
-      return imgLocaleOneFr;
+      return 'img-one-locale-fr';
     }
     if (loc === 'de') {
-      //
-      return imgLocaleOneDe;
+      return 'img-one-locale-de';
     }
   };
 
   const imageLocaleTwo = (loc) => {
     if (loc === 'en') {
-      //
-      return imgLocaleTwoEn;
+      return 'img-two-locale-en';
     }
     if (loc === 'es') {
-      //
-      return imgLocaleTwoEs;
+      return 'img-two-locale-es';
     }
     if (loc === 'fr') {
-      //
-      return imgLocaleTwoFr;
+      return 'img-two-locale-fr';
     }
     if (loc === 'de') {
-      //
-      return imgLocaleTwoDe;
+      return 'img-two-locale-de';
     }
   };
 
   const imageLocaleThree = (loc) => {
     if (loc === 'en') {
-      //
-      return imgLocaleThreeEn;
+      return 'img-three-locale-en';
     }
     if (loc === 'es') {
-      //
-      return imgLocaleThreeEs;
+      return 'img-three-locale-es';
     }
     if (loc === 'fr') {
-      //
-      return imgLocaleThreeFr;
+      return 'img-three-locale-fr';
     }
     if (loc === 'de') {
-      //
-      return imgLocaleThreeDe;
+      return 'img-three-locale-de';
     }
   };
 
   const imageLocaleFour = (loc) => {
     if (loc === 'en') {
-      //
-      return imgLocaleFourEn;
+      return 'img-four-locale-en';
     }
     if (loc === 'es') {
-      //
-      return imgLocaleFourEs;
+      return 'img-four-locale-es';
     }
     if (loc === 'fr') {
-      //
-      return imgLocaleFourFr;
+      return 'img-four-locale-fr';
     }
     if (loc === 'de') {
-      //
-      return imgLocaleFourDe;
+      return 'img-four-locale-de';
     }
   };
 

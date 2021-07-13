@@ -34,18 +34,10 @@ import {
 } from '@data/industries/cleaning.js';
 import { oldList, newList, cleanersSteps } from '@data/industries';
 
-import bannerImage from '@images/cleaning/Time Tracking for Cleaning Companies@2x.png';
 import reviewImage from '@images/cleaning/Cleaners review@2x.png';
 
-import image3 from '@images/cleaning/Group 11@2x.png';
-import image4 from '@images/cleaning/Entrust managers to track your cleaners’ time @2x.png';
 import image5 from '@images/cleaning/See who’s nearby and available to respond to urgent cleaning jobs@2x.png';
 import image6 from '@images/cleaning/Keep a handle on your biggest cost – your cleaners’ wages@2x.png';
-
-import boxImage1 from '@images/cleaning/Cleaners daily timeline@2x.png';
-import boxImage2 from '@images/cleaning/Cleaners location tracking@2x.png';
-import boxImage3 from '@images/cleaning/Cleaners timesheets@2x.png';
-import boxImage4 from '@images/cleaning/Cleaners time tracking@2x.png';
 
 // import { FooterLinks } from '@locale/en.js';
 
@@ -100,7 +92,7 @@ const Cleaning = () => {
           smallTitle="ATTO FOR CLEANERS"
           title="Time Tracking for Cleaning Companies"
           list={checkList1}
-          image={bannerImage}
+          image="cleaning-banner"
         />
         <Divider className="style4" />
         <Story
@@ -174,10 +166,7 @@ const Cleaning = () => {
           />
           <Divider className="style3" />
           <ImagesBox
-            image1={boxImage1}
-            image2={boxImage2}
-            image3={boxImage3}
-            image4={boxImage4}
+            imageType="cleaning-boxes"
             title="Trusted by thousands of cleaning businesses across 50+ countries"
           />
         </div>
@@ -192,7 +181,7 @@ const Cleaning = () => {
           maxDescriptionWidth={750}
         />
         <Divider className="style1" />
-        <Steps list={cleanersSteps} />
+        <Steps list={cleanersSteps} toggleModal={() => openModal()} />
         <Divider className="style4" />
         <SubscribeBanner
           title="Let’s make it a clean sweep! Keep your time tracking tidy with Atto"

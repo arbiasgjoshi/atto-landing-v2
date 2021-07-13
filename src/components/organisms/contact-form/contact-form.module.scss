@@ -9,6 +9,30 @@
   }
 }
 
+.successMessage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 52rem;
+  align-items: center;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: var(--body-style-three);
+    line-height: var(--body-style-three-line-height-size);
+    font-weight: var(--body-style-three-font-weight);
+
+    @include min(tablet) {
+      font-size: var(--body-style-one);
+      letter-spacing: -0.5px;
+      line-height: var(--body-style-one-line-height-size);
+    }
+  }
+}
+
 .formRow {
   @include flex-direction(column);
   margin-bottom: 3rem;

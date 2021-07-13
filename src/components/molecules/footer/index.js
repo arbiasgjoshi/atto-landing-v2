@@ -49,7 +49,7 @@ const Footer = () => {
         },
         {
           id: 3,
-          path: '/product/gps-location-tracking',
+          path: '/product/location-tracking',
           name: Intl.formatMessage({ id: 'header.menu.locationTrackingLabel' }),
           hasLine: false,
         },

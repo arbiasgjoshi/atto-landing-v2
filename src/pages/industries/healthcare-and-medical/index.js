@@ -17,29 +17,8 @@ import AccordionArticle from '@components/organisms/accordion-article';
 import OldVsNew from '@components/organisms/old-vs-new';
 import Steps from '@components/organisms/steps';
 import ImagesBox from '@components/organisms/images-box';
-
-// import authorImage from '@images/authorImage.png';
-// import image2 from '@images/time-tracking-healthcare@2x.png';
-
-// import image3 from '@images/healthcare-accordion1.png';
-// import image4 from '@images/healthcare-accordion2.png';
-// import image5 from '@images/healthcare-accordion3.png';
-// import image6 from '@images/healthcare-accordion4.png';
-
-// import boxImage1 from '@images/healthcare-box-one@2x.png';
-// import boxImage2 from '@images/healthcare-box-two@2x.png';
-// import boxImage3 from '@images/healthcare-box-three@2x.png';
-// import boxImage4 from '@images/healthcare-box-four@2x.png';
-
-import boxImage1 from '@images/healthcare/Healthcare daily timeline@2x.png';
-import boxImage2 from '@images/healthcare/Healthcare location tracking@2x.png';
-import boxImage3 from '@images/healthcare/Healthcare timesheets@2x.png';
-import boxImage4 from '@images/healthcare/Healthcare time tracking@2x.png';
 import authorImage from '@images/healthcare/Healthcare reviews@2x.png';
 
-import image2 from '@images/healthcare/Time Tracking Software for Home Healthcare Providers@2x.png';
-// import image3 from '@images/healthcare/Get helpful reminders so your caregivers never forget to clock-in@2x.png';
-// import image4 from '@images/healthcare/Allow your senior caregivers to track everyone’s time @2x.png';
 import image5 from '@images/healthcare/Adjust quickly to employee sickness and absence @2x.png';
 import image6 from '@images/healthcare/Forecast your payroll costs ahead of payday to avoid unwanted surprises@2x.png';
 
@@ -113,7 +92,7 @@ const HomeHealthcare = () => {
           smallTitle="ATTO FOR HOME HEALTHCARE"
           title="Time Tracking Software for Home Healthcare Providers"
           list={checkList1}
-          image={image2}
+          image="healthcare-banner"
         />
         <Divider className="style4" />
         <Story
@@ -193,10 +172,7 @@ const HomeHealthcare = () => {
           />
           <Divider className="style3" />
           <ImagesBox
-            image1={boxImage1}
-            image2={boxImage2}
-            image3={boxImage3}
-            image4={boxImage4}
+            imageType="healthcare-boxes"
             title="Trusted by thousands of caregivers across 50+ countries"
           />
         </div>
@@ -211,7 +187,7 @@ const HomeHealthcare = () => {
           maxDescriptionWidth={750}
         />
         <Divider className="style1" />
-        <Steps list={healthSteps} />
+        <Steps list={healthSteps} toggleModal={() => openModal()} />
         <Divider className="style4" />
         <SubscribeBanner
           title="You provide quality care. We'll provide quality time tracking software"

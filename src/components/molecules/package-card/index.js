@@ -25,6 +25,7 @@ const PackageCard = ({
   list,
   contentText,
   btnText,
+  goToSection,
   hasGreyBg,
 }) => {
   const Intl = useIntl();
@@ -47,7 +48,7 @@ const PackageCard = ({
           )}
         </div>
         <div className={packageBtnWrap}>
-          <Button btnStyle="teal" btnText={btnText} />
+          <Button btnStyle="teal" btnText={btnText} onBtnClick={() => goToSection()} />
         </div>
       </div>
       <div className={listWrapper}>
@@ -69,6 +70,7 @@ PackageCard.propTypes = {
   usersText: PropTypes.string,
   price: PropTypes.string,
   hasGreyBg: PropTypes.bool,
+  goToSection: PropTypes.func,
   list: PropTypes.arrayOf({}),
   listTitle: PropTypes.string,
   contentText: PropTypes.string,

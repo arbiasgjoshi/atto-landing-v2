@@ -132,7 +132,7 @@ const HeaderComponent = ({ headerStyle }) => {
           <Link
             className={menuItem}
             activeClassName={activeMenuItem}
-            to="/product/gps-location-tracking"
+            to="/product/location-tracking"
           >
             <div className={menuIcon}>
               <LocationTrackingIcon />
@@ -191,7 +191,7 @@ const HeaderComponent = ({ headerStyle }) => {
               </Link>
             </li>
             <li>
-              <Link to="/employee-timesheet-app">
+              <Link to="/timesheet-app">
                 <Icon iconClass="arrow-right" />
                 Accurate Reports
               </Link>

@@ -19,25 +19,8 @@ import Steps from '@components/organisms/steps';
 import ImagesBox from '@components/organisms/images-box';
 import authorImage from '@images/plumbing/Plumbers review@2x.png';
 
-// import authorImage from '@images/plumbing-author@2x.png';
-// import image3 from '@images/plumbing-accordion1.png';
-// import image4 from '@images/plumbing-accordion2.png';
-// import image5 from '@images/plumbing-accordion3.png';
-// import image6 from '@images/plumbing-accordion4.png';
-// import boxImage1 from '@images/plumbing-box-one@2x.png';
-// import boxImage2 from '@images/plumbing-box-two@2x.png';
-// import boxImage3 from '@images/plumbing-box-three@2x.png';
-// import boxImage4 from '@images/plumbing-box-four@2x.png';
-
-import image3 from '@images/plumbing/Get helpful reminders so your plumbers never forget to clock-in@2x.png';
-import image4 from '@images/plumbing/Allow your on-site manager to track your plumbers’ time@2x.png';
 import image5 from '@images/plumbing/Respond faster to emergency plumbing call-outs@2x.png';
 import image6 from '@images/plumbing/Avoid surprises by forecasting your wage bill ahead of payday@2x.png';
-
-import boxImage1 from '@images/plumbing/Plumbers daily timeline@2x.png';
-import boxImage2 from '@images/plumbing/Plumbers location tracking@2x.png';
-import boxImage3 from '@images/plumbing/Plumbers timesheets@2x.png';
-import boxImage4 from '@images/plumbing/Plumbers time tracking@2x.png';
 
 import {
   container,
@@ -109,7 +92,7 @@ const PlumbingAndHeating = () => {
           smallTitle="ATTO FOR PLUMBERS AND HEATING ENGINEERS"
           title="Time Tracking for Plumbing and Heating Companies"
           list={checkList1}
-          image={BannerImage}
+          image="plumbing-banner"
         />
         <Divider className="style4" />
         <Story
@@ -189,10 +172,7 @@ const PlumbingAndHeating = () => {
           />
           <Divider className="style3" />
           <ImagesBox
-            image1={boxImage1}
-            image2={boxImage2}
-            image3={boxImage3}
-            image4={boxImage4}
+            imageType="plumbing-boxes"
             title="Trusted by thousands of plumbers & heaters across 50+ countries"
           />
         </div>
@@ -207,7 +187,7 @@ const PlumbingAndHeating = () => {
           maxDescriptionWidth={750}
         />
         <Divider className="style1" />
-        <Steps list={plumberSteps} />
+        <Steps list={plumberSteps} toggleModal={() => openModal()} />
         <Divider className="style4" />
         <SubscribeBanner
           title="All cisterns go! Get to work with accurate time tracking from Atto."

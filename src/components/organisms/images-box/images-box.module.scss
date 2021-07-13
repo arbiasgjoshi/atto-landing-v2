@@ -37,7 +37,7 @@
     position: absolute;
     right: 0;
 
-    img:first-child {
+    > :first-child {
       margin-bottom: 3.2rem;
     }
 
@@ -72,8 +72,8 @@
       width: 40.2rem;
       margin-right: 0;
 
-      > img {
-        margin-left: -1.7rem;
+      > div {
+        margin-left: -1.5rem;
       }
     }
 
@@ -100,7 +100,7 @@
         margin-top: 22.2rem;
       }
 
-      img:last-child {
+      div:last-child {
         margin-top: 2rem;
         @include min(desktop) {
           margin-top: 0;

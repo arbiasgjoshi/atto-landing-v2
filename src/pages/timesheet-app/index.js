@@ -22,9 +22,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import authorImage from '@images/timesheets/Timesheet app review@2x.png';
 import image1 from '@images/timesheets/Streamline your payroll with our simple employee timesheet app@2x.png';
-// import EstimatesEmployee from '@images/timesheets/Get wage estimates from your employees’ timesheets@2x.png';
-// import TimeCardSummaries from '@images/timesheets/See timesheet summaries per employee, team, or project@2x.png';
-// import ViewTimeCard from '@images/timesheets/View timesheets as a daily map-based timeline@2x.png';
 
 import AutomaticReports from '@images/automatic-email-reports@2x.png';
 import ExportTimesheet from '@images/export-timesheet-and-timesheet-data@2x.png';
@@ -92,7 +89,7 @@ const EmployeeTimesheetApp = () => {
         smallTitle="EMPLOYEE TIMESHEET APP"
         title="Streamline your payroll with our simple employee timesheet app"
         description="Get accurate timesheet reports, including regular time, overtime, breaks, time off, and more."
-        image={image1}
+        image="timesheet-app-banner"
         imageHeight="614"
         imageWidth="438"
         styling="other"

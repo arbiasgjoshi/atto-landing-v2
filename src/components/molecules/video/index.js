@@ -26,9 +26,6 @@ const Video = ({ placeholder, videoUrl }) => {
   const [play, setPlay] = useState(false);
   const [url, setVideoUrl] = useState(videoUrl);
 
-  // const srcUrl =
-  //   'https://player.vimeo.com/video/563662750?badge=0&amp;autopause=0&amp;&amp;player_id=0&amp;app_id=58479';
-
   const switchPlaceholder = (val) => {
     if (val === 'location-tracking') {
       return (

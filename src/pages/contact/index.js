@@ -92,6 +92,7 @@ const Contact = () => {
         setFormValues={(formValues) => formSuccessState(formValues)}
       />
       <Seo
+        noTemplate
         title={Intl.formatMessage({ id: 'pages.contact.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.contact.metaDescription' })}
       />
