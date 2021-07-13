@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -11,6 +11,7 @@ import { formWrapper } from './form.module.scss';
 
 const SubscribeForm = ({ placeholder, onSuccessRes }) => {
   const Intl = useIntl();
+  const [stopLoad, setStopLoad] = useState(false);
 
   const validationSchema = yup.object().shape({
     email: yup.string().email('This field must be a valid email').required('Required'),
@@ -27,7 +28,8 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
     fetch('/confirmation', requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        console.log('success data is:', data);
+        // console.log('success data is:', data);
+
         onSuccessRes(data);
       });
   };
@@ -59,6 +61,9 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
           <Button
             btnText={Intl.formatMessage({ id: 'pages.miscellaneous.startFreeTrial' })}
             btnStyle="black"
+            hasLoader
+            disabled={!values.email}
+            stopLoader={stopLoad}
           />
         </form>
       )}
