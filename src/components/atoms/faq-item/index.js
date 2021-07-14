@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import { item, itemTitle, collapsed, plus } from './faq-item.module.scss';

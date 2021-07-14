@@ -164,7 +164,6 @@ const Painting = () => {
           <StaticImage
             src="../../../images/painting/Say goodbye to paper timesheets@2x.png"
             quality={96}
-            formats={['auto', 'webp', 'avif']}
             width={1209}
             placeholder="blurred"
           />

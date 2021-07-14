@@ -167,7 +167,6 @@ const Electrician = () => {
             src="../../../images/electric/Say goodbye to paper timesheets@2x.png"
             alt="Say goodbye to paper timesheets"
             quality={97}
-            formats={['auto', 'webp', 'avif']}
             placeholder="blurred"
           />
           <Divider className="style3" />

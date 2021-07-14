@@ -165,8 +165,7 @@ const TimeCardApp = () => {
       />
       <Divider />
       <StaticImage
-        quality={96}
-        formats={['auto', 'webp', 'avif']}
+        quality={98}
         src="../../images/time-card-app/Time tracking for any industry@2x.png"
         alt="Time tracking for any industry"
         width={1140}
@@ -185,8 +184,7 @@ const TimeCardApp = () => {
       <CommonQuestions isSwapped list={commonQuestionsList} />
       <Divider />
       <StaticImage
-        quality={96}
-        formats={['auto', 'webp', 'avif']}
+        quality={98}
         src="../../images/time-card-app/Time tracking for field workers@2x.png"
         placeholder="blurred"
         alt="Time tracking for field workers"

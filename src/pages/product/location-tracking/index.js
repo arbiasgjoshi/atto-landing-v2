@@ -276,7 +276,6 @@ const LocationTracking = () => {
       width={500}
       height={600}
       quality={96}
-      formats={['auto', 'webp', 'avif']}
       placeholder="blurred"
     />
   );

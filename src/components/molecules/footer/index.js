@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useIntl } from 'gatsby-plugin-react-intl';
@@ -212,18 +211,6 @@ const Footer = () => {
     if (lang === 'es') {
       return (
         <>
-          <script type="text/javascript">
-            {`  
-             var _iub = _iub || [];
-             _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false,"lang":"es","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":85558244, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};
-            `}
-          </script>
-        </>
-      );
-    }
-    if (lang === 'de') {
-      return (
-        <>
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -279,7 +266,7 @@ const Footer = () => {
               alt="footer-logo"
               quality={100}
               width={86}
-              placeholder="none"
+              placeholder="blurred"
             />
             <p>{Intl.formatMessage({ id: 'pages.miscellaneous.footerText' })}</p>
 
@@ -311,7 +298,7 @@ const Footer = () => {
                         key={app.id}
                         className={linkWrap}
                       >
-                        <img src={app.src} alt="Mobile" width="19" />
+                        <img src={app.src} alt="Mobile" width="19" height="23" />
                         <p>{app.name}</p>
                       </a>
                     ))}
@@ -343,6 +330,7 @@ const Footer = () => {
       />
       {/* Google Tag Manager */}
       <script
+        defer
         dangerouslySetInnerHTML={{
           __html: `
                 (function (w, d, s, l, i) {
@@ -376,6 +364,7 @@ const Footer = () => {
 
       {/* <!-- Helpscout --> */}
       <script
+        defer
         dangerouslySetInnerHTML={{
           __html: `
               !function (e, t, n) {
@@ -394,6 +383,7 @@ const Footer = () => {
         }}
       />
       <script
+        defer
         dangerouslySetInnerHTML={{
           __html: `
               window.Beacon('init', 'f0351335-a50d-4bb8-9d06-9b9bf4ad4e12')

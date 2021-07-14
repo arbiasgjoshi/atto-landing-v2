@@ -183,8 +183,7 @@ const WorkHoursTracker = () => {
       <Divider className="style3" />
       <StaticImage
         src="../../images/work-hours-tracker/Time tracking for any industry@2x.png"
-        quality={96}
-        formats={['auto', 'webp', 'avif']}
+        quality={98}
         width={1140}
         height={445}
         alt="Time tracking for any industry"
@@ -197,8 +196,7 @@ const WorkHoursTracker = () => {
         src="../../images/work-hours-tracker/Time tracking for field workers@2x.png"
         width={1140}
         height={509}
-        quality={96}
-        formats={['auto', 'webp', 'avif']}
+        quality={98}
         placeholder="blurred"
       />
       <Divider />

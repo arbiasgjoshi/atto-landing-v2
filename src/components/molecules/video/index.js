@@ -88,8 +88,7 @@ const Video = ({ placeholder, videoUrl }) => {
         className={videoPlaceholder}
         width={960}
         height={489}
-        quality={96}
-        formats={['auto', 'webp', 'avif']}
+        quality={98}
         alt="Video placeholder"
         placeholder="blurred"
         src="../../../images/Video placeholder - Homepage@2x.png"

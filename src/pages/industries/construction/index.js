@@ -121,7 +121,6 @@ const Construction = () => {
             src="../../../images/construction/Say goodbye to paper timesheets@2x.png"
             placeholder="blurred"
             quality={96}
-            formats={['auto', 'webp', 'avif']}
             alt="Say goodbye to paper timesheets"
           />
           <Divider className="style3" />

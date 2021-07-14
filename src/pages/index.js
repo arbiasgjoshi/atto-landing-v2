@@ -184,8 +184,7 @@ const Home = () => {
         src="../images/Mobile Time tracking, simplified@2x.png"
         alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
         width={434}
-        quality={96}
-        formats={['auto', 'webp', 'avif']}
+        quality={98}
         placeholder="blurred"
         className={mobileImage}
       />

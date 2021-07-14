@@ -436,8 +436,7 @@ const Pricing = () => {
       <StaticImage
         src="../../images/pricing-time-tracking-for-field-workers.png"
         width={1140}
-        quality={96}
-        formats={['auto', 'webp', 'avif']}
+        quality={98}
         placeholder="blurred"
         height={460}
       />

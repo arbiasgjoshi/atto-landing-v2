@@ -7,12 +7,7 @@ const ReviewCard = ({ title, author, job, rating }) => (
   <div className={container}>
     <div className={topBox}>
       <h4>{title}</h4>
-      <StaticImage
-        src="../../../images/stars.png"
-        placeholder="blurred"
-        quality={96}
-        formats={['auto', 'webp', 'avif']}
-      />
+      <StaticImage src="../../../images/stars.png" placeholder="blurred" quality={98} />
       {rating && <p>{rating}</p>}
     </div>
     <div className={authorBox}>
