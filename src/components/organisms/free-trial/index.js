@@ -24,6 +24,7 @@ import {
 
 const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal }) => {
   const Intl = useIntl();
+  const [disabled, setDisabled] = useState(false);
   const [stopLoad, setStopLoad] = useState(false);
   const [hasError, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -85,9 +86,10 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
                 </div>
                 <div className={desktopBtn}>
                   <Button
-                    disabled={!values.email}
+                    disabled={!values.email || disabled}
                     hasLoader
                     stopLoader={stopLoad}
+                    onBtnClick={() => setDisabled(true)}
                     btnMobileText={Intl.formatMessage({ id: 'pages.miscellaneous.start14Days' })}
                     btnText={Intl.formatMessage({ id: 'pages.miscellaneous.freeTrial14Days' })}
                     btnStyle="black"
