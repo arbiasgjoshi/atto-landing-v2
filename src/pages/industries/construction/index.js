@@ -99,14 +99,14 @@ const Construction = () => {
           <StaticImage
             src="../../../images/upper_shape.svg"
             alt="Top Green Mask"
-            placeholder="none"
+            placeholder="blurred"
           />
         </div>
         <div className={bottomImageMask}>
           <StaticImage
             src="../../../images/lower_shape.svg"
             alt="Bottom Green Mask"
-            placeholder="none"
+            placeholder="blurred"
           />
         </div>
         <div className={`${container} ${noPadding}`}>
@@ -119,8 +119,9 @@ const Construction = () => {
           <Divider className="style3" />
           <StaticImage
             src="../../../images/construction/Say goodbye to paper timesheets@2x.png"
-            placeholder="none"
+            placeholder="blurred"
             quality={96}
+            formats={['auto', 'webp', 'avif']}
             alt="Say goodbye to paper timesheets"
           />
           <Divider className="style3" />
@@ -187,7 +188,7 @@ const Construction = () => {
           width={1140}
           height={241}
           alt="Ready to put Atto to work on your construction sites?"
-          placeholder="none"
+          placeholder="blurred"
           style={{ marginBottom: '0.2rem' }}
           src="../../../images/construction/Ready to put Atto to work on your construction sites@2x.png"
         />

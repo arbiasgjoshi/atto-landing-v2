@@ -76,8 +76,9 @@ const Accordion = ({
           src="../../../images/en/overview/Atto - time and location tracking app generating timesheets@2x.png"
           width="438"
           height="597"
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -88,8 +89,9 @@ const Accordion = ({
           src="../../../images/de/overview/DE_Atto - time and location tracking app generating timesheet@2x.png"
           width="438"
           height="597"
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -100,8 +102,9 @@ const Accordion = ({
           src="../../../images/es/overview/ES_Atto - time and location tracking app generating timesheets@2x.png"
           width="438"
           height="597"
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -112,8 +115,9 @@ const Accordion = ({
           src="../../../images/fr/overview/FR_Atto - time and location tracking app generating timesheets@2x.png"
           width="438"
           height="597"
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -123,10 +127,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/en/overview/Know where your team is in real-time@2x.png"
           alt="Know where your team is in real-time@2x.png"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="531"
           height="650"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -135,10 +140,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/de/overview/DE_Know where your team is in real-time@2x.png"
           alt="DE_Know where your team is in real-time@2x.png"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="531"
           height="650"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -147,10 +153,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/es/overview/ES_Know where your team is in real-time@2x.png"
           alt="ES_Know where your team is in real-time@2x.png"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="531"
           height="650"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -159,10 +166,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/fr/overview/FR_Know where your team is in real-time@2x.png"
           alt="FR_Know where your team is in real-time@2x.png"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="531"
           height="650"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -172,10 +180,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/en/overview/Stay in the loop as work happens@2x.png"
           alt="Stay in the loop as work happens@2x.png"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="471"
           height="597"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -184,10 +193,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/de/overview/DE_Stay in the loop as work happens@2x.png"
           alt="Stay in the loop as work happens@2x.png"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="471"
           height="597"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -196,10 +206,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/es/overview/ES_Stay in the loop as work happens@2x.png"
           alt="Stay in the loop as work happens@2x.png"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="471"
           height="597"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -208,10 +219,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/fr/overview/FR_Stay in the loop as work happens@2x.png"
           alt="Stay in the loop as work happens@2x.png"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="471"
           height="597"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -221,10 +233,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/en/overview/Relax with timesheets on time, every time@2x.png"
           alt="Relax with timesheets on time, every time"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="408"
           height="597"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -233,10 +246,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/de/overview/DE_Relax with timesheets on time, every time@2x.png"
           alt="Relax with timesheets on time, every time"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="408"
           height="597"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -245,10 +259,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/es/overview/ES_Relax with timesheets on time, every time@2x.png"
           alt="Relax with timesheets on time, every time"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="408"
           height="597"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }
@@ -257,10 +272,11 @@ const Accordion = ({
         <StaticImage
           src="../../../images/fr/overview/FR_Relax with timesheets on time, every time@2x.png"
           alt="Relax with timesheets on time, every time"
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width="408"
           height="597"
-          placeholder="none"
+          placeholder="blurred"
         />
       );
     }

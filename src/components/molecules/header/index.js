@@ -293,7 +293,7 @@ const HeaderComponent = ({ headerStyle }) => {
             <p>Let’s make it a clean sweep! Keep your time tracking tidy.</p>
           </div>
         </Link>
-        <Link className={menuItem} activeClassName={activeMenuItem} to="/all-features">
+        <Link className={menuItem} activeClassName={activeMenuItem} to="/product">
           <div className={menuIcon}>
             <ThreeDots />
           </div>

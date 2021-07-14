@@ -49,8 +49,9 @@ const IndustryMainCard = ({
           alt={title}
           width="447"
           height="659"
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/timesheets/Streamline your payroll with our simple employee timesheet app@2x.png"
         />
       );
@@ -61,8 +62,9 @@ const IndustryMainCard = ({
           alt={title}
           width={503}
           height={610}
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/cleaning/Time Tracking for Cleaning Companies@2x.png"
         />
       );
@@ -73,8 +75,9 @@ const IndustryMainCard = ({
           alt={title}
           width={503}
           height={610}
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/construction/Time tracking for construction companies@2x.png"
         />
       );
@@ -85,8 +88,9 @@ const IndustryMainCard = ({
           alt={title}
           width={503}
           height={610}
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/landscaping/Time Tracking for Landscaping Companies@2x.png"
         />
       );
@@ -97,8 +101,9 @@ const IndustryMainCard = ({
           alt={title}
           width={503}
           height={610}
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/electric/Time Tracking for Electricians@2x.png"
         />
       );
@@ -109,8 +114,9 @@ const IndustryMainCard = ({
           alt={title}
           width={503}
           height={610}
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/healthcare/Time Tracking Software for Home Healthcare Providers@2x.png"
         />
       );
@@ -121,8 +127,9 @@ const IndustryMainCard = ({
           alt={title}
           width={503}
           height={610}
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/landscaping/Time Tracking for Landscaping Companies@2x.png"
         />
       );
@@ -133,8 +140,9 @@ const IndustryMainCard = ({
           alt={title}
           width={503}
           height={610}
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/painting/Time Tracking for Painting and Decorating Companies@2x.png"
         />
       );
@@ -145,8 +153,9 @@ const IndustryMainCard = ({
           alt={title}
           width={503}
           height={610}
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/plumbing/Time Tracking for Plumbing and Heating Companies@2x.png"
         />
       );
@@ -157,8 +166,9 @@ const IndustryMainCard = ({
           alt={title}
           width={503}
           height={610}
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/roofing/Time Tracking for Roofing Companies@2x.png"
         />
       );
@@ -169,8 +179,9 @@ const IndustryMainCard = ({
           alt={title}
           width="437"
           height="615"
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/time-tracking/A highly accurate time tracking solution@2x.png"
         />
       );
@@ -181,8 +192,9 @@ const IndustryMainCard = ({
           alt={title}
           width="437"
           height="615"
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/time-card-app/A highly accurate time tracking solution@2x.png"
         />
       );
@@ -193,8 +205,9 @@ const IndustryMainCard = ({
           alt={title}
           width="437"
           height="615"
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/time-clock/A highly accurate time tracking solution@2x.png"
         />
       );
@@ -205,8 +218,9 @@ const IndustryMainCard = ({
           alt={title}
           width="437"
           height="615"
-          placeholder="none"
-          quality={93}
+          placeholder="blurred"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           src="../../../images/work-hours-tracker/A highly accurate time tracking solution@2x.png"
         />
       );

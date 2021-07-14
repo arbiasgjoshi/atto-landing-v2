@@ -164,8 +164,9 @@ const Painting = () => {
           <StaticImage
             src="../../../images/painting/Say goodbye to paper timesheets@2x.png"
             quality={96}
+            formats={['auto', 'webp', 'avif']}
             width={1209}
-            placeholder="none"
+            placeholder="blurred"
           />
           <Divider className="style3" />
           <ImagesBox

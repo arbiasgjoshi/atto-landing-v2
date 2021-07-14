@@ -11,6 +11,7 @@ import { formWrapper, errorMessage } from './form.module.scss';
 
 const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted }) => {
   const Intl = useIntl();
+  const [disabled, setDisabled] = useState(false);
   const [stopLoad, setStopLoad] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -74,8 +75,9 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
           <Button
             btnText={Intl.formatMessage({ id: 'pages.miscellaneous.startFreeTrial' })}
             btnStyle="black"
-            disabled={!values.email}
+            disabled={disabled}
             hasLoader
+            onClick={() => setDisabled(true)}
             stopLoader={stopLoad}
           />
         </form>

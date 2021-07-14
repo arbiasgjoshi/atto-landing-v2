@@ -275,8 +275,9 @@ const LocationTracking = () => {
       alt="Keep track of your team’s daily movements@2x.png"
       width={500}
       height={600}
-      quality={95}
-      placeholder="none"
+      quality={96}
+      formats={['auto', 'webp', 'avif']}
+      placeholder="blurred"
     />
   );
 
@@ -288,8 +289,9 @@ const LocationTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
           width={500}
           height={600}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -300,8 +302,9 @@ const LocationTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
           width={500}
           height={600}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -312,8 +315,9 @@ const LocationTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
           width={500}
           height={600}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -324,8 +328,9 @@ const LocationTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
           width={500}
           height={600}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -339,8 +344,9 @@ const LocationTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
           width={1140}
           height={340}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -351,8 +357,9 @@ const LocationTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
           width={1140}
           height={340}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -363,8 +370,9 @@ const LocationTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
           width={1140}
           height={340}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -375,8 +383,9 @@ const LocationTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
           width={1140}
           height={340}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -469,7 +478,7 @@ const LocationTracking = () => {
             width={455}
             height={500}
             quality={90}
-            placeholder="none"
+            placeholder="blurred"
             title={Intl.formatMessage({
               id: 'pages.productLocationTracking.thirdSectionTitle',
             })}

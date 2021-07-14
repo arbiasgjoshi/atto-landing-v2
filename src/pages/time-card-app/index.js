@@ -127,11 +127,12 @@ const TimeCardApp = () => {
       </div>
       <div className={imageWrapper}>
         <StaticImage
-          quality={95}
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
           width={1220}
           src="../../images/time-card-app/Ready-made professional timesheets@2x.png"
           alt="Ready-made professional timesheets"
-          placeholder="none"
+          placeholder="blurred"
         />
       </div>
       <Divider className="style2" />
@@ -165,11 +166,12 @@ const TimeCardApp = () => {
       />
       <Divider />
       <StaticImage
-        quality={95}
+        quality={96}
+        formats={['auto', 'webp', 'avif']}
         src="../../images/time-card-app/Time tracking for any industry@2x.png"
         alt="Time tracking for any industry"
         width={1140}
-        placeholder="none"
+        placeholder="blurred"
       />
       <Divider className="style11" />
       <Title
@@ -184,9 +186,10 @@ const TimeCardApp = () => {
       <CommonQuestions isSwapped list={commonQuestionsList} />
       <Divider />
       <StaticImage
-        quality={95}
+        quality={96}
+        formats={['auto', 'webp', 'avif']}
         src="../../images/time-card-app/Time tracking for field workers@2x.png"
-        placeholder="none"
+        placeholder="blurred"
         alt="Time tracking for field workers"
       />
       <Divider />

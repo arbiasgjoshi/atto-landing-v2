@@ -34,8 +34,9 @@ const Video = ({ placeholder, videoUrl }) => {
           width={960}
           height={489}
           quality={96}
+          formats={['auto', 'webp', 'avif']}
           alt="Video placeholder"
-          placeholder="none"
+          placeholder="blurred"
           src="../../../images/Video placeholder - Location Tracking@2x.png"
         />
       );
@@ -48,8 +49,9 @@ const Video = ({ placeholder, videoUrl }) => {
           width={960}
           height={489}
           quality={96}
+          formats={['auto', 'webp', 'avif']}
           alt="Video placeholder"
-          placeholder="none"
+          placeholder="blurred"
           src="../../../images/Video placeholder - Time Tracking@2x.png"
         />
       );
@@ -62,8 +64,9 @@ const Video = ({ placeholder, videoUrl }) => {
           width={960}
           height={489}
           quality={96}
+          formats={['auto', 'webp', 'avif']}
           alt="Video placeholder"
-          placeholder="none"
+          placeholder="blurred"
           src="../../../images/Video placeholder - Timesheets@2x.png"
         />
       );
@@ -76,8 +79,9 @@ const Video = ({ placeholder, videoUrl }) => {
           width={960}
           height={489}
           quality={96}
+          formats={['auto', 'webp', 'avif']}
           alt="Video placeholder"
-          placeholder="none"
+          placeholder="blurred"
           src="../../../images/Video placeholder - Team Activity@2x.png"
         />
       );
@@ -89,8 +93,9 @@ const Video = ({ placeholder, videoUrl }) => {
         width={960}
         height={489}
         quality={96}
+        formats={['auto', 'webp', 'avif']}
         alt="Video placeholder"
-        placeholder="none"
+        placeholder="blurred"
         src="../../../images/Video placeholder - Homepage@2x.png"
       />
     );

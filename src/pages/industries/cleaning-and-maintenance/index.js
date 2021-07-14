@@ -162,7 +162,7 @@ const Cleaning = () => {
           <StaticImage
             src="../../../images/paper_timesheets@2x.png"
             alt="Say goodbye to paper timesheets"
-            placeholder="none"
+            placeholder="blurred"
           />
           <Divider className="style3" />
           <ImagesBox

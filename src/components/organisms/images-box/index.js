@@ -25,8 +25,9 @@ const ImagesBox = ({
               alt="Construction time tracking"
               width={736}
               height={463}
-              placeholder="none"
+              placeholder="blurred"
               quality={96}
+              formats={['auto', 'webp', 'avif']}
             />
           </div>
           <div className={styles.imagesContainer}>
@@ -37,8 +38,9 @@ const ImagesBox = ({
                 alt="Construction Daily Timeline"
                 width={412}
                 height={842}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
             <div className={styles.imageBox2}>
@@ -48,16 +50,18 @@ const ImagesBox = ({
                 alt="Construction Location"
                 width={350}
                 height={749}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
               {/* boxImage3 */}
               <StaticImage
                 src="../../../images/construction/Construction timesheets@2x.png"
                 alt="Construction timesheets"
                 width={378}
-                placeholder="none"
-                quality={100}
+                placeholder="blurred"
+                quality={97}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
           </div>
@@ -74,8 +78,9 @@ const ImagesBox = ({
               alt="Cleaners time tracking"
               width={736}
               height={463}
-              placeholder="none"
+              placeholder="blurred"
               quality={96}
+              formats={['auto', 'webp', 'avif']}
             />
           </div>
           <div className={styles.imagesContainer}>
@@ -86,8 +91,9 @@ const ImagesBox = ({
                 alt="Cleaners Daily Timeline"
                 width={412}
                 height={842}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
             <div className={styles.imageBox2}>
@@ -97,16 +103,18 @@ const ImagesBox = ({
                 alt="Cleaners Location Tracking"
                 width={350}
                 height={749}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
               {/* boxImage3 */}
               <StaticImage
                 src="../../../images/cleaning/Cleaners timesheets@2x.png"
                 alt="Cleaners timesheets"
                 width={378}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
           </div>
@@ -124,8 +132,9 @@ const ImagesBox = ({
               alt="The grass is always greener with Atto"
               width={736}
               height={463}
-              placeholder="none"
+              placeholder="blurred"
               quality={96}
+              formats={['auto', 'webp', 'avif']}
             />
           </div>
           <div className={styles.imagesContainer}>
@@ -136,8 +145,9 @@ const ImagesBox = ({
                 alt="Landscaping Daily Timeline"
                 width={412}
                 height={842}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
             <div className={styles.imageBox2}>
@@ -147,16 +157,18 @@ const ImagesBox = ({
                 alt="Landscaping Location Tracking"
                 width={350}
                 height={749}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
               {/* boxImage3 */}
               <StaticImage
                 src="../../../images/landscaping/Landscaping timesheets@2x.png"
                 alt="Landscaping timesheets"
                 width={378}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
           </div>
@@ -174,8 +186,9 @@ const ImagesBox = ({
               alt="Electricians time tracking"
               width={736}
               height={463}
-              placeholder="none"
+              placeholder="blurred"
               quality={96}
+              formats={['auto', 'webp', 'avif']}
             />
           </div>
           <div className={styles.imagesContainer}>
@@ -186,8 +199,9 @@ const ImagesBox = ({
                 alt="Electricians daily timeline"
                 width={412}
                 height={842}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
             <div className={styles.imageBox2}>
@@ -197,16 +211,18 @@ const ImagesBox = ({
                 alt="Electricians location tracking"
                 width={350}
                 height={749}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
               {/* boxImage3 */}
               <StaticImage
                 src="../../../images/electric/Electricians timesheets@2x.png"
                 alt="Electricians timesheets"
                 width={378}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
           </div>
@@ -224,8 +240,9 @@ const ImagesBox = ({
               alt="Healthcare time tracking"
               width={736}
               height={463}
-              placeholder="none"
+              placeholder="blurred"
               quality={96}
+              formats={['auto', 'webp', 'avif']}
             />
           </div>
           <div className={styles.imagesContainer}>
@@ -236,8 +253,9 @@ const ImagesBox = ({
                 alt="Healthcare daily timeline"
                 width={412}
                 height={842}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
             <div className={styles.imageBox2}>
@@ -247,16 +265,18 @@ const ImagesBox = ({
                 alt="Healthcare location tracking"
                 width={350}
                 height={749}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
               {/* boxImage3 */}
               <StaticImage
                 src="../../../images/healthcare/Healthcare timesheets@2x.png"
                 alt="Healthcare timesheets"
                 width={378}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
           </div>
@@ -274,8 +294,9 @@ const ImagesBox = ({
               alt="Electricians time tracking"
               width={736}
               height={463}
-              placeholder="none"
+              placeholder="blurred"
               quality={96}
+              formats={['auto', 'webp', 'avif']}
             />
           </div>
           <div className={styles.imagesContainer}>
@@ -286,8 +307,9 @@ const ImagesBox = ({
                 alt="Painting daily timeline"
                 width={412}
                 height={842}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
             <div className={styles.imageBox2}>
@@ -297,8 +319,9 @@ const ImagesBox = ({
                 alt="Painting location tracking"
                 // width={350}
                 height={749}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
               {/* boxImage3 */}
               <StaticImage
@@ -306,8 +329,9 @@ const ImagesBox = ({
                 alt="Painting timesheets"
                 width={366}
                 height={856}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
           </div>
@@ -325,8 +349,9 @@ const ImagesBox = ({
               alt="Electricians time tracking"
               width={736}
               height={463}
-              placeholder="none"
+              placeholder="blurred"
               quality={96}
+              formats={['auto', 'webp', 'avif']}
             />
           </div>
           <div className={styles.imagesContainer}>
@@ -337,8 +362,9 @@ const ImagesBox = ({
                 alt="Plumbers daily timeline"
                 width={412}
                 height={842}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
             <div className={styles.imageBox2}>
@@ -348,16 +374,18 @@ const ImagesBox = ({
                 alt="Plumbers location tracking"
                 width={350}
                 height={749}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
               {/* boxImage3 */}
               <StaticImage
                 src="../../../images/plumbing/Plumbers timesheets@2x.png"
                 alt="Plumbers timesheets"
                 width={378}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
           </div>
@@ -375,8 +403,9 @@ const ImagesBox = ({
               alt="Electricians time tracking"
               width={736}
               height={463}
-              placeholder="none"
+              placeholder="blurred"
               quality={96}
+              formats={['auto', 'webp', 'avif']}
             />
           </div>
           <div className={styles.imagesContainer}>
@@ -387,8 +416,9 @@ const ImagesBox = ({
                 alt="Roofers daily timeline"
                 width={412}
                 height={842}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
             <div className={styles.imageBox2}>
@@ -398,16 +428,18 @@ const ImagesBox = ({
                 alt="Roofers location tracking"
                 width={350}
                 height={749}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
               {/* boxImage3 */}
               <StaticImage
                 src="../../../images/roofing/Roofers timesheets@2x.png"
                 alt="Roofers timesheets"
                 width={378}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
           </div>
@@ -425,16 +457,18 @@ const ImagesBox = ({
               alt="Mobile time tracking app"
               width={736}
               height={463}
-              placeholder="none"
+              placeholder="blurred"
               quality={96}
+              formats={['auto', 'webp', 'avif']}
             />
             <StaticImage
               src="../../../images/time-clock/Location tracking@2x.png"
               alt="Location tracking"
               width={736}
               height={270}
-              placeholder="none"
+              placeholder="blurred"
               quality={96}
+              formats={['auto', 'webp', 'avif']}
             />
           </div>
           <div className={styles.imagesContainer}>
@@ -445,8 +479,9 @@ const ImagesBox = ({
                 alt="Construction Daily Timeline"
                 width={412}
                 height={842}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
             <div className={styles.imageBox2}>
@@ -456,16 +491,18 @@ const ImagesBox = ({
                 alt="Real time location tracking"
                 width={350}
                 height={445}
-                placeholder="none"
+                placeholder="blurred"
                 quality={96}
+                formats={['auto', 'webp', 'avif']}
               />
               {/* boxImage3 */}
               <StaticImage
                 src="../../../images/time-clock/Team activity updates@2x.png"
                 alt="Team activity updates"
                 width={378}
-                placeholder="none"
-                quality={100}
+                placeholder="blurred"
+                quality={97}
+                formats={['auto', 'webp', 'avif']}
               />
             </div>
           </div>

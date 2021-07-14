@@ -14,6 +14,7 @@ const Cover = ({ isSwapped = false, titleValue }) => {
         <div className={iconWrapper}>
           <StaticImage
             quality={96}
+            formats={['auto', 'webp', 'avif']}
             width={48}
             height={57}
             src="../../../../images/verifiedShield.svg"
@@ -26,7 +27,8 @@ const Cover = ({ isSwapped = false, titleValue }) => {
         width={746}
         height={400}
         quality={96}
-        placeholder="none"
+        formats={['auto', 'webp', 'avif']}
+        placeholder="blurred"
         src="../../../../images/en/gps-location-tracking/Trusted by thousands of businesses across 50+ countries globally@2x.png"
       />
     </div>

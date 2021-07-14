@@ -114,15 +114,15 @@ const Content = () => (
     </p>
     <Divider className="style2" />
     <h5>Cost #1 · Sourcing a Hire</h5>
-    <StaticImage height={200} src="../../../images/no-image.png" placeholder="none" />
+    <StaticImage height={200} src="../../../images/no-image.png" placeholder="blurred" />
     <h5>Cost #2 · Sourcing a Hire</h5>
-    <StaticImage height={200} src="../../../images/no-image.png" placeholder="none" />
+    <StaticImage height={200} src="../../../images/no-image.png" placeholder="blurred" />
     <h5>Cost #3 · Sourcing a Hire</h5>
-    <StaticImage height={200} src="../../../images/no-image.png" placeholder="none" />
+    <StaticImage height={200} src="../../../images/no-image.png" placeholder="blurred" />
     <h5>Cost #4 · Sourcing a Hire</h5>
-    <StaticImage height={200} src="../../../images/no-image.png" placeholder="none" />
+    <StaticImage height={200} src="../../../images/no-image.png" placeholder="blurred" />
     <h5>Total Costs of Hiring</h5>
-    <StaticImage height={200} src="../../../images/no-image.png" placeholder="none" />
+    <StaticImage height={200} src="../../../images/no-image.png" placeholder="blurred" />
     <Divider className="style2" />
     <h4>6. Put a number on it</h4>
     <p>
@@ -162,7 +162,7 @@ const Content = () => (
       into account.
     </p>
     <Divider className="style1" />
-    <StaticImage src="../../../images/no-image.png" placeholder="none" />
+    <StaticImage src="../../../images/no-image.png" placeholder="blurred" />
     <Divider className="style1" />
     <p>
       Working on a temporary contract comes at a cost for the employee as well. They enjoy fewer

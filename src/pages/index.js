@@ -98,8 +98,9 @@ const Home = () => {
           src="../images/en/time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           className={desktopImage}
         />
       );
@@ -110,8 +111,9 @@ const Home = () => {
           src="../images/de/de-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           className={desktopImage}
         />
       );
@@ -122,8 +124,9 @@ const Home = () => {
           src="../images/fr/fr-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           className={desktopImage}
         />
       );
@@ -134,8 +137,9 @@ const Home = () => {
           src="../images/es/es-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           className={desktopImage}
         />
       );
@@ -149,8 +153,9 @@ const Home = () => {
           src="../images/DE_Mobile Time tracking, simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           className={mobileImage}
         />
       );
@@ -161,8 +166,9 @@ const Home = () => {
           src="../images/FR_Mobile Time tracking, simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           className={mobileImage}
         />
       );
@@ -173,8 +179,9 @@ const Home = () => {
           src="../images/ES_Mobile Time tracking, simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           className={mobileImage}
         />
       );
@@ -184,8 +191,9 @@ const Home = () => {
         src="../images/Mobile Time tracking, simplified@2x.png"
         alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
         width={434}
-        quality={95}
-        placeholder="none"
+        quality={96}
+        formats={['auto', 'webp', 'avif']}
+        placeholder="blurred"
         className={mobileImage}
       />
     );

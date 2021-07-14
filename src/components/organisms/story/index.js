@@ -9,7 +9,7 @@ const Story = ({ img, paragraph, author, className = '' }) => (
       <img alt={`img-${author}`} width={250} height={400} src={img} />
     </div>
     <div className={styles.paragraphContainer}>
-      <img alt={`star-${author}`} className={styles.starsPic} src={stars} />
+      <img alt={`star-${author}`} width="192" height="31" className={styles.starsPic} src={stars} />
       <h4>{paragraph}</h4>
       <h6>{author}</h6>
     </div>

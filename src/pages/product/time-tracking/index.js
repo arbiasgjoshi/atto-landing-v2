@@ -198,7 +198,8 @@ const TimeTracking = () => {
           alt="admin-panel-image"
           width={1250}
           quality={96}
-          placeholder="none"
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -210,7 +211,8 @@ const TimeTracking = () => {
           alt="admin-panel-image"
           width={1250}
           quality={96}
-          placeholder="none"
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -222,7 +224,8 @@ const TimeTracking = () => {
           alt="admin-panel-image"
           width={1250}
           quality={96}
-          placeholder="none"
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -234,7 +237,8 @@ const TimeTracking = () => {
           alt="admin-panel-image"
           width={1250}
           quality={96}
-          placeholder="none"
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -581,8 +585,9 @@ const TimeTracking = () => {
           src="../images/en/time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -592,8 +597,9 @@ const TimeTracking = () => {
           src="../images/de/de-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -603,8 +609,9 @@ const TimeTracking = () => {
           src="../images/fr/fr-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -614,8 +621,9 @@ const TimeTracking = () => {
           src="../images/es/es-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={95}
-          placeholder="none"
+          quality={96}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
         />
       );
     }
@@ -628,8 +636,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/en/time-tracking/Work in the Office via the Web Dashboard@2x.png"
         />
       );
@@ -640,8 +649,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/es/time-tracking/ES_Work in the Office via the Web Dashboard@2x.png"
         />
       );
@@ -652,8 +662,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/fr/time-tracking/FR_Work in the Office via the Web Dashboard@2x.png"
         />
       );
@@ -664,8 +675,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/de/time-tracking/DE_Work in the Office via the Web Dashboard@2x.png"
         />
       );
@@ -679,8 +691,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/en/time-tracking/Work on the Go via the Mobile App@2x.png"
         />
       );
@@ -691,8 +704,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/es/time-tracking/ES_Work on the Go via the Mobile App@2x.png"
         />
       );
@@ -703,8 +717,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/fr/time-tracking/FR_Work on the Go via the Mobile App@2x.png"
         />
       );
@@ -715,8 +730,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/de/time-tracking/DE_Work on the Go via the Mobile App@2x.png"
         />
       );
@@ -730,8 +746,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/en/time-tracking/Work at Job Sites via the Time Clock Kiosk@2x.png"
         />
       );
@@ -742,8 +759,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/es/time-tracking/ES_Work at Job Sites via the Time Clock Kiosk@2x.png"
         />
       );
@@ -754,8 +772,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/fr/time-tracking/FR_Work at Job Sites via the Time Clock Kiosk@2x.png"
         />
       );
@@ -766,8 +785,9 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={100}
-          placeholder="none"
+          quality={97}
+          formats={['auto', 'webp', 'avif']}
+          placeholder="blurred"
           src="../../../images/de/time-tracking/DE_Work at Job Sites via the Time Clock Kiosk@2x.png"
         />
       );

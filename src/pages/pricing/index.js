@@ -15,7 +15,7 @@ import Title from '@components/molecules/title';
 import Story from '@components/organisms/story';
 import FeaturesList from '@components/organisms/features-list';
 import PriceDragger from '@components/molecules/price-dragger';
-import { navigate } from '@reach/router';
+import { navigate } from 'gatsby-plugin-intl';
 
 import { container } from '@styles/main.module.scss';
 import authorImage2 from '@images/time-tracking-app-review.png';
@@ -391,8 +391,9 @@ const Pricing = () => {
           src="../../images/view-all-features@2x.png"
           width={1140}
           quality={96}
+          formats={['auto', 'webp', 'avif']}
           height={170}
-          placeholder="none"
+          placeholder="blurred"
         />
         <Link to="/all-features">
           <Button
@@ -437,7 +438,8 @@ const Pricing = () => {
         src="../../images/pricing-time-tracking-for-field-workers.png"
         width={1140}
         quality={96}
-        placeholder="none"
+        formats={['auto', 'webp', 'avif']}
+        placeholder="blurred"
         height={460}
       />
       <Divider />

@@ -73,16 +73,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-preload-fonts`,
-    'gatsby-plugin-sharp',
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       // `Roboto:300,400,500,700`, // you can also specify font weights and styles
-    //     ],
-    //     display: 'swap',
-    //   },
-    // },
     `gatsby-plugin-meta-redirect`,
     {
       resolve: 'gatsby-plugin-react-svg',

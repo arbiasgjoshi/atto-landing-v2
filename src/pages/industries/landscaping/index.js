@@ -95,10 +95,10 @@ const Landscaping = () => {
       </div>
       <div className={greenBackground}>
         <div className={topImageMask}>
-          <StaticImage src="../../../images/upper_shape.svg" placeholder="none" />
+          <StaticImage src="../../../images/upper_shape.svg" placeholder="blurred" />
         </div>
         <div className={bottomImageMask}>
-          <StaticImage src="../../../images/lower_shape.svg" placeholder="none" />
+          <StaticImage src="../../../images/lower_shape.svg" placeholder="blurred" />
         </div>
         <div className={`${container} ${noPadding}`}>
           <Title
@@ -111,8 +111,9 @@ const Landscaping = () => {
           <StaticImage
             src="../../../images/landscaping/Ditch paper timesheets and switch to Atto@2x.png"
             width={1140}
-            quality={95}
-            placeholder="none"
+            quality={96}
+            formats={['auto', 'webp', 'avif']}
+            placeholder="blurred"
           />
           <Divider className="style3" />
           <ImagesBox
@@ -181,10 +182,11 @@ const Landscaping = () => {
         <Divider className="style4" />
         <StaticImage
           quality={96}
+          formats={['auto', 'webp', 'avif']}
           width={1140}
           height={241}
           style={{ marginBottom: '0.2rem' }}
-          placeholder="none"
+          placeholder="blurred"
           alt="Help your business to blossom with accurate time tracking from Atto"
           src="../../../images/landscaping/Help your business to blossom with accurate time tracking from Atto@2x.png"
         />
