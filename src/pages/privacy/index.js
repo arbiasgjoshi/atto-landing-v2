@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { graphql } from 'gatsby';
 
@@ -15,12 +15,28 @@ import { privacyPolicyStyle } from './privacy.module.scss';
 const Privacy = ({ data }) => {
   const Intl = useIntl();
 
+  const findDocuments = (val) => {
+    let array = data.allIubendaDocument.nodes;
+    let arrayItem = array.find((obj) => {
+      return obj.documentId === val.toString();
+    });
+    return arrayItem.privacyPolicy;
+  };
+
   const renderPrivacyPolicy = (lang) => {
+    if (lang === 'en') {
+      return (
+        <div
+          className={privacyPolicyStyle}
+          dangerouslySetInnerHTML={{ __html: findDocuments(97533579) }}
+        />
+      );
+    }
     if (lang === 'fr') {
       return (
         <div
           className={privacyPolicyStyle}
-          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[1].privacyPolicy }}
+          dangerouslySetInnerHTML={{ __html: findDocuments(47240763) }}
         />
       );
     }
@@ -28,7 +44,7 @@ const Privacy = ({ data }) => {
       return (
         <div
           className={privacyPolicyStyle}
-          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[2].privacyPolicy }}
+          dangerouslySetInnerHTML={{ __html: findDocuments(85558244) }}
         />
       );
     }
@@ -36,24 +52,23 @@ const Privacy = ({ data }) => {
       return (
         <div
           className={privacyPolicyStyle}
-          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[3].privacyPolicy }}
+          dangerouslySetInnerHTML={{ __html: findDocuments(77119290) }}
         />
       );
     }
-    return (
-      <div
-        className={privacyPolicyStyle}
-        dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[0].privacyPolicy }}
-      />
-    );
+    return null;
   };
+
+  useEffect(() => {
+    console.log('data has been fetched', data);
+  }, [data]);
 
   return (
     <>
       <div className={`${container}`}>
         <Seo title="Privacy" />
         <Header />
-        {renderPrivacyPolicy(Intl.locale)}
+        {data.allIubendaDocument.nodes.length && renderPrivacyPolicy(Intl.locale)}
         <SubscribeBanner
           title="Ready to put Atto to work on your construction sites?"
           placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}

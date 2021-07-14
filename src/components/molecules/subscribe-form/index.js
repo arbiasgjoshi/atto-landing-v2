@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
-import { inputWrapper, defaultInput } from '@components/atoms/input/input.module.scss';
+import { inputWrapper, defaultInput, inputError } from '@components/atoms/input/input.module.scss';
 import Button from '@components/atoms/button';
 import { useIntl } from 'gatsby-plugin-react-intl';
 
-import { formWrapper } from './form.module.scss';
+import { formWrapper, errorMessage } from './form.module.scss';
 
-const SubscribeForm = ({ placeholder, onSuccessRes }) => {
+const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted }) => {
   const Intl = useIntl();
   const [stopLoad, setStopLoad] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   const validationSchema = yup.object().shape({
     email: yup.string().email('This field must be a valid email').required('Required'),
@@ -28,11 +29,23 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
     fetch('/confirmation', requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        // console.log('success data is:', data);
-
-        onSuccessRes(data);
+        if (!data.error) {
+          setHasError(false);
+          console.log('we are having an error');
+          setStopLoad(true);
+          onSuccessRes(data);
+        } else {
+          console.log('we are succeeding');
+          setStopLoad(true);
+          setHasError(true);
+          onError(data.error);
+        }
       });
   };
+
+  useEffect(() => {
+    setStopLoad(true);
+  }, [sucessfullyDeleted]);
 
   return (
     <Formik
@@ -50,7 +63,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
           <div className={inputWrapper}>
             <input
               placeholder={placeholder}
-              className={defaultInput}
+              className={`${defaultInput} ${hasError && inputError}`}
               name="email"
               type="email"
               value={values.email}
@@ -61,8 +74,8 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
           <Button
             btnText={Intl.formatMessage({ id: 'pages.miscellaneous.startFreeTrial' })}
             btnStyle="black"
-            hasLoader
             disabled={!values.email}
+            hasLoader
             stopLoader={stopLoad}
           />
         </form>
@@ -74,6 +87,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes }) => {
 SubscribeForm.propTypes = {
   placeholder: PropTypes.string,
   onSuccessRes: PropTypes.func,
+  onError: PropTypes.func,
 };
 
 export default SubscribeForm;

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Icon from '@components/atoms/icon';
-
+import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby-plugin-react-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -68,9 +68,207 @@ const Accordion = ({
   // const [toggleOpen, setToggleOpen] = useState(expandOnInit);
   const isOpen = i === expanded;
 
+  const imgStaticSwitch = (val) => {
+    if (val === 'img-one-locale-en') {
+      return (
+        <StaticImage
+          alt="Atto - time and location tracking app generating timesheets"
+          src="../../../images/en/overview/Atto - time and location tracking app generating timesheets@2x.png"
+          width="438"
+          height="597"
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-one-locale-de') {
+      return (
+        <StaticImage
+          alt="Atto - time and location tracking app generating timesheets"
+          src="../../../images/de/overview/DE_Atto - time and location tracking app generating timesheet@2x.png"
+          width="438"
+          height="597"
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-one-locale-es') {
+      return (
+        <StaticImage
+          alt="Atto - time and location tracking app generating timesheets"
+          src="../../../images/es/overview/ES_Atto - time and location tracking app generating timesheets@2x.png"
+          width="438"
+          height="597"
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-one-locale-fr') {
+      return (
+        <StaticImage
+          alt="Atto - time and location tracking app generating timesheets"
+          src="../../../images/fr/overview/FR_Atto - time and location tracking app generating timesheets@2x.png"
+          width="438"
+          height="597"
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+
+    if (val === 'img-two-locale-en') {
+      return (
+        <StaticImage
+          src="../../../images/en/overview/Know where your team is in real-time@2x.png"
+          alt="Know where your team is in real-time@2x.png"
+          quality={95}
+          width="531"
+          height="650"
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-two-locale-de') {
+      return (
+        <StaticImage
+          src="../../../images/de/overview/DE_Know where your team is in real-time@2x.png"
+          alt="DE_Know where your team is in real-time@2x.png"
+          quality={95}
+          width="531"
+          height="650"
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-two-locale-es') {
+      return (
+        <StaticImage
+          src="../../../images/es/overview/ES_Know where your team is in real-time@2x.png"
+          alt="ES_Know where your team is in real-time@2x.png"
+          quality={95}
+          width="531"
+          height="650"
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-two-locale-fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/overview/FR_Know where your team is in real-time@2x.png"
+          alt="FR_Know where your team is in real-time@2x.png"
+          quality={95}
+          width="531"
+          height="650"
+          placeholder="none"
+        />
+      );
+    }
+
+    if (val === 'img-three-locale-en') {
+      return (
+        <StaticImage
+          src="../../../images/en/overview/Stay in the loop as work happens@2x.png"
+          alt="Stay in the loop as work happens@2x.png"
+          quality={95}
+          width="471"
+          height="597"
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-three-locale-de') {
+      return (
+        <StaticImage
+          src="../../../images/de/overview/DE_Stay in the loop as work happens@2x.png"
+          alt="Stay in the loop as work happens@2x.png"
+          quality={95}
+          width="471"
+          height="597"
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-three-locale-es') {
+      return (
+        <StaticImage
+          src="../../../images/es/overview/ES_Stay in the loop as work happens@2x.png"
+          alt="Stay in the loop as work happens@2x.png"
+          quality={95}
+          width="471"
+          height="597"
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-three-locale-fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/overview/FR_Stay in the loop as work happens@2x.png"
+          alt="Stay in the loop as work happens@2x.png"
+          quality={95}
+          width="471"
+          height="597"
+          placeholder="none"
+        />
+      );
+    }
+
+    if (val === 'img-four-locale-en') {
+      return (
+        <StaticImage
+          src="../../../images/en/overview/Relax with timesheets on time, every time@2x.png"
+          alt="Relax with timesheets on time, every time"
+          quality={95}
+          width="408"
+          height="597"
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-four-locale-de') {
+      return (
+        <StaticImage
+          src="../../../images/de/overview/DE_Relax with timesheets on time, every time@2x.png"
+          alt="Relax with timesheets on time, every time"
+          quality={95}
+          width="408"
+          height="597"
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-four-locale-es') {
+      return (
+        <StaticImage
+          src="../../../images/es/overview/ES_Relax with timesheets on time, every time@2x.png"
+          alt="Relax with timesheets on time, every time"
+          quality={95}
+          width="408"
+          height="597"
+          placeholder="none"
+        />
+      );
+    }
+    if (val === 'img-four-locale-fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/overview/FR_Relax with timesheets on time, every time@2x.png"
+          alt="Relax with timesheets on time, every time"
+          quality={95}
+          width="408"
+          height="597"
+          placeholder="none"
+        />
+      );
+    }
+  };
+
   return (
     <>
-      <motion.header initial={false} onClick={() => setExpanded(i)}>
+      <motion.header initial={false} onClick={() => setExpanded(i === expanded ? null : i)}>
         {triggerItem(title, isOpen, icon, hasArrow, isMenu, url)}
       </motion.header>
       {!url && (
@@ -101,7 +299,8 @@ const Accordion = ({
                 {!faq ? <p>{content}</p> : <>{content}</>}
                 {featureTabs && featureImage && (
                   <div className={featureImgWrapper}>
-                    <img src={featureImage} alt={title} />
+                    {/* <img src={featureImage} alt={title} /> */}
+                    {imgStaticSwitch(featureImage)}
                   </div>
                 )}
               </motion.div>

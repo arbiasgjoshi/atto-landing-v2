@@ -87,8 +87,7 @@
 
         @include max(tablet) {
           display: block;
-
-          img {
+          > div {
             margin-bottom: 3rem;
           }
         }
@@ -120,8 +119,8 @@
     max-width: 50rem;
     margin-left: auto;
     @include max(tablet) {
-      margin: 4rem 0;
-
+      margin: 0;
+      > div:first-child,
       img {
         display: none;
       }

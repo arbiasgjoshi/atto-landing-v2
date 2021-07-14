@@ -77,6 +77,7 @@
 
       @include max(mobile) {
         justify-content: space-between;
+        margin-bottom: 3rem;
 
         .tickItem {
           margin: 0;
@@ -128,11 +129,31 @@
     }
   }
 
+  .mobileBtn {
+    display: none;
+  }
+
   @include max(tablet) {
     h3,
     h4,
+    .desktopBtn,
     input {
       display: none;
+    }
+
+    .mobileBtn {
+      display: block;
+    }
+
+    .errorMsgStyle {
+      color: #000;
+      margin-top: 1.7rem;
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 1.5rem;
+      display: flex;
+      margin-left: 1.6rem;
+      margin-bottom: 2rem;
     }
   }
 }

@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { graphql } from 'gatsby';
-import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Header from '@components/molecules/header';
@@ -14,12 +13,33 @@ import { privacyPolicyStyle } from '../privacy/privacy.module.scss';
 const Terms = ({ data }) => {
   const Intl = useIntl();
 
+  const findDocuments = (val) => {
+    let array = data.allIubendaDocument.nodes;
+    let arrayItem = array.find((obj) => {
+      return obj.documentId === val.toString();
+    });
+    // console.log(arrayItem);
+    return arrayItem.termsAndConditions;
+  };
+
   const renderPrivacyPolicy = (lang) => {
+    if (lang === 'en') {
+      return (
+        <div
+          className={privacyPolicyStyle}
+          dangerouslySetInnerHTML={{
+            __html: findDocuments(97533579),
+          }}
+        />
+      );
+    }
     if (lang === 'fr') {
       return (
         <div
           className={privacyPolicyStyle}
-          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[1].termsAndConditions }}
+          dangerouslySetInnerHTML={{
+            __html: findDocuments(47240763),
+          }}
         />
       );
     }
@@ -27,7 +47,7 @@ const Terms = ({ data }) => {
       return (
         <div
           className={privacyPolicyStyle}
-          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[2].termsAndConditions }}
+          dangerouslySetInnerHTML={{ __html: findDocuments(85558244) }}
         />
       );
     }
@@ -35,23 +55,22 @@ const Terms = ({ data }) => {
       return (
         <div
           className={privacyPolicyStyle}
-          dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[3].termsAndConditions }}
+          dangerouslySetInnerHTML={{ __html: findDocuments(77119290) }}
         />
       );
     }
-    return (
-      <div
-        className={privacyPolicyStyle}
-        dangerouslySetInnerHTML={{ __html: data.allIubendaDocument.nodes[0].termsAndConditions }}
-      />
-    );
   };
+
+  useEffect(() => {
+    console.log('data has been fetched');
+  }, [data]);
+
   return (
     <>
       <div className={`${container}`}>
         <Seo title="Terms & Conditions" />
         <Header />
-        {renderPrivacyPolicy(Intl.locale)}
+        {data.allIubendaDocument.nodes.length && renderPrivacyPolicy(Intl.locale)}
         <SubscribeBanner
           title="Ready to put Atto to work on your construction sites?"
           placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}

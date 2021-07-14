@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import SubscribeForm from '@components/molecules/subscribe-form';
@@ -12,26 +12,50 @@ const EmailForm = ({
   checkItemTwo,
   checkItemThree,
   style,
+  deleteSucceded = false,
   changeModal,
-}) => (
-  <div className={`${styles.container} ${style ? styles[style] : ''}`}>
-    <SubscribeForm placeholder={placeholder} onSuccessRes={(val) => changeModal(val)} />
-    <div className={styles.checkItems}>
-      <div className={styles.itemWrapper}>
-        <Icon iconClass="tick" />
-        <span>{checkItemOne}</span>
-      </div>
-      <div className={styles.itemWrapper}>
-        <Icon iconClass="tick" />
-        <span>{checkItemTwo}</span>
-      </div>
-      <div className={styles.itemWrapper}>
-        <Icon iconClass="tick" />
-        <span>{checkItemThree}</span>
+}) => {
+  const [hasError, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  return (
+    <div className={`${styles.container} ${style ? styles[style] : ''}`}>
+      <SubscribeForm
+        placeholder={placeholder}
+        sucessfullyDeleted={deleteSucceded}
+        onError={(val) => {
+          setErrorMessage(val);
+          setError(true);
+        }}
+        onSuccessRes={(val) => {
+          changeModal(val);
+          setError(false);
+          setErrorMessage('');
+        }}
+      />
+      <div className={styles.checkItems}>
+        {!hasError ? (
+          <>
+            <div className={styles.itemWrapper}>
+              <Icon iconClass="tick" />
+              <span>{checkItemOne}</span>
+            </div>
+            <div className={styles.itemWrapper}>
+              <Icon iconClass="tick" />
+              <span>{checkItemTwo}</span>
+            </div>
+            <div className={styles.itemWrapper}>
+              <Icon iconClass="tick" />
+              <span>{checkItemThree}</span>
+            </div>
+          </>
+        ) : (
+          <span className={styles.errorMsgStyle}>{errorMessage}</span>
+        )}
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 EmailForm.propTypes = {
   placeholder: PropTypes.string,

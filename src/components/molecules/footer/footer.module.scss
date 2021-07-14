@@ -57,7 +57,7 @@
   }
 
   .footerLinksWrapper {
-    width: 16.5rem;
+    width: 18rem;
     @include flex-direction(column);
 
     .downloadBtn {
@@ -112,6 +112,13 @@
     @include min(laptop) {
       width: 40%;
       flex-grow: unset;
+    }
+    > div:first-child {
+      > :nth-child(4),
+      > :nth-child(8),
+      > :nth-child(9) {
+        display: none;
+      }
     }
     > div:nth-child(2) {
       display: none;

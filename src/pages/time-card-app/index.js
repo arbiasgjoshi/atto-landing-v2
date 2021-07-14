@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import Seo from '@components/molecules/seo';
 import { useIntl } from 'gatsby-plugin-react-intl';
+import { navigate } from '@reach/router';
+
 import Divider from '@components/atoms/divider';
 import Modal from '@components/molecules/modal';
 import Button from '@components/atoms/button';
@@ -39,7 +41,6 @@ import {
   featureCardsList,
   cardList,
 } from '../../data/third-phase/time-card-app';
-import { navigate } from '@reach/router';
 
 const TimeCardApp = () => {
   const Intl = useIntl();
@@ -208,7 +209,7 @@ const TimeCardApp = () => {
           title="GPS Location Tracking"
           description="Get real-time updates on your team’s location. Ensure everyone is safe and productive."
           icon={icon32}
-          path="/product/gps-location-tracking"
+          path="/product/location-tracking"
           imageWidth={27}
           imageHeight={32}
           styling="smaller"

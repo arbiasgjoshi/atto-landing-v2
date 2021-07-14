@@ -4,6 +4,17 @@
   justify-content: center;
   align-items: center;
 
+  .errorMsgStyle {
+    color: #e05656;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    margin-top: 0.4rem;
+    margin-left: -1.4rem;
+    width: 43rem;
+    max-width: 100%;
+  }
+
   &.homepage {
     > form > div {
       // FIXME Need to delete this below if otherwise
@@ -58,6 +69,12 @@
       @include min(tablet) {
         font-size: 2rem;
       }
+    }
+  }
+
+  &.banner {
+    .errorMsgStyle {
+      color: #000;
     }
   }
 

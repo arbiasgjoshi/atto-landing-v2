@@ -295,7 +295,7 @@ const ImagesBox = ({
               <StaticImage
                 src="../../../images/painting/Painting location tracking@2x.png"
                 alt="Painting location tracking"
-                width={350}
+                // width={350}
                 height={749}
                 placeholder="none"
                 quality={96}
@@ -303,8 +303,9 @@ const ImagesBox = ({
               {/* boxImage3 */}
               <StaticImage
                 src="../../../images/painting/Painting timesheets@2x.png"
-                alt="Electricians timesheets"
-                width="Painting timesheets"
+                alt="Painting timesheets"
+                width={366}
+                height={856}
                 placeholder="none"
                 quality={96}
               />
@@ -475,9 +476,9 @@ const ImagesBox = ({
 
   return (
     <div className={`${styles.container} ${styles[styling]}`}>
-      <div className={styles.primaryMobile}>
+      {/* <div className={styles.primaryMobile}>
         <img src={mobileImagePrimary} alt="Primary Mobile Banner" height="217" />
-      </div>
+      </div> */}
       <div className={styles.textContainer}>
         <div className={styles.iconWrapper}>
           <Shield />
@@ -487,10 +488,10 @@ const ImagesBox = ({
         </div>
       </div>
       {staticImageSwitch(imageType)}
-      <div className={styles.mobileVersion}>
+      {/* <div className={styles.mobileVersion}>
         <img src={mobileImageOne} alt="Box Item Four" width="165" />
         <img src={mobileImageTwo} alt="Box Item Five" width="198" />
-      </div>
+      </div> */}
     </div>
   );
 };

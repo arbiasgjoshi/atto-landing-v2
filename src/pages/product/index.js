@@ -49,6 +49,7 @@ const Product = () => {
   const Intl = useIntl();
 
   const [showDialog, setShowDialog] = useState(false);
+  const [deletedInvite, setDeleted] = useState(false);
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
   const [values, setValues] = useState(null);
@@ -64,6 +65,7 @@ const Product = () => {
     fetch('/delete-invite', requestOptions)
       .then((response) => response.json())
       .then((res) => {
+        setDeleted(true);
         setValues(res);
         openModal();
       });
@@ -297,6 +299,7 @@ const Product = () => {
       />
       <div className={imageFormWrapper}>
         <EmailForm
+          deleteSucceded={deletedInvite}
           changeModal={(val) => formSuccessState(val)}
           placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
           checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
@@ -333,7 +336,7 @@ const Product = () => {
         list={productList2}
         image={imageLocaleTwo(Intl.locale)}
         isSwapped
-        path="/product/gps-location-tracking"
+        path="/product/location-tracking"
         imageWidth={500}
         imageHeight={650}
         insideTitle

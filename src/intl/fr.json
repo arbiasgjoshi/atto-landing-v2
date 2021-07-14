@@ -421,7 +421,7 @@
     },
     "contact": {
       "metaTitle": "Vous êtes tout ce qui compte | Contactez nous chez Atto",
-      "metaDesc": "support@attotime.com | Prenez contact avec nous ! Nous sommes là pour vous et prêts à répondre à toutes vos questions.",
+      "metaDescription": "support@attotime.com | Prenez contact avec nous ! Nous sommes là pour vous et prêts à répondre à toutes vos questions.",
       "bannerTitle": "Tout ce qui compte, c'est vous !",
       "bannerDesc": "Restez en contact. Nous sommes prêts à répondre à toutes vos questions.",
       "name": "Nom",
@@ -458,6 +458,7 @@
       "startFreeTrial": "Démarrer un essai gratuit",
       "noCreditCard": "Aucune carte de crédit nécessaire",
       "14DaysTrial": "Essai gratuit de 14 jours",
+      "modalTitle": "S'inscrire à un essai gratuit de 14 jours",
       "cancelAnytime": "Annulez à tout moment",
       "learnMore": "En savoir plus",
       "trustedGlobally": "Plus de 10 000 entreprises dans plus de 50 pays dans le monde nous font confiance.",

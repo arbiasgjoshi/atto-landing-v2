@@ -103,7 +103,8 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
       return (
         <p className={textPush}>
           <span>{data.name}</span> vous a invité(e) à rejoindre <span>{data.company}</span> le
-          compte de société. Rejoignez le reste de l’équipe dès aujourd’hui
+          compte de société. <br />
+          Rejoignez le reste de l’équipe dès aujourd’hui
         </p>
       );
     }
@@ -111,8 +112,8 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
       return (
         <p className={textPush}>
           <span>{data.name}</span> hat Sie eingeladen, sich dem Firmenkonto von{' '}
-          <span>{data.company}</span> anzuschließen. Schließen Sie sich noch heute dem Rest des
-          Teams an
+          <span>{data.company}</span> anzuschließen. <br />
+          Schließen Sie sich noch heute dem Rest des Teams an
         </p>
       );
     }
@@ -120,14 +121,16 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
       return (
         <p className={textPush}>
           <span>{data.name}</span> le ha invitado a unirse a <span>{data.company}</span> la cuenta
-          de la empresa. Únase hoy al resto del equipo
+          de la empresa. <br />
+          Únase hoy al resto del equipo
         </p>
       );
     }
     return (
       <p className={textPush}>
         <span>{data.name}</span> has invited you to join <span>{data.company}</span> company
-        account. Join the rest of the team today
+        account. <br />
+        Join the rest of the team today
       </p>
     );
   };
@@ -212,7 +215,7 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
     return (
       <>
         <div className={textContainer}>
-          <h3>Sign up for a 14-day free trial</h3>
+          <h3>{Intl.formatMessage({ id: 'pages.miscellaneous.modalTitle' })}</h3>
           <p>{Intl.formatMessage({ id: 'pages.pricing.subscribeBanner' })}</p>
         </div>
         <EmailForm

@@ -98,7 +98,7 @@ const Video = ({ placeholder, videoUrl }) => {
 
   useEffect(() => {
     if (play) {
-      setVideoUrl(`${videoUrl}&amp;autoplay=1`);
+      setVideoUrl(`${videoUrl}&amp;autoplay=1&amp;playsinline=0`);
     } else {
       setVideoUrl(`${videoUrl}`);
     }

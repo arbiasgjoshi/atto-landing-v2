@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { defaultInput, inputWrapper } from '@components/atoms/input/input.module.scss';
@@ -16,11 +16,17 @@ import {
   listWrapper,
   ticksWrapper,
   tickItem,
+  desktopBtn,
+  mobileBtn,
+  errorMsgStyle,
   mobileOnly,
 } from './free-trial.module.scss';
 
-const FreeTrial = ({ title, description, list = [], onSuccessRes }) => {
+const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal }) => {
   const Intl = useIntl();
+  const [stopLoad, setStopLoad] = useState(false);
+  const [hasError, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const validationSchema = yup.object().shape({
     email: yup.string().email('This field must be a valid email').required('Required'),
@@ -37,7 +43,13 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes }) => {
     fetch('/confirmation', requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        onSuccessRes(data);
+        setStopLoad(true);
+        if (!data.error) {
+          onSuccessRes(data);
+        } else {
+          setError(true);
+          setErrorMessage(data.error);
+        }
       });
   };
 
@@ -71,25 +83,41 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes }) => {
                     onBlur={handleBlur}
                   />
                 </div>
-                <Button
-                  btnMobileText={Intl.formatMessage({ id: 'pages.miscellaneous.start14Days' })}
-                  btnText={Intl.formatMessage({ id: 'pages.miscellaneous.freeTrial14Days' })}
-                  btnStyle="black"
-                />
+                <div className={desktopBtn}>
+                  <Button
+                    disabled={!values.email}
+                    hasLoader
+                    stopLoader={stopLoad}
+                    btnMobileText={Intl.formatMessage({ id: 'pages.miscellaneous.start14Days' })}
+                    btnText={Intl.formatMessage({ id: 'pages.miscellaneous.freeTrial14Days' })}
+                    btnStyle="black"
+                  />
+                </div>
               </form>
             )}
           </Formik>
-          {/* <Input placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })} /> */}
-          <div className={ticksWrapper}>
-            <div className={tickItem}>
-              <Icon iconClass="tick" />
-              <span>{Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}</span>
-            </div>
-            <div className={tickItem}>
-              <Icon iconClass="tick" />
-              <span>{Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}</span>
-            </div>
+          <div className={mobileBtn}>
+            <Button
+              onBtnClick={() => onToggleModal()}
+              btnMobileText={Intl.formatMessage({ id: 'pages.miscellaneous.start14Days' })}
+              btnText={Intl.formatMessage({ id: 'pages.miscellaneous.freeTrial14Days' })}
+              btnStyle="black"
+            />
           </div>
+          {!hasError ? (
+            <div className={ticksWrapper}>
+              <div className={tickItem}>
+                <Icon iconClass="tick" />
+                <span>{Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}</span>
+              </div>
+              <div className={tickItem}>
+                <Icon iconClass="tick" />
+                <span>{Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}</span>
+              </div>
+            </div>
+          ) : (
+            <span className={errorMsgStyle}>Type your message correctly</span>
+          )}
         </div>
         <div className={listWrapper}>
           {list.map(({ title: listItemTitle }) => (

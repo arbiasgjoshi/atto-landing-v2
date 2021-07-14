@@ -422,7 +422,7 @@
     },
     "contact": {
       "metaTitle": "You're all that matters | Contact us at Atto",
-      "metaDesc": "support@attotime.com | Get in touch! We’re here for you and ready to answer all your questions.",
+      "metaDescription": "support@attotime.com | Get in touch! We’re here for you and ready to answer all your questions.",
       "name": "Name",
       "email": "E-mail",
       "message": "Message",
@@ -457,6 +457,7 @@
       "startFreeTrial": "Start a Free Trial",
       "noCreditCard": "No credit card required",
       "14DaysTrial": "14 day free trial",
+      "modalTitle": "Sign up for a 14-day free trial",
       "cancelAnytime": "Cancel anytime",
       "learnMore": "Learn more",
       "trustedGlobally": "Trusted by 10,000+ businesses across 50+ countries globally.",

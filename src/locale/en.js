@@ -29,7 +29,7 @@ export const FooterLinks = [
       },
       {
         id: 3,
-        path: '/product/gps-location-tracking',
+        path: '/product/location-tracking',
         name: 'GPS Location Tracking',
         hasLine: false,
       },

@@ -421,7 +421,7 @@
     },
     "contact": {
       "metaTitle": "Sie sind alles, was zählt | Kontaktieren Sie uns bei Atto",
-      "metaDesc": "support@attotime.com | Nehmen Sie Kontakt auf! Wir sind für Sie da und beantworten gerne alle Ihre Fragen.",
+      "metaDescription": "support@attotime.com | Nehmen Sie Kontakt auf! Wir sind für Sie da und beantworten gerne alle Ihre Fragen.",
       "name": "Name",
       "email": "E-Mail",
       "message": "Nachricht",
@@ -456,6 +456,7 @@
       "startFreeTrial": "Kostenlosen Test starten",
       "noCreditCard": "Keine Kreditkarte erforderlich",
       "14DaysTrial": "14-tägige kostenlose Testversion",
+      "modalTitle": "Registrieren für einen 14-Tage-Test",
       "cancelAnytime": "Jederzeit kündigen",
       "learnMore": "Mehr erfahren",
       "trustedGlobally": "Über 10.000 Unternehmen in mehr als 50 Ländern auf der ganzen Welt vertrauen uns.",

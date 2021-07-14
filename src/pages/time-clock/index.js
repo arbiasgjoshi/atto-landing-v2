@@ -254,7 +254,7 @@ const TimeClock = () => {
           })}
           description="Get real-time updates on your team’s location. Ensure everyone is safe and productive."
           icon={icon1}
-          path="/product/gps-location-tracking"
+          path="/product/location-tracking"
           imageWidth={27}
           imageHeight={32}
           styling="smaller"

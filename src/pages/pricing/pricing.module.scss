@@ -38,6 +38,7 @@
   }
 
   .rightSide {
+    position: relative;
     @include max(tablet) {
       display: flex;
       flex-direction: column;
@@ -82,10 +83,10 @@
 }
 
 p.discount {
-  margin-top: 1.1rem;
+  // margin-top: 1.1rem;
   min-height: 2rem;
   color: var(--primary-color);
-  @include absolute(right 0 top 8.5rem);
+  @include absolute(right 0 bottom -3.2rem);
   font-weight: 500;
   text-align: center;
   margin-left: auto;

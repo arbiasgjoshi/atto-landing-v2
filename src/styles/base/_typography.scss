@@ -31,6 +31,7 @@ body {
     size: var(--text-size);
     family: var(--main-font), $backup-fonts;
     weight: var(--regular);
+    font-display: swap;
   }
 
   // TODO check font size variables to be optimized in mobile

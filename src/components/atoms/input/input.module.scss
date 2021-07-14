@@ -37,4 +37,9 @@
   }
 
   @include placeholder(#999);
+
+  &.inputError {
+    border-color: #e05656 !important;
+    color: #e05656 !important;
+  }
 }

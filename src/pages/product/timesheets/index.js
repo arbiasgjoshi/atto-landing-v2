@@ -512,7 +512,7 @@ const Timesheets = () => {
             id: 'pages.productTimeTracking.bottomFeatureOneDesc',
           })}
           icon={icon21}
-          path="/product/gps-location-tracking"
+          path="/product/location-tracking"
         />
 
         <LearnMoreCard

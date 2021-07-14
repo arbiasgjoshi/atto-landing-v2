@@ -342,12 +342,12 @@ const Pricing = () => {
               onBtnClick={() => setActive('annually')}
             />
           </div>
+          {active === 'annually' ? (
+            <p className={discount}>{Intl.formatMessage({ id: 'pages.miscellaneous.Save29' })}</p>
+          ) : (
+            <p className={discount}>&nbsp; </p>
+          )}
         </div>
-        {active === 'annually' ? (
-          <p className={discount}>{Intl.formatMessage({ id: 'pages.miscellaneous.Save29' })}</p>
-        ) : (
-          <p className={discount}>&nbsp; </p>
-        )}
       </div>
       <div className={packageWrapper}>
         <PackageCard

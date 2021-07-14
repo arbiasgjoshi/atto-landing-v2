@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { motion } from 'framer-motion';
 import { Formik } from 'formik';
-import Button from '@components/atoms/button';
+import { defaultBtn } from '@components/atoms/button/button.module.scss';
 import * as yup from 'yup';
 
 import {
@@ -15,6 +15,9 @@ import {
 
 const ContactForm = () => {
   const [isOpen, setOpen] = useState(false);
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
+  const [successMsg, setSuccessMessage] = useState('');
 
   const Intl = useIntl();
   const validationSchema = yup.object().shape({
@@ -26,7 +29,8 @@ const ContactForm = () => {
       .required('Email is a required field'),
   });
 
-  const signUpTrial = (val) => {
+  const sendContactEmail = (val) => {
+    console.log('we are entering here!');
     const requestOptions = {
       method: 'POST',
       headers: {
@@ -37,7 +41,13 @@ const ContactForm = () => {
     fetch('/send-email', requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        setOpen(true);
+        if (!data.error) {
+          setOpen(true);
+          setSuccessMessage(data.message);
+        } else {
+          setError(true);
+          setErrorMessage(data.error);
+        }
       });
   };
 
@@ -48,9 +58,11 @@ const ContactForm = () => {
     },
     exit: {
       opacity: 0,
-      marginTop: '10rem',
+      translateY: '10rem',
+      display: 'none',
+      height: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.5,
       },
     },
   };
@@ -64,7 +76,8 @@ const ContactForm = () => {
       opacity: 0,
       marginTop: '10rem',
       transition: {
-        duration: 0.3,
+        duration: 0.4,
+        delay: 0.7,
       },
     },
   };
@@ -81,14 +94,15 @@ const ContactForm = () => {
           initialValues={{
             name: '',
             email: '',
-            message: '',
+            text: '',
           }}
           validationSchema={validationSchema}
           autoComplete="off"
-          onSubmit={(values) => signUpTrial(values)}
+          onSubmit={(values) => sendContactEmail(values)}
         >
-          {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
+          {({ values, handleChange, handleBlur, validateForm, handleSubmit, errors }) => (
             <form onSubmit={handleSubmit}>
+              {/* {console.log(errors)} */}
               <div className={formRow}>
                 <input
                   type="text"
@@ -111,20 +125,22 @@ const ContactForm = () => {
               <div className={formRow}>
                 <textarea
                   name="text"
+                  value={values.text}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                   placeholder={Intl.formatMessage({ id: 'pages.contact.message' })}
                 />
               </div>
               <div className={formBtn}>
-                <Button
-                  btnText={Intl.formatMessage({ id: 'pages.contact.sendMessage' })}
-                  btnStyle="formBtn"
-                  defaultBtn
-                />
+                <button type="submit" className={defaultBtn}>
+                  {Intl.formatMessage({ id: 'pages.contact.sendMessage' })}
+                </button>
                 <span className={formMask} />
               </div>
             </form>
           )}
         </Formik>
+        {error && <span>{errorMessage}</span>}
       </motion.div>
       {isOpen && (
         <motion.div
@@ -134,7 +150,7 @@ const ContactForm = () => {
           className={`${formWrapper} ${successMessage}`}
         >
           <h1>Thank you!</h1>
-          <p>Your message was succesfully sent!</p>
+          <p>{successMsg}</p>
         </motion.div>
       )}
     </>

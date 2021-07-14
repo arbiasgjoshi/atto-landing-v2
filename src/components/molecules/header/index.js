@@ -468,17 +468,23 @@ const HeaderComponent = ({ headerStyle }) => {
             {Intl.formatMessage({ id: 'header.menu.productLabel' })}
           </Link>
           {Intl.locale === 'en' && (
-            <Link
-              to="/#"
+            <a
+              href="#"
+              onClick={(e) => e.preventDefault()}
               activeClassName={activeMenuItem}
               onMouseEnter={() => showMenu('industries')}
             >
               {Intl.formatMessage({ id: 'header.menu.industriesLabel' })}
-            </Link>
+            </a>
           )}
-          <Link to="/#" activeClassName={activeMenuItem} onMouseEnter={() => showMenu('resources')}>
+          <a
+            href="#"
+            onClick={(e) => e.preventDefault()}
+            activeClassName={activeMenuItem}
+            onMouseEnter={() => showMenu('resources')}
+          >
             {Intl.formatMessage({ id: 'header.menu.resourcesLabel' })}
-          </Link>
+          </a>
           <Link to="/pricing" activeClassName={activeMenuItem} onMouseEnter={() => setOpen(false)}>
             {Intl.formatMessage({ id: 'header.menu.pricingLabel' })}
           </Link>

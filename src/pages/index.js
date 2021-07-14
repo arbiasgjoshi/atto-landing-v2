@@ -59,6 +59,7 @@ const Home = () => {
   const Intl = useIntl();
   const [showDialog, setShowDialog] = useState(false);
   const [values, setValues] = useState({});
+  const [deletedInvite, setDeleted] = useState(false);
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
 
@@ -201,6 +202,7 @@ const Home = () => {
     fetch('/delete-invite', requestOptions)
       .then((response) => response.json())
       .then((res) => {
+        setDeleted(true);
         setValues(res);
         openModal();
       });
@@ -262,6 +264,7 @@ const Home = () => {
       />
       <div className={formRotated}>
         <EmailForm
+          deleteSucceded={deletedInvite}
           changeModal={(val) => formSuccessState(val)}
           placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
           checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
@@ -372,6 +375,7 @@ const Home = () => {
         title={Intl.formatMessage({ id: 'pages.homepage.subscribeTitle' })}
         description={Intl.formatMessage({ id: 'pages.homepage.subscribeDesc' })}
         list={checkList}
+        onToggleModal={() => openModal()}
         onSuccessRes={(val) => {
           setValues(val);
           showDialog();

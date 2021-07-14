@@ -628,7 +628,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/en/time-tracking/Work in the Office via the Web Dashboard@2x.png"
         />
@@ -640,7 +640,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/es/time-tracking/ES_Work in the Office via the Web Dashboard@2x.png"
         />
@@ -652,7 +652,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/fr/time-tracking/FR_Work in the Office via the Web Dashboard@2x.png"
         />
@@ -664,7 +664,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/de/time-tracking/DE_Work in the Office via the Web Dashboard@2x.png"
         />
@@ -679,7 +679,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/en/time-tracking/Work on the Go via the Mobile App@2x.png"
         />
@@ -691,7 +691,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/es/time-tracking/ES_Work on the Go via the Mobile App@2x.png"
         />
@@ -703,7 +703,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/fr/time-tracking/FR_Work on the Go via the Mobile App@2x.png"
         />
@@ -715,7 +715,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/de/time-tracking/DE_Work on the Go via the Mobile App@2x.png"
         />
@@ -730,7 +730,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/en/time-tracking/Work at Job Sites via the Time Clock Kiosk@2x.png"
         />
@@ -742,7 +742,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/es/time-tracking/ES_Work at Job Sites via the Time Clock Kiosk@2x.png"
         />
@@ -754,7 +754,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/fr/time-tracking/FR_Work at Job Sites via the Time Clock Kiosk@2x.png"
         />
@@ -766,7 +766,7 @@ const TimeTracking = () => {
           alt={Intl.formatMessage({ id: 'pages.productTimeTracking.imageIconFeatureTitleOne' })}
           height={378}
           width={380}
-          quality={95}
+          quality={100}
           placeholder="none"
           src="../../../images/de/time-tracking/DE_Work at Job Sites via the Time Clock Kiosk@2x.png"
         />
@@ -974,7 +974,7 @@ const TimeTracking = () => {
             id: 'pages.productTimeTracking.bottomFeatureOneDesc',
           })}
           icon={icon32}
-          path="/product/gps-location-tracking"
+          path="/product/location-tracking"
           imageWidth={27}
           imageHeight={32}
         />

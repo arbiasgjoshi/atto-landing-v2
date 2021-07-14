@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Seo from '@components/molecules/seo';
 import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
+import { navigate } from '@reach/router';
+
 import Divider from '@components/atoms/divider';
 import Button from '@components/atoms/button';
 import Header from '@components/molecules/header';
@@ -167,7 +169,7 @@ const WorkHoursTracker = () => {
       <IconCardList cardList={cardList} style="twoCards" />
       <Divider className="style3" />
       <div className={buttonContainer}>
-        <Button btnText="Find out more" />
+        <Button btnText="Find out more" onBtnClick={() => navigate('/product/timesheets')} />
       </div>
       <Divider className="style4" />
       <Title
@@ -217,7 +219,7 @@ const WorkHoursTracker = () => {
           title="GPS Location Tracking"
           description="Get real-time updates on your team’s location. Ensure everyone is safe and productive."
           icon={icon32}
-          path="/product/gps-location-tracking"
+          path="/product/location-tracking"
           imageWidth={27}
           imageHeight={32}
           styling="smaller"

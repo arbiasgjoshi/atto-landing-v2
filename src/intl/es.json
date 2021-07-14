@@ -421,7 +421,7 @@
     },
     "contact": {
       "metaTitle": "Tú eres lo único que importa | Contacta con nosotros en Atto",
-      "metaDesc": "support@attotime.com | Póngase en contacto con nosotros. Estamos aquí para usted y listos para responder a todas sus preguntas.",
+      "metaDescription": "support@attotime.com | Póngase en contacto con nosotros. Estamos aquí para usted y listos para responder a todas sus preguntas.",
       "name": "Nombre",
       "email": "Correo electrónico",
       "message": "Enviar mensaje",
@@ -456,6 +456,7 @@
       "startFreeTrial": "Inicia una prueba gratuita",
       "noCreditCard": "No es necesaria ninguna tarjeta de crédito",
       "14DaysTrial": "Prueba gratuita de 14 días",
+      "modalTitle": "Regístrese para una prueba gratuita de 14 días",
       "cancelAnytime": "Cancela en cualquier momento",
       "learnMore": "Más información",
       "trustedGlobally": "Más de 10 000 empresas de más de 50 países confían en nosotros de manera global.",

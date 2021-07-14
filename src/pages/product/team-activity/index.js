@@ -360,7 +360,7 @@ const TeamActivity = () => {
             id: 'pages.productTimeTracking.bottomFeatureOneDesc',
           })}
           icon={icon15}
-          path="/product/gps-location-tracking"
+          path="/product/location-tracking"
           imageWidth={27}
           imageHeight={32}
         />

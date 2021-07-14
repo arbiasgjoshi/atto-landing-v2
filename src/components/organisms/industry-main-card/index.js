@@ -37,6 +37,7 @@ const IndustryMainCard = ({
   const Intl = useIntl();
   const [showDialog, setShowDialog] = useState(false);
   const [values, setValues] = useState(null);
+  const [deletedInvite, setDeleted] = useState(false);
 
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
@@ -213,6 +214,10 @@ const IndustryMainCard = ({
     return null;
   };
 
+  const stateSucceeded = (val) => {
+    setValues(val);
+  };
+
   const toggleDeleteInvite = (data) => {
     const requestOptions = {
       method: 'POST',
@@ -224,6 +229,7 @@ const IndustryMainCard = ({
     fetch('/delete-invite', requestOptions)
       .then((response) => response.json())
       .then((res) => {
+        setDeleted(true);
         setValues(res);
         openModal();
       });
@@ -261,10 +267,12 @@ const IndustryMainCard = ({
             className={`${styles.emailContainer} ${Intl.locale !== 'en' && styles.differentLocale}`}
           >
             <div className={styles.mobileImage}>
-              <img src={image} alt={title} width={imageWidth || 500} height={imageHeight || 596} />
+              {/* <img src={image} alt={title} width={imageWidth || 500} height={imageHeight || 596} /> */}
+              {staticImageSwitch(image, title)}
             </div>
             <EmailForm
-              changeModal={(val) => console.log(val)}
+              deleteSucceded={deletedInvite}
+              changeModal={(val) => formSuccessState(val)}
               placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
               checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
               checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
