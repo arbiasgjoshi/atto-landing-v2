@@ -124,8 +124,7 @@ const EmployeeTimesheetApp = () => {
       <div className={imageWrapper}>
         <StaticImage
           width={1220}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           src="../../images/timesheets/Ready-made professional timesheets@2x.png"
           placeholder="blurred"
           alt="Ready-made professional timesheets"

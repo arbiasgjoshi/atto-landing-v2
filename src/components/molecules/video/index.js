@@ -33,8 +33,7 @@ const Video = ({ placeholder, videoUrl }) => {
           className={videoPlaceholder}
           width={960}
           height={489}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           alt="Video placeholder"
           placeholder="blurred"
           src="../../../images/Video placeholder - Location Tracking@2x.png"
@@ -48,8 +47,7 @@ const Video = ({ placeholder, videoUrl }) => {
           className={videoPlaceholder}
           width={960}
           height={489}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           alt="Video placeholder"
           placeholder="blurred"
           src="../../../images/Video placeholder - Time Tracking@2x.png"
@@ -63,8 +61,7 @@ const Video = ({ placeholder, videoUrl }) => {
           className={videoPlaceholder}
           width={960}
           height={489}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           alt="Video placeholder"
           placeholder="blurred"
           src="../../../images/Video placeholder - Timesheets@2x.png"
@@ -78,8 +75,7 @@ const Video = ({ placeholder, videoUrl }) => {
           className={videoPlaceholder}
           width={960}
           height={489}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           alt="Video placeholder"
           placeholder="blurred"
           src="../../../images/Video placeholder - Team Activity@2x.png"

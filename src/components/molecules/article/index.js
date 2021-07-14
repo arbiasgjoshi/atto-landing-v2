@@ -40,8 +40,7 @@ const Article = ({
       return (
         <StaticImage
           src="../../../images/timesheets/Get wage estimates from your employees’ timesheets@2x.png"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           width="490"
           height="273"
           alt="Get wage estimates from your employees’ timesheets"
@@ -53,8 +52,7 @@ const Article = ({
       return (
         <StaticImage
           src="../../../images/timesheets/See timesheet summaries per employee, team, or project@2x.png"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           alt="See timesheet summaries per employee, team, or project"
           width="465"
           height="409"
@@ -69,8 +67,7 @@ const Article = ({
           width="543"
           height="383"
           alt="View timesheets as a daily map-based timeline"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -82,8 +79,7 @@ const Article = ({
           width="580"
           height="383"
           alt="View timesheets as a daily map-based timeline"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -95,8 +91,7 @@ const Article = ({
           width="529"
           height="426"
           alt="Entrust managers to track your cleaners’ time"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -109,8 +104,7 @@ const Article = ({
           width="580"
           height="383"
           alt="Buzz your electricians with helpful reminders so they don’t forget to clock-in"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -122,8 +116,7 @@ const Article = ({
           width="575"
           height="430"
           alt="Give on-site supervisors the power to track your electricians’ time"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -136,8 +129,7 @@ const Article = ({
           width="580"
           height="383"
           alt="Get helpful reminders so your caregivers never forget to clock-in"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -149,8 +141,7 @@ const Article = ({
           width="486"
           height="402"
           alt="Allow your senior caregivers to track everyone’s time"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -163,8 +154,7 @@ const Article = ({
           width="580"
           height="383"
           alt="Get helpful reminders so your painters never forget to clock-in"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -176,8 +166,7 @@ const Article = ({
           width="578"
           height="424"
           alt="Allow your supervisor to track your painting crew’s time"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -190,8 +179,7 @@ const Article = ({
           width="580"
           height="383"
           alt="Get helpful reminders so your plumbers never forget to clock-in"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -203,8 +191,7 @@ const Article = ({
           width="428"
           height="430"
           alt="Allow your on-site manager to track your plumbers’ time"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -217,8 +204,7 @@ const Article = ({
           width="580"
           height="383"
           alt="Get helpful reminders so your roofers never forget to clock-in"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -230,8 +216,7 @@ const Article = ({
           width="522"
           height="432"
           alt="Allow your supervisor to track your roofing crew’s time "
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -244,8 +229,7 @@ const Article = ({
           width="510"
           height="380"
           alt="Time tracking for mobile workers"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -257,8 +241,7 @@ const Article = ({
           width="470"
           height="490"
           alt="Time tracking for teams of employees working together"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -270,8 +253,7 @@ const Article = ({
           width="489"
           height="380"
           alt="Time tracking for office workers"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -283,8 +265,7 @@ const Article = ({
           width="414"
           height="483"
           alt="Never forget to start tracking time again"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -297,8 +278,7 @@ const Article = ({
           width="584"
           height="498"
           alt="Add notes, track breaks, assign job codes, and more"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -310,8 +290,7 @@ const Article = ({
           width="550"
           height="581"
           alt="Give managers the power to track employee time"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -323,8 +302,7 @@ const Article = ({
           width="575"
           height="484"
           alt="Ensure employees are ready to work before they clock-in"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -336,8 +314,7 @@ const Article = ({
           width="440"
           height="456"
           alt="Get handy notifications of time clock activity"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -349,8 +326,7 @@ const Article = ({
           width="452"
           height="548"
           alt="Record paid time off for complete payroll data"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -362,8 +338,7 @@ const Article = ({
           width="584"
           height="498"
           alt="See what your employees have been up to"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -373,8 +348,7 @@ const Article = ({
       return (
         <StaticImage
           src="../../../images/time-card-app/Get wage estimates from your employees’ time cards@2x.png"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           width="490"
           height="273"
           alt="Get wage estimates from your employees’ time cards"
@@ -386,8 +360,7 @@ const Article = ({
       return (
         <StaticImage
           src="../../../images/time-card-app/See time card summaries per employee, team, or project@2x.png"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           alt="See time card summaries per employee, team, or project"
           width="465"
           height="409"
@@ -402,8 +375,7 @@ const Article = ({
           width="543"
           height="383"
           alt="View time card data as a daily map-based timeline"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -417,8 +389,7 @@ const Article = ({
           width="460"
           height="383"
           alt="Never feel in the dark again with team activity updates"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -430,8 +401,7 @@ const Article = ({
           width="460"
           height="383"
           alt="Never feel in the dark again with team activity updates"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -443,8 +413,7 @@ const Article = ({
           width="460"
           height="383"
           alt="Never feel in the dark again with team activity updates"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -456,8 +425,7 @@ const Article = ({
           width="460"
           height="383"
           alt="Never feel in the dark again with team activity updates"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -471,8 +439,7 @@ const Article = ({
           width="448"
           height="473"
           alt="Simplify team management with departments"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -484,8 +451,7 @@ const Article = ({
           width="448"
           height="473"
           alt="Simplify team management with departments"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -497,8 +463,7 @@ const Article = ({
           width="448"
           height="473"
           alt="Simplify team management with departments"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -510,8 +475,7 @@ const Article = ({
           width="448"
           height="473"
           alt="Simplify team management with departments"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -525,8 +489,7 @@ const Article = ({
           width="401"
           height="503"
           alt="Find out what any employee is up to in seconds"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -538,8 +501,7 @@ const Article = ({
           width="401"
           height="503"
           alt="Find out what any employee is up to in seconds"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -551,8 +513,7 @@ const Article = ({
           width="401"
           height="503"
           alt="Find out what any employee is up to in seconds"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -564,8 +525,7 @@ const Article = ({
           width="401"
           height="503"
           alt="Find out what any employee is up to in seconds"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -579,8 +539,7 @@ const Article = ({
           width="440"
           height="428"
           alt="Eliminate back and forth phone calls and constant check-ins"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -592,8 +551,7 @@ const Article = ({
           width="440"
           height="428"
           alt="Eliminate back and forth phone calls and constant check-ins"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -605,8 +563,7 @@ const Article = ({
           width="440"
           height="428"
           alt="Eliminate back and forth phone calls and constant check-ins"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -618,8 +575,7 @@ const Article = ({
           width="440"
           height="428"
           alt="Eliminate back and forth phone calls and constant check-ins"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -633,8 +589,7 @@ const Article = ({
           width="460"
           height="489"
           alt="See your team’s progress at the end of each day"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -646,8 +601,7 @@ const Article = ({
           width="460"
           height="489"
           alt="See your team’s progress at the end of each day"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -659,8 +613,7 @@ const Article = ({
           width="460"
           height="489"
           alt="See your team’s progress at the end of each day"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -672,8 +625,7 @@ const Article = ({
           width="460"
           height="489"
           alt="See your team’s progress at the end of each day"
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );

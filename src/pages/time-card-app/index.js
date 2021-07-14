@@ -127,8 +127,7 @@ const TimeCardApp = () => {
       </div>
       <div className={imageWrapper}>
         <StaticImage
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           width={1220}
           src="../../images/time-card-app/Ready-made professional timesheets@2x.png"
           alt="Ready-made professional timesheets"

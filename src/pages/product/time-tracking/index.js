@@ -197,8 +197,7 @@ const TimeTracking = () => {
           src="../../../images/en/time-tracking/Lower costs, higher productivity. Less admin, more business.@2x.png"
           alt="admin-panel-image"
           width={1250}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -210,8 +209,7 @@ const TimeTracking = () => {
           src="../../../images/es/time-tracking/ES_Lower costs, higher productivity. Less admin, more business.@2x.png"
           alt="admin-panel-image"
           width={1250}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -223,8 +221,7 @@ const TimeTracking = () => {
           src="../../../images/de/time-tracking/DE_Lower costs, higher productivity. Less admin, more business.@2x.png"
           alt="admin-panel-image"
           width={1250}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -236,8 +233,7 @@ const TimeTracking = () => {
           src="../../../images/fr/time-tracking/FR_Lower costs, higher productivity. Less admin, more business.@2x.png"
           alt="admin-panel-image"
           width={1250}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -585,8 +581,7 @@ const TimeTracking = () => {
           src="../images/en/time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -597,8 +592,7 @@ const TimeTracking = () => {
           src="../images/de/de-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -609,8 +603,7 @@ const TimeTracking = () => {
           src="../images/fr/fr-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -621,8 +614,7 @@ const TimeTracking = () => {
           src="../images/es/es-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );

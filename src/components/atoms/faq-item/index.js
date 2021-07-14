@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; 
 import { StaticImage } from 'gatsby-plugin-image';
 
 import { item, itemTitle, collapsed, plus } from './faq-item.module.scss';
@@ -13,17 +13,11 @@ const FaqItem = ({ title, paragraph, toggled: defaultToggle }) => {
         <h5>{title}</h5>
         <span onClick={() => setToggled(!toggled)} className={plus}>
           {toggled ? (
-            <StaticImage
-              src="../../../images/minus@2x.png"
-              quality={96}
-              formats={['auto', 'webp', 'avif']}
-              placeholder="blurred"
-            />
+            <StaticImage src="../../../images/minus@2x.png" quality={98} placeholder="blurred" />
           ) : (
             <StaticImage
               src="../../../images/plus-black@2x.png"
-              quality={96}
-              formats={['auto', 'webp', 'avif']}
+              quality={98}
               placeholder="blurred"
             />
           )}

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useIntl } from 'gatsby-plugin-react-intl';
@@ -198,12 +199,13 @@ const Footer = () => {
     if (lang === 'fr') {
       return (
         <>
-          <script type="text/javascript">
-            {`  
-            var _iub = _iub || [];
-                  _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false,"lang":"fr","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":47240763, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};
-            `}
-          </script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                  var _iub = _iub || [];
+                  _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false,"lang":"fr","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":47240763, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};`,
+            }}
+          />
         </>
       );
     }
@@ -222,31 +224,47 @@ const Footer = () => {
     if (lang === 'de') {
       return (
         <>
-          <script type="text/javascript">
-            {`  
-             var _iub = _iub || [];
-             _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false,"lang":"de","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":77119290, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};
-            `}
-          </script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                  var _iub = _iub || [];
+                  _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false,"lang":"es","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":85558244, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};`,
+            }}
+          />
+        </>
+      );
+    }
+    if (lang === 'de') {
+      return (
+        <>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                var _iub = _iub || [];
+                _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false,"lang":"de","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":77119290, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};
+                `,
+            }}
+          />
         </>
       );
     }
     return (
       <>
-        <script type="text/javascript">
-          {`  
-             ar _iub = _iub || [];
-             _iub.csConfiguration = {
-             "gdprAppliesGlobally":false,
-             "enableCcpa":true,
-             "countryDetection":true,
-             "cookiePolicyInOtherWindow":true,
-             "whitelabel":false,
-             "lang":"en",
-             "siteId":1720230,
-             "consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":97533579, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};
-            `}
-        </script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              var _iub = _iub || [];
+              _iub.csConfiguration = {
+              "gdprAppliesGlobally":false,
+              "enableCcpa":true,
+              "countryDetection":true,
+              "cookiePolicyInOtherWindow":true,
+              "whitelabel":false,
+              "lang":"en",
+              "siteId":1720230,
+              "consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":97533579, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};`,
+          }}
+        />
       </>
     );
   };
@@ -260,9 +278,8 @@ const Footer = () => {
               src="../../../images/logo@3x.png"
               alt="footer-logo"
               quality={100}
-              formats={['auto', 'webp', 'avif']}
               width={86}
-              placeholder="blurred"
+              placeholder="none"
             />
             <p>{Intl.formatMessage({ id: 'pages.miscellaneous.footerText' })}</p>
 
@@ -315,66 +332,74 @@ const Footer = () => {
           </Link>
         </p>
       </footer>
-      <Helmet>
-        {cookieScripts(Intl.locale)}
-        <script type="text/javascript" defer async src="//cdn.iubenda.com/cs/ccpa/stub.js" />
-        <script
-          type="text/javascript"
-          defer
-          src="//cdn.iubenda.com/cs/iubenda_cs.js"
-          charSet="UTF-8"
-          async
+      {cookieScripts(Intl.locale)}
+      <script type="text/javascript" defer src="//cdn.iubenda.com/cs/ccpa/stub.js" />
+      <script
+        type="text/javascript"
+        defer
+        src="//cdn.iubenda.com/cs/iubenda_cs.js"
+        charSet="UTF-8"
+        async
+      />
+      {/* Google Tag Manager */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+                (function (w, d, s, l, i) {
+                  w[l] = w[l] || [];
+                  w[l].push({
+                      'gtm.start':
+                          new Date().getTime(), event: 'gtm.js'
+                  });
+                  var f = d.getElementsByTagName(s)[0],
+                      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                  j.async = true;
+                  j.src =
+                      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                  f.parentNode.insertBefore(j, f);
+              })(window, document, 'script', 'dataLayer', 'GTM-NV2DTP3');    
+              `,
+        }}
+      />
+      {/* <!-- End Google Tag Manager --> */}
+
+      {/* <!-- Google Tag Manager (noscript) --> */}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-NV2DTP3"
+          title="null"
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
         />
-        <script type="text/javascript">
-          {`(function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NV2DTP3');`}
-        </script>
-        {/* Google Tag Manager */}
+      </noscript>
 
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NV2DTP3"
-            title="null"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {/* <!-- End Google Tag Manager --> */}
-
-        {/* <!-- Helpscout --> */}
-
-        {/* <!-- Google Tag Manager (noscript) --> */}
-        <script type="text/javascript">
-          {`
-            !function (e, t, n) {
-              function a() {
-                  var e = t.getElementsByTagName("script")[0], n = t.createElement("script");
-                  n.type = "text/javascript", n.async = !0, n.src = "https://beacon-v2.helpscout.net", e.parentNode.insertBefore(n, e)
-              }
-      
-              if (e.Beacon = n = function (t, n, a) {
-                  e.Beacon.readyQueue.push({method: t, options: n, data: a})
-              }, n.readyQueue = [], "complete" === t.readyState) return a();
-              e.attachEvent ? e.attachEvent("onload", a) : e.addEventListener("load", a, !1)
-          }(window, document, window.Beacon || function () {
-          }); 
-            
-          `}
-        </script>
-        <script type="text/javascript">{`window.Beacon('init', 'f0351335-a50d-4bb8-9d06-9b9bf4ad4e12')`}</script>
-      </Helmet>
+      {/* <!-- Helpscout --> */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              !function (e, t, n) {
+                function a() {
+                    var e = t.getElementsByTagName("script")[0], n = t.createElement("script");
+                    n.type = "text/javascript", n.async = !0, n.src = "https://beacon-v2.helpscout.net", e.parentNode.insertBefore(n, e)
+                }
+        
+                if (e.Beacon = n = function (t, n, a) {
+                    e.Beacon.readyQueue.push({method: t, options: n, data: a})
+                }, n.readyQueue = [], "complete" === t.readyState) return a();
+                e.attachEvent ? e.attachEvent("onload", a) : e.addEventListener("load", a, !1)
+            }(window, document, window.Beacon || function () {
+            }); 
+              `,
+        }}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.Beacon('init', 'f0351335-a50d-4bb8-9d06-9b9bf4ad4e12')
+          `,
+        }}
+      />
     </>
   );
 };

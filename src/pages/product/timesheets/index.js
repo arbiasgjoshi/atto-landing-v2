@@ -233,8 +233,7 @@ const Timesheets = () => {
           src="../../../images/en/overview/Everything you need to keep track of your employees’ time@2x.png"
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -245,8 +244,7 @@ const Timesheets = () => {
           src="../../../images/de/overview/DE_Everything you need to keep track of your employees’ time@2x.png"
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -257,8 +255,7 @@ const Timesheets = () => {
           src="../../../images/es/overview/ES_Everything you need to keep track of your employees’ time@2x.png"
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );
@@ -269,8 +266,7 @@ const Timesheets = () => {
           src="../../../images/fr/timesheets/FR_Everything you need to keep track of your employees’ time@2x.png"
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           placeholder="blurred"
         />
       );

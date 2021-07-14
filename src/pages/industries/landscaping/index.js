@@ -181,8 +181,7 @@ const Landscaping = () => {
         <Steps list={landscapeSteps} toggleModal={() => openModal()} />
         <Divider className="style4" />
         <StaticImage
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           width={1140}
           height={241}
           style={{ marginBottom: '0.2rem' }}

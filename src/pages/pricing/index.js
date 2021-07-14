@@ -390,8 +390,7 @@ const Pricing = () => {
         <StaticImage
           src="../../images/view-all-features@2x.png"
           width={1140}
-          quality={96}
-          formats={['auto', 'webp', 'avif']}
+          quality={98}
           height={170}
           placeholder="blurred"
         />
