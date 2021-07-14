@@ -24,8 +24,8 @@ import {
 
 const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal }) => {
   const Intl = useIntl();
-  const [disabled, setDisabled] = useState(false);
   const [stopLoad, setStopLoad] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   const [hasError, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -88,8 +88,8 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
                   <Button
                     disabled={!values.email || disabled}
                     hasLoader
-                    stopLoader={stopLoad}
                     onBtnClick={() => setDisabled(true)}
+                    stopLoader={stopLoad}
                     btnMobileText={Intl.formatMessage({ id: 'pages.miscellaneous.start14Days' })}
                     btnText={Intl.formatMessage({ id: 'pages.miscellaneous.freeTrial14Days' })}
                     btnStyle="black"
@@ -118,7 +118,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
               </div>
             </div>
           ) : (
-            <span className={errorMsgStyle}>Type your message correctly</span>
+            <span className={errorMsgStyle}>{errorMessage}</span>
           )}
         </div>
         <div className={listWrapper}>
