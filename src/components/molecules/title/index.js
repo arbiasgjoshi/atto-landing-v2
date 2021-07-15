@@ -56,15 +56,15 @@ const Title = ({
 };
 
 Title.propTypes = {
-  smallTitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  smallTitle: PropTypes.string,
   description: PropTypes.string,
   leftAlign: PropTypes.bool,
   smallerMargin: PropTypes.bool,
   notCentered: PropTypes.bool,
   bodyStyle: PropTypes.string,
-  maxWidth: PropTypes.string,
-  maxDescriptionWidth: PropTypes.string,
+  maxWidth: PropTypes.number,
+  maxDescriptionWidth: PropTypes.number,
   marginBottom: PropTypes.string,
 };
 

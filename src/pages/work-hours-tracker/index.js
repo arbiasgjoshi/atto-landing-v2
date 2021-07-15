@@ -32,7 +32,12 @@ import icon33 from '@images/profile@1x.png';
 import icon34 from '@images/timesheets@1x.png';
 import icon35 from '@images/time-tracking-clock@1x.png';
 
-import { container, imageFormWrapper, imageWrapper } from '@styles/main.module.scss';
+import {
+  container,
+  imageFormWrapper,
+  imageWrapper,
+  learnMoreContainer,
+} from '@styles/main.module.scss';
 
 import { firstList } from '@data/third-phase/time-tracking-app.js';
 
@@ -43,7 +48,7 @@ import {
   cardList,
   verticalList,
 } from '@data/third-phase/work-hours.js';
-import { buttonContainer, learnMoreContainer } from './work-hours-tracker.module.scss';
+import { buttonContainer } from './work-hours-tracker.module.scss';
 
 // import localeData from '@locale/en';
 

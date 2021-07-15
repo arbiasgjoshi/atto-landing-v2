@@ -15,7 +15,6 @@ import SubscribeBanner from '@components/molecules/subscribe-banner';
 import TickCardList from '@components/organisms/tick-card-list';
 import LearnMoreCard from '@components/molecules/learn-more-card';
 import { StaticImage } from 'gatsby-plugin-image';
-import { container } from '@styles/main.module.scss';
 
 import authorImage from '@images/time-clock/Time clock app review@2x.png';
 
@@ -30,11 +29,8 @@ import icon2 from '@images/time-tracking-clock@1x.png';
 import icon3 from '@images/profile@1x.png';
 import icon4 from '@images/timesheets@1x.png';
 
-import {
-  workListContainer,
-  learnMoreContainer,
-  featureCardWithBanner,
-} from './time-clock.module.scss';
+import { container, learnMoreContainer } from '@styles/main.module.scss';
+import { workListContainer, featureCardWithBanner } from './time-clock.module.scss';
 
 import { checkList, commonQuestionsList } from '../../data/third-phase/time-clock.js';
 

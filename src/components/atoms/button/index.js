@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { LoadingSpinner } from '@components/atoms/svg-icons';
-
 import {
   defaultBtn,
   tealStyle,
@@ -76,7 +74,9 @@ const Button = ({
   };
 
   useEffect(() => {
-    setToggle(false);
+    if (stopLoader) {
+      setToggle(false);
+    }
   }, [stopLoader]);
 
   return (

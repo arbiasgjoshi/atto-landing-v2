@@ -37,7 +37,7 @@ const IconCard = ({
 );
 
 IconCard.propTypes = {
-  icon: PropTypes.shape({}),
+  icon: PropTypes.string,
   alt: PropTypes.string,
   bigImage: PropTypes.bool,
   titleBreak: PropTypes.bool,
@@ -47,8 +47,8 @@ IconCard.propTypes = {
   isRound: PropTypes.bool,
   style: PropTypes.string,
   imagePadding: PropTypes.string,
-  imageWidth: PropTypes.number,
-  imageHeight: PropTypes.number,
+  imageWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  imageHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export default IconCard;

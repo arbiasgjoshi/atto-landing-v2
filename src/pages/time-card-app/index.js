@@ -31,9 +31,14 @@ import icon33 from '@images/profile@1x.png';
 import icon34 from '@images/timesheets@1x.png';
 import icon35 from '@images/time-tracking-clock@1x.png';
 
-import { container, imageFormWrapper, imageWrapper } from '@styles/main.module.scss';
+import {
+  container,
+  imageFormWrapper,
+  imageWrapper,
+  learnMoreContainer,
+} from '@styles/main.module.scss';
 
-import { learnMoreContainer, buttonContainer } from './time-card-app.module.scss';
+import { buttonContainer } from './time-card-app.module.scss';
 
 import {
   checkList,

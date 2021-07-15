@@ -47,8 +47,8 @@ const IndustryMainCard = ({
       return (
         <StaticImage
           alt={title}
-          width="447"
-          height="659"
+          width={447}
+          height={659}
           placeholder="blurred"
           quality={98}
           src="../../../images/timesheets/Streamline your payroll with our simple employee timesheet app@2x.png"
@@ -167,8 +167,8 @@ const IndustryMainCard = ({
       return (
         <StaticImage
           alt={title}
-          width="437"
-          height="615"
+          width={437}
+          height={615}
           placeholder="blurred"
           quality={98}
           src="../../../images/time-tracking/A highly accurate time tracking solution@2x.png"
@@ -179,8 +179,8 @@ const IndustryMainCard = ({
       return (
         <StaticImage
           alt={title}
-          width="437"
-          height="615"
+          width={437}
+          height={615}
           placeholder="blurred"
           quality={98}
           src="../../../images/time-card-app/A highly accurate time tracking solution@2x.png"
@@ -191,8 +191,8 @@ const IndustryMainCard = ({
       return (
         <StaticImage
           alt={title}
-          width="437"
-          height="615"
+          width={437}
+          height={615}
           placeholder="blurred"
           quality={98}
           src="../../../images/time-clock/A highly accurate time tracking solution@2x.png"
@@ -203,8 +203,8 @@ const IndustryMainCard = ({
       return (
         <StaticImage
           alt={title}
-          width="437"
-          height="615"
+          width={437}
+          height={615}
           placeholder="blurred"
           quality={98}
           src="../../../images/work-hours-tracker/A highly accurate time tracking solution@2x.png"

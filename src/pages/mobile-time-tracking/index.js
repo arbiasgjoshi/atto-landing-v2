@@ -19,7 +19,6 @@ import Services from '@components/organisms/services';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import reviewImage from '@images/time-tracking/Time tracking app review@2x.png';
-import bannerImage from '@images/time-tracking/A highly accurate time tracking solution@2x.png';
 import anyDevice from '@images/time-tracking/Time tracking from any device – offline, online, or on the go@2x.png';
 
 import icon32 from '@images/location@1x.png';
@@ -27,13 +26,12 @@ import icon33 from '@images/profile@1x.png';
 import icon34 from '@images/timesheets@1x.png';
 import icon35 from '@images/time-tracking-clock@1x.png';
 
-import { container } from '@styles/main.module.scss';
+import { container, learnMoreContainer } from '@styles/main.module.scss';
 import {
   featureCardsList,
   commonQuestionsList,
   firstList,
 } from '../../data/third-phase/time-tracking-app';
-import { learnMoreContainer } from './mobile-time-tracking.module.scss';
 
 const TimeTrackingApp = () => {
   const Intl = useIntl();
