@@ -73,7 +73,9 @@
 
     .imageContainer {
       @include min(tablet) {
-        margin-right: 7rem;
+        margin-right: 6rem;
+        max-width: 30rem;
+        max-height: 45rem;
       }
     }
     h4 {

@@ -17,7 +17,6 @@ import AccordionArticle from '@components/organisms/accordion-article';
 import OldVsNew from '@components/organisms/old-vs-new';
 import Steps from '@components/organisms/steps';
 import ImagesBox from '@components/organisms/images-box';
-import authorImage from '@images/healthcare/Healthcare reviews@2x.png';
 
 import image5 from '@images/healthcare/Adjust quickly to employee sickness and absence @2x.png';
 import image6 from '@images/healthcare/Forecast your payroll costs ahead of payday to avoid unwanted surprises@2x.png';
@@ -96,7 +95,7 @@ const HomeHealthcare = () => {
         />
         <Divider className="style4" />
         <Story
-          img={authorImage}
+          img="healthcare"
           paragraph={`"Using them for our non profit, to manage a few employees. I've tried about 50 others apps before (no kidding). This one finally did the trick."`}
           author="- Dance of Life"
         />

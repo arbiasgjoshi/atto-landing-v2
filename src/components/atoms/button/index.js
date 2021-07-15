@@ -83,6 +83,7 @@ const Button = ({
     <button
       className={`${defaultBtn} ${checkBtnStyle()}`}
       type="submit"
+      aria-label="Submit Form"
       disabled={disabled}
       onClick={() => toggleButtonClick()}
     >

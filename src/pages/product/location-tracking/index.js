@@ -29,22 +29,11 @@ import Coffe from '@images/coffe.svg';
 import Bookmark from '@images/bookmark.svg';
 import Battery from '@images/battery.svg';
 
-import verifyTeamEn from '@images/en/gps-location-tracking/Verify your team are working where they should be@2x.png';
-import verifyTeamDe from '@images/de/gps-location-tracking/DE_Verify your team are working where they should be@2x.png';
-import verifyTeamFr from '@images/fr/gps-location-tracking/FR_Verify your team are working where they should be@2x.png';
-import verifyTeamEs from '@images/es/gps-location-tracking/ES_Verify your team are working where they should be@2x.png';
-
-import reviewImage from '@images/en/gps-location-tracking/Time tracking app review@2x.png';
-
-import movements from '@images/en/gps-location-tracking/Keep track of your team’s daily movements@2x.png';
-
 import icon18 from '@images/location@1x.png';
 import icon19 from '@images/profile@1x.png';
 import icon20 from '@images/timesheets@1x.png';
 
 import { container } from '@styles/main.module.scss';
-
-// import { FooterLinks } from '@locale/en.js';
 
 import { teamActivityContainer, learnMoreContainer } from '../product.module.scss';
 import { privacyContainer, imageContainer } from './gps-location-tracking.module.scss';
@@ -504,7 +493,7 @@ const LocationTracking = () => {
       <Services />
       <Divider />
       <Story
-        img={reviewImage}
+        img="location-tracking"
         paragraph={Intl.formatMessage({ id: 'pages.productLocationTracking.review' })}
         author="Robert Bennett - DPA Cleaning Services, Inc."
       />

@@ -26,14 +26,14 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
   };
 
   const signUpTrial = (val) => {
-    console.log('we are submitting stuff here');
+    console.log(val);
     const requestOptions = {
       method: 'POST',
       mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email: val }),
+      body: JSON.stringify({ val }),
     };
     fetch('/confirmation', requestOptions)
       .then((response) => response.json())
@@ -50,6 +50,10 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
             onError(data.error);
           }
         }
+      })
+      .catch(() => {
+        setLoader(false);
+        setDisabled(false);
       });
   };
 
@@ -66,11 +70,11 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
         validationSchema={validationSchema}
         autoComplete="off"
         onSubmit={(values) => {
-          signUpTrial(values.email);
+          signUpTrial(values);
         }}
       >
-        {({ values, handleSubmit, handleChange, handleBlur, errors }) => (
-          <form method="POST" className={formWrapper}>
+        {({ values, isValid, handleSubmit, handleChange, handleBlur, errors }) => (
+          <form method="POST" onSubmit={handleSubmit} className={formWrapper}>
             <div className={inputWrapper}>
               <input
                 placeholder={placeholder}
@@ -82,13 +86,17 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
                 onBlur={handleBlur}
               />
             </div>
-            {console.log(errors)}
+            {/* <Button btnText="Submit" /> */}
             <button
+              type="submit"
+              aria-label="Submit Form"
               onClick={() => {
-                handleSubmit();
-                toggleButtonAnimations();
+                if (isValid) {
+                  handleSubmit();
+                  toggleButtonAnimations();
+                }
               }}
-              disabled={disabled}
+              disabled={disabled || !isValid}
               className={`${defaultBtn} ${blackStyle}`}
             >
               {loader ? (

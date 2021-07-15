@@ -22,8 +22,6 @@ import image3 from '@images/construction/So simple that your workers will want t
 import image4 from '@images/construction/Guarantee your crew is on-site before they clock in@2x.png';
 import image5 from '@images/construction/Keep projects on budget with wage estimates@2x.png';
 
-import authorImage from '@images/construction/Built with construction companies in mind@2x.png';
-
 import { container, industryPadding, noPadding, oldVsNewGradient } from '@styles/main.module.scss';
 import {
   checkList1,
@@ -166,7 +164,7 @@ const Construction = () => {
         <Title title="Built with construction companies in mind" maxWidth={600} />
         <Divider className="style2" />
         <Story
-          img={authorImage}
+          img="construction"
           paragraph={`"So perfectly simplistic. I work in construction so employees can all be in different places. 
       The ease of tracking hours and productivity via GPS is amazing."`}
           author="Jack Thomas – Vision Building & Development"

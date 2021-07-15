@@ -501,6 +501,7 @@ const HeaderComponent = ({ headerStyle }) => {
           <button
             className={`${menuTrigger} ${openMobile && activeButton} `}
             type="button"
+            aria-label="toggle-menu"
             onClick={() => toggleMenu()}
           >
             <i className={tiles1} />

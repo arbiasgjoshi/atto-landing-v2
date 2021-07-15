@@ -417,7 +417,7 @@ const Pricing = () => {
       <PriceDragger />
       <Divider />
       <Story
-        img={authorImage2}
+        img="pricing"
         paragraph={Intl.formatMessage({
           id: 'pages.pricing.review',
         })}

@@ -22,11 +22,8 @@ import Story from '@components/organisms/story';
 import Services from '@components/organisms/services';
 import VideoCheckList from '@components/organisms/video-checklist';
 
-import authorImage from '@images/hear-what-businesses-have-to-say@2x.png';
-
 import { container, formRotated } from '@styles/main.module.scss';
 import '@styles/includes/slick-carousel.scss';
-// import { FooterLinks } from '@locale/en.js';
 import {
   btnWrapper,
   pulledLeft,
@@ -99,7 +96,7 @@ const Home = () => {
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
           className={desktopImage}
         />
       );
@@ -111,7 +108,7 @@ const Home = () => {
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
           className={desktopImage}
         />
       );
@@ -123,7 +120,7 @@ const Home = () => {
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
           className={desktopImage}
         />
       );
@@ -135,7 +132,7 @@ const Home = () => {
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
           className={desktopImage}
         />
       );
@@ -150,7 +147,7 @@ const Home = () => {
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
           className={mobileImage}
         />
       );
@@ -162,7 +159,7 @@ const Home = () => {
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
           className={mobileImage}
         />
       );
@@ -174,7 +171,7 @@ const Home = () => {
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
           className={mobileImage}
         />
       );
@@ -185,7 +182,7 @@ const Home = () => {
         alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
         width={434}
         quality={98}
-        placeholder="blurred"
+        placeholder="none"
         className={mobileImage}
       />
     );
@@ -353,7 +350,7 @@ const Home = () => {
       <CarouselComponent large>
         <Story
           className="homepage"
-          img={authorImage}
+          img="homepage"
           paragraph={Intl.formatMessage({ id: 'pages.homepage.reviews.bottomReview' })}
           author="Julia Conner – Pennprojects, LLC"
         />

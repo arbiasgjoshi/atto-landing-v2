@@ -34,8 +34,6 @@ import {
 } from '@data/industries/cleaning.js';
 import { oldList, newList, cleanersSteps } from '@data/industries';
 
-import reviewImage from '@images/cleaning/Cleaners review@2x.png';
-
 import image5 from '@images/cleaning/See who’s nearby and available to respond to urgent cleaning jobs@2x.png';
 import image6 from '@images/cleaning/Keep a handle on your biggest cost – your cleaners’ wages@2x.png';
 
@@ -96,7 +94,7 @@ const Cleaning = () => {
         />
         <Divider className="style4" />
         <Story
-          img={reviewImage}
+          img="cleaners"
           paragraph={`"Does precisely and perfectly what it says. The great big pulsating green button is appealing, makes you want to start work right away! Loving it and the helpful staff."`}
           author="Xana Still"
         />

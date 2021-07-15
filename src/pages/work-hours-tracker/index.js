@@ -24,7 +24,6 @@ import CommonQuestions from '@components/organisms/common-questions';
 import Services from '@components/organisms/services';
 
 import TrackMore from '@images/work-hours-tracker/Track more than just work hours@2x.png';
-import authorImage from '@images/work-hours-tracker/Work hours tracker review@2x.png';
 import image2 from '@images/work-hours-tracker/A work hours tracker for every device, and every purpose@2x.png';
 
 import icon32 from '@images/location@1x.png';
@@ -121,7 +120,7 @@ const WorkHoursTracker = () => {
       <IconCardList cardList={firstList} hasBigImages style="smallerMargin" />
       <Divider />
       <Story
-        img={authorImage}
+        img="work-hours-tracker"
         paragraph={`“We work in different locations. Atto has saved me much money over the previous way I managed time; piece of paper. It allows me to see the employees’ locations when they clock in and out. Atto is an immediate money saver."`}
         author="Stephen Carlson - Coastal Contracting LLC"
       />

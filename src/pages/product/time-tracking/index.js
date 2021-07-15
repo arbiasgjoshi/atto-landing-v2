@@ -23,9 +23,6 @@ import Story from '@components/organisms/story';
 import SubscribeBanner from '@components/molecules/subscribe-banner';
 import { container, imageWrapper } from '@styles/main.module.scss';
 
-// import { FooterLinks } from '@locale/en.js';
-import authorImage from '@images/en/time-tracking/Time tracking app review@2x.png';
-
 import WebTracking from '@images/web-time-tracking.svg';
 import MobileTracking from '@images/mobile_time_tracking.svg';
 import KioskTracking from '@images/kiosk-time-tracking.svg';
@@ -950,7 +947,7 @@ const TimeTracking = () => {
       <Services />
       <Divider />
       <Story
-        img={authorImage}
+        img="time-tracking"
         paragraph={Intl.formatMessage({ id: 'pages.productTimeTracking.review' })}
         author="Julia Conner – Pennprojects, LLC"
       />

@@ -18,7 +18,6 @@ const Terms = ({ data }) => {
     let arrayItem = array.find((obj) => {
       return obj.documentId === val.toString();
     });
-    // console.log(arrayItem);
     return arrayItem.termsAndConditions;
   };
 
@@ -62,7 +61,7 @@ const Terms = ({ data }) => {
   };
 
   useEffect(() => {
-    console.log('data has been fetched');
+    // console.log('data has been fetched');
   }, [data]);
 
   return (

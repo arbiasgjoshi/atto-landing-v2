@@ -241,7 +241,7 @@ const Product = () => {
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
           quality={97}
-          placeholder="blurred"
+          placeholder="none"
         />
       );
     }
@@ -252,7 +252,7 @@ const Product = () => {
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
           quality={97}
-          placeholder="blurred"
+          placeholder="none"
         />
       );
     }
@@ -263,7 +263,7 @@ const Product = () => {
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
           quality={97}
-          placeholder="blurred"
+          placeholder="none"
         />
       );
     }
@@ -273,7 +273,7 @@ const Product = () => {
         alt="Everything you need to keep track of your employees’ time"
         width={1220}
         quality={97}
-        placeholder="blurred"
+        placeholder="none"
       />
     );
   };
@@ -372,7 +372,7 @@ const Product = () => {
       <GrowthNumbers title={Intl.formatMessage({ id: 'pages.miscellaneous.trustedGlobally' })} />
       <Divider />
       <Story
-        img={authorImage}
+        img="product"
         paragraph={Intl.formatMessage({ id: 'pages.productOverview.review' })}
         author="Jack Thomas – Vision Building & Development"
       />

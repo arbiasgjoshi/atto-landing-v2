@@ -17,7 +17,6 @@ import Services from '@components/organisms/services';
 import Story from '@components/organisms/story';
 import VideoCheckList from '@components/organisms/video-checklist';
 
-import authorImage from '@images/en/team-activity/Time tracking app review@2x.png';
 import Team from '@images/team.svg';
 import Timeline from '@images/timeline.svg';
 import Departments from '@images/departments.svg';
@@ -28,31 +27,6 @@ import Messaging from '@images/messaging.svg';
 import icon14 from '@images/time-tracking-clock@1x.png';
 import icon15 from '@images/location@1x.png';
 import icon16 from '@images/timesheets@1x.png';
-
-import featureImgLocaleOneEn from '@images/en/team-activity/Never feel in the dark again with team activity updates@2x.png';
-import featureImgLocaleOneDe from '@images/de/team-activity/DE_Never feel in the dark again with team activity updates@2x.png';
-import featureImgLocaleOneEs from '@images/es/team-activity/ES_Never feel in the dark again with team activity updates@2x.png';
-import featureImgLocaleOneFr from '@images/fr/team-activity/FR_Never feel in the dark again with team activity updates@2x.png';
-
-import featureImgLocaleTwoEn from '@images/en/team-activity/Simplify team management with departments@2x.png';
-import featureImgLocaleTwoDe from '@images/de/team-activity/DE_Simplify team management with departments@2x.png';
-import featureImgLocaleTwoEs from '@images/es/team-activity/ES_Simplify team management with departments@2x.png';
-import featureImgLocaleTwoFr from '@images/fr/team-activity/FR_Simplify team management with departments@2x.png';
-
-import featureImgLocaleThreeEn from '@images/en/team-activity/Find out what any employee is up to in seconds@2x.png';
-import featureImgLocaleThreeDe from '@images/de/team-activity/DE_Find out what any employee is up to in seconds@2x.png';
-import featureImgLocaleThreeEs from '@images/es/team-activity/ES_Find out what any employee is up to in seconds@2x.png';
-import featureImgLocaleThreeFr from '@images/fr/team-activity/FR_Find out what any employee is up to in seconds@2x.png';
-
-import featureImgLocaleFourEn from '@images/en/team-activity/Eliminate back and forth phone calls and constant check-ins@2x.png';
-import featureImgLocaleFourDe from '@images/de/team-activity/DE_Eliminate back and forth phone calls and constant check-ins@2x.png';
-import featureImgLocaleFourEs from '@images/es/team-activity/ES_Eliminate back and forth phone calls and constant check-ins@2x.png';
-import featureImgLocaleFourFr from '@images/fr/team-activity/FR_Eliminate back and forth phone calls and constant check-ins@2x.png';
-
-import featureImgLocaleFiveEn from '@images/en/team-activity/See your team’s progress at the end of each day@2x.png';
-import featureImgLocaleFiveDe from '@images/de/team-activity/DE_See your team’s progress at the end of each day@2x.png';
-import featureImgLocaleFiveEs from '@images/es/team-activity/ES_See your team’s progress at the end of each day@2x.png';
-import featureImgLocaleFiveFr from '@images/fr/team-activity/FR_See your team’s progress at the end of each day@2x.png';
 
 import { container, articleList } from '@styles/main.module.scss';
 
@@ -328,7 +302,7 @@ const TeamActivity = () => {
       <Services />
       <Divider />
       <Story
-        img={authorImage}
+        img="team-activity"
         paragraph={Intl.formatMessage({ id: 'pages.productTeamActivity.review' })}
         author="Andy"
       />

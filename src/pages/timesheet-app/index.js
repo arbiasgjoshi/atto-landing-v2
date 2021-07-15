@@ -20,9 +20,6 @@ import LearnMoreCard from '@components/molecules/learn-more-card';
 import Services from '@components/organisms/services';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import authorImage from '@images/timesheets/Timesheet app review@2x.png';
-import image1 from '@images/timesheets/Streamline your payroll with our simple employee timesheet app@2x.png';
-
 import AutomaticReports from '@images/automatic-email-reports@2x.png';
 import ExportTimesheet from '@images/export-timesheet-and-timesheet-data@2x.png';
 import AccountingIntegrations from '@images/accounting-integrations@2x.png';
@@ -108,7 +105,7 @@ const EmployeeTimesheetApp = () => {
       <IconCardList cardList={firstList} hasBigImages style="smallerMargin" />
       <Divider />
       <Story
-        img={authorImage}
+        img="timesheet-app"
         paragraph={`Great time keeping app for business. Lets you clock on for different clients and jobs or enter manually. Simple to use & great timesheet reporting. Exactly what I was looking for.`}
         author="David Warwick"
       />

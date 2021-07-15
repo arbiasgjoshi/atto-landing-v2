@@ -66,6 +66,10 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
             setErrorMessage(data.error);
           }
         }
+      })
+      .catch(() => {
+        setLoader(false);
+        setDisabled(false);
       });
   };
 

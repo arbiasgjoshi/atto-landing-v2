@@ -163,7 +163,7 @@ const Landscaping = () => {
         <Title title="Built with landscaping companies in mind" maxWidth={600} />
         <Divider className="style2" />
         <Story
-          img={authorImage}
+          img="landscaping"
           paragraph={`"It makes keeping up with my team's hours seamless! It is saving us a ton of time with timesheets and everyone’s getting paid accurately for the hours they’ve worked.
           "`}
           author="Julia Conner – Pennprojects, LLC"

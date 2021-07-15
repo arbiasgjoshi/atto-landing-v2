@@ -16,8 +16,6 @@ import TickCardList from '@components/organisms/tick-card-list';
 import LearnMoreCard from '@components/molecules/learn-more-card';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import authorImage from '@images/time-clock/Time clock app review@2x.png';
-
 import WebTracking from '@images/web-time-tracking.svg';
 import MobileTracking from '@images/mobile_time_tracking.svg';
 import KioskTracking from '@images/kiosk-time-tracking.svg';
@@ -93,7 +91,7 @@ const TimeClock = () => {
       />
       <Divider className="style11" />
       <Story
-        img={authorImage}
+        img="time-clock"
         paragraph={`“So perfectly simplistic. I work in construction so employees can all be in different places. 
         The ease of tracking hours and productivity via GPS is amazing.”`}
         author="Jack Thomas – Vision Building & Development"

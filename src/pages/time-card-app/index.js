@@ -21,9 +21,6 @@ import IconCardList from '@components/organisms/icon-card-list';
 import CommonQuestions from '@components/organisms/common-questions';
 import Services from '@components/organisms/services';
 import { StaticImage } from 'gatsby-plugin-image';
-
-import authorImage from '@images/time-card-app/Time card app review@2x.png';
-import image1 from '@images/time-card-app/A highly accurate time tracking solution@2x.png';
 import image2 from '@images/time-card-app/Time card options to suit the needs of any business@2x.png';
 
 import icon32 from '@images/location@1x.png';
@@ -106,7 +103,7 @@ const TimeCardApp = () => {
       <TickCardList list={checkList} />
       <Divider className="style4" />
       <Story
-        img={authorImage}
+        img="time-card-app"
         paragraph={`"Using them for our non profit, to manage a few employees. I've tried about 50 others apps before (no kidding). This one finally did the trick."`}
         author="- Dance Of Life"
       />

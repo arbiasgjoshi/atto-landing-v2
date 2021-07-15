@@ -42,7 +42,6 @@ import WageEstimate from '@images/Wage_estimatesSVG.svg';
 import icon20 from '@images/time-tracking-clock@1x.png';
 import icon21 from '@images/location@1x.png';
 import icon22 from '@images/profile@1x.png';
-import authorImage from '@images/en/timesheets/Time tracking app review@2x.png';
 
 import featureImgLocaleOneEn from '@images/en/timesheets/Boost productivity with timesheet insights@2x.png';
 import featureImgLocaleOneDe from '@images/de/timesheets/DE_Boost productivity with timesheet insights@2x.png';
@@ -477,7 +476,7 @@ const Timesheets = () => {
       <Services />
       <Divider />
       <Story
-        img={authorImage}
+        img="timesheets"
         paragraph={Intl.formatMessage({ id: 'pages.productTimesheets.review' })}
         author="David Warwick"
       />

@@ -17,7 +17,6 @@ import AccordionArticle from '@components/organisms/accordion-article';
 import OldVsNew from '@components/organisms/old-vs-new';
 import Steps from '@components/organisms/steps';
 import ImagesBox from '@components/organisms/images-box';
-import authorImage from '@images/plumbing/Plumbers review@2x.png';
 
 import image5 from '@images/plumbing/Respond faster to emergency plumbing call-outs@2x.png';
 import image6 from '@images/plumbing/Avoid surprises by forecasting your wage bill ahead of payday@2x.png';
@@ -96,7 +95,7 @@ const PlumbingAndHeating = () => {
         />
         <Divider className="style4" />
         <Story
-          img={authorImage}
+          img="plumbing"
           paragraph={`"This app has really helped our company. I love the location service that it provides while my employees are clocked in. This is absolutely necessary as our employees drive to multiple job site locations.”`}
           author="Lyns & J"
         />

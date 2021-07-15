@@ -30,7 +30,6 @@ const ContactForm = () => {
   });
 
   const sendContactEmail = (val) => {
-    console.log('we are entering here!');
     const requestOptions = {
       method: 'POST',
       headers: {

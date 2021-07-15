@@ -91,7 +91,7 @@ const TimeTrackingApp = () => {
       />
       <Divider className="style11" />
       <Story
-        img={reviewImage}
+        img="mobile-time-tracking"
         paragraph={`"I appreciate the simplicity yet advance features. Knowing where my team members are and what they are working on allows us to communicate with our devices and takes the human (time) out of the loop."`}
         author="Andy"
       />

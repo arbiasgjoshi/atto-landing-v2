@@ -23,8 +23,6 @@ import SubscribeBanner from '@components/molecules/subscribe-banner';
 import image5 from '@images/painting/Respond to absenteeism and last-minute schedule changes@2x.png';
 import image6 from '@images/painting/Avoid surprises by forecasting wages ahead of payday@2x.png';
 
-import authorImage from '@images/painting/Painting reviews@2x.png';
-
 import {
   firstList,
   checkList1,
@@ -97,7 +95,7 @@ const Painting = () => {
         />
         <Divider className="style4" />
         <Story
-          img={authorImage}
+          img="painting"
           paragraph={`"This app really does offer everything you need and more as far as time tracking goes. This is an app I highly recommend to all of my friends and family who are running a business."`}
           author="Anthony Harp"
         />

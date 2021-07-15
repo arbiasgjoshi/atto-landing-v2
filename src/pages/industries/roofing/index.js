@@ -18,8 +18,6 @@ import OldVsNew from '@components/organisms/old-vs-new';
 import Steps from '@components/organisms/steps';
 import ImagesBox from '@components/organisms/images-box';
 
-import authorImage from '@images/roofing/Roofing reviews@2x.png';
-
 import image5 from '@images/roofing/Respond quickly to weather changes and employee absences @2x.png';
 import image6 from '@images/roofing/Forecast your wage bill ahead of payday to avoid unwanted surprises@2x.png';
 
@@ -92,7 +90,7 @@ const Roofing = () => {
         />
         <Divider className="style4" />
         <Story
-          img={authorImage}
+          img="roofing"
           paragraph={`“Great app for my roofing business. Allows me to track my employees/contractors and more importantly makes it easy for them to fill out timesheets."`}
           author="Syphon"
         />

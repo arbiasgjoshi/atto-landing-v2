@@ -60,7 +60,7 @@ const Privacy = ({ data }) => {
   };
 
   useEffect(() => {
-    console.log('data has been fetched', data);
+    // console.log('data has been fetched', data);
   }, [data]);
 
   return (
