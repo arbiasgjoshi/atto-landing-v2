@@ -238,7 +238,7 @@ const Footer = () => {
         },
         {
           id: 1,
-          path: '/industries/painting',
+          path: '/industries/painting-and-decorating',
           name: Intl.formatMessage({ id: 'pages.industries.paintingLabel' }),
           hasLine: false,
         },

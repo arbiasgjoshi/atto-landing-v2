@@ -50,7 +50,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email: val }),
+      body: JSON.stringify(val),
     };
     fetch('/confirmation', requestOptions)
       .then((response) => response.json())
@@ -87,7 +87,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
             validationSchema={validationSchema}
             autoComplete="off"
             onSubmit={(values) => {
-              signUpTrial(values.email);
+              signUpTrial(values);
             }}
           >
             {({ values, handleSubmit, handleChange, handleBlur, errors }) => (

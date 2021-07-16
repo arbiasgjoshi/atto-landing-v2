@@ -29,11 +29,10 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
     console.log(val);
     const requestOptions = {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ val }),
+      body: JSON.stringify(val),
     };
     fetch('/confirmation', requestOptions)
       .then((response) => response.json())

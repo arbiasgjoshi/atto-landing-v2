@@ -58,10 +58,14 @@
 
     .leftNav {
       margin-right: 0;
+      position: relative;
+      z-index: 9999;
     }
 
     .rightNavButtons {
       // margin-left: 0;
+      position: relative;
+      z-index: 9999;
       @include flex-align(center, flex-end);
       .login {
         display: none;
@@ -433,11 +437,16 @@
   position: fixed;
   z-index: 1000;
   left: 0;
-  top: 6.1rem;
+  top: 0;
   background-color: #fff;
   width: 100%;
   height: calc(100% - 6.1rem);
+  height: -webkit-fill-available;
   overflow: scroll;
+
+  > div {
+    margin-top: 6.1rem;
+  }
 
   @include flex-direction(column);
 
