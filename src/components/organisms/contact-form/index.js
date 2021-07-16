@@ -11,11 +11,13 @@ import {
   formBtn,
   formMask,
   successMessage,
+  hasError,
 } from './contact-form.module.scss';
 
 const ContactForm = () => {
   const [isOpen, setOpen] = useState(false);
   const [error, setError] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   const [loader, setLoader] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [successMsg, setSuccessMessage] = useState('');
@@ -29,6 +31,11 @@ const ContactForm = () => {
       .email('This field must be a valid email')
       .required('Email is a required field'),
   });
+
+  const toggleButtonAnimations = () => {
+    setLoader(true);
+    setDisabled(true);
+  };
 
   const sendContactEmail = (val) => {
     const requestOptions = {
@@ -51,6 +58,10 @@ const ContactForm = () => {
           setError(true);
           setErrorMessage(data.error);
         }
+      })
+      .catch(() => {
+        setLoader(false);
+        setDisabled(false);
       });
   };
 
@@ -103,7 +114,7 @@ const ContactForm = () => {
           autoComplete="off"
           onSubmit={(values) => sendContactEmail(values)}
         >
-          {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
+          {({ values, handleChange, handleBlur, isValid, handleSubmit, errors }) => (
             <form method="POST">
               <div className={formRow}>
                 <input
@@ -113,6 +124,7 @@ const ContactForm = () => {
                   value={values.name}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  className={errors.name && hasError}
                 />
                 <input
                   type="email"
@@ -121,6 +133,7 @@ const ContactForm = () => {
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  className={errors.email && hasError}
                 />
               </div>
 
@@ -131,10 +144,23 @@ const ContactForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder={Intl.formatMessage({ id: 'pages.contact.message' })}
+                  className={errors.text && hasError}
                 />
               </div>
               <div className={formBtn}>
-                <button type="submit" className={defaultBtn}>
+                <button
+                  type="submit"
+                  onClick={() => {
+                    if (isValid) {
+                      handleSubmit();
+                      if (!errors) {
+                        toggleButtonAnimations();
+                      }
+                    }
+                  }}
+                  disabled={disabled || !isValid}
+                  className={defaultBtn}
+                >
                   {loader ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

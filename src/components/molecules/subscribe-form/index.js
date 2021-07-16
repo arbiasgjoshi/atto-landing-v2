@@ -11,7 +11,6 @@ import { formWrapper } from './form.module.scss';
 
 const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted }) => {
   const Intl = useIntl();
-  // const [stopLoad, setStopLoad] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [loader, setLoader] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -92,7 +91,9 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
               onClick={() => {
                 if (isValid) {
                   handleSubmit();
-                  toggleButtonAnimations();
+                  if (!errors) {
+                    toggleButtonAnimations();
+                  }
                 }
               }}
               disabled={disabled || !isValid}

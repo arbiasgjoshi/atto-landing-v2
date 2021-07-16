@@ -65,6 +65,11 @@
       border-color: var(--primary-color);
       box-shadow: 0 0 5px 5px rgba(0, 185, 203, 0.15);
     }
+
+    &.hasError {
+      border-color: #e05656;
+      color: #e05656;
+    }
   }
 
   @include max(tablet) {
