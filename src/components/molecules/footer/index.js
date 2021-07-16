@@ -92,15 +92,14 @@ const Footer = () => {
     );
   };
 
-  const scriptsToRender = () => {
-    return (
-      <>
-        {cookieScripts(Intl.locale)}
-        {/* Google Tag Manager */}
-        <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `
+  const scriptsToRender = () => (
+    <>
+      {cookieScripts(Intl.locale)}
+      {/* Google Tag Manager */}
+      <script
+        defer
+        dangerouslySetInnerHTML={{
+          __html: `
                 (function (w, d, s, l, i) {
                   w[l] = w[l] || [];
                   w[l].push({
@@ -115,26 +114,26 @@ const Footer = () => {
                   f.parentNode.insertBefore(j, f);
               })(window, document, 'script', 'dataLayer', 'GTM-NV2DTP3');    
               `,
-          }}
+        }}
+      />
+      {/* <!-- End Google Tag Manager --> */}
+
+      {/* <!-- Google Tag Manager (noscript) --> */}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-NV2DTP3"
+          title="null"
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
         />
-        {/* <!-- End Google Tag Manager --> */}
+      </noscript>
 
-        {/* <!-- Google Tag Manager (noscript) --> */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NV2DTP3"
-            title="null"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-
-        {/* <!-- Helpscout --> */}
-        <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `
+      {/* <!-- Helpscout --> */}
+      <script
+        defer
+        dangerouslySetInnerHTML={{
+          __html: `
               !function (e, t, n) {
                 function a() {
                     var e = t.getElementsByTagName("script")[0], n = t.createElement("script");
@@ -148,19 +147,18 @@ const Footer = () => {
             }(window, document, window.Beacon || function () {
             }); 
               `,
-          }}
-        />
-        <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `
+        }}
+      />
+      <script
+        defer
+        dangerouslySetInnerHTML={{
+          __html: `
               window.Beacon('init', 'f0351335-a50d-4bb8-9d06-9b9bf4ad4e12')
           `,
-          }}
-        />
-      </>
-    );
-  };
+        }}
+      />
+    </>
+  );
 
   const FooterLinks = [
     {
