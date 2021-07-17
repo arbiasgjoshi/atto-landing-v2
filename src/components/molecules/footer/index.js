@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { LiveChatLoaderProvider, HelpScout } from 'react-live-chat-loader';
 import { Link, useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
 import googlePlay from '@images/google-play@2x.png';
@@ -21,7 +22,6 @@ import {
 
 const Footer = () => {
   const Intl = useIntl();
-  const [afterLoad, setAfterLoad] = useState(null);
 
   const productLabel = () => {
     if (Intl.locale !== 'en') {
@@ -91,74 +91,6 @@ const Footer = () => {
       </>
     );
   };
-
-  const scriptsToRender = () => (
-    <>
-      {cookieScripts(Intl.locale)}
-      {/* Google Tag Manager */}
-      <script
-        defer
-        dangerouslySetInnerHTML={{
-          __html: `
-                (function (w, d, s, l, i) {
-                  w[l] = w[l] || [];
-                  w[l].push({
-                      'gtm.start':
-                          new Date().getTime(), event: 'gtm.js'
-                  });
-                  var f = d.getElementsByTagName(s)[0],
-                      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-                  j.async = true;
-                  j.src =
-                      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                  f.parentNode.insertBefore(j, f);
-              })(window, document, 'script', 'dataLayer', 'GTM-NV2DTP3');    
-              `,
-        }}
-      />
-      {/* <!-- End Google Tag Manager --> */}
-
-      {/* <!-- Google Tag Manager (noscript) --> */}
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-NV2DTP3"
-          title="null"
-          height="0"
-          width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
-        />
-      </noscript>
-
-      {/* <!-- Helpscout --> */}
-      <script
-        defer
-        dangerouslySetInnerHTML={{
-          __html: `
-              !function (e, t, n) {
-                function a() {
-                    var e = t.getElementsByTagName("script")[0], n = t.createElement("script");
-                    n.type = "text/javascript", n.async = !0, n.src = "https://beacon-v2.helpscout.net", e.parentNode.insertBefore(n, e)
-                }
-        
-                if (e.Beacon = n = function (t, n, a) {
-                    e.Beacon.readyQueue.push({method: t, options: n, data: a})
-                }, n.readyQueue = [], "complete" === t.readyState) return a();
-                e.attachEvent ? e.attachEvent("onload", a) : e.addEventListener("load", a, !1)
-            }(window, document, window.Beacon || function () {
-            }); 
-              `,
-        }}
-      />
-      <script
-        defer
-        dangerouslySetInnerHTML={{
-          __html: `
-              window.Beacon('init', 'f0351335-a50d-4bb8-9d06-9b9bf4ad4e12')
-          `,
-        }}
-      />
-    </>
-  );
 
   const FooterLinks = [
     {
@@ -323,12 +255,6 @@ const Footer = () => {
     },
   ];
 
-  useEffect(() => {
-    setTimeout(() => {
-      setAfterLoad(scriptsToRender);
-    }, 3000);
-  });
-
   return (
     <>
       <footer className={pageFooter}>
@@ -391,7 +317,45 @@ const Footer = () => {
             {Intl.formatMessage({ id: 'pages.miscellaneous.footerLinkTwo' })}
           </Link>
         </p>
+        <LiveChatLoaderProvider
+          providerKey="f0351335-a50d-4bb8-9d06-9b9bf4ad4e12"
+          provider="helpScout"
+        >
+          <HelpScout horizontalPosition="right" color="#00b9cb" icon="message" />
+        </LiveChatLoaderProvider>
       </footer>
+      {cookieScripts(Intl.locale)}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+                (function (w, d, s, l, i) {
+                  w[l] = w[l] || [];
+                  w[l].push({
+                      'gtm.start':
+                          new Date().getTime(), event: 'gtm.js'
+                  });
+                  var f = d.getElementsByTagName(s)[0],
+                      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                  j.async = true;
+                  j.src =
+                      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                  f.parentNode.insertBefore(j, f);
+              })(window, document, 'script', 'dataLayer', 'GTM-NV2DTP3');    
+              `,
+        }}
+      />
+      {/* <!-- End Google Tag Manager --> */}
+
+      {/* <!-- Google Tag Manager (noscript) --> */}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-NV2DTP3"
+          title="null"
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
+        />
+      </noscript>
       <script type="text/javascript" async defer src="//cdn.iubenda.com/cs/ccpa/stub.js" />
       <script
         type="text/javascript"
@@ -400,7 +364,6 @@ const Footer = () => {
         defer
         async
       />
-      {afterLoad}
     </>
   );
 };

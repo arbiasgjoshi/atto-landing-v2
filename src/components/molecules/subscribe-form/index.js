@@ -25,7 +25,6 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
   };
 
   const signUpTrial = (val) => {
-    console.log(val);
     const requestOptions = {
       method: 'POST',
       headers: {
@@ -49,10 +48,18 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
           }
         }
       })
-      .catch(() => {
+      .catch((err) => {
         setLoader(false);
         setDisabled(false);
       });
+  };
+
+  const toggleSubmit = (e, submit, valid) => {
+    e.preventDefault();
+    if (valid) {
+      submit();
+      toggleButtonAnimations();
+    }
   };
 
   useEffect(() => {
@@ -72,7 +79,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
         }}
       >
         {({ values, isValid, handleSubmit, handleChange, handleBlur, errors }) => (
-          <form method="POST" onSubmit={handleSubmit} className={formWrapper}>
+          <form method="POST" className={formWrapper}>
             <div className={inputWrapper}>
               <input
                 placeholder={placeholder}
@@ -84,18 +91,10 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
                 onBlur={handleBlur}
               />
             </div>
-            {/* <Button btnText="Submit" /> */}
             <button
               type="submit"
               aria-label="Submit Form"
-              onClick={() => {
-                if (isValid) {
-                  handleSubmit();
-                  if (!errors) {
-                    toggleButtonAnimations();
-                  }
-                }
-              }}
+              onClick={(e) => toggleSubmit(e, handleSubmit, isValid)}
               disabled={disabled || !isValid}
               className={`${defaultBtn} ${blackStyle}`}
             >

@@ -1,23 +1,27 @@
 {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "useBuiltIns": "entry"
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "corejs": "3.0.0",
+        "targets": {
+          "esmodules": true,
+          "ie": "11"
         }
-      ],
-      "@babel/preset-react"
-    ], 
-    "plugins": [
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-export-default-from",
-      "@babel/plugin-transform-react-jsx",
-      [
-        "@babel/plugin-transform-runtime",
-        {
-          "regenerator": true
-        }
-      ]
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-transform-react-jsx",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
     ]
-  }
-  
+  ]
+}

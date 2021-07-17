@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-
 import { StaticImage } from 'gatsby-plugin-image';
+import { useIntl } from 'gatsby-plugin-react-intl';
+
 import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
 import Modal from '@components/molecules/modal';
-import { useIntl } from 'gatsby-plugin-react-intl';
 import Header from '@components/molecules/header';
 import Footer from '@components/molecules/footer';
 import VideoCheckList from '@components/organisms/video-checklist';
@@ -14,7 +14,6 @@ import LearnMoreCard from '@components/molecules/learn-more-card';
 import IconCard from '@components/molecules/icon-card';
 import Title from '@components/molecules/title';
 import CheckList from '@components/molecules/check-list';
-// import ImageSlider from '@components/molecules/image-slider';
 import IconCardList from '@components/organisms/icon-card-list';
 import FeaturesList from '@components/organisms/features-list';
 import GrowthNumbers from '@components/organisms/growth-numbers';
@@ -47,8 +46,6 @@ import icon3 from '@images/trustworthy.png';
 import icon32 from '@images/location@1x.png';
 import icon33 from '@images/profile@1x.png';
 import icon34 from '@images/timesheets@1x.png';
-//
-// Clock-in and out@2x.png
 
 import roundedFeatureOneEn from '@images/en/time-tracking/Employees forget to track their time_@2x.png';
 import roundedFeatureOneDe from '@images/de/time-tracking/DE_Employees forget to track their time_@2x.png';
@@ -121,16 +118,17 @@ const TimeTracking = () => {
       body: JSON.stringify({ email: data.email }),
     };
     fetch('/delete-invite', requestOptions)
-      .then((response) => response.json())
-      .then((res) => {
-        setValues(res);
-        openModal();
+      .then((res) => res.json())
+      .then((data) => {
+        closeModal();
+        setValues(data);
+        setTimeout(() => openModal(), 2000);
       });
   };
 
   const formSuccessState = (val) => {
-    closeModal();
     if (val?.action !== 'delete') {
+      closeModal();
       setValues(val);
     } else {
       toggleDeleteInvite(val);

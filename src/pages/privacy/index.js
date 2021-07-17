@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 
 import { graphql } from 'gatsby';
 
-import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Header from '@components/molecules/header';

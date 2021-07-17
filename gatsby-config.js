@@ -101,5 +101,6 @@ module.exports = {
         redirect: false,
       },
     },
+    // 'gatsby-plugin-webpack-bundle-analyser-v2',
   ],
 };

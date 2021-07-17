@@ -73,6 +73,14 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
       });
   };
 
+  const toggleSubmit = (e, submit, valid) => {
+    e.preventDefault();
+    if (valid) {
+      submit();
+      toggleButtonAnimations();
+    }
+  };
+
   return (
     <>
       <h4 className={mobileOnly}>{description}</h4>
@@ -90,7 +98,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
               signUpTrial(values);
             }}
           >
-            {({ values, handleSubmit, handleChange, handleBlur, errors }) => (
+            {({ values, handleSubmit, handleChange, isValid, handleBlur, errors }) => (
               <form method="POST">
                 <div className={inputWrapper}>
                   <input
@@ -105,10 +113,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
                 </div>
                 <div className={desktopBtn}>
                   <button
-                    onClick={() => {
-                      handleSubmit();
-                      toggleButtonAnimations();
-                    }}
+                    onClick={(e) => toggleSubmit(e, handleSubmit, isValid)}
                     disabled={disabled}
                     className={`${defaultBtn} ${blackStyle}`}
                   >

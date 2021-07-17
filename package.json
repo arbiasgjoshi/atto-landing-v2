@@ -47,6 +47,7 @@
     "react-draggable": "^4.4.3",
     "react-helmet": "^6.1.0",
     "react-lazyload": "^3.2.0",
+    "react-live-chat-loader": "^2.5.2",
     "react-player": "^2.9.0",
     "react-responsive-carousel": "^3.2.18",
     "react-slick": "^0.28.1",
@@ -74,6 +75,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
     "jest": "^26.6.3"
   }
 }

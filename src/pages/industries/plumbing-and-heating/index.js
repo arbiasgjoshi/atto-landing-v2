@@ -35,9 +35,6 @@ import {
   accordionList2,
 } from '@data/industries/plumbing-and-heating.js';
 import { oldList, newList, plumberSteps } from '@data/industries';
-// import image2 from '@images/time-tracking-plumbing@2x.png';
-import BannerImage from '@images/plumbing/Time Tracking for Plumbing and Heating Companies@2x.png';
-// import { FooterLinks } from '@locale/en.js';
 
 const PlumbingAndHeating = () => {
   const Intl = useIntl();
@@ -56,16 +53,17 @@ const PlumbingAndHeating = () => {
       body: JSON.stringify({ email: data.email }),
     };
     fetch('/delete-invite', requestOptions)
-      .then((response) => response.json())
-      .then((res) => {
-        setValues(res);
-        openModal();
+      .then((res) => res.json())
+      .then((data) => {
+        closeModal();
+        setValues(data);
+        setTimeout(() => openModal(), 2000);
       });
   };
 
   const formSuccessState = (val) => {
-    closeModal();
     if (val?.action !== 'delete') {
+      closeModal();
       setValues(val);
     } else {
       toggleDeleteInvite(val);

@@ -150,7 +150,8 @@ const ContactForm = () => {
               <div className={formBtn}>
                 <button
                   type="submit"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     if (isValid) {
                       handleSubmit();
                       if (!errors) {

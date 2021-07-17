@@ -3,18 +3,6 @@ import PropTypes from 'prop-types';
 
 import { StaticImage } from 'gatsby-plugin-image';
 
-// Team Activity
-
-import teamActivityArticleLocaleFiveEn from '@images/en/team-activity/See your team’s progress at the end of each day@2x.png';
-import teamActivityArticleLocaleFiveDe from '@images/de/team-activity/DE_See your team’s progress at the end of each day@2x.png';
-import teamActivityArticleLocaleFiveEs from '@images/es/team-activity/ES_See your team’s progress at the end of each day@2x.png';
-import teamActivityArticleLocaleFiveFr from '@images/fr/team-activity/FR_See your team’s progress at the end of each day@2x.png';
-
-// Time Card App
-import TimeCardGetWageEstimates from '@images/time-card-app/Get wage estimates from your employees’ time cards@2x.png';
-import TimeCardSummariesImage from '@images/time-card-app/See time card summaries per employee, team, or project@2x.png';
-import TimeCardViewTimeCard from '@images/time-card-app/View time card data as a daily map-based timeline@2x.png';
-
 import {
   container,
   textWrapper,

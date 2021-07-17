@@ -23,7 +23,6 @@ import image6 from '@images/roofing/Forecast your wage bill ahead of payday to a
 
 import { oldList, newList, roofingSteps } from '@data/industries';
 import { checkList1, firstList, accordionList1, accordionList2 } from '@data/industries/roofing.js';
-// import { FooterLinks } from '@locale/en.js';
 import {
   container,
   industryPadding,
@@ -31,8 +30,6 @@ import {
   background,
   oldVsNewGradient,
 } from '@styles/main.module.scss';
-
-// import localeData from '@locale/en';
 
 const Roofing = () => {
   const Intl = useIntl();
@@ -51,16 +48,17 @@ const Roofing = () => {
       body: JSON.stringify({ email: data.email }),
     };
     fetch('/delete-invite', requestOptions)
-      .then((response) => response.json())
-      .then((res) => {
-        setValues(res);
-        openModal();
+      .then((res) => res.json())
+      .then((data) => {
+        closeModal();
+        setValues(data);
+        setTimeout(() => openModal(), 2000);
       });
   };
 
   const formSuccessState = (val) => {
-    closeModal();
     if (val?.action !== 'delete') {
+      closeModal();
       setValues(val);
     } else {
       toggleDeleteInvite(val);

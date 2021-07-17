@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-// import { StaticImage } from 'gatsby-plugin-image';
 import { Link, useIntl } from 'gatsby-plugin-react-intl';
+import useScroll from 'react-use-scroll';
 
 import Button from '@components/atoms/button';
 import Divider from '@components/atoms/divider';
 import Icon from '@components/atoms/icon';
 import Modal from '@components/molecules/modal';
-import useScroll from 'react-use-scroll';
 import Accordion from '@components/organisms/accordion';
 
 import ProductIcon from '@images/product-overview-logo.svg';
@@ -91,8 +90,6 @@ const HeaderComponent = ({ headerStyle }) => {
   useEffect(() => {
     listentoScroll();
   }, [scroll]);
-
-  // FIXME There is a need for three states: opened menu, you're over the menu, you've left both the menu and main links;
 
   const productSection = () => (
     <div className={menuSection}>
@@ -422,8 +419,8 @@ const HeaderComponent = ({ headerStyle }) => {
   };
 
   const formSuccessState = (val) => {
-    closeModal();
     if (val?.action !== 'delete') {
+      closeModal();
       setValues(val);
     } else {
       toggleDeleteInvite(val);
@@ -450,7 +447,6 @@ const HeaderComponent = ({ headerStyle }) => {
         close={closeModal}
         showDialog={showDialog}
         hasValues={values}
-        onDelete={toggleDeleteInvite}
         setFormValues={(formValues) => formSuccessState(formValues)}
       />
       <div className={container}>
@@ -490,7 +486,12 @@ const HeaderComponent = ({ headerStyle }) => {
           </Link>
         </div>
         <div className={rightNavButtons}>
-          <a href="https://app.attotime.com/login" target="_blank" className={login}>
+          <a
+            href="https://app.attotime.com/login"
+            rel="noreferrer"
+            target="_blank"
+            className={login}
+          >
             {Intl.formatMessage({ id: 'header.menu.login' })}
           </a>
           <Button

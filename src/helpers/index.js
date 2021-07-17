@@ -14,3 +14,14 @@ export const placeholders = [
   { id: 10 },
   { id: 11 },
 ];
+
+export const deleteInvitation = (data) => {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email: data.email }),
+  };
+  fetch('/delete-invite', requestOptions);
+};

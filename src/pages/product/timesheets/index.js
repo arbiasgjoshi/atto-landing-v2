@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { container, imageWrapper } from '@styles/main.module.scss';
+import { StaticImage } from 'gatsby-plugin-image';
+import { useIntl } from 'gatsby-plugin-react-intl';
 
 import Divider from '@components/atoms/divider';
-import { StaticImage } from 'gatsby-plugin-image';
 import Seo from '@components/molecules/seo';
 import Modal from '@components/molecules/modal';
-import { useIntl } from 'gatsby-plugin-react-intl';
 import Title from '@components/molecules/title';
 import Header from '@components/molecules/header';
 import Footer from '@components/molecules/footer';
@@ -56,6 +55,7 @@ import featureImgLocaleTwoFr from '@images/fr/timesheets/FR_Gain a clear underst
 import featureImgLocaleThreeEn from '@images/en/timesheets/Timesheets on-time and in your Inbox@2x.png';
 import featureImgLocaleThreeDe from '@images/de/timesheets/DE_Timesheets on-time and in your Inbox@2x.png';
 import featureImgLocaleThreeEs from '@images/es/timesheets/ES_Timesheets on-time and in your Inbox@2x.png';
+import { container, imageWrapper } from '@styles/main.module.scss';
 import featureImgLocaleThreeFr from '@images/fr/timesheets/FR_Timesheets on-time and in your Inbox@2x.png';
 
 import featureImgLocaleFourEn from '@images/en/timesheets/Estimate your Employees’ Wages@2x.png';
@@ -87,16 +87,17 @@ const Timesheets = () => {
       body: JSON.stringify({ email: data.email }),
     };
     fetch('/delete-invite', requestOptions)
-      .then((response) => response.json())
-      .then((res) => {
-        setValues(res);
-        openModal();
+      .then((res) => res.json())
+      .then((data) => {
+        closeModal();
+        setValues(data);
+        setTimeout(() => openModal(), 2000);
       });
   };
 
   const formSuccessState = (val) => {
-    closeModal();
     if (val?.action !== 'delete') {
+      closeModal();
       setValues(val);
     } else {
       toggleDeleteInvite(val);
