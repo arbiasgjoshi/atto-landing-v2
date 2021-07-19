@@ -57,7 +57,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
   const toggleSubmit = (e, submit, valid, err) => {
     e.preventDefault();
     if (valid) {
-      if (!err && err !== undefined) {
+      if (!err || err !== undefined) {
         toggleButtonAnimations();
       }
       console.log(err);

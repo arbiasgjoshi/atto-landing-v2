@@ -77,7 +77,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
     e.preventDefault();
     if (valid) {
       submit();
-      if (!err && err !== undefined) {
+      if (!err || err !== undefined) {
         toggleButtonAnimations();
       }
     }
