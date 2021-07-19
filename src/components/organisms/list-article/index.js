@@ -26,7 +26,7 @@ const ListArticle = ({
   imageWidth,
   textMargin,
 }) => {
-  const [image2, setImage2] = useState(null); //TODO If we have svg and .img files coming in props. For now!
+  const [image2, setImage2] = useState(null); // TODO If we have svg and .img files coming in props. For now!
   useEffect(() => {
     if (typeof image === 'string') {
       setImage2(

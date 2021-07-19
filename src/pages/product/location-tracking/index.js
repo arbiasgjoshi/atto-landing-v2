@@ -271,18 +271,6 @@ const LocationTracking = () => {
   );
 
   const imageTwoLocale = (loc) => {
-    if (loc === 'en') {
-      return (
-        <StaticImage
-          src="../../../images/en/gps-location-tracking/Verify your team are working where they should be@2x.png"
-          alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
-          width={500}
-          height={600}
-          quality={98}
-          placeholder="blurred"
-        />
-      );
-    }
     if (loc === 'de') {
       return (
         <StaticImage
@@ -319,21 +307,19 @@ const LocationTracking = () => {
         />
       );
     }
+    return (
+      <StaticImage
+        src="../../../images/en/gps-location-tracking/Verify your team are working where they should be@2x.png"
+        alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
+        width={500}
+        height={600}
+        quality={98}
+        placeholder="blurred"
+      />
+    );
   };
 
   const imageBannerLocale = (loc) => {
-    if (loc === 'en') {
-      return (
-        <StaticImage
-          src="../../../images/en/gps-location-tracking/Track the locations of your entire team in real-time@2x.png"
-          alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
-          width={1140}
-          height={340}
-          quality={98}
-          placeholder="blurred"
-        />
-      );
-    }
     if (loc === 'de') {
       return (
         <StaticImage
@@ -370,6 +356,16 @@ const LocationTracking = () => {
         />
       );
     }
+    return (
+      <StaticImage
+        src="../../../images/en/gps-location-tracking/Track the locations of your entire team in real-time@2x.png"
+        alt={Intl.formatMessage({ id: 'pages.productLocationTracking.secondSectionTitle' })}
+        width={1140}
+        height={340}
+        quality={98}
+        placeholder="blurred"
+      />
+    );
   };
 
   return (

@@ -42,27 +42,17 @@ import icon20 from '@images/time-tracking-clock@1x.png';
 import icon21 from '@images/location@1x.png';
 import icon22 from '@images/profile@1x.png';
 
-import featureImgLocaleOneEn from '@images/en/timesheets/Boost productivity with timesheet insights@2x.png';
-import featureImgLocaleOneDe from '@images/de/timesheets/DE_Boost productivity with timesheet insights@2x.png';
-import featureImgLocaleOneEs from '@images/es/timesheets/ES_Boost productivity with timesheet insights@2x.png';
-import featureImgLocaleOneFr from '@images/fr/timesheets/FR_Boost productivity with timesheet insights@2x.png';
-
-import featureImgLocaleTwoEn from '@images/en/timesheets/Gain a clear understanding of your employees’ activity@2x.png';
-import featureImgLocaleTwoDe from '@images/de/timesheets/DE_Gain a clear understanding of your employees’ activity@2x.png';
-import featureImgLocaleTwoEs from '@images/es/timesheets/ES_Gain a clear understanding of your employees’ activity@2x.png';
-import featureImgLocaleTwoFr from '@images/fr/timesheets/FR_Gain a clear understanding of your employees’ activity@2x.png';
-
-import featureImgLocaleThreeEn from '@images/en/timesheets/Timesheets on-time and in your Inbox@2x.png';
 import featureImgLocaleThreeDe from '@images/de/timesheets/DE_Timesheets on-time and in your Inbox@2x.png';
 import featureImgLocaleThreeEs from '@images/es/timesheets/ES_Timesheets on-time and in your Inbox@2x.png';
-import { container, imageWrapper } from '@styles/main.module.scss';
 import featureImgLocaleThreeFr from '@images/fr/timesheets/FR_Timesheets on-time and in your Inbox@2x.png';
+import featureImgLocaleThreeEn from '@images/en/timesheets/Timesheets on-time and in your Inbox@2x.png';
 
-import featureImgLocaleFourEn from '@images/en/timesheets/Estimate your Employees’ Wages@2x.png';
 import featureImgLocaleFourDe from '@images/de/timesheets/DE_Estimate your Employees’ Wages@2x.png';
 import featureImgLocaleFourEs from '@images/es/timesheets/ES_Estimate your Employees’ Wages@2x.png';
 import featureImgLocaleFourFr from '@images/fr/timesheets/FR_Estimate your Employees’ Wages@2x.png';
+import featureImgLocaleFourEn from '@images/en/timesheets/Estimate your Employees’ Wages@2x.png';
 
+import { container, imageWrapper } from '@styles/main.module.scss';
 import {
   teamActivityContainer,
   roundImagesContainer,
@@ -226,6 +216,104 @@ const Timesheets = () => {
     },
   ];
 
+  const featureImgLocaleOne = (lang) => {
+    if (lang === 'de') {
+      return (
+        <StaticImage
+          src="../../../images/de/timesheets/DE_Boost productivity with timesheet insights@2x.png"
+          alt="Boost productivity with timesheet insights"
+          width={511}
+          height={566}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (lang === 'es') {
+      return (
+        <StaticImage
+          src="../../../images/es/timesheets/ES_Boost productivity with timesheet insights@2x.png"
+          alt="Everything you need to keep track of your employees’ time"
+          width={511}
+          height={566}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (lang === 'fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/timesheets/FR_Boost productivity with timesheet insights@2x.png"
+          alt="Boost productivity with timesheet insights"
+          width={511}
+          height={566}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    return (
+      <StaticImage
+        src="../../../images/en/timesheets/Boost productivity with timesheet insights@2x.png"
+        alt="Boost productivity with timesheet insights"
+        width={511}
+        height={566}
+        quality={95}
+        placeholder="none"
+      />
+    );
+  };
+
+  const featureImgLocaleTwo = (lang) => {
+    if (lang === 'de') {
+      return (
+        <StaticImage
+          src="../../../images/de/timesheets/DE_Gain a clear understanding of your employees’ activity@2x.png"
+          alt="Gain a clear understanding of your employees’ activity"
+          width={506}
+          height={686}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (lang === 'es') {
+      return (
+        <StaticImage
+          src="../../../images/es/timesheets/ES_Gain a clear understanding of your employees’ activity@2x.png"
+          alt="Gain a clear understanding of your employees’ activity"
+          width={506}
+          height={686}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    if (lang === 'fr') {
+      return (
+        <StaticImage
+          src="../../../images/fr/timesheets/FR_Gain a clear understanding of your employees’ activity@2x.png"
+          alt="Gain a clear understanding of your employees’ activity"
+          width={506}
+          height={686}
+          quality={95}
+          placeholder="none"
+        />
+      );
+    }
+    return (
+      <StaticImage
+        src="../../../images/en/timesheets/Gain a clear understanding of your employees’ activity@2x.png"
+        alt="Gain a clear understanding of your employees’ activity"
+        width={506}
+        height={686}
+        quality={95}
+        placeholder="none"
+      />
+    );
+  };
+
   const bannerImage = (loc) => {
     if (loc === 'en') {
       return (
@@ -234,7 +322,7 @@ const Timesheets = () => {
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
         />
       );
     }
@@ -245,7 +333,7 @@ const Timesheets = () => {
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
         />
       );
     }
@@ -256,7 +344,7 @@ const Timesheets = () => {
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
         />
       );
     }
@@ -267,48 +355,12 @@ const Timesheets = () => {
           alt="Everything you need to keep track of your employees’ time"
           width={1220}
           quality={98}
-          placeholder="blurred"
+          placeholder="none"
         />
       );
     }
-  };
 
-  const timeSheetFeatureImgOne = (loc) => {
-    if (loc === 'en') {
-      //
-      return featureImgLocaleOneEn;
-    }
-    if (loc === 'es') {
-      //
-      return featureImgLocaleOneEs;
-    }
-    if (loc === 'de') {
-      //
-      return featureImgLocaleOneDe;
-    }
-    if (loc === 'fr') {
-      //
-      return featureImgLocaleOneFr;
-    }
-  };
-
-  const timeSheetFeatureImgTwo = (loc) => {
-    if (loc === 'en') {
-      //
-      return featureImgLocaleTwoEn;
-    }
-    if (loc === 'es') {
-      //
-      return featureImgLocaleTwoEs;
-    }
-    if (loc === 'de') {
-      //
-      return featureImgLocaleTwoDe;
-    }
-    if (loc === 'fr') {
-      //
-      return featureImgLocaleTwoFr;
-    }
+    return null;
   };
 
   const timeSheetFeatureImgThree = (loc) => {
@@ -398,7 +450,7 @@ const Timesheets = () => {
         title={Intl.formatMessage({ id: 'pages.productTimesheets.firstFeatureTitle' })}
         description={Intl.formatMessage({ id: 'pages.productTimesheets.firstFeatureDesc' })}
         list={checkLists2}
-        image={timeSheetFeatureImgOne(Intl.locale)}
+        image={featureImgLocaleOne(Intl.locale)}
         textMargin="10.3 0"
       />
       <Divider />
@@ -406,7 +458,7 @@ const Timesheets = () => {
         title={Intl.formatMessage({ id: 'pages.productTimesheets.secondFeatureTitle' })}
         description={Intl.formatMessage({ id: 'pages.productTimesheets.secondFeatureDesc' })}
         list={checkLists3}
-        image={timeSheetFeatureImgTwo(Intl.locale)}
+        image={featureImgLocaleTwo(Intl.locale)}
         isSwapped
         textMargin="5.8rem 0"
       />

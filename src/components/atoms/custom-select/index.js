@@ -66,7 +66,7 @@ const CustomSelect = () => {
       className={selectDropdown}
       onKeyDown={() => toggleDropdown()}
       role="listbox"
-      aria-input-field-name="listbox"
+      aria-labelledby="select_language"
       tabIndex="0"
       onClick={() => toggleDropdown()}
     >

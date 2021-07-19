@@ -6,6 +6,7 @@ import googlePlay from '@images/google-play@2x.png';
 import appStore from '@images/apple-store@2x.png';
 import CustomSelect from '@components/atoms/custom-select';
 
+import { Helmet } from 'react-helmet';
 import {
   leftFooterItems,
   footerLinksWrapper,
@@ -28,68 +29,6 @@ const Footer = () => {
       return Intl.formatMessage({ id: 'pages.productOverview.name' });
     }
     return 'Why Atto';
-  };
-
-  const cookieScripts = (lang) => {
-    if (lang === 'fr') {
-      return (
-        <>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                  var _iub = _iub || [];
-                  _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false,"lang":"fr","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":47240763, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};`,
-            }}
-          />
-        </>
-      );
-    }
-    if (lang === 'es') {
-      return (
-        <>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                  var _iub = _iub || [];
-                  _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false,"lang":"es","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":85558244, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};`,
-            }}
-          />
-        </>
-      );
-    }
-    if (lang === 'de') {
-      return (
-        <>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                var _iub = _iub || [];
-                _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false,"lang":"de","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":77119290, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};
-                `,
-            }}
-          />
-        </>
-      );
-    }
-    return (
-      <>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              var _iub = _iub || [];
-              _iub.csConfiguration = {
-              "gdprAppliesGlobally":false,
-              "enableCcpa":true,
-              "countryDetection":true,
-              "cookiePolicyInOtherWindow":true,
-              "whitelabel":false,
-              "lang":"en",
-              "siteId":1720230,
-              "consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":97533579, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};`,
-          }}
-        />
-      </>
-    );
   };
 
   const FooterLinks = [
@@ -324,44 +263,58 @@ const Footer = () => {
           <HelpScout horizontalPosition="right" color="#00b9cb" icon="message" />
         </LiveChatLoaderProvider>
       </footer>
-      {cookieScripts(Intl.locale)}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-                (function (w, d, s, l, i) {
-                  w[l] = w[l] || [];
-                  w[l].push({
-                      'gtm.start':
-                          new Date().getTime(), event: 'gtm.js'
-                  });
-                  var f = d.getElementsByTagName(s)[0],
-                      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-                  j.async = true;
-                  j.src =
-                      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                  f.parentNode.insertBefore(j, f);
-              })(window, document, 'script', 'dataLayer', 'GTM-NV2DTP3');    
-              `,
-        }}
-      />
-      {/* <!-- End Google Tag Manager --> */}
+      <Helmet>
+        {/* English cookie footer */}
+        {Intl.locale === 'en' && (
+          <script>
+            {`
+            var _iub = _iub || [];
+            _iub.csConfiguration = {
+            "gdprAppliesGlobally":false,
+            "enableCcpa":true,
+            "countryDetection":true,
+            "cookiePolicyInOtherWindow":true,
+            "whitelabel":false,
+            "lang":"en",
+            "siteId":1720230,
+            "consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":97533579, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};
+            `}
+          </script>
+        )}
+        {/* German Cookie Footer */}
+        {Intl.locale === 'de' && (
+          <script>
+            {`
+              var _iub = _iub || [];
+              _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false"lang":"de","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true"cookiePolicyId":77119290, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626""acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom""textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999""rejectButtonDisplay":true }};
+            `}
+          </script>
+        )}
+        {/* French Cookie Footer */}
 
-      {/* <!-- Google Tag Manager (noscript) --> */}
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-NV2DTP3"
-          title="null"
-          height="0"
-          width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
-        />
-      </noscript>
-      <script type="text/javascript" async defer src="//cdn.iubenda.com/cs/ccpa/stub.js" />
+        {Intl.locale === 'fr' && (
+          <script>
+            {`
+              var _iub = _iub || [];
+              _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true,"whitelabel":false,"lang":"fr","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":47240763, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999","position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef","rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};
+            `}
+          </script>
+        )}
+        {/* Spanish Cookie Footer */}
+        {Intl.locale === 'es' && (
+          <script>
+            {`
+              var _iub = _iub || [];
+              _iub.csConfiguration = {"gdprAppliesGlobally":false,"enableCcpa":true,"countryDetection":true,"cookiePolicyInOtherWindow":true"whitelabel":false,"lang":"es","siteId":1720230,"consentOnContinuedBrowsing":false,"perPurposeConsent":true"askConsentAtCookiePolicyUpdate":true,"cookiePolicyId":85558244, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true"acceptButtonColor":"#262626","acceptButtonCaptionColor":"white","customizeButtonColor":"#efefef","customizeButtonCaptionColor":"#999999""position":"bottom","textColor":"#262626","backgroundColor":"#f7f7f7","fontSize":"12px","rejectButtonColor":"#efefef""rejectButtonCaptionColor":"#999999","rejectButtonDisplay":true }};
+            `}
+          </script>
+        )}
+      </Helmet>
+      <script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js" async />
       <script
         type="text/javascript"
         src="//cdn.iubenda.com/cs/iubenda_cs.js"
         charSet="UTF-8"
-        defer
         async
       />
     </>
