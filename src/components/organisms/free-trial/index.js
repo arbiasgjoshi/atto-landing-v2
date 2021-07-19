@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { defaultInput, inputWrapper } from '@components/atoms/input/input.module.scss';
+import { defaultInput, inputWrapper, inputError } from '@components/atoms/input/input.module.scss';
 // import { formWrapper } from '@components/molecules/subscribe-form/form.module.scss';
 import Button from '@components/atoms/button';
 import {
@@ -73,11 +73,13 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
       });
   };
 
-  const toggleSubmit = (e, submit, valid) => {
+  const toggleSubmit = (e, submit, valid, err) => {
     e.preventDefault();
     if (valid) {
       submit();
-      toggleButtonAnimations();
+      if (!err && err !== undefined) {
+        toggleButtonAnimations();
+      }
     }
   };
 
@@ -103,7 +105,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
                 <div className={inputWrapper}>
                   <input
                     placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
-                    className={defaultInput}
+                    className={`${defaultInput} ${(hasError || errors.email) && inputError}`}
                     name="email"
                     type="email"
                     value={values.email}
@@ -113,7 +115,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
                 </div>
                 <div className={desktopBtn}>
                   <button
-                    onClick={(e) => toggleSubmit(e, handleSubmit, isValid)}
+                    onClick={(e) => toggleSubmit(e, handleSubmit, isValid, errors.email)}
                     disabled={disabled}
                     className={`${defaultBtn} ${blackStyle}`}
                   >

@@ -64,6 +64,7 @@ import {
 
 const AllFeaturesPage = () => {
   const Intl = useIntl();
+
   const [showDialog, setShowDialog] = useState(false);
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
@@ -81,7 +82,6 @@ const AllFeaturesPage = () => {
       .then((res) => res.json())
       .then((data) => {
         closeModal();
-        setDeleted(true);
         setValues(data);
         setTimeout(() => openModal(), 2000);
       });
