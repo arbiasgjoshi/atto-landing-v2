@@ -109,7 +109,6 @@ const Video = ({ placeholder, videoUrl }) => {
       {!play && (
         <motion.div
           key="content"
-          style={{ overflow: 'hidden' }}
           initial="open"
           animate="collapsed"
           exit="open"
@@ -119,7 +118,7 @@ const Video = ({ placeholder, videoUrl }) => {
             collapsed: { opacity: 1 },
           }}
           transition={{ duration: 0.25 }}
-          style={{ height: '100%' }}
+          style={{ height: '100%', overflow: 'hidden' }}
           className={maskOverlay}
         >
           <span className={`${videoBackground} ${leftAligned}`} />
