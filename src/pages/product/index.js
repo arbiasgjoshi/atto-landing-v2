@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
+import { useIntl } from 'gatsby-plugin-react-intl';
+import { StaticImage } from 'gatsby-plugin-image';
+import loadable from '@loadable/component';
 
 import HeaderComponent from '@components/molecules/header';
 import MainTitleCard from '@components/molecules/main-title-card';
 import Seo from '@components/molecules/seo';
-import Modal from '@components/molecules/modal';
-import { useIntl } from 'gatsby-plugin-react-intl';
-import { StaticImage } from 'gatsby-plugin-image';
 import Divider from '@components/atoms/divider';
 import EmailForm from '@components/atoms/email-form';
 import Story from '@components/organisms/story';
 import IconCardList from '@components/organisms/icon-card-list';
-import SubscribeBanner from '@components/molecules/subscribe-banner';
 import ProductCard from '@components/organisms/product-card';
 import GrowthNumbers from '@components/organisms/growth-numbers';
-import FooterComponent from '@components/molecules/footer';
 
 import { container, imageFormWrapper, imageWrapper } from '@styles/main.module.scss';
-
 import icon from '@images/easy-to-use.png';
 import icon2 from '@images/All_in_one@2x.png';
 import icon3 from '@images/Time_saving@2x.png';
 
 import { productContainer } from './product.module.scss';
+
+const Modal = loadable(() => import('@components/molecules/modal'));
+const FooterComponent = loadable(() => import('@components/molecules/footer'));
+const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
 const Product = () => {
   const Intl = useIntl();

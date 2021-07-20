@@ -204,7 +204,8 @@ const Footer = () => {
               alt="footer-logo"
               quality={100}
               width={86}
-              placeholder="blurred"
+              height={29}
+              placeholder="none"
             />
             <p>{Intl.formatMessage({ id: 'pages.miscellaneous.footerText' })}</p>
 
@@ -263,7 +264,7 @@ const Footer = () => {
           <HelpScout horizontalPosition="right" color="#00b9cb" icon="message" />
         </LiveChatLoaderProvider>
       </footer>
-      <Helmet>
+      <Helmet defer>
         {/* English cookie footer */}
         {Intl.locale === 'en' && (
           <script>

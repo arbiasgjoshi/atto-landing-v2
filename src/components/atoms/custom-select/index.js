@@ -65,16 +65,21 @@ const CustomSelect = () => {
     <div
       className={selectDropdown}
       onKeyDown={() => toggleDropdown()}
-      role="listbox"
-      aria-labelledby="select_language"
       tabIndex="0"
+      role="button"
       onClick={() => toggleDropdown()}
     >
       <div className={selectedItem}>
-        <span>{selected}</span>
+        <span aria-label="language">{selected}</span>
         <ArrowDown />
       </div>
-      <div className={`${optionsDropdown} ${open && isOpened}`}>
+      <div
+        className={`${optionsDropdown} ${open && isOpened}`}
+        aria-haspopup="listbox"
+        role="listbox"
+        aria-labelledby="language"
+        aria-expanded="true"
+      >
         {languages.map((lang, ix) => (
           <button
             className={buttonClass(lang)}
@@ -82,6 +87,7 @@ const CustomSelect = () => {
             onClick={() => changeLocale(lang.path)}
             type="button"
             role="option"
+            id={`choose_language_${lang.id}`}
             key={ix}
           >
             {lang.name}

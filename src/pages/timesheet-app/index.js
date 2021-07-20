@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
+import { useIntl } from 'gatsby-plugin-react-intl';
+import { StaticImage } from 'gatsby-plugin-image';
+import loadable from '@loadable/component';
 
 import Seo from '@components/molecules/seo';
-import Modal from '@components/molecules/modal';
-import { useIntl } from 'gatsby-plugin-react-intl';
 import Divider from '@components/atoms/divider';
 import Header from '@components/molecules/header';
 import Title from '@components/molecules/title';
 import IndustryMainCard from '@components/organisms/industry-main-card';
-import Footer from '@components/molecules/footer';
 import Story from '@components/organisms/story';
-import SubscribeBanner from '@components/molecules/subscribe-banner';
 import IconCardList from '@components/organisms/icon-card-list';
 import Article from '@components/molecules/article';
 import IconCard from '@components/molecules/icon-card';
@@ -18,7 +17,6 @@ import TickCardList from '@components/organisms/tick-card-list';
 import CommonQuestions from '@components/organisms/common-questions';
 import LearnMoreCard from '@components/molecules/learn-more-card';
 import Services from '@components/organisms/services';
-import { StaticImage } from 'gatsby-plugin-image';
 
 import AutomaticReports from '@images/automatic-email-reports@2x.png';
 import ExportTimesheet from '@images/export-timesheet-and-timesheet-data@2x.png';
@@ -35,6 +33,10 @@ import { oldList, newList } from '@data/industries';
 import { checkList, cardList, commonQuestionsList } from '@data/third-phase/employee-timesheet-app';
 import { firstList } from '@data/third-phase/time-tracking-app';
 import { rndContainer } from './employee.module.scss';
+
+const Modal = loadable(() => import('@components/molecules/modal'));
+const Footer = loadable(() => import('@components/molecules/footer'));
+const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
 const EmployeeTimesheetApp = () => {
   const Intl = useIntl();

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import loadable from '@loadable/component';
 
 import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
-import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import Title from '@components/molecules/title';
 import Header from '@components/molecules/header';
-import Footer from '@components/molecules/footer';
 import Article from '@components/molecules/article';
 import Story from '@components/organisms/story';
 import IconCardList from '@components/organisms/icon-card-list';
@@ -16,8 +15,6 @@ import AccordionArticle from '@components/organisms/accordion-article';
 import OldVsNew from '@components/organisms/old-vs-new';
 import Steps from '@components/organisms/steps';
 import ImagesBox from '@components/organisms/images-box';
-
-import SubscribeBanner from '@components/molecules/subscribe-banner';
 
 // Add Industry Images
 import image5 from '@images/painting/Respond to absenteeism and last-minute schedule changes@2x.png';
@@ -37,6 +34,10 @@ import {
   background,
   oldVsNewGradient,
 } from '@styles/main.module.scss';
+
+const Modal = loadable(() => import('@components/molecules/modal'));
+const Footer = loadable(() => import('@components/molecules/footer'));
+const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
 const Painting = () => {
   const Intl = useIntl();

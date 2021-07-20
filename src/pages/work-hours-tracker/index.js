@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 import Seo from '@components/molecules/seo';
-import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { navigate } from '@reach/router';
+import { StaticImage } from 'gatsby-plugin-image';
+import loadable from '@loadable/component';
 
 import Divider from '@components/atoms/divider';
 import Button from '@components/atoms/button';
@@ -11,14 +12,11 @@ import Header from '@components/molecules/header';
 import Title from '@components/molecules/title';
 import IndustryMainCard from '@components/organisms/industry-main-card';
 import LearnMoreCard from '@components/molecules/learn-more-card';
-import Footer from '@components/molecules/footer';
 import Story from '@components/organisms/story';
-import SubscribeBanner from '@components/molecules/subscribe-banner';
 import IconCardList from '@components/organisms/icon-card-list';
 import TickCardList from '@components/organisms/tick-card-list';
 import AnyDevice from '@components/organisms/any-device';
 import VerticalCheckList from '@components/organisms/vertical-check-list';
-import { StaticImage } from 'gatsby-plugin-image';
 
 import CommonQuestions from '@components/organisms/common-questions';
 import Services from '@components/organisms/services';
@@ -48,6 +46,10 @@ import {
   verticalList,
 } from '@data/third-phase/work-hours.js';
 import { buttonContainer } from './work-hours-tracker.module.scss';
+
+const Modal = loadable(() => import('@components/molecules/modal'));
+const Footer = loadable(() => import('@components/molecules/footer'));
+const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
 const WorkHoursTracker = () => {
   const Intl = useIntl();

@@ -152,7 +152,7 @@ const Video = ({ placeholder, videoUrl }) => {
             />
           )}
         </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
+        <script src="https://player.vimeo.com/api/player.js" async defer></script>
       </div>
     </div>
   );

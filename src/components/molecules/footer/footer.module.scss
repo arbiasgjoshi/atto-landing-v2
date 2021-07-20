@@ -105,6 +105,11 @@
       &:hover {
         color: var(--primary-color);
       }
+
+      @include max(mobile) {
+        line-height: 4.8rem;
+        font-size: 2rem;
+      }
     }
   }
 
@@ -178,6 +183,10 @@
 
   @include max(tablet) {
     margin-top: 2rem;
+  }
+
+  @include max(mobile) {
+    line-height: 4.8rem;
   }
 
   a {

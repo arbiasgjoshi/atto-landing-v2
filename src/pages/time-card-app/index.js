@@ -3,16 +3,14 @@ import React, { useState } from 'react';
 import Seo from '@components/molecules/seo';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { navigate } from '@reach/router';
+import loadable from '@loadable/component';
 
 import Divider from '@components/atoms/divider';
-import Modal from '@components/molecules/modal';
 import Button from '@components/atoms/button';
 import Header from '@components/molecules/header';
 import Title from '@components/molecules/title';
 import IndustryMainCard from '@components/organisms/industry-main-card';
-import Footer from '@components/molecules/footer';
 import Story from '@components/organisms/story';
-import SubscribeBanner from '@components/molecules/subscribe-banner';
 import LearnMoreCard from '@components/molecules/learn-more-card';
 import TickCardList from '@components/organisms/tick-card-list';
 import Article from '@components/molecules/article';
@@ -43,6 +41,10 @@ import {
   featureCardsList,
   cardList,
 } from '../../data/third-phase/time-card-app';
+
+const Modal = loadable(() => import('@components/molecules/modal'));
+const Footer = loadable(() => import('@components/molecules/footer'));
+const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
 const TimeCardApp = () => {
   const Intl = useIntl();

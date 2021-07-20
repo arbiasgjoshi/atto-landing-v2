@@ -1,7 +1,8 @@
-import React, { lazy, Suspense, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
 import { useIntl } from 'gatsby-plugin-react-intl';
+import loadable from '@loadable/component';
 
 import HeaderComponent from '@components/molecules/header';
 import Seo from '@components/molecules/seo';
@@ -10,19 +11,14 @@ import Divider from '@components/atoms/divider';
 import Title from '@components/molecules/title';
 import MainTitle from '@components/molecules/main-title-card';
 import EmailForm from '@components/atoms/email-form';
-
-import Modal from '@components/molecules/modal';
-import FooterComponent from '@components/molecules/footer';
-import VideoCheckList from '@components/organisms/video-checklist';
-import CarouselComponent from '@components/molecules/carousel';
 import FeatureTabs from '@components/organisms/feature-tabs';
+import Services from '@components/organisms/services';
+import CarouselComponent from '@components/molecules/carousel';
+import FreeTrial from '@components/organisms/free-trial';
+
 import Story from '@components/organisms/story';
 import CommentCard from '@components/molecules/comment-card';
-import Services from '@components/organisms/services';
-import FreeTrial from '@components/organisms/free-trial';
 import Number from '@components/atoms/number-card';
-
-import { deleteInvitation } from '@helpers';
 
 import { container, formRotated } from '@styles/main.module.scss';
 import '@styles/includes/slick-carousel.scss';
@@ -33,6 +29,10 @@ import {
   carouselWrapper,
 } from '@components/molecules/carousel/carousel.module.scss';
 import { sliderWrapper, numbers, desktopImage, mobileImage } from './homepage.module.scss';
+
+const VideoCheckList = loadable(() => import('@components/organisms/video-checklist'));
+const Modal = loadable(() => import('@components/molecules/modal'));
+const FooterComponent = loadable(() => import('@components/molecules/footer'));
 
 const SampleNextArrow = (props) => {
   // eslint-disable-next-line react/prop-types
@@ -148,6 +148,7 @@ const Home = () => {
           src="../images/DE_Mobile Time tracking, simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
+          height={516}
           quality={98}
           placeholder="none"
           className={mobileImage}
@@ -160,6 +161,7 @@ const Home = () => {
           src="../images/FR_Mobile Time tracking, simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
+          height={516}
           quality={98}
           placeholder="none"
           className={mobileImage}
@@ -172,6 +174,7 @@ const Home = () => {
           src="../images/ES_Mobile Time tracking, simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
+          height={516}
           quality={98}
           placeholder="none"
           className={mobileImage}
@@ -183,6 +186,7 @@ const Home = () => {
         src="../images/Mobile Time tracking, simplified@2x.png"
         alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
         width={434}
+        height={516}
         quality={98}
         placeholder="none"
         className={mobileImage}

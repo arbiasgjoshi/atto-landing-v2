@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
+import { useIntl } from 'gatsby-plugin-react-intl';
+import loadable from '@loadable/component';
 
 import HeaderComponent from '@components/molecules/header';
 import Seo from '@components/molecules/seo';
-import Modal from '@components/molecules/modal';
-import { useIntl } from 'gatsby-plugin-react-intl';
 import Divider from '@components/atoms/divider';
 import MainTitleCard from '@components/molecules/main-title-card';
 import HeartIcon from '@images/heart-icon@2x.png';
 import ContactForm from '@components/organisms/contact-form';
 
 import Faq from '@components/organisms/faq';
-import FooterComponent from '@components/molecules/footer';
-import SubscribeBanner from '@components/molecules/subscribe-banner';
 
 import { container } from '@styles/main.module.scss';
 import { middleAlign } from './contact-page.module.scss';
+
+const Modal = loadable(() => import('@components/molecules/modal'));
+const FooterComponent = loadable(() => import('@components/molecules/footer'));
+const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
 const Contact = () => {
   const Intl = useIntl();

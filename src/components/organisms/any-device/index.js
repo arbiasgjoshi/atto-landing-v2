@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { StaticImage } from 'gatsby-plugin-image';
 import FeatureCard from '@components/molecules/feature-card';
 
 import * as styles from './any-device.module.scss';
@@ -12,7 +12,13 @@ const AnyDevice = ({ title, description, image, bigDescStyle = false, list, styl
         <p className={bigDescStyle && styles.bigStyle}>{description}</p>
       </div>
       <div className={styles.imageContainer}>
-        <img src={image} alt={title} width="538" height="459" />
+        <StaticImage
+          src="../../../images/time-tracking/Time tracking from any device – offline, online, or on the go@2x.png"
+          alt={title}
+          width={538}
+          height={459}
+          quality={95}
+        />
       </div>
     </div>
     <div className={styles.secondRow}>

@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
+import { useIntl } from 'gatsby-plugin-react-intl';
+import loadable from '@loadable/component';
 
 import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
-import Modal from '@components/molecules/modal';
-import { useIntl } from 'gatsby-plugin-react-intl';
 import Header from '@components/molecules/header';
-import Footer from '@components/molecules/footer';
+import Story from '@components/organisms/story';
 import Title from '@components/molecules/title';
 import MainTitleCard from '@components/molecules/main-title-card';
 import LearnMoreCard from '@components/molecules/learn-more-card';
-import SubscribeBanner from '@components/molecules/subscribe-banner';
 import Article from '@components/molecules/article';
 import FeaturesList from '@components/organisms/features-list';
 import Cover from '@components/organisms/growth-numbers/cover';
 import Services from '@components/organisms/services';
-import Story from '@components/organisms/story';
-import VideoCheckList from '@components/organisms/video-checklist';
 
 import Team from '@images/team.svg';
 import Timeline from '@images/timeline.svg';
@@ -33,6 +30,11 @@ import { container, articleList } from '@styles/main.module.scss';
 import { teamActivityContainer, learnMoreContainer } from '../product.module.scss';
 
 import { featuresStyle } from './team-activity.module.scss';
+
+const Modal = loadable(() => import('@components/molecules/modal'));
+const VideoCheckList = loadable(() => import('@components/organisms/video-checklist'));
+const Footer = loadable(() => import('@components/molecules/footer'));
+const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
 const TeamActivity = () => {
   const Intl = useIntl();

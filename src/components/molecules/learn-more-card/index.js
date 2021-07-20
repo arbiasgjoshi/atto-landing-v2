@@ -21,7 +21,7 @@ const LearnMoreCard = ({
   return (
     <div className={`${styles.container} ${styles[styling]}`}>
       <div className={styles.iconWrapper}>
-        <img alt={`title${imageWidth}`} width={imageWidth} height={imageHeight} src={icon} />
+        <img alt={title} width={imageWidth} height={imageHeight} src={icon} />
       </div>
       <div className={styles.textWrapper}>
         <h5 className={styles.cardTitle}>{title}</h5>

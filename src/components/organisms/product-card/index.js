@@ -249,7 +249,7 @@ const ProductCard = ({
         )}
         <div className={styles.learnMoreContainer}>
           <div className={styles.arrowIconContainer}>
-            <img src={arrowIcon} alt={title} />
+            <img src={arrowIcon} alt={title} width="16" height="16" />
           </div>
           <span className={styles.leftArrow}>
             {style === 'homepage' && <Icon fSize={3} iconClass="long-arrow" />}
@@ -264,14 +264,6 @@ const ProductCard = ({
       </div>
       <div className={styles.secondWrapper}>
         <div style={{ padding: imagePadding }} className={styles.imageContainer}>
-          {/* <img
-            width={imageWidth}
-            height={imageHeight}
-            className={styles.img}
-            src={image}
-            alt={title}
-          /> */}
-
           {imgStaticSwitch(image)}
         </div>
       </div>

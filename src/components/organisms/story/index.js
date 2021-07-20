@@ -14,6 +14,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="300"
           height="450"
+          quality={97}
         />
       );
     }
@@ -25,6 +26,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -37,6 +39,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -49,6 +52,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -61,6 +65,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -73,6 +78,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -85,6 +91,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -97,6 +104,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -109,6 +117,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -121,6 +130,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -133,6 +143,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -145,6 +156,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -157,6 +169,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -169,6 +182,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -181,6 +195,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -193,6 +208,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -205,6 +221,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -217,6 +234,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -229,6 +247,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }
@@ -241,6 +260,7 @@ const Story = ({ img, paragraph, author, className = '' }) => {
           placeholder="none"
           width="250"
           height="400"
+          quality={97}
         />
       );
     }

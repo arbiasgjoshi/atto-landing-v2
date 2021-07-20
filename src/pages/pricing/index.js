@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
+import { useIntl } from 'gatsby-plugin-react-intl';
+import { Link } from 'gatsby-plugin-react-intl';
+import loadable from '@loadable/component';
 
 import HeaderComponent from '@components/molecules/header';
 import Seo from '@components/molecules/seo';
-import Modal from '@components/molecules/modal';
-import { useIntl } from 'gatsby-plugin-react-intl';
-import { Link } from 'gatsby-plugin-react-intl';
+
 import Button from '@components/atoms/button';
 import Divider from '@components/atoms/divider';
 import SubscribeBanner from '@components/molecules/subscribe-banner';
-import FooterComponent from '@components/molecules/footer';
 import PackageCard from '@components/molecules/package-card';
 import Title from '@components/molecules/title';
 import Story from '@components/organisms/story';
@@ -39,6 +39,9 @@ import {
   discount,
   behindMask,
 } from './pricing.module.scss';
+
+const Modal = loadable(() => import('@components/molecules/modal'));
+const FooterComponent = loadable(() => import('@components/molecules/footer'));
 
 const Pricing = () => {
   const Intl = useIntl();

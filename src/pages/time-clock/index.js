@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
+import { useIntl } from 'gatsby-plugin-react-intl';
+import { StaticImage } from 'gatsby-plugin-image';
+import loadable from '@loadable/component';
 
 import Seo from '@components/molecules/seo';
-import Modal from '@components/molecules/modal';
-import { useIntl } from 'gatsby-plugin-react-intl';
 import Divider from '@components/atoms/divider';
 import Header from '@components/molecules/header';
 import Title from '@components/molecules/title';
 import FeatureCard from '@components/molecules/feature-card';
 import IndustryMainCard from '@components/organisms/industry-main-card';
-import Footer from '@components/molecules/footer';
 import Story from '@components/organisms/story';
 import Article from '@components/molecules/article';
-import SubscribeBanner from '@components/molecules/subscribe-banner';
 import TickCardList from '@components/organisms/tick-card-list';
 import LearnMoreCard from '@components/molecules/learn-more-card';
-import { StaticImage } from 'gatsby-plugin-image';
 
 import WebTracking from '@images/web-time-tracking.svg';
 import MobileTracking from '@images/mobile_time_tracking.svg';
@@ -31,6 +29,10 @@ import { container, learnMoreContainer } from '@styles/main.module.scss';
 import { workListContainer, featureCardWithBanner } from './time-clock.module.scss';
 
 import { checkList, commonQuestionsList } from '../../data/third-phase/time-clock.js';
+
+const Modal = loadable(() => import('@components/molecules/modal'));
+const Footer = loadable(() => import('@components/molecules/footer'));
+const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
 const TimeClock = () => {
   const Intl = useIntl();

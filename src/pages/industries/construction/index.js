@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import { useIntl } from 'gatsby-plugin-react-intl';
+import loadable from '@loadable/component';
 
 import Divider from '@components/atoms/divider';
 import Seo from '@components/molecules/seo';
-import Modal from '@components/molecules/modal';
-import { useIntl } from 'gatsby-plugin-react-intl';
 
 import Header from '@components/molecules/header';
 import Title from '@components/molecules/title';
-import Footer from '@components/molecules/footer';
-import SubscribeBanner from '@components/molecules/subscribe-banner';
 import Story from '@components/organisms/story';
 import IndustryMainCard from '@components/organisms/industry-main-card';
 import Steps from '@components/organisms/steps';
@@ -32,6 +30,10 @@ import {
 
 import { steps, oldList, newList } from '@data/industries';
 import { topImageMask, bottomImageMask, greenBackground } from './construction.module.scss';
+
+const Modal = loadable(() => import('@components/molecules/modal'));
+const Footer = loadable(() => import('@components/molecules/footer'));
+const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
 const Construction = () => {
   const Intl = useIntl();
