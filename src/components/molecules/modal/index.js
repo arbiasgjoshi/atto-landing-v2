@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
+import { useIntl } from 'gatsby-plugin-react-intl';
 import EmailForm from '../../atoms/email-form';
 import Button from '../../atoms/button';
-import { useIntl } from 'gatsby-plugin-react-intl';
 
 import {
   dialogContainer,
@@ -181,8 +182,13 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
   };
 
   const handleModalClosing = () => {
-    if (hasValues.message === 'Signup Succeeded' || hasValues?.message === '__Signup Succeeded') {
-      setFormValues({});
+    if (hasValues) {
+      if (
+        hasValues?.message === 'Signup Succeeded' ||
+        hasValues?.message === '__Signup Succeeded'
+      ) {
+        setFormValues({});
+      }
     }
     close();
   };
@@ -252,5 +258,12 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
     </div>
   );
 }
+
+ModalDialog.propTypes = {
+  showDialog: PropTypes.func,
+  setFormValues: PropTypes.func,
+  hasValues: PropTypes.shape(),
+  close: PropTypes.func,
+};
 
 export default ModalDialog;

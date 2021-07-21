@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link, useIntl } from 'gatsby-plugin-react-intl';
+import { Link, useIntl, navigate } from 'gatsby-plugin-react-intl';
 import useScroll from 'react-use-scroll';
 
 import Button from '@components/atoms/button';
@@ -529,10 +529,15 @@ const HeaderComponent = ({ headerStyle }) => {
               mainMenuStyle
             />
             <div className={mobileButtons}>
-              <Button btnStyle="gray" btnText={Intl.formatMessage({ id: 'header.menu.login' })} />
+              <Button
+                btnStyle="gray"
+                btnText={Intl.formatMessage({ id: 'header.menu.login' })}
+                onBtnClick={() => navigate('https://app.attotime.com')}
+              />
               <Button
                 btnStyle="teal"
                 btnText={Intl.formatMessage({ id: 'pages.miscellaneous.start14Days' })}
+                onBtnClick={openModal}
               />
             </div>
           </div>
