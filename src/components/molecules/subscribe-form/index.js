@@ -55,13 +55,13 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
   };
 
   const toggleSubmit = (e, submit, valid, err) => {
-    e.preventDefault();
     if (valid) {
       if (!err) {
         toggleButtonAnimations();
       }
       submit();
     }
+    e.preventDefault();
   };
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
           signUpTrial(values);
         }}
       >
-        {({ values, isValid, handleSubmit, handleChange, handleBlur, errors }) => (
+        {({ values, isValid, dirty, handleSubmit, handleChange, handleBlur, errors }) => (
           <form method="POST" className={formWrapper}>
             <div className={inputWrapper}>
               <input
@@ -99,7 +99,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
               onClick={(e) => {
                 toggleSubmit(e, handleSubmit, isValid, errors.email ? errors.email : false);
               }}
-              disabled={disabled || !isValid}
+              disabled={disabled || !isValid || !dirty}
               className={`${defaultBtn} ${blackStyle}`}
             >
               {loader ? (

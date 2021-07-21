@@ -114,7 +114,7 @@ const ContactForm = () => {
           autoComplete="off"
           onSubmit={(values) => sendContactEmail(values)}
         >
-          {({ values, handleChange, handleBlur, isValid, handleSubmit, errors }) => (
+          {({ values, dirty, handleChange, handleBlur, isValid, handleSubmit, errors }) => (
             <form method="POST">
               <div className={formRow}>
                 <input
@@ -159,7 +159,7 @@ const ContactForm = () => {
                       }
                     }
                   }}
-                  disabled={disabled || !isValid}
+                  disabled={disabled || !isValid || !dirty}
                   className={defaultBtn}
                 >
                   {loader ? (
