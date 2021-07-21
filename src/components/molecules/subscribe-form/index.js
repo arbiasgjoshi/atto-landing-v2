@@ -81,16 +81,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
           signUpTrial(values);
         }}
       >
-        {({
-          values,
-          isValid,
-          dirty,
-          handleSubmit,
-          handleChange,
-          handleBlur,
-          resetForm,
-          errors,
-        }) => (
+        {({ values, isValid, dirty, handleSubmit, handleChange, handleBlur, errors }) => (
           <form method="POST" className={formWrapper}>
             <div className={inputWrapper}>
               <input
