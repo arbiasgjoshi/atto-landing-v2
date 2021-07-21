@@ -76,11 +76,21 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
         }}
         validationSchema={validationSchema}
         autoComplete="off"
+        enableReinitialize
         onSubmit={(values) => {
           signUpTrial(values);
         }}
       >
-        {({ values, isValid, dirty, handleSubmit, handleChange, handleBlur, errors }) => (
+        {({
+          values,
+          isValid,
+          dirty,
+          handleSubmit,
+          handleChange,
+          handleBlur,
+          resetForm,
+          errors,
+        }) => (
           <form method="POST" className={formWrapper}>
             <div className={inputWrapper}>
               <input

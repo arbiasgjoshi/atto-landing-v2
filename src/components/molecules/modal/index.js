@@ -180,6 +180,13 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
     setDisabled(true);
   };
 
+  const handleModalClosing = () => {
+    if (hasValues.message === 'Signup Succeeded' || hasValues?.message === '__Signup Succeeded') {
+      setFormValues({});
+    }
+    close();
+  };
+
   const renderModalTypes = (data) => {
     if (data?.message === 'Signup Succeeded' || data?.message === '__Signup Succeeded') {
       return (
@@ -239,7 +246,7 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
 
   return (
     <div>
-      <Dialog className={dialogContainer} isOpen={showDialog} onDismiss={close}>
+      <Dialog className={dialogContainer} isOpen={showDialog} onDismiss={handleModalClosing}>
         {renderModalTypes(hasValues)}
       </Dialog>
     </div>

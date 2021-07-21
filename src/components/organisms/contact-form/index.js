@@ -111,6 +111,7 @@ const ContactForm = () => {
             text: '',
           }}
           validationSchema={validationSchema}
+          enableReinitialize
           autoComplete="off"
           onSubmit={(values) => sendContactEmail(values)}
         >

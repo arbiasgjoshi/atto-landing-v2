@@ -96,6 +96,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
             }}
             validationSchema={validationSchema}
             autoComplete="off"
+            enableReinitialize
             onSubmit={(values) => {
               signUpTrial(values);
             }}
