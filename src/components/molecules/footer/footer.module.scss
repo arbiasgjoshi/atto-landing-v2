@@ -111,6 +111,10 @@
         font-size: 2rem;
       }
     }
+
+    @include max(tablet) {
+      width: 20rem;
+    }
   }
 
   &.hiddenItem {
