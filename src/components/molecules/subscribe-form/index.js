@@ -57,7 +57,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
   const toggleSubmit = (e, submit, valid, err) => {
     e.preventDefault();
     if (valid) {
-      if (!err && err !== undefined) {
+      if (!err) {
         toggleButtonAnimations();
       }
       submit();
@@ -85,7 +85,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
             <div className={inputWrapper}>
               <input
                 placeholder={placeholder}
-                className={`${defaultInput} ${(hasError || errors.email) && inputError}`}
+                className={`${defaultInput} ${hasError && inputError}`}
                 name="email"
                 type="email"
                 value={values.email}
@@ -97,7 +97,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
               type="submit"
               aria-label="Submit Form"
               onClick={(e) => {
-                toggleSubmit(e, handleSubmit, isValid, errors.email);
+                toggleSubmit(e, handleSubmit, isValid, errors.email ? errors.email : false);
               }}
               disabled={disabled || !isValid}
               className={`${defaultBtn} ${blackStyle}`}

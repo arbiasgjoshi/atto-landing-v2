@@ -77,7 +77,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
     e.preventDefault();
     if (valid) {
       submit();
-      if (!err && err !== undefined) {
+      if (!err) {
         toggleButtonAnimations();
       }
     }
@@ -105,7 +105,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
                 <div className={inputWrapper}>
                   <input
                     placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
-                    className={`${defaultInput} ${(hasError || errors.email) && inputError}`}
+                    className={`${defaultInput} ${hasError && inputError}`}
                     name="email"
                     type="email"
                     value={values.email}
@@ -115,7 +115,9 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
                 </div>
                 <div className={desktopBtn}>
                   <button
-                    onClick={(e) => toggleSubmit(e, handleSubmit, isValid, errors.email)}
+                    onClick={(e) => {
+                      toggleSubmit(e, handleSubmit, isValid, errors.email ? errors.email : false);
+                    }}
                     disabled={disabled}
                     type="button"
                     className={`${defaultBtn} ${blackStyle}`}
