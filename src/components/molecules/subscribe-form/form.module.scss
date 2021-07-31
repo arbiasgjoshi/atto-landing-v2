@@ -1,7 +1,7 @@
 .formWrapper {
   @include flex-direction(column);
 
-  @include min(tablet) {
+  @include min(desktop) {
     flex-direction: row;
     margin: 0 auto;
     > div {
@@ -19,12 +19,15 @@
       // opacity: 0.8;
     }
   }
-
+  @include max(tablet) {
+    > button {
+      margin-top: 2rem;
+    }
+  }
   @include max(mobile) {
     width: 100%;
     > button {
       width: 100% !important;
-      margin-top: 2rem;
     }
   }
 }

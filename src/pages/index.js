@@ -230,7 +230,7 @@ const Home = () => {
         ...settings,
         slidesToShow: 1,
       });
-    } else if (window.innerWidth > 768 && window.innerWidth < 1024) {
+    } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
       setSettings({
         ...settings,
         slidesToShow: 2,
@@ -361,18 +361,6 @@ const Home = () => {
           paragraph={Intl.formatMessage({ id: 'pages.homepage.reviews.bottomReview' })}
           author="Julia Conner – Pennprojects, LLC"
         />
-        {/* <Story
-          className="homepage"
-          img={authorImage}
-          paragraph="“Atto has saved us $1,000’s on payroll and taken away the stress of running a business.”"
-          author="Robert Bennet - DPA Cleaning Services, Inc."
-        />
-        <Story
-          className="homepage"
-          img={authorImage}
-          paragraph="“Atto has saved us $1,000’s on payroll and taken away the stress of running a business.”"
-          author="Robert Bennet - DPA Cleaning Services, Inc."
-        /> */}
       </CarouselComponent>
       <Divider />
       <FreeTrial

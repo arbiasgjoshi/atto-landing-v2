@@ -67,7 +67,7 @@
 
   &.homepage {
     margin-bottom: 11rem;
-    @include min(tablet) {
+    @include min(desktop) {
       margin: 0 9rem;
     }
 
@@ -89,6 +89,15 @@
         line-height: 6rem;
         letter-spacing: -1px;
         margin-bottom: 4rem !important;
+      }
+    }
+
+    @include max(tablet) {
+      flex-direction: column;
+      margin-bottom: 4rem;
+      .imageContainer{
+        margin-bottom: 4rem;
+        margin-right: 0;
       }
     }
   }

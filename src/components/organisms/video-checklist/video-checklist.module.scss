@@ -5,7 +5,7 @@
   // }
 
   .checkListContainer {
-    @include min(tablet) {
+    @include min(laptop) {
       margin: 0 8.5rem;
     }
     > div {

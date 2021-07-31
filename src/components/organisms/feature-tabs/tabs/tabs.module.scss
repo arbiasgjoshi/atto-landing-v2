@@ -1,14 +1,11 @@
 .container {
-  @include max(mobile) {
+  @include max(tablet-lg) {
     display: none;
   }
 
   .listContainer {
     @include max(mobile) {
       @include flex-direction(column);
-
-      .item {
-      }
     }
 
     @include min(tablet) {

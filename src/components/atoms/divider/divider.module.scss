@@ -50,6 +50,12 @@
     margin: 1rem 0;
   }
 
+  @include max(tablet) {
+    &.style2{
+      margin: 2.5rem;
+    }
+  }
+
   @include min(laptop) {
     margin: 9.9rem 0;
 

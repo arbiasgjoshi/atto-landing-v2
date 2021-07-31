@@ -1,7 +1,7 @@
 .container {
   .content {
     display: none;
-    @include min(tablet) {
+    @include min(desktop) {
       display: block;
       margin-top: 3rem;
 
@@ -19,7 +19,7 @@
 
   .collapseDiv {
     display: none;
-    @include max(tablet) {
+    @include max(tablet-lg) {
       display: block;
 
       > div {

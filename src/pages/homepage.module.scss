@@ -29,7 +29,14 @@
   border-top: 2px solid #efefef;
   border-bottom: 2px solid #efefef;
 
-  @include min(tablet) {
+  @include max(tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2.5rem 0;
+    row-gap: 3rem;
+  }
+
+  @include min(desktop) {
     margin: 0;
     flex-direction: row;
     padding: 7rem 0;
@@ -47,7 +54,12 @@
   > div {
     text-align: center;
 
-    @include min(tablet) {
+    @include max(tablet) {
+      width: 50%;
+      // margin-bottom: 2rem;
+    }
+
+    @include min(desktop) {
       width: 24rem;
       text-align: left;
     }

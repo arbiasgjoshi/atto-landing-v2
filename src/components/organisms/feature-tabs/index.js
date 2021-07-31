@@ -1,30 +1,9 @@
 import React, { useState } from 'react';
 import { useIntl } from 'gatsby-plugin-react-intl';
 
-import ProductCard from '../product-card';
-import Tabs from './tabs';
-
-import imgLocaleOneEn from '@images/en/overview/Atto - time and location tracking app generating timesheets@2x.png';
-import imgLocaleOneDe from '@images/de/overview/DE_Atto - time and location tracking app generating timesheet@2x.png';
-import imgLocaleOneEs from '@images/es/overview/ES_Atto - time and location tracking app generating timesheets@2x.png';
-import imgLocaleOneFr from '@images/fr/overview/FR_Atto - time and location tracking app generating timesheets@2x.png';
-
-import imgLocaleTwoEn from '@images/en/overview/Know where your team is in real-time@2x.png';
-import imgLocaleTwoDe from '@images/de/overview/DE_Know where your team is in real-time@2x.png';
-import imgLocaleTwoEs from '@images/es/overview/ES_Know where your team is in real-time@2x.png';
-import imgLocaleTwoFr from '@images/fr/overview/FR_Know where your team is in real-time@2x.png';
-
-import imgLocaleThreeEn from '@images/en/overview/Stay in the loop as work happens@2x.png';
-import imgLocaleThreeDe from '@images/de/overview/DE_Stay in the loop as work happens@2x.png';
-import imgLocaleThreeEs from '@images/es/overview/ES_Stay in the loop as work happens@2x.png';
-import imgLocaleThreeFr from '@images/fr/overview/FR_Stay in the loop as work happens@2x.png';
-
-import imgLocaleFourEn from '@images/en/overview/Relax with timesheets on time, every time@2x.png';
-import imgLocaleFourDe from '@images/de/overview/DE_Relax with timesheets on time, every time@2x.png';
-import imgLocaleFourEs from '@images/es/overview/ES_Relax with timesheets on time, every time@2x.png';
-import imgLocaleFourFr from '@images/fr/overview/FR_Relax with timesheets on time, every time@2x.png';
-
 import Accordion from '@components/organisms/accordion';
+import Tabs from './tabs';
+import ProductCard from '../product-card';
 
 import { container, content, inactive, collapseDiv } from './feature-tabs.module.scss';
 
@@ -37,9 +16,6 @@ const FeatureTabs = () => {
   };
 
   const imageLocaleOne = (loc) => {
-    if (loc === 'en') {
-      return 'img-one-locale-en';
-    }
     if (loc === 'es') {
       return 'img-one-locale-es';
     }
@@ -49,12 +25,10 @@ const FeatureTabs = () => {
     if (loc === 'de') {
       return 'img-one-locale-de';
     }
+    return 'img-one-locale-en';
   };
 
   const imageLocaleTwo = (loc) => {
-    if (loc === 'en') {
-      return 'img-two-locale-en';
-    }
     if (loc === 'es') {
       return 'img-two-locale-es';
     }
@@ -64,12 +38,10 @@ const FeatureTabs = () => {
     if (loc === 'de') {
       return 'img-two-locale-de';
     }
+    return 'img-two-locale-en';
   };
 
   const imageLocaleThree = (loc) => {
-    if (loc === 'en') {
-      return 'img-three-locale-en';
-    }
     if (loc === 'es') {
       return 'img-three-locale-es';
     }
@@ -79,12 +51,10 @@ const FeatureTabs = () => {
     if (loc === 'de') {
       return 'img-three-locale-de';
     }
+    return 'img-three-locale-en';
   };
 
   const imageLocaleFour = (loc) => {
-    if (loc === 'en') {
-      return 'img-four-locale-en';
-    }
     if (loc === 'es') {
       return 'img-four-locale-es';
     }
@@ -94,6 +64,7 @@ const FeatureTabs = () => {
     if (loc === 'de') {
       return 'img-four-locale-de';
     }
+    return 'img-four-locale-en';
   };
 
   const ProductFeatures = [
@@ -139,9 +110,7 @@ const FeatureTabs = () => {
     },
   ];
 
-  const getClassName = (index) => {
-    return activeIndex === index ? content : inactive;
-  };
+  const getClassName = (index) => (activeIndex === index ? content : inactive);
 
   return (
     <div className={container}>

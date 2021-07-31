@@ -16,9 +16,13 @@
     @include max(mobile) {
       margin: 2.5rem 1.2rem;
     }
+
+    @include max(tablet) {
+      margin: 2.5rem 1.5rem;
+    }
   }
 
-  @include min(tablet) {
+  @include max(tablet) {
     margin: 0 1rem;
   }
 
