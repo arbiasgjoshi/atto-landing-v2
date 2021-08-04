@@ -163,7 +163,7 @@ const Footer = () => {
         },
         {
           id: 1,
-          path: 'https://help.attotime.com/', 
+          path: 'https://help.attotime.com/',
           name: Intl.formatMessage({ id: 'header.menu.helpCenterLabel' }),
           hasLine: false,
         },
@@ -217,15 +217,25 @@ const Footer = () => {
             {FooterLinks.map((section) => (
               <div className={footerLinksWrapper} key={section.id}>
                 <h5 className={parentPath}>{section.parent}</h5>
-                {section.subMenuLinks.map((subMenu) => (
-                  <Link
-                    to={`${subMenu.path}`}
-                    className={subMenu.hasLine ? hasLine : null}
-                    key={subMenu.id}
-                  >
-                    {subMenu.name}
-                  </Link>
-                ))}
+                {section.subMenuLinks.map((subMenu) =>
+                  subMenu.path !== 'https://help.attotime.com/' ? (
+                    <Link
+                      to={`${subMenu.path}`}
+                      className={subMenu.hasLine ? hasLine : null}
+                      key={subMenu.id}
+                    >
+                      {subMenu.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href="https://help.attotime.com/"
+                      className={subMenu.hasLine ? hasLine : null}
+                      key={subMenu.id}
+                    >
+                      {subMenu.name}
+                    </a>
+                  )
+                )}
                 {section.downloadApp && (
                   <div className={downloadApp}>
                     <h5 className={parentPath}>Download</h5>
