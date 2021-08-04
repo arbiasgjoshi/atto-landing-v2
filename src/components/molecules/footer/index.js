@@ -163,13 +163,13 @@ const Footer = () => {
         },
         {
           id: 1,
-          path: '/help-center',
+          path: 'https://help.attotime.com/', 
           name: Intl.formatMessage({ id: 'header.menu.helpCenterLabel' }),
           hasLine: false,
         },
         {
           id: 2,
-          path: '/Contact',
+          path: '/contact',
           name: Intl.formatMessage({ id: 'header.menu.contactLabel' }),
           hasLine: false,
         },
