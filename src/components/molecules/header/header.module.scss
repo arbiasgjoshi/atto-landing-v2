@@ -188,8 +188,7 @@
     left: 21rem;
     width: unset;
     .menuItems {
-      display: flex;
-      flex-direction: column;
+      grid-template-columns: repeat(1,1fr);
 
       .menuItem {
         width: 27.6rem;
