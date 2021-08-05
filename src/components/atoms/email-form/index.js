@@ -63,6 +63,7 @@ EmailForm.propTypes = {
   checkItemTwo: PropTypes.string,
   checkItemThree: PropTypes.string,
   style: PropTypes.string,
+  deleteSucceded: PropTypes.bool,
   changeModal: PropTypes.func,
 };
 

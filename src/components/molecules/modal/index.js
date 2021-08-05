@@ -203,6 +203,7 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
             <p>{confirmDesc(Intl.locale, data)}</p>
             <Button
               btnStyle="gray"
+              customClass="continue-signup"
               btnText={confirmButton(Intl.locale)}
               onBtnClick={() => close()}
             />

@@ -333,6 +333,8 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
 FreeTrial.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
+  onSuccessRes: PropTypes.func,
+  onToggleModal: PropTypes.func,
   list: PropTypes.arrayOf({}),
 };
 
