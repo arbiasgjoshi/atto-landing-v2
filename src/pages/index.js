@@ -370,7 +370,7 @@ const Home = () => {
         onToggleModal={() => openModal()}
         onSuccessRes={(val) => {
           setValues(val);
-          showDialog();
+          openModal();
         }}
       />
       <FooterComponent />
