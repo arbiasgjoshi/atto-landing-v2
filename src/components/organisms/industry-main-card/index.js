@@ -240,6 +240,9 @@ const IndustryMainCard = ({
     if (val?.action !== 'delete') {
       closeModal();
       setValues(val);
+      setTimeout(() => {
+        openModal();
+      }, 500);
     } else {
       toggleDeleteInvite(val);
     }

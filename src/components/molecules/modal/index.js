@@ -190,7 +190,9 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
         setFormValues({});
       }
     }
-    close();
+    if (!hasValues) {
+      close();
+    }
   };
 
   const renderModalTypes = (data) => {
