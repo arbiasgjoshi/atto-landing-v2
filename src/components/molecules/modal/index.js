@@ -190,7 +190,7 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
         setFormValues({});
       }
     }
-    if (!hasValues) {
+    if (hasValues?.message !== 'Signup Succeeded' || hasValues?.message !== '__Signup Succeeded') {
       close();
     }
   };
