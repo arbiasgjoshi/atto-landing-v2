@@ -410,7 +410,7 @@ const HeaderComponent = ({ headerStyle }) => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('/delete-invite', requestOptions)
+    fetch('https://staging.attotime.com/delete-invite', requestOptions)
       .then((response) => response.json())
       .then((res) => {
         setValues(res);

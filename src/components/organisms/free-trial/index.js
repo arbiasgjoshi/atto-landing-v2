@@ -52,7 +52,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
       },
       body: JSON.stringify(val),
     };
-    fetch('/confirmation', requestOptions)
+    fetch('https://staging.attotime.com/confirmation', requestOptions)
       .then((response) => response.json())
       .then((data) => {
         setLoader(false);

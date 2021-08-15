@@ -60,7 +60,7 @@ const Pricing = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('/delete-invite', requestOptions)
+    fetch('https://staging.attotime.com/delete-invite', requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

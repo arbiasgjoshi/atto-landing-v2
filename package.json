@@ -51,6 +51,7 @@
     "react-helmet": "^6.1.0",
     "react-lazyload": "^3.2.0",
     "react-live-chat-loader": "^2.5.2",
+    "react-loader-spinner": "^4.0.0",
     "react-player": "^2.9.0",
     "react-responsive-carousel": "^3.2.18",
     "react-slick": "^0.28.1",

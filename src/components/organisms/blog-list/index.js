@@ -8,26 +8,10 @@ import Pagination from './pagination';
 import { blogListWrapper } from './blog-list.module.scss';
 
 const BlogList = ({ list }) => {
-  const [blogs, setBlogs] = useState(list);
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [blogsPerPage] = useState(4);
-
-  const indexOfLastPost = currentPage * blogsPerPage;
-  const indexOfFirstPost = indexOfLastPost - blogsPerPage;
-  const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastPost);
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <div className={blogListWrapper}>
-      <List list={currentPosts} />
+      <List list={list} />
       <Divider className="style4" />
-      <Pagination
-        currentPage={currentPage}
-        postsPerPage={blogsPerPage}
-        totalPosts={blogs.length}
-        paginate={paginate}
-      />
     </div>
   );
 };
