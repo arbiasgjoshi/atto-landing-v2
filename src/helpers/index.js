@@ -1,3 +1,5 @@
+import parse from 'html-react-parser';
+
 export const isBrowser = () => typeof window !== 'undefined';
 
 export const placeholders = [
@@ -25,6 +27,13 @@ export const deleteInvitation = (data) => {
   };
   fetch('https://staging.attotime.com/delete-invite', requestOptions);
 };
+
+export const parseHTML = (bodyText) => {
+  const parsedContent = parse(bodyText);
+  return parsedContent;
+};
+
+export const parseTitleList = () => {};
 
 export const paginationList = (currentPage, pageCount) => {
   const delta = 2;

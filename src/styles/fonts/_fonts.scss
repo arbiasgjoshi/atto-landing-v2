@@ -42,3 +42,9 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Charter BT W01 Roman';
+  src: url('/fonts/b03b71fa-6e3e-44ab-8854-24cd39f67376.woff2') format('woff2'),
+    url('/fonts/7b22595f-47e6-4a66-9ec8-20be7208e5a9.woff') format('woff');
+}

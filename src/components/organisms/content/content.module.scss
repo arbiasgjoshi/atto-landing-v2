@@ -1,37 +1,31 @@
 .contentContainer {
   width: 100%;
   @include min(desktop) {
-    width: 62rem;
+    min-width: 62rem;
     margin-left: 13rem;
+    // padding-right: 8.1rem;
   }
 
   blockquote {
-    &::before {
-      content: '';
-      height: 4rem;
-      width: 5rem;
-      display: inline-flex;
-      margin-bottom: 5rem;
-      background-image: url('@images/open-quote.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-    padding-left: 5rem;
     font-size: 3rem;
-    line-height: 4rem;
-    font-family: Charter;
+    font-family: 'Charter BT W01 Roman';
     font-style: italic;
-    @include flex-direction(column);
-    margin: 0;
+    line-height: 4rem;
+    color: #262626;
+    border-left: 3px solid #00b9cb;
+    padding-left: 5rem;
+    margin: 2.4rem;
+    display: block;
+    margin-left: 0;
+  }
 
-    span {
-      margin-top: 2rem;
-      font-size: 1.8rem;
-      line-height: 3rem;
-      color: #999;
-      font-weight: 400;
-      font-style: normal;
-    }
+  h2,
+  h3,
+  p,
+  ul,
+  blockquote,
+  ol {
+    margin-right: 8.1rem;
   }
 
   .specialParagraph {
@@ -41,6 +35,34 @@
     font-style: italic;
     letter-spacing: 0;
     line-height: 40px;
+  }
+
+  h2,
+  h3 {
+    font-family: 'Calibre', sans-serif;
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 5rem;
+    font-weight: 600;
+  }
+
+  p:has(img) {
+    margin-right: 0;
+  }
+
+  img {
+    margin: 6rem auto;
+    // width: 62rem;
+    max-width: 100%;
+  }
+
+  h3 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    letter-spacing: -0.05rem;
   }
 
   h4 {
@@ -72,9 +94,23 @@
   }
 
   p {
-    font-family: Charter;
+    font-family: 'Charter BT W01 Roman';
     font-size: 2.1rem;
+    margin-bottom: 1.8rem;
     letter-spacing: 0;
     line-height: 3.2rem;
+
+    a {
+      color: #262626;
+      text-decoration: underline;
+      text-decoration-color: #06b8b7;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      @include transition(ease all 0.15s);
+
+      &:hover {
+        color: #06b8b7;
+      }
+    }
   }
 }

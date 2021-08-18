@@ -11,7 +11,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import PreviewImage from '../../../images/Atto - Social Media Share@2x.png';
 
-function SEO({ description, lang, meta, title, noTemplate = false }) {
+function SEO({ description, lang, meta, title, seoImage,  noTemplate = false }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -70,7 +70,7 @@ function SEO({ description, lang, meta, title, noTemplate = false }) {
         },
         {
           property: `og:image`,
-          content: PreviewImage,
+          content: seoImage || PreviewImage,
         },
       ].concat(meta)}
     />
