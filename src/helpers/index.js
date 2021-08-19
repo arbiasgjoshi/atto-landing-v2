@@ -1,4 +1,5 @@
-import parse from 'html-react-parser';
+import React from 'react';
+import parse, { domToReact } from 'html-react-parser';
 
 export const isBrowser = () => typeof window !== 'undefined';
 
@@ -29,11 +30,15 @@ export const deleteInvitation = (data) => {
 };
 
 export const parseHTML = (bodyText) => {
-  const parsedContent = parse(bodyText);
+  const parsedContent = parse(bodyText, {
+    trim: true,
+  });
   return parsedContent;
 };
 
-export const parseTitleList = () => {};
+export const parseTitleList = (bodyText) => {
+  const parsedContent = parse(bodyText);
+};
 
 export const paginationList = (currentPage, pageCount) => {
   const delta = 2;

@@ -107,6 +107,10 @@
       line-height: 3.2rem;
       font-family: Charter;
       @include flex-align(center, flex-start);
+
+      p {
+        margin-bottom: 0;
+      }
       &::before {
         content: '';
         display: inline-flex;

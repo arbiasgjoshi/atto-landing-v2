@@ -1,6 +1,7 @@
 .contentContainer {
   max-width: 100%;
   margin-bottom: 9rem;
+  max-height: 65rem;
   @include min(desktop) {
     position: sticky;
     min-width: 29rem;
@@ -22,12 +23,20 @@
       display: flex;
       margin-bottom: 2rem;
       margin-bottom: 2rem;
+      text-align: left;
 
       .iconWrapper {
         @include flex-align(center, center);
         min-width: 2.4rem;
         margin-right: 1rem;
         padding: 0.8rem;
+        height: 3rem;
+      }
+
+      &:hover {
+        span {
+          text-decoration: underline;
+        }
       }
     }
   }

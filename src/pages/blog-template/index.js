@@ -36,7 +36,6 @@ import {
 const BlogTemplate = ({ location }) => {
   const [article, setArticle] = useState([]);
   const [seo, setSeo] = useState([]);
-  const [related, setRelated] = useState([]);
   const [slug, setSlug] = useState(false);
 
   const fetcher = () =>
@@ -57,15 +56,12 @@ const BlogTemplate = ({ location }) => {
     if (data) {
       setArticle(data.article);
       setSeo(data.seo);
-      // setRelated(data.article.related_articles);
-      console.log(data.article);
     }
 
     // ReactDOM.findDOMNode(this.domNode).addEventListener('click', handleClick);
     return () => {
       // document.getElementsByClassName('js-btn-tag').removeEventListener('click', handleClick);
       setArticle([]);
-      setRelated([]);
     };
   }, [data, error]);
   return (

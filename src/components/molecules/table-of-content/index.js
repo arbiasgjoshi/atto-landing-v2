@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Icon from '@components/atoms/icon';
@@ -23,42 +23,65 @@ import {
   socialsWrapper,
 } from './table-of-content.module.scss';
 
-const TableOfContent = ({ list }) => (
-  <div className={contentContainer}>
-    <h6>Table of Contents</h6>
-    <ul className={listContainer}>
-      {list &&
-        list.map((item, index) => (
-          <li className={itemWrapper}>
-            <div className={iconWrapper}>
-              <Icon iconClass="arrow-right" fSize={0.8} />
-            </div>
-            <span>{`${index + 1}. ${item}`}</span>
-          </li>
-        ))}
-    </ul>
-    <div className={miniSlider}>
-      <p>Tired of paperwork?</p>
-      <div className={sliderWrapper}>
-        <h5>Try Atto</h5>
-        <div className={sliderIconWrapper}>
-          <Icon iconClass="arrow-right" fSize={1} />
+const TableOfContent = ({ content }) => {
+  const [list, setList] = useState();
+
+  const renderList = () => {
+    const blog = document.getElementById('blogContent');
+    const el = blog.getElementsByTagName('h2');
+    const newListItems = [];
+
+    Array.from(el).forEach((item) => {
+      newListItems.push(item.innerHTML);
+    });
+
+    setList(newListItems);
+  };
+  useEffect(() => {
+    setTimeout(() => renderList(), 1000);
+  }, []);
+
+  const jumpToHeader = (val) => {
+    console.log(val);
+  };
+
+  return (
+    <div className={contentContainer}>
+      <h6>Table of Contents</h6>
+      <div className={listContainer}>
+        {list &&
+          list.map((item, index) => (
+            <button className={itemWrapper} type="button" onClick={() => jumpToHeader(index)}>
+              <div className={iconWrapper}>
+                <Icon iconClass="arrow-right" fSize={0.8} />
+              </div>
+              <span>{`${index + 1}. ${item}`}</span>
+            </button>
+          ))}
+      </div>
+      <div className={miniSlider}>
+        <p>Tired of paperwork?</p>
+        <div className={sliderWrapper}>
+          <h5>Try Atto</h5>
+          <div className={sliderIconWrapper}>
+            <Icon iconClass="arrow-right" fSize={1} />
+          </div>
         </div>
       </div>
+      <div className={socialsWrapper}>
+        <TwitterShareButton>
+          <TwitterIcon round size={42} />
+        </TwitterShareButton>
+        <FacebookShareButton>
+          <FacebookIcon round size={42} />
+        </FacebookShareButton>
+        <LinkedinShareButton>
+          <LinkedinIcon round size={42} />
+        </LinkedinShareButton>
+      </div>
     </div>
-    <div className={socialsWrapper}>
-      <TwitterShareButton>
-        <TwitterIcon round size={42} />
-      </TwitterShareButton>
-      <FacebookShareButton>
-        <FacebookIcon round size={42} />
-      </FacebookShareButton>
-      <LinkedinShareButton>
-        <LinkedinIcon round size={42} />
-      </LinkedinShareButton>
-    </div>
-  </div>
-);
+  );
+};
 
 TableOfContent.propTypes = {
   list: PropTypes.arrayOf(PropTypes.string),
