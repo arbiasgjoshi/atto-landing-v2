@@ -10,14 +10,13 @@
     }
   }
 
-  h2 {
-    letter-spacing: -1px;
-    font-size: 5rem;
-    line-height: 6rem;
-    width: 62rem;
-    margin-bottom: 1rem;
-    padding-right: 5rem;
-    font-weight: 600;
-    font-family: 'Calibre';
+  @include min(desktop) {
+    h1 {
+      letter-spacing: -1px;
+      font-size: 5rem;
+      width: 62rem;
+      margin-bottom: 1rem;
+      padding-right: 5rem;
+    }
   }
 }

@@ -1,13 +1,15 @@
 .contentContainer {
-  width: 100%;
+  max-width: 100%;
+  margin-bottom: 9rem;
   @include min(desktop) {
     position: sticky;
-    width: 29rem;
+    min-width: 29rem;
     top: 93px;
   }
 
   h6 {
     margin-bottom: 4rem;
+    font-family: 'Calibre', sans-serif;
   }
 
   .listContainer {
@@ -35,6 +37,7 @@
     @include flex-direction(column);
     height: 13.5rem;
     padding: 2.5rem 3.4rem 2.9rem 3.4rem;
+    margin-bottom: 10rem;
 
     p {
       margin-bottom: 1.5rem;
@@ -52,6 +55,18 @@
           margin-left: 12.9rem;
         }
       }
+    }
+  }
+
+  @include max(tablet) {
+    h6 {
+      font-size: 2rem;
+      line-height: 2rem;
+      font-weight: 700;
+    }
+
+    .socialsWrapper {
+      padding: 0 34px;
     }
   }
 }

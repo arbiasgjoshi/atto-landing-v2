@@ -7,6 +7,7 @@ import { Link } from 'gatsby-plugin-react-intl';
 // import { StaticImage } from 'gatsby-plugin-image';
 // import { useLocation } from '@reach/router';
 // import { Link } from '@reach/router';
+import BlogCard from '@components/molecules/blog-card';
 
 import Icon from '@components/atoms/icon';
 import Divider from '@components/atoms/divider';
@@ -23,21 +24,14 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { container } from '@styles/main.module.scss';
 import {
   blogTemplateContainer,
+  titleWrapper,
   goBackContainer,
   iconWrapper,
   loadingArticle,
+  relatedArticles,
+  relatedWrapper,
   contentWrapper,
 } from './blog-template.module.scss';
-
-// const titleList = [
-//   'Do your homework',
-//   'Communication goes a long way',
-//   'Assign a person of reference. Design version for longer subtitles',
-//   "Don't vanish",
-//   'Positive reinforcment',
-//   'Put a number on it',
-//   'Pay a fair wage',
-// ];
 
 const BlogTemplate = ({ location }) => {
   const [article, setArticle] = useState([]);
@@ -57,14 +51,19 @@ const BlogTemplate = ({ location }) => {
     }
   }, []);
 
+  const handleClick = () => {};
+
   useEffect(() => {
     if (data) {
       setArticle(data.article);
       setSeo(data.seo);
-      // parseHTML(data.article.body);
+      // setRelated(data.article.related_articles);
+      console.log(data.article);
     }
 
+    // ReactDOM.findDOMNode(this.domNode).addEventListener('click', handleClick);
     return () => {
+      // document.getElementsByClassName('js-btn-tag').removeEventListener('click', handleClick);
       setArticle([]);
       setRelated([]);
     };
@@ -75,7 +74,7 @@ const BlogTemplate = ({ location }) => {
       <Header />
       {data && article ? (
         <>
-          <div style={{ display: 'flex', paddingRight: '10rem' }}>
+          <div className={titleWrapper}>
             <div className={goBackContainer}>
               <Link to="/blog">
                 <div className={iconWrapper}>
@@ -85,7 +84,7 @@ const BlogTemplate = ({ location }) => {
               <p>All posts</p>
             </div>
             <BlogTitle
-              smallTitle="Published March 18, 2021 in Productivity   ·   2 min read"
+              // smallTitle="Published March 18, 2021 in Productivity   ·   2 min read"
               title={article.title}
               // author="By Nick Blackeye"
             />
@@ -94,12 +93,27 @@ const BlogTemplate = ({ location }) => {
           <img src={article.cover_image} alt={article.seo_title} width={1140} height={450} />
           <Divider className="style2" />
           <div className={contentWrapper}>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              {data && article && <TableOfContent />}
-            </div>
+            {data && article && <TableOfContent />}
             {data && article && <Content content={article.body} />}
             <Divider className="style1" />
             {/* <Newsletter style="column" /> */}
+          </div>
+          <div className={relatedArticles}>
+            <h3>Related Articles</h3>
+            <div className={relatedWrapper}>
+              {data &&
+                data.article.related_articles.map((item, idx) => (
+                  <BlogCard
+                    title={item.title}
+                    description={item.description}
+                    key={idx}
+                    date={item.date}
+                    slug={slug}
+                    smallTitle={item.tag}
+                    image={item.cover_image}
+                  />
+                ))}
+            </div>
           </div>
         </>
       ) : (

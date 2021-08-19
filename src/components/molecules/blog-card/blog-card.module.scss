@@ -85,6 +85,15 @@
 
     h4 {
       margin-bottom: 2rem;
+      transition: ease all 0.15s;
+    }
+  }
+
+  &:hover {
+    .textContainer {
+      h4 {
+        color: #00b9cb;
+      }
     }
   }
 }
