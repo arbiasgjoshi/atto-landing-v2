@@ -8,6 +8,7 @@
     margin: 3rem 0 0 0;
 
     @include min(tablet) {
+      border: 3px solid red;
       margin: 0;
       text-align: left;
       width: 100%;
