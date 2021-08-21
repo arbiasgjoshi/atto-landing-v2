@@ -127,7 +127,7 @@
     > div:first-child {
       margin-left: 0;
 
-      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
         border: 1px solid blue;
         margin-left: auto;
       }
@@ -136,7 +136,7 @@
       text-align: left;
       justify-content: start;
 
-      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
         text-align: center;
         justify-content: center;
         border: 1px solid blue;
@@ -154,7 +154,7 @@
         justify-content: start;
       }
 
-      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
         margin-left: auto;
         border: 1px solid blue;
       }
@@ -163,7 +163,7 @@
       text-align: left;
       margin: 0;
 
-      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
         margin: auto;
         border: 1px solid blue;
         text-align: center;
@@ -178,7 +178,7 @@
       h4.hasBreakStyle {
         margin-right: 8.5rem;
 
-        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
           margin-right: 0;
           border: 1px solid blue;
         }
