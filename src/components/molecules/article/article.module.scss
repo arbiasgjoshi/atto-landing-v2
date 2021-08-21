@@ -9,6 +9,11 @@
     margin: 0;
   }
 
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+    flex-direction: column-reverse;
+    border: 1px solid blue;
+  }
+
   &.swap {
     @include min(tablet) {
       flex-direction: row-reverse;
@@ -22,6 +27,21 @@
           border: 1px solid blue;
           margin: 4rem 0 6rem 0;
         }
+      }
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+      flex-direction: column-reverse;
+      border: 1px solid blue;
+    }
+  }
+
+  .secondBlock {
+    .imageWrapper {
+      @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        border: 1px solid blue;
       }
     }
   }
@@ -47,6 +67,9 @@
   @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
     border: 1px solid blue;
     margin-right: 0rem;
+    max-width: initial !important;
+    width: 100%;
+    padding: 0 7rem;
   }
 
   h3 {

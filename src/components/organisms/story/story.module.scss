@@ -6,6 +6,11 @@
     margin: 0 7.5rem 0 7.5rem;
   }
 
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+    flex-direction: column;
+    border: 1px solid blue;
+  }
+
   .imageContainer {
     width: 20rem;
     @include flex-align(center, center);
@@ -21,6 +26,16 @@
       max-width: 25rem;
       max-height: 40rem;
     }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+      margin-right: 0;
+      border: 1px solid blue;
+    }
+
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+      margin-right: 2rem;
+      border: 1px solid blue;
+    }
   }
 
   .paragraphContainer {
@@ -30,6 +45,11 @@
 
     @include min(tablet) {
       max-width: 60.2rem;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+      @include flex-align(center, center);
+      border: 1px solid blue;
     }
 
     h4 {
@@ -95,7 +115,7 @@
     @include max(tablet) {
       flex-direction: column;
       margin-bottom: 4rem;
-      .imageContainer{
+      .imageContainer {
         margin-bottom: 4rem;
         margin-right: 0;
       }
