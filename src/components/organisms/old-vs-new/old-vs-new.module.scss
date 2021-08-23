@@ -102,6 +102,10 @@
     border-radius: 20px;
   }
 
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+    flex-direction: column;
+  }
+
   @include min(laptop) {
     padding: 5rem;
   }
@@ -147,6 +151,11 @@
       }
     }
 
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+      width: 100%;
+      margin-bottom: 13rem;
+    }
+
     @include max(mobile) {
       margin-bottom: 10rem;
     }
@@ -156,6 +165,11 @@
     @include min(tablet) {
       border-left: 1px solid #efefef;
       width: 50%;
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+        width: 100%;
+      }
+
       > div {
         padding: 3rem 3.1rem 3rem 4rem;
       }
