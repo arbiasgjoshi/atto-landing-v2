@@ -18,7 +18,7 @@ export const placeholders = [
   { id: 11 },
 ];
 
-const apiUrl = 'https://staging.attotime.com';
+export const apiUrl = 'https://staging.attotime.com';
 
 export const deleteInvitation = (data) => {
   const requestOptions = {

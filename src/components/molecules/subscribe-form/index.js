@@ -54,6 +54,8 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
       });
   };
 
+  console.log(`${apiUrl}/confirmation`);
+
   const toggleSubmit = (e, submit, valid, err) => {
     if (valid) {
       if (!err) {
