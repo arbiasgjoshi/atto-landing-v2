@@ -335,7 +335,7 @@ FreeTrial.propTypes = {
   description: PropTypes.string,
   onSuccessRes: PropTypes.func,
   onToggleModal: PropTypes.func,
-  list: PropTypes.arrayOf({}),
+  list: PropTypes.shape(),
 };
 
 export default FreeTrial;

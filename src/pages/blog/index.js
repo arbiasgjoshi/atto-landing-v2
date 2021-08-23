@@ -17,6 +17,7 @@ import BlogList from '@components/organisms/blog-list';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 // import Newsletter from '@components/molecules/newsletter';
+import Title from '@components/molecules/title';
 import {
   blogStyle,
   loadingContent,
@@ -30,7 +31,6 @@ import {
   dotStyle,
   selected,
 } from './blog.module.scss';
-import Title from '@components/molecules/title';
 
 const Blog = () => {
   const [tags, setTags] = useState([{ id: 0, name: 'All' }]);
@@ -50,11 +50,10 @@ const Blog = () => {
   const fetcher = () =>
     fetch(
       `https://staging.attotime.com/api/v2/blog` +
-        `${activeItem !== 'All' ? '?tag=' + activeItem : ''}` +
-        `${pageIndex && `${activeItem !== 'All' ? `&` : '?'}page=` + pageIndex}`
-    ).then((res) => {
-      return res.json();
-    });
+        `${activeItem !== 'All' ? `?tag=${activeItem}` : ''}` +
+        `${pageIndex && `${activeItem !== 'All' ? `&` : '?'}page=${pageIndex}`}`
+    ).then((res) => res.json());
+
   const { data, error } = useSWR(['/api/v2/blog', pageIndex, activeItem], fetcher);
 
   const handlePrevious = () => {
@@ -111,13 +110,14 @@ const Blog = () => {
       }, 500);
     }
   }, [data, error]);
+  console.log('the data value is:', data?.articles?.length, loader);
 
   return (
-    <div className={`${container} ${blogStyle} ${loader && loadingContent}`}>
+    <div className={`${container} ${blogStyle} ${loader && !articles ? loadingContent : null}`}>
       <Seo title={seoTitle} />
       <HeaderComponent />
       <MainTitle image={mainHeader} subtitle="Thoughts and ideas on the future of work" />
-      {loader ? (
+      {loader && !articles ? (
         <div className={loaderWrap}>
           <Loader type="ThreeDots" color="#00b9cb" height={80} width={80} timeout={2000} />
         </div>

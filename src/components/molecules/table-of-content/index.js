@@ -23,7 +23,7 @@ import {
   socialsWrapper,
 } from './table-of-content.module.scss';
 
-const TableOfContent = ({ content }) => {
+const TableOfContent = ({ toggleModal }) => {
   const [list, setList] = useState();
 
   const renderList = () => {
@@ -61,12 +61,12 @@ const TableOfContent = ({ content }) => {
       </div>
       <div className={miniSlider}>
         <p>Tired of paperwork?</p>
-        <div className={sliderWrapper}>
+        <button type="button" className={sliderWrapper} onClick={() => toggleModal()}>
           <h5>Try Atto</h5>
           <div className={sliderIconWrapper}>
             <Icon iconClass="arrow-right" fSize={1} />
           </div>
-        </div>
+        </button>
       </div>
       <div className={socialsWrapper}>
         <TwitterShareButton>
@@ -84,7 +84,7 @@ const TableOfContent = ({ content }) => {
 };
 
 TableOfContent.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.string),
+  toggleModal: PropTypes.func,
 };
 
 export default TableOfContent;

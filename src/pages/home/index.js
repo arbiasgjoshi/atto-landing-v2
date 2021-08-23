@@ -91,18 +91,7 @@ const Home = () => {
   ];
 
   const imageOneLocale = (loc) => {
-    if (loc === 'en') {
-      return (
-        <StaticImage
-          src="../images/en/time-tracking-simplified@2x.png"
-          alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
-          width={1140}
-          quality={98}
-          placeholder="none"
-          className={desktopImage}
-        />
-      );
-    }
+    console.log('default language is:', loc);
     if (loc === 'de') {
       return (
         <StaticImage
@@ -139,6 +128,16 @@ const Home = () => {
         />
       );
     }
+    return (
+      <StaticImage
+        src="../images/en/time-tracking-simplified@2x.png"
+        alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
+        width={1140}
+        quality={98}
+        placeholder="none"
+        className={desktopImage}
+      />
+    );
   };
 
   const mobileLocale = (loc) => {
