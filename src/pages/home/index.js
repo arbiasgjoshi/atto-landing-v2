@@ -56,6 +56,7 @@ const SamplePrevArrow = (props) => {
 
 const Home = () => {
   const Intl = useIntl();
+  // dialog config
   const [showDialog, setShowDialog] = useState(false);
   const [values, setValues] = useState({});
   const [deletedInvite, setDeleted] = useState(false);
