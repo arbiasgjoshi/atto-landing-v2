@@ -92,22 +92,10 @@ const Home = () => {
   ];
 
   const imageOneLocale = (loc) => {
-    if (loc === 'en') {
-      return (
-        <StaticImage
-          src="../images/en/time-tracking-simplified@2x.png"
-          alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
-          width={1140}
-          quality={98}
-          placeholder="none"
-          className={desktopImage}
-        />
-      );
-    }
     if (loc === 'de') {
       return (
         <StaticImage
-          src="../images/de/de-time-tracking-simplified@2x.png"
+          src="../../images/de/de-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
           quality={98}
@@ -119,7 +107,7 @@ const Home = () => {
     if (loc === 'fr') {
       return (
         <StaticImage
-          src="../images/fr/fr-time-tracking-simplified@2x.png"
+          src="../../images/fr/fr-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
           quality={98}
@@ -131,7 +119,7 @@ const Home = () => {
     if (loc === 'es') {
       return (
         <StaticImage
-          src="../images/es/es-time-tracking-simplified@2x.png"
+          src="../../images/es/es-time-tracking-simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={1140}
           quality={98}
@@ -140,13 +128,23 @@ const Home = () => {
         />
       );
     }
+    return (
+      <StaticImage
+        src="../../images/en/time-tracking-simplified@2x.png"
+        alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
+        width={1140}
+        quality={98}
+        placeholder="none"
+        className={desktopImage}
+      />
+    );
   };
 
   const mobileLocale = (loc) => {
     if (loc === 'de') {
       return (
         <StaticImage
-          src="../images/DE_Mobile Time tracking, simplified@2x.png"
+          src="../../images/DE_Mobile Time tracking, simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
           height={516}
@@ -159,7 +157,7 @@ const Home = () => {
     if (loc === 'fr') {
       return (
         <StaticImage
-          src="../images/FR_Mobile Time tracking, simplified@2x.png"
+          src="../../images/FR_Mobile Time tracking, simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
           height={516}
@@ -172,7 +170,7 @@ const Home = () => {
     if (loc === 'es') {
       return (
         <StaticImage
-          src="../images/ES_Mobile Time tracking, simplified@2x.png"
+          src="../../images/ES_Mobile Time tracking, simplified@2x.png"
           alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
           width={434}
           height={516}
@@ -184,7 +182,7 @@ const Home = () => {
     }
     return (
       <StaticImage
-        src="../images/Mobile Time tracking, simplified@2x.png"
+        src="../../images/Mobile Time tracking, simplified@2x.png"
         alt={Intl.formatMessage({ id: 'pages.homepage.title' })}
         width={434}
         height={516}
