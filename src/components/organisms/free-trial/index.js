@@ -15,7 +15,7 @@ import CheckCard from '@components/molecules/check-card';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-
+import { apiUrl } from '@helpers';
 import {
   container,
   firstBox,
@@ -52,7 +52,7 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
       },
       body: JSON.stringify(val),
     };
-    fetch('https://staging.attotime.com/confirmation', requestOptions)
+    fetch(`${apiUrl}/confirmation`, requestOptions)
       .then((response) => response.json())
       .then((data) => {
         setLoader(false);

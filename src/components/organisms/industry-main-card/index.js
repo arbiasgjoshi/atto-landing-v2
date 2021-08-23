@@ -6,9 +6,9 @@ import EmailForm from '@components/atoms/email-form';
 import CheckList from '@components/molecules/check-list';
 
 import { StaticImage } from 'gatsby-plugin-image';
-
-import * as styles from './industry-main-card.module.scss';
+import { apiUrl } from '@helpers';
 import { useIntl } from 'gatsby-plugin-react-intl';
+import * as styles from './industry-main-card.module.scss';
 
 // import TimesheetApp from '@images/timesheets/Streamline your payroll with our simple employee timesheet app@2x.png';
 // import CleaningImage from '@images/cleaning/Time Tracking for Cleaning Companies@2x.png';
@@ -24,16 +24,7 @@ import { useIntl } from 'gatsby-plugin-react-intl';
 // import TimeClock from '@images/time-clock/A highly accurate time tracking solution@2x.png';
 // import WorkHours from '@images/work-hours-tracker/A highly accurate time tracking solution@2x.png';
 
-const IndustryMainCard = ({
-  smallTitle,
-  title,
-  description,
-  list,
-  image,
-  styling,
-  imageHeight,
-  imageWidth,
-}) => {
+const IndustryMainCard = ({ smallTitle, title, description, list, image, styling }) => {
   const Intl = useIntl();
   const [showDialog, setShowDialog] = useState(false);
   const [values, setValues] = useState(null);
@@ -214,9 +205,9 @@ const IndustryMainCard = ({
     return null;
   };
 
-  const stateSucceeded = (val) => {
-    setValues(val);
-  };
+  // const stateSucceeded = (val) => {
+  //   setValues(val);
+  // };
 
   const toggleDeleteInvite = (data) => {
     const requestOptions = {
@@ -226,12 +217,12 @@ const IndustryMainCard = ({
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
-      .then((data) => {
+      .then((dd) => {
         closeModal();
         setDeleted(true);
-        setValues(data);
+        setValues(dd);
         setTimeout(() => openModal(), 2000);
       });
   };

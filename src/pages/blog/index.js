@@ -5,8 +5,7 @@ import Seo from '@components/molecules/seo';
 import useSWR from 'swr';
 import { Link } from '@reach/router';
 
-// import { FooterLinks } from '@locale/en.js';
-import { formatDate, paginationList } from '@helpers';
+import { paginationList, apiUrl } from '@helpers';
 import FooterComponent from '@components/molecules/footer';
 import Divider from '@components/atoms/divider';
 import { container } from '@styles/main.module.scss';
@@ -49,7 +48,7 @@ const Blog = () => {
 
   const fetcher = () =>
     fetch(
-      `https://staging.attotime.com/api/v2/blog` +
+      `${apiUrl}/api/v2/blog` +
         `${activeItem !== 'All' ? `?tag=${activeItem}` : ''}` +
         `${pageIndex && `${activeItem !== 'All' ? `&` : '?'}page=${pageIndex}`}`
     ).then((res) => res.json());

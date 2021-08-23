@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useIntl } from 'gatsby-plugin-react-intl';
-import { Link } from 'gatsby-plugin-react-intl';
+import { useIntl, Link } from 'gatsby-plugin-react-intl';
+
 import loadable from '@loadable/component';
 
 import HeaderComponent from '@components/molecules/header';
@@ -28,7 +28,7 @@ import MobileTimeTracking from '@images/mobile_time_tracking.svg';
 import TenderIcon from '@images/tender.svg';
 import SupportIcon from '@images/help_support.svg';
 import ProfileIcon from '@images/profile.svg';
-
+import { apiUrl } from '@helpers';
 import Faq from '@components/organisms/faq';
 import {
   packageWrapper,
@@ -60,7 +60,7 @@ const Pricing = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

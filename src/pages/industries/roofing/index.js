@@ -18,7 +18,7 @@ import ImagesBox from '@components/organisms/images-box';
 
 import image5 from '@images/roofing/Respond quickly to weather changes and employee absences @2x.png';
 import image6 from '@images/roofing/Forecast your wage bill ahead of payday to avoid unwanted surprises@2x.png';
-
+import { apiUrl } from '@helpers';
 import { oldList, newList, roofingSteps } from '@data/industries';
 import { checkList1, firstList, accordionList1, accordionList2 } from '@data/industries/roofing.js';
 import {
@@ -49,7 +49,7 @@ const Roofing = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

@@ -26,6 +26,7 @@ import {
   accordionList2,
 } from '@data/industries/home-and-healthcare.js';
 import { oldList, newList, healthSteps } from '@data/industries';
+import { apiUrl } from '@helpers';
 import {
   container,
   industryPadding,
@@ -54,7 +55,7 @@ const HomeHealthcare = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

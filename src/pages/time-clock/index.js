@@ -24,7 +24,7 @@ import icon1 from '@images/location@1x.png';
 import icon2 from '@images/time-tracking-clock@1x.png';
 import icon3 from '@images/profile@1x.png';
 import icon4 from '@images/timesheets@1x.png';
-
+import { apiUrl } from '@helpers';
 import { container, learnMoreContainer } from '@styles/main.module.scss';
 import { workListContainer, featureCardWithBanner } from './time-clock.module.scss';
 
@@ -49,7 +49,7 @@ const TimeClock = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

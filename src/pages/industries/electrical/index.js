@@ -27,6 +27,7 @@ import {
   accordionList1,
   accordionList2,
 } from '@data/industries/electrician.js';
+import { apiUrl } from '@helpers';
 import { oldList, newList, electricianSteps } from '@data/industries';
 import {
   container,
@@ -56,7 +57,7 @@ const Electrician = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

@@ -28,6 +28,7 @@ import {
   accordionList3,
 } from '@data/industries/construction.js';
 
+import { apiUrl } from '@helpers';
 import { steps, oldList, newList } from '@data/industries';
 import { topImageMask, bottomImageMask, greenBackground } from './construction.module.scss';
 
@@ -51,7 +52,7 @@ const Construction = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

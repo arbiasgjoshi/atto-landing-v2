@@ -31,7 +31,7 @@ import {
   accordionList2,
 } from '@data/industries/cleaning.js';
 import { oldList, newList, cleanersSteps } from '@data/industries';
-
+import { apiUrl } from '@helpers';
 import image5 from '@images/cleaning/See who’s nearby and available to respond to urgent cleaning jobs@2x.png';
 import image6 from '@images/cleaning/Keep a handle on your biggest cost – your cleaners’ wages@2x.png';
 
@@ -55,7 +55,7 @@ const Cleaning = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

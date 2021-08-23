@@ -23,7 +23,7 @@ import TableOfContent from '@components/molecules/table-of-content';
 // import Footer from '@components/molecules/footer';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-
+import { apiUrl } from '@helpers';
 import { container } from '@styles/main.module.scss';
 import {
   blogTemplateContainer,
@@ -57,7 +57,7 @@ const BlogTemplate = ({ location }) => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((dd) => {
         closeModal();

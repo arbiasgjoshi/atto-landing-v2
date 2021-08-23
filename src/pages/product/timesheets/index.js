@@ -46,7 +46,7 @@ import featureImgLocaleFourDe from '@images/de/timesheets/DE_Estimate your Emplo
 import featureImgLocaleFourEs from '@images/es/timesheets/ES_Estimate your Employees’ Wages@2x.png';
 import featureImgLocaleFourFr from '@images/fr/timesheets/FR_Estimate your Employees’ Wages@2x.png';
 import featureImgLocaleFourEn from '@images/en/timesheets/Estimate your Employees’ Wages@2x.png';
-
+import { apiUrl } from '@helpers';
 import { container, imageWrapper } from '@styles/main.module.scss';
 import {
   teamActivityContainer,
@@ -76,7 +76,7 @@ const Timesheets = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

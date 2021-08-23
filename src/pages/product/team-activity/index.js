@@ -27,8 +27,8 @@ import icon16 from '@images/timesheets@1x.png';
 
 import { container, articleList } from '@styles/main.module.scss';
 
+import { apiUrl } from '@helpers';
 import { teamActivityContainer, learnMoreContainer } from '../product.module.scss';
-
 import { featuresStyle } from './team-activity.module.scss';
 
 const Modal = loadable(() => import('@components/molecules/modal'));
@@ -52,7 +52,7 @@ const TeamActivity = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

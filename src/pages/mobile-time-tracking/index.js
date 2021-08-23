@@ -22,7 +22,7 @@ import icon32 from '@images/location@1x.png';
 import icon33 from '@images/profile@1x.png';
 import icon34 from '@images/timesheets@1x.png';
 import icon35 from '@images/time-tracking-clock@1x.png';
-
+import { apiUrl } from '@helpers';
 import { container, learnMoreContainer } from '@styles/main.module.scss';
 import {
   featureCardsList,
@@ -50,7 +50,7 @@ const TimeTrackingApp = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

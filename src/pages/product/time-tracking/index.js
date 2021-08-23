@@ -89,7 +89,7 @@ import featureImgLocaleSixEn from '@images/add-time-off.png';
 import featureImgLocaleSixDe from '@images/de/time-tracking/DE_Add time off@2x.png';
 import featureImgLocaleSixEs from '@images/es/time-tracking/ES_Add time off@2x.png';
 import featureImgLocaleSixFr from '@images/fr/time-tracking/FR_Add time off@2x.png';
-
+import { apiUrl } from '@helpers';
 import { teamActivityContainer, learnMoreContainer } from '../product.module.scss';
 
 import {
@@ -120,7 +120,7 @@ const TimeTracking = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

@@ -30,6 +30,8 @@ import BlogLogo from '@images/blog-menu-logo.svg';
 import ContactLogo from '@images/contact-menu-logo.svg';
 import HeaderLogo from '@images/logo@3x.png';
 
+import { apiUrl } from '@helpers';
+
 import {
   headerWrapper,
   onScrollStyle,
@@ -410,7 +412,7 @@ const HeaderComponent = ({ headerStyle }) => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         setValues(res);

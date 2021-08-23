@@ -19,7 +19,7 @@ import FreeTrial from '@components/organisms/free-trial';
 import Story from '@components/organisms/story';
 import CommentCard from '@components/molecules/comment-card';
 import Number from '@components/atoms/number-card';
-
+import { apiUrl } from '@helpers';
 import { container, formRotated } from '@styles/main.module.scss';
 import '@styles/includes/slick-carousel.scss';
 import {
@@ -200,7 +200,7 @@ const Home = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

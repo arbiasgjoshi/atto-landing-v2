@@ -18,6 +18,8 @@ export const placeholders = [
   { id: 11 },
 ];
 
+const apiUrl = 'https://staging.attotime.com';
+
 export const deleteInvitation = (data) => {
   const requestOptions = {
     method: 'POST',
@@ -26,7 +28,7 @@ export const deleteInvitation = (data) => {
     },
     body: JSON.stringify({ email: data.email }),
   };
-  fetch('https://staging.attotime.com/delete-invite', requestOptions);
+  fetch(`${apiUrl}/delete-invite`, requestOptions);
 };
 
 export const parseHTML = (bodyText) => {

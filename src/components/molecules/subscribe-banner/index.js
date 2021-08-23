@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Modal from '@components/molecules/modal';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
-
+import { apiUrl } from '@helpers';
 import EmailForm from '../../atoms/email-form';
 
 import { bannerWrapper, textWrapper, hasImage, imgWrap } from './subscribe.module.scss';
@@ -36,7 +36,7 @@ const SubscribeBanner = ({
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();
