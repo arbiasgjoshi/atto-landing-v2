@@ -128,7 +128,6 @@
       margin-left: 0;
 
       @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
-        border: 1px solid blue;
         margin-left: auto;
       }
     }
@@ -139,7 +138,7 @@
       @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
         text-align: center;
         justify-content: center;
-        border: 1px solid blue;
+
         margin-left: auto;
       }
     }
@@ -156,7 +155,6 @@
 
       @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
         margin-left: auto;
-        border: 1px solid blue;
       }
     }
     > div {
@@ -165,7 +163,7 @@
 
       @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
         margin: auto;
-        border: 1px solid blue;
+
         text-align: center;
       }
 
@@ -180,7 +178,6 @@
 
         @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
           margin-right: 0;
-          border: 1px solid blue;
         }
       }
     }

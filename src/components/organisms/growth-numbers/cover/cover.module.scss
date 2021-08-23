@@ -2,6 +2,11 @@
   display: flex;
   justify-content: space-between;
 
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    width: calc(100% - 10rem);
+    margin: 0 auto;
+  }
+
   &.swap {
     flex-direction: row-reverse;
 
@@ -23,7 +28,11 @@
     @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
       margin-left: 0;
       margin-right: 3.5rem;
-      border: 1px solid blue;
+    }
+
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+      margin-left: 0;
+      margin-right: 3.5rem;
     }
 
     .iconWrapper {
