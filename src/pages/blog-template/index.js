@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { useIntl } from 'gatsby-plugin-react-intl';
+import { useIntl, Link } from 'gatsby-plugin-react-intl';
 import loadable from '@loadable/component';
 import useSWR from 'swr';
 import Seo from '@components/molecules/seo';
-import { Link } from 'gatsby-plugin-react-intl';
+
 // import { StaticImage } from 'gatsby-plugin-image';
 // import { useLocation } from '@reach/router';
 // import { Link } from '@reach/router';
+
 import BlogCard from '@components/molecules/blog-card';
 
 import Icon from '@components/atoms/icon';
@@ -16,8 +17,8 @@ import Divider from '@components/atoms/divider';
 import Header from '@components/molecules/header';
 import BlogTitle from '@components/molecules/blog-title';
 import Content from '@components/organisms/content';
-import Newsletter from '@components/molecules/newsletter';
 import TableOfContent from '@components/molecules/table-of-content';
+// import Newsletter from '@components/molecules/newsletter';
 
 // import Footer from '@components/molecules/footer';
 import Loader from 'react-loader-spinner';
@@ -93,7 +94,8 @@ const BlogTemplate = ({ location }) => {
     }
   }, []);
 
-  const handleClick = () => {};
+  // TODO use this to confirm share check
+  // const handleClick = () => {};
 
   useEffect(() => {
     if (data) {
@@ -139,8 +141,23 @@ const BlogTemplate = ({ location }) => {
           <img src={article.cover_image} alt={article.seo_title} width={1140} height={450} />
           <Divider className="style2" />
           <div className={contentWrapper}>
-            {data && article && <TableOfContent toggleModal={() => openModal()} />}
-            {data && article && <Content content={article.body} />}
+            {data && article && (
+              <TableOfContent
+                title={article.title}
+                description={seo.description}
+                slug={slug}
+                seo={seo}
+                toggleModal={() => openModal()}
+              />
+            )}
+            {data && article && (
+              <Content
+                title={article.title}
+                description={seo.description}
+                slug={slug}
+                content={article.body}
+              />
+            )}
             <Divider className="style1" />
             {/* <Newsletter style="column" /> */}
           </div>

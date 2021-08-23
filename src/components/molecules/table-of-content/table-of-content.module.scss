@@ -74,15 +74,49 @@
     }
   }
 
+  .socialsWrapper {
+
+    padding: 0 34px;
+    span {
+      font-size: 1.8rem;
+      line-height: 3rem;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 2rem;
+      display: inline-flex;
+    }
+
+    .buttonWrapper{
+      display: flex;
+      flex-direction: row;
+    }
+
+    button {
+      margin-right: 1rem;
+
+      svg > :first-child,
+      svg path{
+        transition: ease all 0.15s;
+      }
+
+      &:hover {
+        svg {
+          > :first-child {
+            fill: #999 !important;  
+          }
+          path{
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+
   @include max(tablet) {
     h6 {
       font-size: 2rem;
       line-height: 2rem;
       font-weight: 700;
-    }
-
-    .socialsWrapper {
-      padding: 0 34px;
     }
   }
 }

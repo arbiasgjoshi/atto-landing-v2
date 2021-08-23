@@ -21,9 +21,10 @@ import {
   sliderWrapper,
   sliderIconWrapper,
   socialsWrapper,
+  buttonWrapper,
 } from './table-of-content.module.scss';
 
-const TableOfContent = ({ toggleModal }) => {
+const TableOfContent = ({ toggleModal, slug, title, description }) => {
   const [list, setList] = useState();
 
   const renderList = () => {
@@ -69,15 +70,22 @@ const TableOfContent = ({ toggleModal }) => {
         </button>
       </div>
       <div className={socialsWrapper}>
-        <TwitterShareButton>
-          <TwitterIcon round size={42} />
-        </TwitterShareButton>
-        <FacebookShareButton>
-          <FacebookIcon round size={42} />
-        </FacebookShareButton>
-        <LinkedinShareButton>
-          <LinkedinIcon round size={42} />
-        </LinkedinShareButton>
+        <span>Share this post</span>
+        <div className={buttonWrapper}>
+          <TwitterShareButton url={`https://attotime.com/blog-template?slug=${slug}`}>
+            <TwitterIcon round size={42} bgStyle={{ fill: '#efefef' }} iconFillColor="#999" />
+          </TwitterShareButton>
+          <FacebookShareButton url={`https://attotime.com/blog-template?slug=${slug}`}>
+            <FacebookIcon round size={42} bgStyle={{ fill: '#efefef' }} iconFillColor="#999" />
+          </FacebookShareButton>
+          <LinkedinShareButton
+            title={title}
+            summary={description}
+            url={`https://attotime.com/blog-template?slug=${slug}`}
+          >
+            <LinkedinIcon round size={42} bgStyle={{ fill: '#efefef' }} iconFillColor="#999" />
+          </LinkedinShareButton>
+        </div>
       </div>
     </div>
   );
@@ -85,6 +93,9 @@ const TableOfContent = ({ toggleModal }) => {
 
 TableOfContent.propTypes = {
   toggleModal: PropTypes.func,
+  slug: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
 };
 
 export default TableOfContent;
