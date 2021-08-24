@@ -28,7 +28,6 @@
 }
 
 .buttonList {
-  border: 1px solid red;
   @include flex-direction(row);
   margin-bottom: 2.5rem;
 

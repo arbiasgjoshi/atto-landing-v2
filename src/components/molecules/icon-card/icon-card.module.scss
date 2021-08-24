@@ -47,6 +47,11 @@
       margin: 0 auto;
     }
 
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
     h4 {
       margin-bottom: 1.6rem;
     }
@@ -93,6 +98,10 @@
   &.smallerMargin {
     display: flex;
     flex-direction: column;
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+      align-items: center;
+    }
 
     .iconWrapper {
       margin-bottom: 2.4rem;

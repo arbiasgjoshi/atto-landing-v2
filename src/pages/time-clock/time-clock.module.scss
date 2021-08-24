@@ -41,6 +41,12 @@
     }
   }
 
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    width: calc(100% - 12rem);
+    margin: 0 auto;
+    padding-left: 5rem;
+  }
+
   @include min(desktop) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
