@@ -14,9 +14,16 @@
     color: #262626;
   }
 
-  @include max(mobile) {
+  @include max(tablet) {
     p:first-child{
       margin-top: 2rem;
+    }
+  }
+  @include max(mobile) {
+    h1 {
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: -0.5px;
     }
   }
 

@@ -1,7 +1,7 @@
 .contentContainer {
   width: 100%;
   @include min(tablet) {
-    margin-left: 4rem;  
+    margin-left: 0;  
   }
   @include min(desktop) {
     min-width: 62rem;
@@ -10,7 +10,13 @@
   @include max(mobile) {
     margin-top: 5rem;
     margin-left: 0;
-  }
+  } 
+
+  // @include max(tablet-lg, 'screen and (orientation:landscape)') { 
+
+    
+    margin-left: 5rem;
+  // } 
 
   blockquote {
     font-size: 3rem;
@@ -24,6 +30,7 @@
     display: block;
     margin-left: 0;
   }
+
   @include min(desktop) {
     h2,
     h3,

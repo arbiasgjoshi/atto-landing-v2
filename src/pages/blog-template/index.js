@@ -33,6 +33,7 @@ import {
   loadingArticle,
   relatedArticles,
   relatedWrapper,
+  featuredImage,
   contentWrapper,
 } from './blog-template.module.scss';
 
@@ -140,7 +141,9 @@ const BlogTemplate = ({ location }) => {
             />
           </div>
           <Divider className="style5" />
-          <img src={article.cover_image} alt={article.seo_title} width={1140} height={450} />
+          <div className={featuredImage}>
+            <img src={article.cover_image} alt={article.seo_title} width={1140} height={450} />
+          </div>
           <div className={contentWrapper}>
             {data && article && (
               <TableOfContent
