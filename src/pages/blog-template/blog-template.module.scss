@@ -6,8 +6,8 @@
     padding-left: 0;
   }
 
-  @include landscape-max(tablet-lg) {
-    margin: 0 3rem;
+  @media only screen and (max-device-width: 1024px) and (orientation:landscape) {
+    margin: 0 1.5rem;
   }
 
 }
@@ -57,8 +57,8 @@
       @include flex-direction(column);
     }
 
-    @include landscape-max(1024px) {
-      margin: 4.8rem 3rem 0;
+    @media only screen and (max-device-width: 1024px) and (orientation:landscape) {
+      margin: 4.8rem 1.5rem 0;
     }
   }
 }

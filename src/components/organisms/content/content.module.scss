@@ -12,10 +12,14 @@
     margin-left: 0;
   } 
 
+  @media only screen and (max-device-width: 1024px) and (orientation:landscape) {
+    margin-left: 4rem;
+  }
+
   // @include max(tablet-lg, 'screen and (orientation:landscape)') { 
 
-    
-    margin-left: 5rem;
+      
+    // margin-left: 5rem;
   // } 
 
   blockquote {

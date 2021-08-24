@@ -40,6 +40,11 @@
     @include flex-align(center, flex-start);
     flex-direction: row;
     position: relative;
+
+    @media only screen and (max-device-width: 1024px) and (orientation:landscape) {
+      margin-right: 1.5rem;
+      margin-left: 1.5rem;
+    }
   }
 
   &.pricingStyle {

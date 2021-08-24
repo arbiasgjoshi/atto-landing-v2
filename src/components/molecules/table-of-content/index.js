@@ -43,7 +43,17 @@ const TableOfContent = ({ toggleModal, slug, title, description }) => {
   }, []);
 
   const jumpToHeader = (val) => {
-    console.log(val);
+    const element = document.getElementById(val);
+    const headerOffset = 90;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition - headerOffset;
+
+    console.log(offsetPosition);
+
+    window.scrollBy({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
   };
 
   return (
@@ -52,7 +62,11 @@ const TableOfContent = ({ toggleModal, slug, title, description }) => {
       <div className={listContainer}>
         {list &&
           list.map((item, index) => (
-            <button className={itemWrapper} type="button" onClick={() => jumpToHeader(index)}>
+            <button
+              className={itemWrapper}
+              type="button"
+              onClick={() => jumpToHeader(`title-${index}`)}
+            >
               <div className={iconWrapper}>
                 <Icon iconClass="arrow-right" fSize={0.8} />
               </div>
