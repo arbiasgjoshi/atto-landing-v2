@@ -59,6 +59,9 @@
 
     @include max(tablet) {
       margin-bottom: 1rem !important;
+      font-size: 3.2rem;
+      line-height: 4rem;
+      letter-spacing: -0.05rem;
     }
 
     &.lighterTitle {

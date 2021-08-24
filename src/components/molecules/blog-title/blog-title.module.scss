@@ -14,6 +14,12 @@
     color: #262626;
   }
 
+  @include max(mobile) {
+    p:first-child{
+      margin-top: 2rem;
+    }
+  }
+
   @include min(desktop) {
     h1 {
       letter-spacing: -1px;
