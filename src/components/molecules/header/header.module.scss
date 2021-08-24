@@ -314,8 +314,11 @@
     }
   }
 
-  @include max(tablet) {
+  @include max(mobile) {
     flex-direction: column;
+  }
+
+  @include max(tablet) {
 
     .leftItems {
       width: 100%;
@@ -372,9 +375,15 @@
   column-gap: 6rem;
   row-gap: 4rem;
 
-  @include max(tablet) {
+  @include max(mobile) {
     grid-template-columns: repeat(1, 1fr);
     column-gap: 0;
+    row-gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  @include max(tablet) {
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 2rem;
     padding: 2rem 0;
   }
@@ -488,10 +497,12 @@
     }
   }
 
-  > div:first-child {
-    > section {
-      > div {
-        padding-left: 0.8rem;
+  @include min(desktop) {
+    > div:first-child {
+      > section {
+        > div {
+          padding-left: 0.8rem;
+        }
       }
     }
   }

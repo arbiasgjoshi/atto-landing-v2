@@ -92,6 +92,12 @@
         height: 5rem;
         background-repeat: no-repeat;
       }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+        &::after{
+          left: 4.4rem;
+        }
+      }
     }
   }
 
@@ -104,6 +110,7 @@
 
   @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
     flex-direction: column;
+    border: unset;
   }
 
   @include min(laptop) {
@@ -154,6 +161,9 @@
     @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
       width: 100%;
       margin-bottom: 13rem;
+      border-right: inherit;
+      border: 2px solid #efefef;
+      border-radius: 2rem;
     }
 
     @include max(mobile) {
@@ -168,6 +178,8 @@
 
       @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
         width: 100%;
+        border: 2px solid #efefef;
+        border-radius: 2rem;
       }
 
       > div {
