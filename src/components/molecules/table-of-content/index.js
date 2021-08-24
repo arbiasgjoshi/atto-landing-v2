@@ -48,8 +48,6 @@ const TableOfContent = ({ toggleModal, slug, title, description }) => {
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition - headerOffset;
 
-    console.log(offsetPosition);
-
     window.scrollBy({
       top: offsetPosition,
       behavior: 'smooth',
