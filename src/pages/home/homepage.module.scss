@@ -97,7 +97,7 @@
 }
 
 .desktopImage {
-  @include max(tablet) {
+  @include max(mobile) {
     display: none !important;
   }
 }
