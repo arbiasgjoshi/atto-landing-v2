@@ -23,7 +23,7 @@ import TableOfContent from '@components/molecules/table-of-content';
 // import Footer from '@components/molecules/footer';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import { apiUrl } from '@helpers';
+import { apiUrl, parseDate } from '@helpers';
 import { container } from '@styles/main.module.scss';
 import {
   blogTemplateContainer,
@@ -100,6 +100,7 @@ const BlogTemplate = ({ location }) => {
   useEffect(() => {
     if (data) {
       setArticle(data.article);
+      console.log(data.article);
       setSeo(data.seo);
     }
 
@@ -132,6 +133,7 @@ const BlogTemplate = ({ location }) => {
               <p>All posts</p>
             </div>
             <BlogTitle
+              smallTitle={`Published ${parseDate(article.published_at)}`}
               // smallTitle="Published March 18, 2021 in Productivity   ·   2 min read"
               title={article.title}
               // author="By Nick Blackeye"
@@ -139,7 +141,6 @@ const BlogTemplate = ({ location }) => {
           </div>
           <Divider className="style5" />
           <img src={article.cover_image} alt={article.seo_title} width={1140} height={450} />
-          <Divider className="style2" />
           <div className={contentWrapper}>
             {data && article && (
               <TableOfContent
@@ -158,7 +159,6 @@ const BlogTemplate = ({ location }) => {
                 content={article.body}
               />
             )}
-            <Divider className="style1" />
             {/* <Newsletter style="column" /> */}
           </div>
           <div className={relatedArticles}>

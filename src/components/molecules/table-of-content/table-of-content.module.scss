@@ -1,10 +1,10 @@
 .contentContainer {
   max-width: 100%;
-  margin-bottom: 9rem;
+  
   max-height: 65rem;
+  min-width: 29rem;
   @include min(desktop) {
     position: sticky;
-    min-width: 29rem;
     top: 93px;
   }
 
@@ -22,8 +22,11 @@
       font-size: 1.8rem;
       display: flex;
       margin-bottom: 2rem;
-      margin-bottom: 2rem;
       text-align: left;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
 
       .iconWrapper {
         @include flex-align(center, center);
@@ -59,10 +62,7 @@
         width: 2.4rem;
         height: 2.4rem;
         padding: 0.7rem;
-
-        i {
-          margin-left: 12.9rem;
-        }
+        margin-left: auto;
       }
 
       &:hover {
@@ -92,11 +92,22 @@
     }
 
     button {
-      margin-right: 1rem;
+      margin-right: 1.6rem;
+      height: 42px;
+      width: 42px;
+      transition: ease all 0.15s;
+      @include flex-align(center, center);
+      padding: 0;
+      border-radius: 100%;
+      background-color: #efefef !important;
 
       svg > :first-child,
       svg path{
         transition: ease all 0.15s;
+      }
+
+      &:hover{
+        background-color: #999 !important;   
       }
 
       &:hover {
@@ -113,6 +124,8 @@
   }
 
   @include max(tablet) {
+    margin-bottom: 9rem;
+    
     h6 {
       font-size: 2rem;
       line-height: 2rem;

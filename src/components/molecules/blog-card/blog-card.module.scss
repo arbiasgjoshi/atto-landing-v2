@@ -43,14 +43,15 @@
   }
 
   .imageWrapper {
+    height: 30rem;   
     @include min(desktop) {
       width: 51rem;
-      height: 22.4rem;
     }
 
     img {
       height: 100%;
       width: 100%;
+      object-fit: cover;
     }
   }
 

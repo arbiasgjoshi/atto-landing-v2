@@ -10,6 +10,10 @@
     }
   }
 
+  h1{
+    color: #262626;
+  }
+
   @include min(desktop) {
     h1 {
       letter-spacing: -1px;

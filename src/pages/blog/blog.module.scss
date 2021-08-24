@@ -56,7 +56,8 @@
     position: relative;
 
     @include min(tablet) {
-      margin-right: 2.8rem;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
       width: unset;
       padding: 1.2rem 2.8rem;
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import parse, { domToReact } from 'html-react-parser';
+import { format } from 'date-fns';
 
 export const isBrowser = () => typeof window !== 'undefined';
 
@@ -17,6 +18,11 @@ export const placeholders = [
   { id: 10 },
   { id: 11 },
 ];
+
+export const parseDate = (date) => {
+  console.log(date);
+  // format(date, 'dd MMMM yyyy')
+};
 
 export const apiUrl = 'https://staging.attotime.com';
 

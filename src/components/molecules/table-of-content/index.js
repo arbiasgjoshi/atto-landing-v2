@@ -73,17 +73,17 @@ const TableOfContent = ({ toggleModal, slug, title, description }) => {
         <span>Share this post</span>
         <div className={buttonWrapper}>
           <TwitterShareButton url={`https://attotime.com/blog-template?slug=${slug}`}>
-            <TwitterIcon round size={42} bgStyle={{ fill: '#efefef' }} iconFillColor="#999" />
+            <TwitterIcon round size={34} bgStyle={{ fill: '#efefef' }} iconFillColor="#999" />
           </TwitterShareButton>
           <FacebookShareButton url={`https://attotime.com/blog-template?slug=${slug}`}>
-            <FacebookIcon round size={42} bgStyle={{ fill: '#efefef' }} iconFillColor="#999" />
+            <FacebookIcon round size={34} bgStyle={{ fill: '#efefef' }} iconFillColor="#999" />
           </FacebookShareButton>
           <LinkedinShareButton
             title={title}
             summary={description}
             url={`https://attotime.com/blog-template?slug=${slug}`}
           >
-            <LinkedinIcon round size={42} bgStyle={{ fill: '#efefef' }} iconFillColor="#999" />
+            <LinkedinIcon round size={34} bgStyle={{ fill: '#efefef' }} iconFillColor="#999" />
           </LinkedinShareButton>
         </div>
       </div>
