@@ -55,21 +55,31 @@ const Blog = () => {
 
   const { data, error } = useSWR(['/api/v2/blog', pageIndex, activeItem], fetcher);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   const handlePrevious = () => {
     if (pageData.prev_page_url) {
       setPageIndex(pageIndex - 1);
+      scrollToTop();
     }
   };
+
   const handleNext = () => {
     if (pageData.next_page_url) {
       setPageIndex(pageIndex + 1);
+      scrollToTop();
     }
   };
 
   const changeTag = (val) => {
     // if (articles && featured) {
-    setLoader(true);
     // }
+    setLoader(true);
     setActiveItem(val);
     setPageIndex(1);
   };
@@ -77,6 +87,7 @@ const Blog = () => {
   const changePage = (val) => {
     setLoader(true);
     setPageIndex(val);
+    scrollToTop();
   };
 
   useEffect(() => {
@@ -109,7 +120,6 @@ const Blog = () => {
       }, 500);
     }
   }, [data, error]);
-  console.log('the data value is:', data?.articles?.length, loader);
 
   return (
     <div className={`${container} ${blogStyle} ${loader && !articles ? loadingContent : null}`}>
@@ -151,7 +161,7 @@ const Blog = () => {
           <Button
             btnText="Previous"
             btnStyle="teal"
-            disabled={pageIndex === pageData.current_page}
+            disabled={!pageData.prev_page_url}
             onBtnClick={handlePrevious}
           />
           <ul className={pagination}>
@@ -159,14 +169,15 @@ const Blog = () => {
               <>
                 <li key={page} className="page-item">
                   {page !== '...' ? (
-                    <a
+                    <button
+                      type="button"
                       onClick={() => (page !== '...' ? changePage(page) : null)}
                       className={`${pageLink} ${page === '...' && dotStyle} ${
                         pageIndex === page && selected
                       }`}
                     >
                       {page}
-                    </a>
+                    </button>
                   ) : (
                     <span>{page}</span>
                   )}
@@ -177,7 +188,7 @@ const Blog = () => {
           <Button
             btnText="Next"
             btnStyle="teal"
-            disabled={pageIndex === pageData.last_page}
+            disabled={!pageData.next_page_url}
             onBtnClick={handleNext}
           />
         </nav>

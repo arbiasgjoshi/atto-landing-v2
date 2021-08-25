@@ -123,7 +123,7 @@
     }
     .pageLink {
       @include flex-align(center, center);
-      width: 4rem;
+      max-width: 4rem;
       height: 4rem;
       font-size: 20px;
       text-align: center;
