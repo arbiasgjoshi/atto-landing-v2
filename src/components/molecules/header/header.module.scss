@@ -224,6 +224,19 @@
         display: block;
       }
     }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+      width: 100%;
+      padding: 2rem 0;
+      max-width: 61rem;
+      padding-right: 10rem;
+
+      .mobile,
+      hr {
+        display: none;
+      }
+    }
+
     .headedItem {
       p {
         font-size: var(--body-style-five);
@@ -258,6 +271,13 @@
           order: 3;
         }
       }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+        margin-top: 2rem;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 2rem;
+        column-gap: unset;
+      }
     }
   }
 
@@ -265,6 +285,10 @@
     width: 33.333334%;
     padding: 7.7rem 6rem;
     background-color: #f7f7f7;
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+      padding-top: 5rem;
+    }
 
     h6 {
       margin-bottom: 2.5rem;
@@ -319,7 +343,6 @@
   }
 
   @include max(tablet) {
-
     .leftItems {
       width: 100%;
       padding: 2rem 0;
@@ -395,6 +418,11 @@
   margin-right: 0;
   // text-decoration: none;
   color: #000;
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    align-items: flex-start;
+  }
+
   .menuIcon {
     min-width: 6rem;
     width: 6rem;
