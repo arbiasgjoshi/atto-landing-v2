@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useIntl, navigate } from 'gatsby-plugin-react-intl';
+import { motion } from 'framer-motion';
 import useScroll from 'react-use-scroll';
 
 import Button from '@components/atoms/button';
@@ -351,6 +352,19 @@ const HeaderComponent = ({ headerStyle }) => {
         return null;
     }
   };
+
+  const item = {};
+
+  const parent = {};
+
+  // const animationVariants = {
+  //   product: {
+  //     left: 0,
+
+  //   },
+  //   industries: {},
+  //   resources: {},
+  // };
 
   const menuClasses = (val) => {
     let menuClass = menu;

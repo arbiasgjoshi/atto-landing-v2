@@ -107,6 +107,17 @@ module.exports = {
         redirect: false,
       },
     },
+    // {
+    //   resolve: 'gatsby-plugin-iubenda-cookie-footer',
+    //   options: {
+    //     iubendaOptions: {
+    //       lang: 'en',
+    //       siteId: 'XXXXX',
+    //       cookiePolicyId: 'YYYYY',
+    //     },
+    //     googleTagManagerOptions: true,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-csp`,
       options: {
