@@ -96,16 +96,16 @@ $screen: 'only screen';
 // Landscape
 // (If we find more use cases of this in the future, might want to refactor this and include it in the media-query function for $screen)
 // Pass number
-$landscape: 'screen and (orientation:landscape)';
+// $landscape: 'only screen';
 
-@mixin landscape-max($max) {
-  @media #{$landscape} and (max-width: #{$max}px) {
+@mixin landscape-max($media) {
+  @media #{media-query($media, '', false)} and (orientation:landscape) {
     @content;
   }
 }
 
-@mixin landscape-min($min) {
-  @media #{$landscape} and (min-width: #{$min}px) {
+@mixin landscape-min($media) {
+  @media #{media-query($media, '', false)} and (orientation:landscape) {
     @content;
   }
 }

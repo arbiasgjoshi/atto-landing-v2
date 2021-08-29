@@ -5,6 +5,16 @@
     overflow: hidden;
   }
 
+  @include max(tablet-lg) {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  @include landscape-max(tablet-lg) {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
   &.industryPadding {
     padding-top: 7.3rem;
   }

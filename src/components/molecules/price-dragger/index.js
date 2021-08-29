@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useIntl } from 'gatsby-plugin-react-intl';
+// import {}
+
+import { Link } from 'gatsby-plugin-intl';
 import Slider from 'rc-slider';
 import Draggable from 'react-draggable';
 
@@ -28,6 +31,15 @@ const PriceDragger = () => {
     setVal(roundedVal);
   };
 
+  const draggingValue = (val) => {
+    if (val !== 100) {
+      return `${val} ${Intl.formatMessage({ id: 'pages.miscellaneous.users' })}`;
+    }
+    return (
+      <Link to="/contact">{Intl.formatMessage({ id: 'pages.miscellaneous.contactSales' })}</Link>
+    );
+  };
+
   // TODO potentialy in order to properly dragg, have the elements be divided
   // with the total area, the values of min and max be divided with percentage
   // and that achieve the satisfactory results
@@ -45,9 +57,7 @@ const PriceDragger = () => {
         onDrag={(event, info) => handleDrag(event, info)}
       >
         <div className={draggerResults}>
-          <h5>
-            {val} {Intl.formatMessage({ id: 'pages.miscellaneous.users' })}
-          </h5>
+          <h5>{draggingValue(val)}</h5>
         </div>
       </Draggable>
       <Slider min={1} max={100} value={val} onChange={(v) => onDrag(v)} />

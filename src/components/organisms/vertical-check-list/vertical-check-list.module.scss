@@ -19,7 +19,12 @@
       }
     }
 
-    @include min(laptop) {
+    @include landscape-max(tablet-lg) {
+      width: 50%;
+      margin-right: 5%;
+    }
+
+    @include min(desktop) {
       max-width: 55rem;
     }
 

@@ -45,19 +45,18 @@
     }
   }
 
-
   @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
-    flex-direction: column;   
+    flex-direction: column;
     .firstBox {
-      margin: 0 0 3rem 1rem;  
+      margin: 0 0 3rem 1rem;
       max-width: unset;
     }
 
     &.swap {
       flex-direction: column;
 
-      .firstBox{
-        margin: 0 0 3rem 3rem;  
+      .firstBox {
+        margin: 0 0 3rem 3rem;
         width: unset;
       }
     }
@@ -107,6 +106,16 @@
 
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+
+    @include max(tablet-lg) {
+      > div {
+        header {
+          h5 {
+            margin-left: 0.6rem;
+          }
+        }
       }
     }
   }

@@ -154,10 +154,6 @@
 
   @include max(tablet) {
     width: 100%;
-
-    // .footerLinksWrapper {
-    //   width: 33.333334%;
-    // }
   }
 }
 
@@ -213,6 +209,11 @@
 
   @include max(tablet) {
     margin-top: 2rem;
+  }
+
+  @include landscape-max(tablet-lg) {
+    width: calc(100% - 3rem);
+    margin: 2rem auto 0;
   }
 
   @include max(mobile) {
