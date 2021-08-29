@@ -10,7 +10,7 @@ import HeartIcon from '@images/heart-icon@2x.png';
 import ContactForm from '@components/organisms/contact-form';
 
 import Faq from '@components/organisms/faq';
-
+import { apiUrl } from '@helpers';
 import { container } from '@styles/main.module.scss';
 import { middleAlign } from './contact-page.module.scss';
 
@@ -33,11 +33,11 @@ const Contact = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
-      .then((data) => {
+      .then((response) => {
         closeModal();
-        setValues(data);
+        setValues(response);
         setTimeout(() => openModal(), 2000);
       });
   };

@@ -20,7 +20,7 @@ const CheckList = ({ list, hasDescription = false, cardStyle = '' }) => (
 );
 
 CheckList.propTypes = {
-  list: PropTypes.string.isRequired,
+  list: PropTypes.shape(),
   hasDescription: PropTypes.bool,
   cardStyle: PropTypes.string,
 };

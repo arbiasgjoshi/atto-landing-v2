@@ -12,7 +12,7 @@ import Story from '@components/organisms/story';
 import IconCardList from '@components/organisms/icon-card-list';
 import ProductCard from '@components/organisms/product-card';
 import GrowthNumbers from '@components/organisms/growth-numbers';
-
+import { apiUrl } from '@helpers';
 import { container, imageFormWrapper, imageWrapper } from '@styles/main.module.scss';
 import icon from '@images/easy-to-use.png';
 import icon2 from '@images/All_in_one@2x.png';
@@ -41,7 +41,7 @@ const Product = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

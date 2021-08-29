@@ -25,6 +25,7 @@ import {
   accordionList3,
 } from '@data/industries/landscaping.js';
 
+import { apiUrl } from '@helpers';
 import { oldList, newList, landscapeSteps } from '@data/industries';
 import { container, industryPadding, noPadding, oldVsNewGradient } from '@styles/main.module.scss';
 import {
@@ -53,7 +54,7 @@ const Landscaping = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

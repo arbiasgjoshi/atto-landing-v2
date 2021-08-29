@@ -1,10 +1,26 @@
 .contentContainer {
   width: 100%;
+  @include min(tablet) {
+    margin-left: 0;  
+  }
   @include min(desktop) {
     min-width: 62rem;
     margin-left: 13rem;
-    // padding-right: 8.1rem;
   }
+  @include max(mobile) {
+    margin-top: 5rem;
+    margin-left: 0;
+  } 
+
+  @media only screen and (max-device-width: 1024px) and (orientation:landscape) {
+    margin-left: 4rem;
+  }
+
+  // @include max(tablet-lg, 'screen and (orientation:landscape)') { 
+
+      
+    // margin-left: 5rem;
+  // } 
 
   blockquote {
     font-size: 3rem;
@@ -19,13 +35,26 @@
     margin-left: 0;
   }
 
-  h2,
-  h3,
-  p,
-  ul,
-  blockquote,
-  ol {
-    margin-right: 8.1rem;
+  @include min(desktop) {
+    h2,
+    h3,
+    p,
+    ul,
+    blockquote,
+    ol {
+      margin-right: 8.1rem;
+    }
+
+    h2 {
+      font-size: 5rem;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 3.2rem;
+      line-height: 4rem;
+      letter-spacing: -0.05rem;
+    }
   }
 
   .specialParagraph {
@@ -44,29 +73,43 @@
     margin-bottom: 20px;
   }
 
-  h2 {
-    font-size: 5rem;
-    font-weight: 600;
-  }
-
   p:has(img) {
     margin-right: 0;
   }
 
   img {
     margin: 6rem auto;
-    // width: 62rem;
+    display: block;
     max-width: 100%;
-  }
-
-  h3 {
-    font-size: 3.2rem;
-    line-height: 4rem;
-    letter-spacing: -0.05rem;
   }
 
   h4 {
     margin-bottom: 2rem;
+  }
+  ol {
+    counter-reset: my-awesome-counter;
+    padding-left: 3.2rem;
+    margin-top: 3.2rem;
+    list-style: none;
+    margin-bottom: 1rem;
+    li {
+      counter-increment: my-awesome-counter;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 6px;
+      color: #262626;
+
+      &::before {
+        content: counter(my-awesome-counter) '. ';
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #262626;
+      }
+    }
   }
 
   ul {
@@ -81,10 +124,14 @@
       line-height: 3.2rem;
       font-family: Charter;
       @include flex-align(center, flex-start);
+
+      p {
+        margin-bottom: 0;
+      }
       &::before {
         content: '';
         display: inline-flex;
-        margin-right: 2rem;
+        margin: 15px 20px 15px 2px;
         width: 2px;
         height: 2px;
         border-radius: 2px;
@@ -113,4 +160,56 @@
       }
     }
   }
+}
+
+.socialsWrapper {
+  padding: 10rem 3.4rem 0 7rem; 
+  span {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 2rem;
+    display: inline-flex;
+  }
+
+  @include max (tablet) {
+    padding: 3rem 1.5rem 0 1.5rem;
+  }
+
+  .buttonWrapper{
+    display: flex;
+    flex-direction: row;
+  }
+
+  button {
+      margin-right: 1.6rem;
+      height: 42px;
+      width: 42px;
+      transition: ease all 0.15s;
+      @include flex-align(center, center);
+      padding: 0;
+      border-radius: 100%;
+      background-color: #efefef !important;
+
+      svg > :first-child,
+      svg path{
+        transition: ease all 0.15s;
+      }
+
+      &:hover{
+        background-color: #999 !important;   
+      }
+
+      &:hover {
+        svg {
+          > :first-child {
+            fill: #999 !important;  
+          }
+          path{
+            fill: #fff;
+          }
+        }
+      }
+    }
 }

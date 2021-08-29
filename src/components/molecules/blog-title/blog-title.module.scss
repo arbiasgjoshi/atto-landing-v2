@@ -10,14 +10,30 @@
     }
   }
 
-  h2 {
-    letter-spacing: -1px;
-    font-size: 5rem;
-    line-height: 6rem;
-    width: 62rem;
-    margin-bottom: 1rem;
-    padding-right: 5rem;
-    font-weight: 600;
-    font-family: 'Calibre';
+  h1{
+    color: #262626;
+  }
+
+  @include max(tablet) {
+    p:first-child{
+      margin-top: 2rem;
+    }
+  }
+  @include max(mobile) {
+    h1 {
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  @include min(desktop) {
+    h1 {
+      letter-spacing: -1px;
+      font-size: 5rem;
+      width: 62rem;
+      margin-bottom: 1rem;
+      padding-right: 5rem;
+    }
   }
 }

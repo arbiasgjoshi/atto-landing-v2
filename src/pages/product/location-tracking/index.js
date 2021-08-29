@@ -31,7 +31,7 @@ import icon19 from '@images/profile@1x.png';
 import icon20 from '@images/timesheets@1x.png';
 
 import { container } from '@styles/main.module.scss';
-
+import { apiUrl } from '@helpers';
 import { teamActivityContainer, learnMoreContainer } from '../product.module.scss';
 import { privacyContainer, imageContainer } from './gps-location-tracking.module.scss';
 
@@ -56,7 +56,7 @@ const LocationTracking = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

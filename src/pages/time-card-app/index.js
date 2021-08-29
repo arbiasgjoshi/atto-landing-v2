@@ -20,7 +20,7 @@ import CommonQuestions from '@components/organisms/common-questions';
 import Services from '@components/organisms/services';
 import { StaticImage } from 'gatsby-plugin-image';
 import image2 from '@images/time-card-app/Time card options to suit the needs of any business@2x.png';
-
+import { apiUrl } from '@helpers';
 import icon32 from '@images/location@1x.png';
 import icon33 from '@images/profile@1x.png';
 import icon34 from '@images/timesheets@1x.png';
@@ -61,7 +61,7 @@ const TimeCardApp = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

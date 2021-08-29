@@ -5,8 +5,7 @@ import Seo from '@components/molecules/seo';
 import useSWR from 'swr';
 import { Link } from '@reach/router';
 
-// import { FooterLinks } from '@locale/en.js';
-import { formatDate, paginationList } from '@helpers';
+import { paginationList, apiUrl } from '@helpers';
 import FooterComponent from '@components/molecules/footer';
 import Divider from '@components/atoms/divider';
 import { container } from '@styles/main.module.scss';
@@ -17,6 +16,7 @@ import BlogList from '@components/organisms/blog-list';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 // import Newsletter from '@components/molecules/newsletter';
+import Title from '@components/molecules/title';
 import {
   blogStyle,
   loadingContent,
@@ -30,7 +30,6 @@ import {
   dotStyle,
   selected,
 } from './blog.module.scss';
-import Title from '@components/molecules/title';
 
 const Blog = () => {
   const [tags, setTags] = useState([{ id: 0, name: 'All' }]);
@@ -49,29 +48,38 @@ const Blog = () => {
 
   const fetcher = () =>
     fetch(
-      `https://staging.attotime.com/api/v2/blog` +
-        `${activeItem !== 'All' ? '?tag=' + activeItem : ''}` +
-        `${pageIndex && `${activeItem !== 'All' ? `&` : '?'}page=` + pageIndex}`
-    ).then((res) => {
-      return res.json();
-    });
+      `${apiUrl}/api/v2/blog` +
+        `${activeItem !== 'All' ? `?tag=${activeItem}` : ''}` +
+        `${pageIndex && `${activeItem !== 'All' ? `&` : '?'}page=${pageIndex}`}`
+    ).then((res) => res.json());
+
   const { data, error } = useSWR(['/api/v2/blog', pageIndex, activeItem], fetcher);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   const handlePrevious = () => {
     if (pageData.prev_page_url) {
       setPageIndex(pageIndex - 1);
+      scrollToTop();
     }
   };
+
   const handleNext = () => {
     if (pageData.next_page_url) {
       setPageIndex(pageIndex + 1);
+      scrollToTop();
     }
   };
 
   const changeTag = (val) => {
     // if (articles && featured) {
-    setLoader(true);
     // }
+    setLoader(true);
     setActiveItem(val);
     setPageIndex(1);
   };
@@ -79,6 +87,7 @@ const Blog = () => {
   const changePage = (val) => {
     setLoader(true);
     setPageIndex(val);
+    scrollToTop();
   };
 
   useEffect(() => {
@@ -113,11 +122,11 @@ const Blog = () => {
   }, [data, error]);
 
   return (
-    <div className={`${container} ${blogStyle} ${loader && loadingContent}`}>
+    <div className={`${container} ${blogStyle} ${loader && !articles ? loadingContent : null}`}>
       <Seo title={seoTitle} />
       <HeaderComponent />
       <MainTitle image={mainHeader} subtitle="Thoughts and ideas on the future of work" />
-      {loader ? (
+      {loader && !articles ? (
         <div className={loaderWrap}>
           <Loader type="ThreeDots" color="#00b9cb" height={80} width={80} timeout={2000} />
         </div>
@@ -152,7 +161,7 @@ const Blog = () => {
           <Button
             btnText="Previous"
             btnStyle="teal"
-            disabled={pageIndex === pageData.current_page}
+            disabled={!pageData.prev_page_url}
             onBtnClick={handlePrevious}
           />
           <ul className={pagination}>
@@ -160,14 +169,15 @@ const Blog = () => {
               <>
                 <li key={page} className="page-item">
                   {page !== '...' ? (
-                    <a
+                    <button
+                      type="button"
                       onClick={() => (page !== '...' ? changePage(page) : null)}
                       className={`${pageLink} ${page === '...' && dotStyle} ${
                         pageIndex === page && selected
                       }`}
                     >
                       {page}
-                    </a>
+                    </button>
                   ) : (
                     <span>{page}</span>
                   )}
@@ -178,7 +188,7 @@ const Blog = () => {
           <Button
             btnText="Next"
             btnStyle="teal"
-            disabled={pageIndex === pageData.last_page}
+            disabled={!pageData.next_page_url}
             onBtnClick={handleNext}
           />
         </nav>

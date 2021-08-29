@@ -1,4 +1,6 @@
-import parse from 'html-react-parser';
+import React from 'react';
+import parse, { domToReact } from 'html-react-parser';
+import { format } from 'date-fns';
 
 export const isBrowser = () => typeof window !== 'undefined';
 
@@ -17,6 +19,13 @@ export const placeholders = [
   { id: 11 },
 ];
 
+export const parseDate = (date) => {
+  console.log(date);
+  // format(date, 'dd MMMM yyyy')
+};
+
+export const apiUrl = 'https://staging.attotime.com';
+
 export const deleteInvitation = (data) => {
   const requestOptions = {
     method: 'POST',
@@ -25,15 +34,19 @@ export const deleteInvitation = (data) => {
     },
     body: JSON.stringify({ email: data.email }),
   };
-  fetch('https://staging.attotime.com/delete-invite', requestOptions);
+  fetch(`${apiUrl}/delete-invite`, requestOptions);
 };
 
 export const parseHTML = (bodyText) => {
-  const parsedContent = parse(bodyText);
+  const parsedContent = parse(bodyText, {
+    trim: true,
+  });
   return parsedContent;
 };
 
-export const parseTitleList = () => {};
+export const parseTitleList = (bodyText) => {
+  const parsedContent = parse(bodyText);
+};
 
 export const paginationList = (currentPage, pageCount) => {
   const delta = 2;

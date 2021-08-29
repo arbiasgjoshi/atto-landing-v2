@@ -55,6 +55,10 @@
     font-size: 18px;
     letter-spacing: 0;
     line-height: 3rem;
+
+    @include max(mobile) {
+      text-align: center;
+    }
   }
 
   .titleWrapper {
@@ -64,19 +68,20 @@
 
     @include max(tablet) {
       margin-bottom: 1rem !important;
+      font-size: 3.2rem;
+      line-height: 4rem;
+      letter-spacing: -0.05rem;
     }
 
     &.lighterTitle {
       font-weight: var(--regular);
-      font-size: 5rem;
+      @include min(desktop){
+        font-size: 5rem;
+      }
     }
 
     &.smallMargin {
       margin-bottom: 0.4rem;
-    }
-
-    @include max(mobile) {
-      // text-align: left;
     }
   }
 

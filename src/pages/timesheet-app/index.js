@@ -28,7 +28,7 @@ import icon34 from '@images/work-hours-tracker@2x.png';
 import icon35 from '@images/time-tracking-clock@1x.png';
 
 import { container, imageWrapper, learnMoreContainer } from '@styles/main.module.scss';
-
+import { apiUrl } from '@helpers';
 import { oldList, newList } from '@data/industries';
 import { checkList, cardList, commonQuestionsList } from '@data/third-phase/employee-timesheet-app';
 import { firstList } from '@data/third-phase/time-tracking-app';
@@ -53,7 +53,7 @@ const EmployeeTimesheetApp = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();
@@ -109,7 +109,7 @@ const EmployeeTimesheetApp = () => {
       <Divider />
       <Story
         img="timesheet-app"
-        paragraph={`Great time keeping app for business. Lets you clock on for different clients and jobs or enter manually. Simple to use & great timesheet reporting. Exactly what I was looking for.`}
+        paragraph="Great time keeping app for business. Lets you clock on for different clients and jobs or enter manually. Simple to use & great timesheet reporting. Exactly what I was looking for."
         author="David Warwick"
       />
       <Divider />

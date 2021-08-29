@@ -45,7 +45,7 @@ import AllFeatresRounding from '@images/featres_rounding.svg';
 import ChangeHistory from '@images/change_history.svg';
 import ArchivedMembers from '@images/Archived_membersSVG.svg';
 import WageEstimate from '@images/Wage_estimatesSVG.svg';
-
+import { apiUrl } from '@helpers';
 import { container } from '@styles/main.module.scss';
 
 import {
@@ -79,7 +79,7 @@ const AllFeaturesPage = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

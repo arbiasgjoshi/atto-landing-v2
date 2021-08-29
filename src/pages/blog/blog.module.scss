@@ -31,6 +31,9 @@
   @include flex-direction(row);
   margin-bottom: 2.5rem;
 
+  @include max(tablet) {
+  }
+
   @include min(tablet) {
     display: flex;
     height: 4.8rem;
@@ -56,7 +59,8 @@
     position: relative;
 
     @include min(tablet) {
-      margin-right: 2.8rem;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
       width: unset;
       padding: 1.2rem 2.8rem;
     }
@@ -71,12 +75,35 @@
   button:last-child {
     margin-right: 0;
   }
+
+  @include max(tablet) {
+    flex-wrap: wrap;
+    justify-content: center;
+    button {
+      padding: 12px 20px;
+      width: unset;
+      font-size: 16px;
+      line-height: 20px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
 }
 
-.featurdArticle:hover {
-  > div {
-    h2 {
-      color: #00b9cb;
+.featurdArticle{
+  &:hover {
+    > div {
+      h2 {
+        color: #00b9cb;
+      }
+    }
+  }
+
+  @include max(tablet) {
+    img {
+      height: 36rem;
+      object-fit: cover;
+
     }
   }
 }
@@ -96,7 +123,7 @@
     }
     .pageLink {
       @include flex-align(center, center);
-      width: 4rem;
+      max-width: 4rem;
       height: 4rem;
       font-size: 20px;
       text-align: center;
@@ -139,6 +166,33 @@
       background-color: rgba(255, 255, 255, 0.1);
       z-index: 11;
       cursor: none;
+    }
+  }
+
+  @include max(tablet){
+    max-width: calc(100% - 6rem);
+    flex-wrap: wrap;
+    margin: 0 auto;
+    flex-direction: column;
+
+    button {
+      min-width: 20rem !important;
+      height: 4.8rem !important;
+      padding: 1rem 1.5rem !important;
+      > span {
+        font-size: 2rem;
+      }
+    }
+
+    ul.pagination {
+      display: flex;
+      margin: 4rem 0;
+      flex-wrap: wrap;
+      gap: 30px 20px;
+
+      li {
+        margin: 0;
+      }
     }
   }
 }

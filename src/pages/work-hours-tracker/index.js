@@ -37,7 +37,7 @@ import {
 } from '@styles/main.module.scss';
 
 import { firstList } from '@data/third-phase/time-tracking-app.js';
-
+import { apiUrl } from '@helpers';
 import {
   checkList,
   commonQuestionsList,
@@ -66,7 +66,7 @@ const WorkHoursTracker = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

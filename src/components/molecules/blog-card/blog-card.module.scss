@@ -1,14 +1,14 @@
 .cardWrapper {
   @include flex-direction(column);
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 
   @include min(desktop) {
     margin-bottom: 0;
   }
 
   .smallTitleWrapper {
-    margin: 0 0rem 0.5rem 3rem;
+    margin: 0 0rem 1rem 3rem;
     color: var(--gray);
 
     @include min(desktop) {
@@ -43,19 +43,22 @@
   }
 
   .imageWrapper {
+    height: 30rem;   
+    margin-bottom: 3rem;
     @include min(desktop) {
       width: 51rem;
-      height: 22.4rem;
+      margin-bottom: 0;
     }
 
     img {
       height: 100%;
       width: 100%;
+      object-fit: cover;
     }
   }
 
   .textContainer {
-    margin: 1rem 0 0 3rem;
+    margin: 0rem 2rem 0 5rem;
     position: relative;
 
     @include min(desktop) {
@@ -64,12 +67,12 @@
 
     .horizontalLine {
       position: absolute;
-      width: 2rem;
+      width: 3rem;
       height: 1px;
       border-radius: 1px;
       background-color: #c7c7c7;
       top: 1.5rem;
-      left: -3rem;
+      left: -5rem;
 
       @include min(tablet) {
         top: 2rem;
@@ -85,6 +88,15 @@
 
     h4 {
       margin-bottom: 2rem;
+      transition: ease all 0.15s;
+    }
+  }
+
+  &:hover {
+    .textContainer {
+      h4 {
+        color: #00b9cb;
+      }
     }
   }
 }

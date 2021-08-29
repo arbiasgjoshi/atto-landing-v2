@@ -18,7 +18,7 @@ import ImagesBox from '@components/organisms/images-box';
 
 import image5 from '@images/plumbing/Respond faster to emergency plumbing call-outs@2x.png';
 import image6 from '@images/plumbing/Avoid surprises by forecasting your wage bill ahead of payday@2x.png';
-
+import { apiUrl } from '@helpers';
 import {
   container,
   industryPadding,
@@ -54,7 +54,7 @@ const PlumbingAndHeating = () => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
       .then((data) => {
         closeModal();

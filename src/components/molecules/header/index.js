@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useIntl, navigate } from 'gatsby-plugin-react-intl';
+import { motion } from 'framer-motion';
 import useScroll from 'react-use-scroll';
 
 import Button from '@components/atoms/button';
@@ -29,6 +30,8 @@ import HelpCenterLogo from '@images/help-center-logo.svg';
 import BlogLogo from '@images/blog-menu-logo.svg';
 import ContactLogo from '@images/contact-menu-logo.svg';
 import HeaderLogo from '@images/logo@3x.png';
+
+import { apiUrl } from '@helpers';
 
 import {
   headerWrapper,
@@ -350,6 +353,19 @@ const HeaderComponent = ({ headerStyle }) => {
     }
   };
 
+  const item = {};
+
+  const parent = {};
+
+  // const animationVariants = {
+  //   product: {
+  //     left: 0,
+
+  //   },
+  //   industries: {},
+  //   resources: {},
+  // };
+
   const menuClasses = (val) => {
     let menuClass = menu;
     if (val === 'resources') {
@@ -410,7 +426,7 @@ const HeaderComponent = ({ headerStyle }) => {
       },
       body: JSON.stringify({ email: data.email }),
     };
-    fetch('https://staging.attotime.com/delete-invite', requestOptions)
+    fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         setValues(res);

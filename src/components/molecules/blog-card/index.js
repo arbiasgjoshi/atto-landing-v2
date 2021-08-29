@@ -15,7 +15,7 @@ const BlogCard = ({ image, slug, smallTitle, date, title, description }) => (
       <p>{`${date} · ${smallTitle}`}</p>
     </div>
     <div className={imageWrapper}>
-      <img src={image} alt={title} />
+      <img src={image} alt={title} height={300} />
     </div>
     <div className={textContainer}>
       <div className={horizontalLine} />

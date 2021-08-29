@@ -6,7 +6,7 @@ import * as yup from 'yup';
 import { inputWrapper, defaultInput, inputError } from '@components/atoms/input/input.module.scss';
 import { defaultBtn, blackStyle } from '@components/atoms/button/button.module.scss';
 import { useIntl } from 'gatsby-plugin-react-intl';
-
+import { apiUrl } from '@helpers';
 import { formWrapper } from './form.module.scss';
 
 const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted }) => {
@@ -32,7 +32,7 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
       },
       body: JSON.stringify(val),
     };
-    fetch('https://staging.attotime.com/confirmation', requestOptions)
+    fetch(`${apiUrl}/confirmation`, requestOptions)
       .then((response) => response.json())
       .then((data) => {
         setLoader(false);
@@ -53,6 +53,8 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
         setDisabled(false);
       });
   };
+
+  console.log(`${apiUrl}/confirmation`);
 
   const toggleSubmit = (e, submit, valid, err) => {
     if (valid) {

@@ -5,9 +5,9 @@ import { container } from './blog-title.module.scss';
 
 const BlogTitle = ({ smallTitle, title, author }) => (
   <div className={container}>
-    <p>{smallTitle}</p>
-    <h2>{title}</h2>
-    <p>{author}</p>
+    {smallTitle && <p>{smallTitle}</p>}
+    <h1>{title}</h1>
+    {author && <p>{author}</p>}
   </div>
 );
 
