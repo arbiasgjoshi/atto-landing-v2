@@ -31,21 +31,16 @@ const PriceDragger = () => {
     setVal(roundedVal);
   };
 
-  const draggingValue = (val) => {
-    if (val !== 100) {
-      return `${val} ${Intl.formatMessage({ id: 'pages.miscellaneous.users' })}`;
-    }
-    return (
-      <Link to="/contact">{Intl.formatMessage({ id: 'pages.miscellaneous.contactSales' })}</Link>
-    );
-  };
+  // const draggingValue = (value) => {
+  //   if (value !== 100) {
+  //     return (
+  //       <h5>
 
-  // TODO potentialy in order to properly dragg, have the elements be divided
-  // with the total area, the values of min and max be divided with percentage
-  // and that achieve the satisfactory results
-
-  // TODO have these features be on mobile, and responive
-  // Ask Etnik about the possibilities
+  //       </h5>
+  //     );
+  //   }
+  //   // return <button>;
+  // };
 
   return (
     <div className={draggerWrapper}>
@@ -57,7 +52,9 @@ const PriceDragger = () => {
         onDrag={(event, info) => handleDrag(event, info)}
       >
         <div className={draggerResults}>
-          <h5>{draggingValue(val)}</h5>
+          <h5>
+            {val} {Intl.formatMessage({ id: 'pages.miscellaneous.users' })}
+          </h5>
         </div>
       </Draggable>
       <Slider min={1} max={100} value={val} onChange={(v) => onDrag(v)} />
