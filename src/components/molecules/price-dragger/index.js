@@ -31,17 +31,6 @@ const PriceDragger = () => {
     setVal(roundedVal);
   };
 
-  // const draggingValue = (value) => {
-  //   if (value !== 100) {
-  //     return (
-  //       <h5>
-
-  //       </h5>
-  //     );
-  //   }
-  //   // return <button>;
-  // };
-
   return (
     <div className={draggerWrapper}>
       <Draggable
