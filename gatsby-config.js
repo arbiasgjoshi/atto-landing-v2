@@ -116,10 +116,14 @@ module.exports = {
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         mergeDefaultDirectives: false,
         directives: {
-          'script-src': "'self' www.google-analytics.com https://hello.myfonts.net",
-          'style-src': "'self' 'unsafe-inline'",
+          'script-src': "'self' 'report-sample' https://beacon-v2.helpscout.net/ https://script.hotjar.com/modules.189ddfe225c89657c20d.js https://static.hotjar.com/c/hotjar-2526807.js https://www.googletagmanager.com/gtm.js;",
+          'style-src': "'self' 'unsafe-inline' https://hello.myfonts.net",
           'img-src': "'self' data: www.google-analytics.com",
+          'default-src': "'self'",
+          'frame-src': "'self' https://vars.hotjar.com;",
+          'connect-src': "'self' https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net https://in.hotjar.com;",
           // you can add your directives or override defaults
+
         },
       },
     },
