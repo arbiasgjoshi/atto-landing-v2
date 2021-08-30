@@ -122,7 +122,7 @@ module.exports = {
           'default-src': "'self' http: https:",
           'frame-src': "'self' https://vars.hotjar.com;",
           'font-src': "'self' data:; https://hello.myfonts.net",
-          'connect-src': "'self' https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net https://in.hotjar.com; https://stats.g.doubleclick.net;",
+          'connect-src': "'self' https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net https://in.hotjar.com https://stats.g.doubleclick.net;",
           // you can add your directives or override defaults
 
         },
