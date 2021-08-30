@@ -116,7 +116,7 @@ module.exports = {
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         mergeDefaultDirectives: false,
         directives: {
-          'script-src': "'self' http: https: 'report-sample' https://beacon-v2.helpscout.net/ https://script.hotjar.com/modules.189ddfe225c89657c20d.js https://static.hotjar.com/c/hotjar-2526807.js https://www.googletagmanager.com/gtm.js;",
+          'script-src': "'self' 'unsafe-inline' http: https: 'report-sample' https://beacon-v2.helpscout.net/ https://script.hotjar.com/modules.189ddfe225c89657c20d.js https://static.hotjar.com/c/hotjar-2526807.js https://www.googletagmanager.com/gtm.js;",
           'style-src': "'self' http: https: 'unsafe-inline' https://hello.myfonts.net",
           'img-src': "'self' data: www.google-analytics.com",
           'default-src': "'self' http: https:",
