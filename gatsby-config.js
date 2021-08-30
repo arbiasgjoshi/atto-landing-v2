@@ -133,7 +133,7 @@ module.exports = {
     //       // you can add your directives or override defaults
     //     },
     //   },
-    },
+    // },
     // 'gatsby-plugin-webpack-bundle-analyser-v2',
   ],
 };
