@@ -111,7 +111,7 @@ module.exports = {
       resolve: `gatsby-plugin-csp`,
       options: {
         disableOnDev: true,
-        reportOnly: false, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
+        reportOnly: true, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
         mergeScriptHashes: false, // you can disable scripts sha256 hashes
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         mergeDefaultDirectives: false,
@@ -121,7 +121,7 @@ module.exports = {
           'img-src': "'self' data: www.google-analytics.com",
           'default-src': "'self' http: https:",
           'frame-src': "'self' https://vars.hotjar.com;",
-          'connect-src': "'self' https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net https://in.hotjar.com;",
+          'connect-src': "'self' https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net https://in.hotjar.com; https://stats.g.doubleclick.net;",
           // you can add your directives or override defaults
 
         },
