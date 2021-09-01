@@ -207,6 +207,7 @@ const Footer = () => {
               height={29}
               placeholder="none"
             />
+
             <p>{Intl.formatMessage({ id: 'pages.miscellaneous.footerText' })}</p>
 
             <div>
