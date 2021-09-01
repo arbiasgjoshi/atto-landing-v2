@@ -41,13 +41,15 @@
     position: relative;
     z-index: 9999;
 
-    &::before {
-      content: '';
-      @include absolute(left -2.2rem top -1.7rem);
-      height: calc(100% + 3.2rem);
-      z-index: -1;
-      background-color: #fff;
-      width: calc(100% + 4.4rem);
+    @include max(tablet) {
+      &::before {
+        content: '';
+        @include absolute(left -2.2rem top -1.7rem);
+        height: 6.2rem;
+        z-index: -1;
+        background-color: #fff;
+        width: calc(100% + 4.4rem);
+      }
     }
   }
 
