@@ -95,10 +95,6 @@
   @include min(tablet) {
     padding: 0 3.2rem 2.2rem 3rem;
   }
-
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-    padding-left: 0.6rem;
-  }
 }
 
 .accordionItem {
@@ -121,7 +117,15 @@
     .contentWrapper {
       padding: 0 4.2rem 2rem 0.8rem;
       @include min(tablet) {
-        padding: 0 7.2rem 3.2rem 5.8rem;
+        padding: 0 7.2rem 3.2rem 1.8rem;
+      }
+
+      @include landscape-min(tablet-lg) {
+        padding: 0 1.8em 3.2rem 5.8rem;
+      }
+
+      @include landscape-max(tablet) {
+        padding: 0 1.8em 3.2rem 1.8rem;
       }
     }
 

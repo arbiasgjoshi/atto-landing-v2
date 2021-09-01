@@ -20,14 +20,18 @@
   }
 
   @include max(tablet) {
+    max-width: unset;
     .secondWrapper {
       order: -1;
       margin-bottom: 4rem;
     }
 
-    max-width: 60rem;
     margin: 0 auto;
     align-items: center;
+  }
+
+  @include max(tablet-lg) {
+    max-width: 60rem;
   }
 
   .firstWrapper {
@@ -314,10 +318,15 @@
   }
 
   @include landscape-max(tablet-lg) {
-    width: calc(100% - 5rem);
+    width: calc(100% - 1.2rem);
+    max-width: unset;
     margin: 0 auto;
     align-items: center;
     flex-direction: column-reverse;
+
+    .secondWrapper {
+      order: unset;
+    }
 
     &.swapped {
       align-items: center;

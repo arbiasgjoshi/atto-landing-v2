@@ -68,6 +68,25 @@
     }
   }
 
+  &.industryPage {
+    @include max(tablet-lg) {
+      align-items: flex-start;
+    }
+
+    @include landscape-max(tablet-lg) {
+      align-items: flex-start;
+    }
+
+    @include max(tablet) {
+      align-items: center;
+    }
+
+    @include landscape-max(tablet) {
+      align-items: center;
+    }
+  }
+
+  &.industryPage,
   &.productPage {
     color: var(--gray);
 

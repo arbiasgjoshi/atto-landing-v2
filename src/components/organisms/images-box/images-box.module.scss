@@ -134,6 +134,10 @@
         margin-top: 22.2rem;
       }
 
+      @include landscape-max(tablet-lg) {
+        margin-top: 0;
+      }
+
       > div {
         img {
           width: 100%;

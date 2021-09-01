@@ -34,6 +34,9 @@
     flex-wrap: wrap;
     padding: 2.5rem 0;
     row-gap: 3rem;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
@@ -71,7 +74,7 @@
     text-align: center;
 
     @include max(tablet) {
-      width: 50%;
+      // width: 50%;
       // margin-bottom: 2rem;
     }
 
