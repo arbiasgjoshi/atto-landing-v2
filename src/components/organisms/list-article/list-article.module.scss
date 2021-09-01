@@ -44,8 +44,8 @@
     }
 
     .tabletBlock {
-      display: none;
       @include flex-align(center, center);
+      display: none;
       margin-bottom: 7rem;
       margin-top: 3rem;
     }
