@@ -123,14 +123,19 @@ module.exports = {
       options: {
         disableOnDev: true,
         reportOnly: false, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
-        mergeScriptHashes: true, // you can disable scripts sha256 hashes
-        mergeStyleHashes: true, // you can disable styles sha256 hashes
-        mergeDefaultDirectives: true,
+        mergeScriptHashes: false, // you can disable scripts sha256 hashes
+        mergeStyleHashes: false, // you can disable styles sha256 hashes
+        mergeDefaultDirectives: false,
         directives: {
-          'script-src': "'self' www.google-analytics.com",
-          'style-src': "'self' 'unsafe-inline'",
+          'script-src': "'self' 'unsafe-inline' http: https: 'report-sample' https://beacon-v2.helpscout.net/ https://script.hotjar.com/modules.189ddfe225c89657c20d.js https://static.hotjar.com/c/hotjar-2526807.js https://www.googletagmanager.com/gtm.js;",
+          'style-src': "'self' http: https: 'unsafe-inline' https://hello.myfonts.net",
           'img-src': "'self' data: www.google-analytics.com",
+          'default-src': "'self' http: https:",
+          'frame-src': "'self' https://vars.hotjar.com;",
+          'font-src': "'self' data: https://hello.myfonts.net;",
+          'connect-src': "'self' https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net https://in.hotjar.com https://stats.g.doubleclick.net;",
           // you can add your directives or override defaults
+
         },
       },
     },
