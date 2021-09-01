@@ -41,7 +41,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={447}
           height={659}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/timesheets/Streamline your payroll with our simple employee timesheet app@2x.png"
         />
       );
@@ -53,7 +53,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={503}
           height={610}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/cleaning/Time Tracking for Cleaning Companies@2x.png"
         />
       );
@@ -65,7 +65,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={503}
           height={610}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/construction/Time tracking for construction companies@2x.png"
         />
       );
@@ -77,7 +77,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={503}
           height={610}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/landscaping/Time Tracking for Landscaping Companies@2x.png"
         />
       );
@@ -89,7 +89,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={503}
           height={610}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/electric/Time Tracking for Electricians@2x.png"
         />
       );
@@ -101,7 +101,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={503}
           height={610}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/healthcare/Time Tracking Software for Home Healthcare Providers@2x.png"
         />
       );
@@ -113,7 +113,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={503}
           height={610}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/landscaping/Time Tracking for Landscaping Companies@2x.png"
         />
       );
@@ -125,7 +125,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={503}
           height={610}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/painting/Time Tracking for Painting and Decorating Companies@2x.png"
         />
       );
@@ -137,7 +137,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={503}
           height={610}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/plumbing/Time Tracking for Plumbing and Heating Companies@2x.png"
         />
       );
@@ -149,7 +149,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={503}
           height={610}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/roofing/Time Tracking for Roofing Companies@2x.png"
         />
       );
@@ -161,7 +161,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={437}
           height={615}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/time-tracking/A highly accurate time tracking solution@2x.png"
         />
       );
@@ -173,7 +173,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={437}
           height={615}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/time-card-app/A highly accurate time tracking solution@2x.png"
         />
       );
@@ -185,7 +185,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={437}
           height={615}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/time-clock/A highly accurate time tracking solution@2x.png"
         />
       );
@@ -197,7 +197,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
           width={437}
           height={615}
           placeholder="none"
-          quality={98}
+          quality={99}
           src="../../../images/work-hours-tracker/A highly accurate time tracking solution@2x.png"
         />
       );
@@ -272,7 +272,7 @@ const IndustryMainCard = ({ smallTitle, title, description, list, image, styling
               checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
               checkItemTwo={Intl.formatMessage({ id: 'pages.miscellaneous.14DaysTrial' })}
               checkItemThree={Intl.formatMessage({ id: 'pages.miscellaneous.cancelAnytime' })}
-              style="productPage"
+              style="industryPage"
             />
           </div>
         </div>

@@ -34,6 +34,25 @@
     flex-wrap: wrap;
     padding: 2.5rem 0;
     row-gap: 3rem;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4rem;
+    padding: 2rem 0;
+  }
+
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4rem;
+    padding: 2rem 0;
   }
 
   @include min(desktop) {
@@ -55,7 +74,7 @@
     text-align: center;
 
     @include max(tablet) {
-      width: 50%;
+      // width: 50%;
       // margin-bottom: 2rem;
     }
 
@@ -81,7 +100,7 @@
 }
 
 .desktopImage {
-  @include max(tablet) {
+  @include max(mobile) {
     display: none !important;
   }
 }

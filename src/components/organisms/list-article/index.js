@@ -10,6 +10,7 @@ import {
   textWrapper,
   descr2,
   secondBlock,
+  tabletBlock,
   imageWrapper,
   img,
 } from './list-article.module.scss';
@@ -42,6 +43,9 @@ const ListArticle = ({
       <div style={{ margin: textMargin }} className={textWrapper}>
         <Title title={title} description={description} leftAlign />
         {description2 && <p className={descr2}>{description2}</p>}
+        <div style={{ padding: imagePadding }} className={tabletBlock}>
+          <div className={imageWrapper}>{image2}</div>
+        </div>
         <CheckList list={list} insideTitle cardStyle="small" />
       </div>
       <div style={{ padding: imagePadding }} className={secondBlock}>

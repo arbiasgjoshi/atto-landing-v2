@@ -5,6 +5,16 @@
     overflow: hidden;
   }
 
+  @include max(tablet-lg) {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  @include landscape-max(tablet-lg) {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
   &.industryPadding {
     padding-top: 7.3rem;
   }
@@ -34,6 +44,14 @@
     @include min(tablet) {
       top: 36rem;
       height: 112rem;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+      top: 19rem;
+    }
+
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+      top: 28rem;
     }
   }
 }
@@ -67,6 +85,14 @@
     margin-left: -35px;
     display: flex;
     justify-content: center;
+  }
+
+  @include landscape-min(tablet-lg) {
+    width: 100% !important;
+  }
+
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    width: 100% !important;
   }
 
   @include max(tablet) {

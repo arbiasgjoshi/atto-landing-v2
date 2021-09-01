@@ -38,6 +38,7 @@ import {
   onScrollStyle,
   container,
   leftNav,
+  headerItems,
   menuLinks,
   login,
   rightNavButtons,
@@ -466,65 +467,71 @@ const HeaderComponent = ({ headerStyle }) => {
         setFormValues={(formValues) => formSuccessState(formValues)}
       />
       <div className={container}>
-        <div className={leftNav}>
-          <Link to="/">
-            <img src={HeaderLogo} alt="Header Logo" width="87" height="30" />
-          </Link>
-        </div>
-        <div className={menuLinks} onMouseEnter={() => setAbove(true)}>
-          <Link
-            to="/product"
-            activeClassName={activeMenuItem}
-            onMouseEnter={() => showMenu('product')}
-          >
-            {Intl.formatMessage({ id: 'header.menu.productLabel' })}
-          </Link>
-          {Intl.locale === 'en' && (
+        <div className={headerItems}>
+          <div className={leftNav}>
+            <Link to="/">
+              <img src={HeaderLogo} alt="Header Logo" width="87" height="30" />
+            </Link>
+          </div>
+          <div className={menuLinks} onMouseEnter={() => setAbove(true)}>
+            <Link
+              to="/product"
+              activeClassName={activeMenuItem}
+              onMouseEnter={() => showMenu('product')}
+            >
+              {Intl.formatMessage({ id: 'header.menu.productLabel' })}
+            </Link>
+            {Intl.locale === 'en' && (
+              <a
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                activeClassName={activeMenuItem}
+                onMouseEnter={() => showMenu('industries')}
+              >
+                {Intl.formatMessage({ id: 'header.menu.industriesLabel' })}
+              </a>
+            )}
             <a
               href="#"
               onClick={(e) => e.preventDefault()}
               activeClassName={activeMenuItem}
-              onMouseEnter={() => showMenu('industries')}
+              onMouseEnter={() => showMenu('resources')}
             >
-              {Intl.formatMessage({ id: 'header.menu.industriesLabel' })}
+              {Intl.formatMessage({ id: 'header.menu.resourcesLabel' })}
             </a>
-          )}
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            activeClassName={activeMenuItem}
-            onMouseEnter={() => showMenu('resources')}
-          >
-            {Intl.formatMessage({ id: 'header.menu.resourcesLabel' })}
-          </a>
-          <Link to="/pricing" activeClassName={activeMenuItem} onMouseEnter={() => setOpen(false)}>
-            {Intl.formatMessage({ id: 'header.menu.pricingLabel' })}
-          </Link>
-        </div>
-        <div className={rightNavButtons}>
-          <a
-            href="https://app.attotime.com/login"
-            rel="noreferrer"
-            target="_blank"
-            className={login}
-          >
-            {Intl.formatMessage({ id: 'header.menu.login' })}
-          </a>
-          <Button
-            onBtnClick={openModal}
-            btnText={Intl.formatMessage({ id: 'header.menu.tryForFreeLabel' })}
-            btnStyle="teal"
-          />
-          <button
-            className={`${menuTrigger} ${openMobile && activeButton} `}
-            type="button"
-            aria-label="toggle-menu"
-            onClick={() => toggleMenu()}
-          >
-            <i className={tiles1} />
-            <i className={tiles2} />
-            <i className={tiles3} />
-          </button>
+            <Link
+              to="/pricing"
+              activeClassName={activeMenuItem}
+              onMouseEnter={() => setOpen(false)}
+            >
+              {Intl.formatMessage({ id: 'header.menu.pricingLabel' })}
+            </Link>
+          </div>
+          <div className={rightNavButtons}>
+            <a
+              href="https://app.attotime.com/login"
+              rel="noreferrer"
+              target="_blank"
+              className={login}
+            >
+              {Intl.formatMessage({ id: 'header.menu.login' })}
+            </a>
+            <Button
+              onBtnClick={openModal}
+              btnText={Intl.formatMessage({ id: 'header.menu.tryForFreeLabel' })}
+              btnStyle="teal"
+            />
+            <button
+              className={`${menuTrigger} ${openMobile && activeButton} `}
+              type="button"
+              aria-label="toggle-menu"
+              onClick={() => toggleMenu()}
+            >
+              <i className={tiles1} />
+              <i className={tiles2} />
+              <i className={tiles3} />
+            </button>
+          </div>
         </div>
         {open && (
           <div

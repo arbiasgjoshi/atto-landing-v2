@@ -6,13 +6,16 @@
   padding: 8rem 0 0;
   margin: 2rem auto 0;
 
-  // @include max(tablet) {
-  //   display: none;
-  // }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    width: calc(100% - 3rem);
+    margin: 0 auto;
+    padding-top: 10rem;
+    margin-top: 3rem;
+  }
 }
 
 .draggerResults {
-  @include max(tablet) {
+  @include max(tablet-lg) {
     @include absolute(left 50% top 0);
     transform: unset !important;
     margin-left: -8.5rem;
@@ -32,6 +35,15 @@
     background-size: 99% auto;
     background-repeat: no-repeat;
   }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    transform: none !important;
+  }
+
   background-size: 97% auto;
   height: 7rem;
   cursor: grab;

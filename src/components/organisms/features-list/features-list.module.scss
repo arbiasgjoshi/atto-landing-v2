@@ -11,6 +11,24 @@
       }
     }
 
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+      width: calc(100% - 6rem);
+      column-gap: 7rem;
+      margin: 0 auto;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+      width: calc(100% - 6rem);
+      margin: 0 auto;
+      column-gap: 7rem;
+    }
+
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+      width: calc(100% - 10rem);
+      margin: 0 auto;
+      column-gap: 10rem;
+    }
+
     @include min(desktop) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);

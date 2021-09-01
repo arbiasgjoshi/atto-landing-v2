@@ -6,14 +6,48 @@
     justify-content: space-between;
   }
 
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    width: calc(100% - 1.2rem);
+    margin: 0 auto;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    width: calc(100% - 1.2rem);
+    margin: 0 auto;
+  }
+
   &.swap {
     @include min(tablet) {
       @include flex-direction(row-reverse);
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+      flex-direction: column-reverse;
+      align-items: center;
     }
   }
 
   .firstBox {
     max-width: 68rem;
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+      margin-top: 2rem;
+    }
+
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+      max-width: 63rem;
+    }
+
+    @media only screen and (max-device-width: 1024px) and (orientation: landscape) {
+      max-width: 55rem;
+      margin-right: 4rem;
+    }
+
     .titleContainer {
       margin-bottom: 3rem;
 
@@ -35,6 +69,16 @@
       @include max(mobile) {
         padding: 4rem 0 !important; //because of inline-style
         height: fit-content !important;
+      }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+        height: initial !important;
+        padding: 1rem 0 !important;
+      }
+
+      @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
       }
     }
   }

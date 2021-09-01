@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useIntl } from 'gatsby-plugin-react-intl';
+// import {}
+
+import { Link } from 'gatsby-plugin-intl';
 import Slider from 'rc-slider';
 import Draggable from 'react-draggable';
 
@@ -27,13 +30,6 @@ const PriceDragger = () => {
     const roundedVal = Math.round(proportionalVal);
     setVal(roundedVal);
   };
-
-  // TODO potentialy in order to properly dragg, have the elements be divided
-  // with the total area, the values of min and max be divided with percentage
-  // and that achieve the satisfactory results
-
-  // TODO have these features be on mobile, and responive
-  // Ask Etnik about the possibilities
 
   return (
     <div className={draggerWrapper}>
