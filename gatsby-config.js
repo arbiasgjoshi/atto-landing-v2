@@ -107,17 +107,6 @@ module.exports = {
         redirect: false,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-iubenda-cookie-footer',
-    //   options: {
-    //     iubendaOptions: {
-    //       lang: 'en',
-    //       siteId: 'XXXXX',
-    //       cookiePolicyId: 'YYYYY',
-    //     },
-    //     googleTagManagerOptions: true,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-csp`,
       options: {
@@ -127,15 +116,16 @@ module.exports = {
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         mergeDefaultDirectives: false,
         directives: {
-          'script-src': "'self' 'unsafe-inline' http: https: 'report-sample' https://beacon-v2.helpscout.net/ https://script.hotjar.com/modules.189ddfe225c89657c20d.js https://static.hotjar.com/c/hotjar-2526807.js https://www.googletagmanager.com/gtm.js;",
+          'script-src':
+            "'self' 'unsafe-inline' http: https: 'report-sample' https://beacon-v2.helpscout.net/ https://script.hotjar.com/modules.189ddfe225c89657c20d.js https://static.hotjar.com/c/hotjar-2526807.js https://www.googletagmanager.com/gtm.js;",
           'style-src': "'self' http: https: 'unsafe-inline' https://hello.myfonts.net",
           'img-src': "'self' data: www.google-analytics.com",
           'default-src': "'self' http: https:",
           'frame-src': "'self' https://vars.hotjar.com;",
           'font-src': "'self' data: https://hello.myfonts.net;",
-          'connect-src': "'self' https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net https://in.hotjar.com https://stats.g.doubleclick.net;",
+          'connect-src':
+            "'self' https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net https://in.hotjar.com https://stats.g.doubleclick.net;",
           // you can add your directives or override defaults
-
         },
       },
     },
