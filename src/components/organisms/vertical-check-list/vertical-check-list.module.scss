@@ -19,8 +19,17 @@
       }
     }
 
-    @include min(laptop) {
+    @include landscape-max(tablet-lg) {
+      width: 50%;
+      margin-right: 5%;
+    }
+
+    @include min(desktop) {
       max-width: 55rem;
+    }
+
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+      max-width: 49rem;
     }
   }
 

@@ -52,9 +52,9 @@ const TimeTrackingApp = () => {
     };
     fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
-      .then((data) => {
+      .then((dd) => {
         closeModal();
-        setValues(data);
+        setValues(dd);
         setTimeout(() => openModal(), 2000);
       });
   };

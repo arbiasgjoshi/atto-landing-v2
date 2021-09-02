@@ -18,6 +18,7 @@ const SubscribeBanner = ({
   checkItemTwo,
   checkItemThree,
   style = '',
+  className = '',
 }) => {
   const Intl = useIntl();
 
@@ -118,7 +119,7 @@ const SubscribeBanner = ({
         setFormValues={(formValues) => formSuccessState(formValues)}
       />
       <div
-        className={`${bannerWrapper} ${bannerImage && hasImage}`}
+        className={`${className} ${bannerWrapper} ${bannerImage && hasImage}`}
         style={{ padding: formPadding }}
       >
         {bannerImage && <div className={imgWrap}>{subscribeBanner()}</div>}

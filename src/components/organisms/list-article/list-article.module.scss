@@ -5,6 +5,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+      width: calc(100% - 4rem);
+      margin: 0 auto;
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    justify-content: center;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+    justify-content: center;
   }
 
   &.swap {
@@ -27,6 +41,29 @@
 
     @include min(tablet) {
       width: 56rem;
+    }
+
+    .tabletBlock {
+      @include flex-align(center, center);
+      display: none;
+      margin-bottom: 7rem;
+      margin-top: 3rem;
+    }
+
+    // @media only screen and (min-device-width: 768px) and (max-device-width: 1024px)
+
+    @include landscape-max(tablet-lg) {
+      width: calc(100% - 10rem);
+      margin: 0 auto;
+    }
+
+    @include max(tablet-lg) {
+      width: calc(100% - 10rem);
+      margin: 0 auto;
+    }
+
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+      padding: 0 2rem;
     }
 
     p {
@@ -73,6 +110,18 @@
           height: auto;
         }
       }
+    }
+  }
+
+  @include max(tablet-lg) {
+    .textWrapper {
+      .tabletBlock {
+        display: flex;
+      }
+    }
+
+    .secondBlock {
+      display: none;
     }
   }
 }

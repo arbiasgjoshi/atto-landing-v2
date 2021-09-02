@@ -15,8 +15,30 @@
     max-width: 100%;
   }
 
+  > form {
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+      > div {
+        margin-bottom: 1rem;
+      }
+
+      > button {
+        height: 6rem;
+      }
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+      > div {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
   &.homepage {
     > form > div {
+      @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+        margin-bottom: 1rem;
+      }
+
       // FIXME Need to delete this below if otherwise
       > div:focus-within {
         &:before {
@@ -46,6 +68,25 @@
     }
   }
 
+  &.industryPage {
+    @include max(tablet-lg) {
+      align-items: flex-start;
+    }
+
+    @include landscape-max(tablet-lg) {
+      align-items: flex-start;
+    }
+
+    @include max(tablet) {
+      align-items: center;
+    }
+
+    @include landscape-max(tablet) {
+      align-items: center;
+    }
+  }
+
+  &.industryPage,
   &.productPage {
     color: var(--gray);
 

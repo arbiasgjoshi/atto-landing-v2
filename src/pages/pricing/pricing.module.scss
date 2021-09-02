@@ -18,6 +18,11 @@
   @include min(tablet) {
     flex-direction: row;
   }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    width: calc(100% - 3rem);
+    margin: 0 auto;
+  }
 }
 
 .priceHeader {
@@ -29,6 +34,11 @@
 
   @include min(tablet) {
     flex-direction: row;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    width: calc(100% - 3rem);
+    margin: 0 auto;
   }
 
   @include min(desktop) {
@@ -46,6 +56,10 @@
       align-items: center;
       width: 100%;
       margin-top: 2rem;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+      align-items: flex-end;
     }
 
     .buttonContainer {
@@ -102,6 +116,11 @@ p.discount {
     bottom: 0rem;
     position: unset;
   }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+    margin-right: 0;
+  }
+
   @include min(laptop) {
     margin-right: 1.5rem;
     width: 16rem;

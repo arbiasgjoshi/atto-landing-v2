@@ -871,7 +871,7 @@ const TimeTracking = () => {
         title={Intl.formatMessage({ id: 'pages.productTimeTracking.fourthSectionTitle' })}
       />
       <Divider className="style7" />
-      <div className={imageWrapper} style={{ width: 'calc(100% + 100px)' }}>
+      <div className={imageWrapper} style={{ width: 'calc(100% + 70px)' }}>
         {timeTrackingBannerImg(Intl.locale)}
       </div>
       <Divider className="style3" />

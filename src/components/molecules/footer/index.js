@@ -202,11 +202,12 @@ const Footer = () => {
             <StaticImage
               src="../../../images/logo@3x.png"
               alt="footer-logo"
-              quality={100}
+              quality={96}
               width={86}
               height={29}
               placeholder="none"
             />
+
             <p>{Intl.formatMessage({ id: 'pages.miscellaneous.footerText' })}</p>
 
             <div>

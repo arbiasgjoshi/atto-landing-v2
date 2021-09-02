@@ -28,7 +28,10 @@
     }
   }
 
-  @include min(tablet) {
+  // @include min(tablet) {
+  // }
+
+  @include min(desktop) {
     &::after {
       content: '';
       @include absolute(left 30rem top 7.9rem);

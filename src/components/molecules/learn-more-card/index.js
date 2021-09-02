@@ -19,21 +19,21 @@ const LearnMoreCard = ({
   const Intl = useIntl();
 
   return (
-    <div className={`${styles.container} ${styles[styling]}`}>
-      <div className={styles.iconWrapper}>
-        <img alt={title} width={imageWidth} height={imageHeight} src={icon} />
-      </div>
-      <div className={styles.textWrapper}>
-        <h5 className={styles.cardTitle}>{title}</h5>
-        <p className={styles.paragraphText}>{description}</p>
-      </div>
-      <Link to={path}>
+    <Link to={path}>
+      <div className={`${styles.container} ${styles[styling]}`}>
+        <div className={styles.iconWrapper}>
+          <img alt={title} width={imageWidth} height={imageHeight} src={icon} />
+        </div>
+        <div className={styles.textWrapper}>
+          <h5 className={styles.cardTitle}>{title}</h5>
+          <p className={styles.paragraphText}>{description}</p>
+        </div>
         <Button
           btnStyle="wide"
           btnText={btnText || Intl.formatMessage({ id: 'pages.miscellaneous.learnMore' })}
         />
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

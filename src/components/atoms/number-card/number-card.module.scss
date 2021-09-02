@@ -5,6 +5,10 @@
     margin: 0;
   }
 
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    margin-bottom: 0.5rem;
+  }
+
   @include max(tablet) {
     h5 {
       font-weight: normal;
