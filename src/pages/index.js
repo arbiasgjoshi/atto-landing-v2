@@ -8,10 +8,8 @@ import BlogTemplate from './blog-template';
 const Index = () => (
   <Router>
     <HomePage path="/" />
-    <Blog path="/blog">
-      <BlogTemplate path="/:slugId" />
-    </Blog>
-
+    <Blog path="/blog/" />
+    <BlogTemplate path="/blog/:slugId" />
     <Redirect
       from="https://attotime.com/download/android"
       to="https://play.google.com/store/apps/details?id=tech.zetta.atto"
