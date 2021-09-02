@@ -24,7 +24,7 @@ export const parseDate = (date) => {
   // format(date, 'dd MMMM yyyy')
 };
 
-export const apiUrl = 'https://staging.attotime.com';
+export const apiUrl = 'https://app.attotime.com';
 
 export const deleteInvitation = (data) => {
   const requestOptions = {
