@@ -143,7 +143,7 @@ const Blog = () => {
           ))}
       </div>
       {featured && (
-        <Link to={`/blog-template?slug=${featured?.slug}`} className={featurdArticle}>
+        <Link to={`/blog/${featured?.slug}`} className={featurdArticle}>
           <img src={featured?.cover_image} width={1140} height={450} alt={featured?.title} />
           <Title
             maxWidth={780}

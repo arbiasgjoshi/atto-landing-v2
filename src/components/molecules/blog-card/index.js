@@ -9,7 +9,7 @@ import {
 } from './blog-card.module.scss';
 
 const BlogCard = ({ image, slug, smallTitle, date, title, description }) => (
-  <Link to={`/blog-template?slug=${slug}`} className={cardWrapper}>
+  <Link to={`/blog/${slug}`} className={cardWrapper}>
     <div className={smallTitleWrapper}>
       <div className={horizontalLine} />
       <p>{`${date} · ${smallTitle}`}</p>

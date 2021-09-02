@@ -41,14 +41,13 @@ const Modal = loadable(() => import('@components/molecules/modal'));
 const FooterComponent = loadable(() => import('@components/molecules/footer'));
 const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
-const BlogTemplate = ({ location }) => {
+const BlogTemplate = ({ id }) => {
   const Intl = useIntl();
 
   const [showDialog, setShowDialog] = useState(false);
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
   const [values, setValues] = useState(null);
-  // const [deletedInvite, setDeleted] = useState(false);
 
   const toggleDeleteInvite = (data) => {
     const requestOptions = {
@@ -83,34 +82,32 @@ const BlogTemplate = ({ location }) => {
   const [seo, setSeo] = useState([]);
   const [slug, setSlug] = useState(false);
 
-  const fetcher = () =>
-    fetch(`https://staging.attotime.com/api/v2/blog/${slug}`).then((res) => res.json());
+  const fetcher = () => fetch(`${apiUrl}/api/v2/blog/${id}`).then((res) => res.json());
   const { data, error } = useSWR(slug ? '/blog-article' : null, fetcher);
 
   useEffect(() => {
-    if (location.search) {
-      setSlug(location.search.replaceAll('?slug=', ''));
-    } else {
-      setSlug(false);
-    }
+    // console.log(id);
+    // if (location.search) {
+    //   setSlug(location.search.replaceAll('?slug=', ''));
+    // } else {
+    //   setSlug(false);
+    // }
   }, []);
 
   // TODO use this to confirm share check
-  // const handleClick = () => {};
+  const handleClick = () => {};
 
   useEffect(() => {
     if (data) {
       setArticle(data.article);
-      console.log(data.article);
       setSeo(data.seo);
     }
 
-    // ReactDOM.findDOMNode(this.domNode).addEventListener('click', handleClick);
     return () => {
-      // document.getElementsByClassName('js-btn-tag').removeEventListener('click', handleClick);
       setArticle([]);
     };
   }, [data, error]);
+
   return (
     <div className={`${blogTemplateContainer} ${container}`}>
       <Modal

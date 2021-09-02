@@ -1,17 +1,15 @@
 import React from 'react';
 
 import { Router, Redirect } from '@reach/router';
-import HomePage from './home';
-import Blog from './blog';
-import BlogTemplate from './blog-template';
+import HomePage from './pages/home';
+import Blog from './pages/blog';
+import BlogTemplate from './pages/blog-template';
 
 const Index = () => (
-  <Router>
+  <Router basepath="/">
     <HomePage path="/" />
-    <Blog path="/blog">
-      <BlogTemplate path="/:slugId" />
-    </Blog>
-
+    <Blog path="/blog" />
+    <BlogTemplate path="/blog/:id" />
     <Redirect
       from="https://attotime.com/download/android"
       to="https://play.google.com/store/apps/details?id=tech.zetta.atto"
