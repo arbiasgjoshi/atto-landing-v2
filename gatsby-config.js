@@ -118,13 +118,13 @@ module.exports = {
         directives: {
           'script-src':
             "'self' 'unsafe-inline' http: https: 'report-sample' https://beacon-v2.helpscout.net/ https://script.hotjar.com/modules.189ddfe225c89657c20d.js https://static.hotjar.com/c/hotjar-2526807.js https://www.googletagmanager.com/gtm.js;",
-          'style-src': "'self' http: https: 'unsafe-inline' https://hello.myfonts.net",
-          'img-src': "'self' data: https://www.google-analytics.com https://googleads.g.doubleclick.net",
+          'style-src': "'self' http: https: 'unsafe-inline' https://hello.myfonts.net;",
+          'img-src': "'self' data: https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.google.com;",
           'default-src': "'self' http: https:",
           'frame-src': "'self' https://vars.hotjar.com;",
           'font-src': "'self' data: https://hello.myfonts.net;",
           'connect-src':
-            "'self' https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net  https://stats.g.doubleclick.net https://staging.attotime.com https://www.google-analytics.com https://*.hotjar.com;",
+            "'self' https://vc.hotjar.io https://ws16.hotjar.com https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net  https://stats.g.doubleclick.net https://staging.attotime.com https://www.google-analytics.com http://*.hotjar.com:* https://*.hotjar.com:* https://vc.hotjar.io:* https://surveystats.hotjar.io wss://*.hotjar.com;",
           // you can add your directives or override defaults
         },
       },
