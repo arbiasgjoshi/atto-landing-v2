@@ -36,9 +36,10 @@
 
   @include min(tablet) {
     display: flex;
-    height: 4.8rem;
+    min-height: 4.8rem;
+    flex-wrap: wrap;
     margin: 0 auto;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     justify-content: center;
     align-items: center;
   }
@@ -90,7 +91,7 @@
   }
 }
 
-.featurdArticle{
+.featurdArticle {
   &:hover {
     > div {
       h2 {
@@ -103,7 +104,6 @@
     img {
       height: 36rem;
       object-fit: cover;
-
     }
   }
 }
@@ -169,7 +169,7 @@
     }
   }
 
-  @include max(tablet){
+  @include max(tablet) {
     max-width: calc(100% - 6rem);
     flex-wrap: wrap;
     margin: 0 auto;

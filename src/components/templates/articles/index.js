@@ -1,15 +1,15 @@
 import React from 'react';
 
 import { Router, Redirect } from '@reach/router';
-import HomePage from './pages/home';
-import Blog from './components/templates/blog';
-import BlogTemplate from './pages/blog-template';
+import Expense from '@components/templates/blog-template';
+import Blog from '@components/templates/blog';
+import HomePage from '@pages/home';
 
-const Index = () => (
-  <Router basepath="/">
+const ArticleList = () => (
+  <Router>
     <HomePage path="/" />
     <Blog path="/blog" />
-    <BlogTemplate path="/blog/:id" />
+    <Expense path="/blog/:id" />
     <Redirect
       from="https://attotime.com/download/android"
       to="https://play.google.com/store/apps/details?id=tech.zetta.atto"
@@ -37,4 +37,4 @@ const Index = () => (
   </Router>
 );
 
-export default Index;
+export default ArticleList;

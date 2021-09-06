@@ -13,6 +13,12 @@
     margin-left: -1.4rem;
     width: 43rem;
     max-width: 100%;
+
+    @include max(mobile) {
+      margin-left: 0;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   > form {

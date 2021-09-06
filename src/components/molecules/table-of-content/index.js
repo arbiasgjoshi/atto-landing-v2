@@ -33,7 +33,12 @@ const TableOfContent = ({ toggleModal, slug, title, description }) => {
     const newListItems = [];
 
     Array.from(el).forEach((item) => {
-      newListItems.push(item.innerHTML);
+      console.log();
+      // if (item.nodeType === item.TEXT_NODE) {
+      // }
+      if (item.innerText) {
+        newListItems.push(item.innerText);
+      }
     });
 
     setList(newListItems);

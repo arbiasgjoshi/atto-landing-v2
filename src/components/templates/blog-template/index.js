@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { useIntl, Link } from 'gatsby-plugin-react-intl';
 import loadable from '@loadable/component';
-import useSWR from 'swr';
+import useSWR, { cache } from 'swr';
 import Seo from '@components/molecules/seo';
 
 // import { StaticImage } from 'gatsby-plugin-image';
@@ -48,6 +48,7 @@ const BlogTemplate = ({ id }) => {
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
   const [values, setValues] = useState(null);
+  const [slug, setSlug] = useState('');
 
   const toggleDeleteInvite = (data) => {
     const requestOptions = {
@@ -80,24 +81,24 @@ const BlogTemplate = ({ id }) => {
 
   const [article, setArticle] = useState([]);
   const [seo, setSeo] = useState([]);
-  const [slug, setSlug] = useState(false);
 
   const fetcher = () => fetch(`${apiUrl}/api/v2/blog/${id}`).then((res) => res.json());
-  const { data, error } = useSWR(slug ? '/blog-article' : null, fetcher);
+  const { data, error } = useSWR(['/blog-article', id], fetcher);
 
   useEffect(() => {
-    // console.log(id);
-    // if (location.search) {
-    //   setSlug(location.search.replaceAll('?slug=', ''));
-    // } else {
-    //   setSlug(false);
-    // }
+    if (id) {
+      setSlug(id);
+    } else {
+      setSlug(false);
+    }
   }, []);
 
-  // TODO use this to confirm share check
-  const handleClick = () => {};
-
   useEffect(() => {
+    if (id !== slug) {
+      cache.clear();
+      setSlug(id);
+    }
+
     if (data) {
       setArticle(data.article);
       setSeo(data.seo);
@@ -106,7 +107,7 @@ const BlogTemplate = ({ id }) => {
     return () => {
       setArticle([]);
     };
-  }, [data, error]);
+  }, [data, error, id]);
 
   return (
     <div className={`${blogTemplateContainer} ${container}`}>
@@ -131,7 +132,9 @@ const BlogTemplate = ({ id }) => {
               <p>All posts</p>
             </div>
             <BlogTitle
-              smallTitle={`Published ${parseDate(article.published_at)}`}
+              smallTitle={`Published ${article.date} ${
+                article.tags && ` in ${article.tags[0].name}`
+              }`}
               // smallTitle="Published March 18, 2021 in Productivity   ·   2 min read"
               title={article.title}
               // author="By Nick Blackeye"
@@ -146,7 +149,7 @@ const BlogTemplate = ({ id }) => {
               <TableOfContent
                 title={article.title}
                 description={seo.description}
-                slug={slug}
+                slug={id}
                 seo={seo}
                 toggleModal={() => openModal()}
               />
@@ -155,7 +158,7 @@ const BlogTemplate = ({ id }) => {
               <Content
                 title={article.title}
                 description={seo.description}
-                slug={slug}
+                slug={id}
                 content={article.body}
               />
             )}
@@ -166,15 +169,17 @@ const BlogTemplate = ({ id }) => {
             <div className={relatedWrapper}>
               {data &&
                 data.article.related_articles.map((item, idx) => (
-                  <BlogCard
-                    title={item.title}
-                    description={item.description}
-                    key={idx}
-                    date={item.date}
-                    slug={slug}
-                    smallTitle={item.tag}
-                    image={item.cover_image}
-                  />
+                  <>
+                    <BlogCard
+                      title={item.title}
+                      description={item.description}
+                      key={idx}
+                      date={item.date}
+                      slug={item.slug}
+                      smallTitle={item.tag}
+                      image={item.cover_image}
+                    />
+                  </>
                 ))}
             </div>
           </div>

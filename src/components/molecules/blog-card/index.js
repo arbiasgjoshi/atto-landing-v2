@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import PropTypes from 'prop-types';
+
+import { Link } from 'gatsby';
 import {
   cardWrapper,
   smallTitleWrapper,
@@ -24,5 +26,14 @@ const BlogCard = ({ image, slug, smallTitle, date, title, description }) => (
     </div>
   </Link>
 );
+
+BlogCard.propTypes = {
+  image: PropTypes.string,
+  slug: PropTypes.string,
+  smallTitle: PropTypes.string,
+  date: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+};
 
 export default BlogCard;

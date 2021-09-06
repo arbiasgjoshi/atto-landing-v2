@@ -19,10 +19,10 @@ export const placeholders = [
   { id: 11 },
 ];
 
-export const parseDate = (date) => {
-  console.log(date);
-  // format(date, 'dd MMMM yyyy')
-};
+// export const parseDate = (date) => {
+//   console.log(date);
+//   // format(date, 'dd MMMM yyyy')
+// };
 
 export const apiUrl = 'https://app.attotime.com';
 
