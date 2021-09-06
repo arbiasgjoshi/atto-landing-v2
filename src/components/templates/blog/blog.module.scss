@@ -175,7 +175,7 @@
     margin: 0 auto;
     flex-direction: column;
 
-    button {
+    > button {
       min-width: 20rem !important;
       height: 4.8rem !important;
       padding: 1rem 1.5rem !important;
@@ -189,6 +189,7 @@
       margin: 4rem 0;
       flex-wrap: wrap;
       gap: 30px 20px;
+      max-width: 20rem;
 
       li {
         margin: 0;
