@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import HeaderComponent from '@components/molecules/header';
 import Seo from '@components/molecules/seo';
 import useSWR from 'swr';
-import { Link } from 'gatsby';
+import { Link } from 'gatsby-plugin-react-intl';
 
 import { paginationList, apiUrl } from '@helpers';
 import FooterComponent from '@components/molecules/footer';
