@@ -127,6 +127,7 @@ module.exports = {
           'connect-src':
             "'self' https://hits-i.iubenda.com https://app.attotime.com https://vc.hotjar.io https://ws16.hotjar.com https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net  https://stats.g.doubleclick.net https://staging.attotime.com https://www.google-analytics.com http://*.hotjar.com:* https://*.hotjar.com:* https://vc.hotjar.io:* https://surveystats.hotjar.io wss://*.hotjar.com;",
           // you can add your directives or override defaults
+          //
         },
       },
     },
