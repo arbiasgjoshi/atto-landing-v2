@@ -141,6 +141,6 @@ module.exports = {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/app/*`] },
     },
-    // 'gatsby-plugin-webpack-bundle-analyser-v2',
+    // 'gatsby-plugin-webpack-bundle-analyser-v2',/
   ],
 };
