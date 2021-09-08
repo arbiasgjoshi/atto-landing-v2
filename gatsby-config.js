@@ -80,6 +80,8 @@ module.exports = {
     },
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-meta-redirect`,
+    `gatsby-plugin-styled-components`,
+
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -132,15 +134,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Add any options here/
-      },
-    },
-    {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/app/*`] },
     },
-    // 'gatsby-plugin-webpack-bundle-analyser-v2',/
+    // 'gatsby-plugin-webpack-bundle-analyser-v2',
   ],
 };
