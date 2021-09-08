@@ -80,8 +80,6 @@ module.exports = {
     },
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-meta-redirect`,
-    `gatsby-plugin-styled-components`,
-
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
