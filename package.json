@@ -30,6 +30,7 @@
     "gatsby-plugin-google-tagmanager-delayed": "^2.1.25",
     "gatsby-plugin-image": "^1.2.1",
     "gatsby-plugin-intl": "^0.3.3",
+    "gatsby-plugin-layout": "^2.13.0",
     "gatsby-plugin-manifest": "^3.2.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-preload-fonts": "^2.2.0",

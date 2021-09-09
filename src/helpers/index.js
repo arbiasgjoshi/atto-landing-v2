@@ -1,8 +1,8 @@
-import React from 'react';
-import parse, { domToReact } from 'html-react-parser';
-import { format } from 'date-fns';
+// import React from 'react';
+import parse from 'html-react-parser';
+// import { format } from 'date-fns';
 
-export const isBrowser = () => typeof window !== 'undefined';
+// export const isBrowser = () => typeof window !== 'undefined';
 
 export const placeholders = [
   { id: 0 },
@@ -16,7 +16,7 @@ export const placeholders = [
   { id: 8 },
   { id: 9 },
   { id: 10 },
-  { id: 11 },
+  { id: 11 }
 ];
 
 // export const parseDate = (date) => {
@@ -30,16 +30,16 @@ export const deleteInvitation = (data) => {
   const requestOptions = {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ email: data.email }),
+    body: JSON.stringify({ email: data.email })
   };
   fetch(`${apiUrl}/delete-invite`, requestOptions);
 };
 
 export const parseHTML = (bodyText) => {
   const parsedContent = parse(bodyText, {
-    trim: true,
+    trim: true
   });
   return parsedContent;
 };

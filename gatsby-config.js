@@ -4,7 +4,7 @@ module.exports = {
     description: `Atto is a simple, all-in-one solution that accurately tracks your employees’ time and automates timesheets. Join 10,000+ businesses that trust Atto. Sign up now!`,
     author: `Zetta Technologies`,
     siteUrl: 'https://attotime.com',
-    image: 'src/images/Atto - Social Media Share@2x.png',
+    image: 'src/images/Atto - Social Media Share@2x.png'
   },
   flags: {
     PARALLEL_SOURCING: false,
@@ -12,7 +12,7 @@ module.exports = {
     FAST_DEV: false,
     LMDB_STORE: false,
     PRESERVE_WEBPACK_CACHE: false,
-    DEV_SSR: false,
+    DEV_SSR: false
   },
   plugins: [
     {
@@ -21,40 +21,41 @@ module.exports = {
         additionalData: `@import "./src/styles/globals.scss";`,
         cssLoaderOptions: {
           modules: {
-            exportLocalsConvention: 'camelCaseOnly',
-          },
-        },
-      },
+            exportLocalsConvention: 'camelCaseOnly'
+          }
+        }
+      }
     },
     'gatsby-plugin-image',
+    'gatsby-plugin-layout',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
-        icon: 'src/images/atto_favicon@2x.png',
-      },
+        icon: 'src/images/atto_favicon@2x.png'
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images/`,
+        path: `${__dirname}/src/images/`
       },
-      __key: 'images',
+      __key: 'images'
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://attotime.com/`,
-      },
+        siteUrl: `https://attotime.com/`
+      }
     },
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/atto_favicon@2x.png',
-      },
+        icon: 'src/images/atto_favicon@2x.png'
+      }
     },
     {
       resolve: `gatsby-alias-imports`,
@@ -68,15 +69,15 @@ module.exports = {
           '@helpers': 'src/helpers',
           '@styles': 'src/styles',
           '@services': 'src/services',
-          '@locale': 'src/locale',
-        },
-      },
+          '@locale': 'src/locale'
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: 'GTM-NV2DTP3',
-      },
+        id: 'GTM-NV2DTP3'
+      }
     },
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-meta-redirect`,
@@ -85,14 +86,14 @@ module.exports = {
       options: {
         rule: {
           // include: /images/, // See below to configure properly
-        },
-      },
+        }
+      }
     },
     {
       resolve: `gatsby-source-iubenda-documents`,
       options: {
-        documentIds: [`77119290`, `47240763`, `85558244`, `97533579`],
-      },
+        documentIds: [`77119290`, `47240763`, `85558244`, `97533579`]
+      }
     },
     {
       resolve: `gatsby-plugin-react-intl`,
@@ -104,8 +105,8 @@ module.exports = {
         languages: [`en`, `de`, `es`, `fr`],
         // language file path
         defaultLanguage: `en`,
-        redirect: false,
-      },
+        redirect: false
+      }
     },
     {
       resolve: `gatsby-plugin-csp`,
@@ -125,16 +126,16 @@ module.exports = {
           'frame-src': "'self' https://vars.hotjar.com;",
           'font-src': "'self' data: https://hello.myfonts.net;",
           'connect-src':
-            "'self' https://hits-i.iubenda.com https://app.attotime.com https://vc.hotjar.io https://ws16.hotjar.com https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net  https://stats.g.doubleclick.net https://staging.attotime.com https://www.google-analytics.com http://*.hotjar.com:* https://*.hotjar.com:* https://vc.hotjar.io:* https://surveystats.hotjar.io wss://*.hotjar.com;",
+            "'self' https://hits-i.iubenda.com https://app.attotime.com https://vc.hotjar.io https://ws16.hotjar.com https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net  https://stats.g.doubleclick.net https://staging.attotime.com https://www.google-analytics.com http://*.hotjar.com:* https://*.hotjar.com:* https://vc.hotjar.io:* https://surveystats.hotjar.io wss://*.hotjar.com;"
           // you can add your directives or override defaults
           //
-        },
-      },
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/app/*`] },
-    },
+      options: { prefixes: [`/app/*`] }
+    }
     // 'gatsby-plugin-webpack-bundle-analyser-v2',
-  ],
+  ]
 };
