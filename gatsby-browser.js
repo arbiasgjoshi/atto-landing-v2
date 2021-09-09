@@ -6,7 +6,6 @@
 
 // You can delete this file if you're not using it
 import '@reach/dialog/styles.css';
-import './src/styles/globals.scss';
 
 // Main Styling
 import './src/styles/utils/variables/_colors.scss';
