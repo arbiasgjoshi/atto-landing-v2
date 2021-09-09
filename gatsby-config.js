@@ -27,7 +27,6 @@ module.exports = {
       }
     },
     'gatsby-plugin-image',
-    'gatsby-plugin-layout',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {

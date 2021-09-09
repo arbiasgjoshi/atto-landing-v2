@@ -44,6 +44,12 @@ const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-b
 const BlogTemplate = ({ id }) => {
   const Intl = useIntl();
 
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   const [showDialog, setShowDialog] = useState(false);
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
@@ -109,6 +115,10 @@ const BlogTemplate = ({ id }) => {
       setArticle([]);
     };
   }, [data, error, id]);
+
+  if (!hasMounted) {
+    return null;
+  }
 
   return (
     <div className={`${blogTemplateContainer} ${container}`}>
