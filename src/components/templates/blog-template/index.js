@@ -9,7 +9,7 @@ import Seo from '@components/molecules/seo';
 // import { StaticImage } from 'gatsby-plugin-image';
 // import { useLocation } from '@reach/router';
 // import { Link } from '@reach/router';
-
+console.log('_____________ WE ARE STARTING________');
 import BlogCard from '@components/molecules/blog-card';
 
 import Icon from '@components/atoms/icon';
@@ -36,7 +36,7 @@ import {
   featuredImage,
   contentWrapper
 } from './blog-template.module.scss';
-console.log('_____________ WE ARE STARTING________');
+
 const Modal = loadable(() => import('@components/molecules/modal'));
 const FooterComponent = loadable(() => import('@components/molecules/footer'));
 const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
