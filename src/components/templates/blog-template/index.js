@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
+console.log('_____________ WE ARE STARTING________');
 import { useIntl, Link } from 'gatsby-plugin-react-intl';
 import loadable from '@loadable/component';
 import useSWR, { cache } from 'swr';
@@ -9,7 +9,7 @@ import Seo from '@components/molecules/seo';
 // import { StaticImage } from 'gatsby-plugin-image';
 // import { useLocation } from '@reach/router';
 // import { Link } from '@reach/router';
-console.log('_____________ WE ARE STARTING________');
+
 import BlogCard from '@components/molecules/blog-card';
 
 import Icon from '@components/atoms/icon';
