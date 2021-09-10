@@ -1,6 +1,6 @@
+console.log('_____________ WE ARE STARTING________');
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-console.log('_____________ WE ARE STARTING________');
 import { useIntl, Link } from 'gatsby-plugin-react-intl';
 import loadable from '@loadable/component';
 import useSWR, { cache } from 'swr';
