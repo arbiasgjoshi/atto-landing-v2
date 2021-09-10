@@ -1,4 +1,3 @@
-console.log('_____________ WE ARE STARTING________');
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useIntl, Link } from 'gatsby-plugin-react-intl';
