@@ -7,8 +7,5 @@ exports.onCreatePage = async ({ page, actions }) => {
     createPage(page);
   }
 
-  if (page.path.match(/^\/blog/)) {
-    page.matchPath = '/blog/*';
-    createPage(page);
-  }
+
 };
