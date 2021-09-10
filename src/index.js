@@ -4,7 +4,7 @@ import { Router, Redirect } from '@reach/router';
 import HomePage from './pages/home';
 import Blog from './components/templates/blog';
 import BlogTemplate from './pages/blog-template';
-console.log('_____________ WE ARE STARTING________');
+
 const Index = () => (
   <Router basepath="/">
     <HomePage path="/" />
@@ -14,7 +14,6 @@ const Index = () => (
       from="https://attotime.com/download/android"
       to="https://play.google.com/store/apps/details?id=tech.zetta.atto"
     />
-
     <Redirect
       from="https://attotime.com/download/ios"
       to="https://itunes.apple.com/us/app/atto-employee-time-location/id1132847984?ls=1&mt=8"
@@ -37,5 +36,5 @@ const Index = () => (
     />
   </Router>
 );
-console.log('_____________ WE ARE STARTING2________');
+
 export default Index;
