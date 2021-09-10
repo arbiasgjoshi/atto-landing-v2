@@ -36,7 +36,7 @@ import {
   featuredImage,
   contentWrapper
 } from './blog-template.module.scss';
-
+console.log('_____________ WE ARE STARTING________');
 const Modal = loadable(() => import('@components/molecules/modal'));
 const FooterComponent = loadable(() => import('@components/molecules/footer'));
 const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
