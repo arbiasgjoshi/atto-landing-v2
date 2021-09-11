@@ -30,7 +30,7 @@ import {
   dotStyle,
   selected,
 } from './blog.module.scss';
-console.log('_____________ WE ARE ENTERING THE BLOG POST - BUT REHYDRATION ________');
+
 const Blog = () => {
   const [tags, setTags] = useState([{ id: 0, name: 'All' }]);
   const [seoTitle, setSeotitle] = useState(
