@@ -34,7 +34,7 @@ import {
   relatedArticles,
   relatedWrapper,
   featuredImage,
-  contentWrapper
+  contentWrapper,
 } from './blog-template.module.scss';
 
 const Modal = loadable(() => import('@components/molecules/modal'));
@@ -62,9 +62,9 @@ const BlogTemplate = ({ id }) => {
     const requestOptions = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email: data.email })
+      body: JSON.stringify({ email: data.email }),
     };
     fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
@@ -203,7 +203,7 @@ const BlogTemplate = ({ id }) => {
       <Divider className="style5" />
       <SubscribeBanner
         title={`${Intl.formatMessage({
-          id: 'pages.productTimeTracking.subscribeBannerTitle'
+          id: 'pages.productTimeTracking.subscribeBannerTitle',
         })} ${Intl.locale === 'en' && 'Start growing with Atto now.'}`}
         placeholder={Intl.formatMessage({ id: 'pages.miscellaneous.typeYourEmail' })}
         checkItemOne={Intl.formatMessage({ id: 'pages.miscellaneous.noCreditCard' })}
@@ -216,7 +216,7 @@ const BlogTemplate = ({ id }) => {
 };
 
 BlogTemplate.propTypes = {
-  location: PropTypes.shape()
+  id: PropTypes.string,
 };
 
 export default BlogTemplate;
