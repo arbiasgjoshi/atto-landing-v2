@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Router, Redirect } from '@reach/router';
 import BlogTemplate from './blog/id';
@@ -6,6 +6,16 @@ import Blog from './blog';
 import HomePage from './home';
 
 const App = () => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
+
   const Article = ({ id }) => <BlogTemplate id={id} />;
   return (
     <Router>

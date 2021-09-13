@@ -46,6 +46,16 @@ const Blog = () => {
 
   const [loader, setLoader] = useState(true);
 
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
+
   const fetcher = () =>
     fetch(
       `${apiUrl}/api/v2/blog` +
