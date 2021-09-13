@@ -52,10 +52,6 @@ const Blog = () => {
     setHasMounted(true);
   }, []);
 
-  if (!hasMounted) {
-    return null;
-  }
-
   const fetcher = () =>
     fetch(
       `${apiUrl}/api/v2/blog` +
@@ -130,6 +126,10 @@ const Blog = () => {
       }, 500);
     }
   }, [data, error]);
+
+  if (!hasMounted) {
+    return null;
+  }
 
   return (
     <div className={`${container} ${blogStyle} ${loader && !articles ? loadingContent : null}`}>

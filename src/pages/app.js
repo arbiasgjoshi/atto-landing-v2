@@ -17,6 +17,7 @@ const App = () => {
   }
 
   const Article = ({ id }) => <BlogTemplate id={id} />;
+
   return (
     <Router>
       <HomePage path="/" />
