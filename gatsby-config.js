@@ -41,6 +41,14 @@ module.exports = {
       },
       __key: 'images',
     },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'pages',
+    //     path: `${__dirname}/src/pages/`,
+    //   },
+    //   __key: 'pages',
+    // },
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
@@ -133,9 +141,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/app/*`] },
+      resolve: `gatsby-plugin-force-trailing-slashes`,
+      options: {
+        excludedPaths: [`/404.html`, `/blog/*`],
+      },
     },
-    // 'gatsby-plugin-webpack-bundle-analyser-v2',
   ],
 };

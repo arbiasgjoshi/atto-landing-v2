@@ -19,7 +19,7 @@ const App = () => {
   return (
     <Router>
       <HomePage path="/" />
-      <Blog path="/blog" />
+      <Blog path="/blog">{/* <BlogTemplate path=":id" />  */}</Blog>
       <Article path="/blog/:id" />
 
       <Redirect
