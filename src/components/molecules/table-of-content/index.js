@@ -33,9 +33,6 @@ const TableOfContent = ({ toggleModal, slug, title, description }) => {
     const newListItems = [];
 
     Array.from(el).forEach((item) => {
-      console.log();
-      // if (item.nodeType === item.TEXT_NODE) {
-      // }
       if (item.innerText) {
         newListItems.push(item.innerText);
       }
@@ -44,7 +41,7 @@ const TableOfContent = ({ toggleModal, slug, title, description }) => {
     setList(newListItems);
   };
   useEffect(() => {
-    setTimeout(() => renderList(), 1000);
+    setTimeout(() => renderList(), 100);
   }, []);
 
   const jumpToHeader = (val) => {

@@ -15,9 +15,7 @@ const App = () => {
   if (!hasMounted) {
     return null;
   }
-
   const Article = ({ id }) => <BlogTemplate id={id} />;
-
   return (
     <Router>
       <HomePage path="/" />

@@ -21,8 +21,9 @@ import {
   blogStyle,
   loadingContent,
   loaderWrap,
+  imageLoader,
   buttonList,
-  featurdArticle,
+  featuredArticle,
   paginationWrapper,
   pagination,
   disabledPagination,
@@ -153,13 +154,23 @@ const Blog = () => {
           ))}
       </div>
       {featured && (
-        <Link to={`/blog/${featured?.slug}`} className={featurdArticle}>
-          <img src={featured?.cover_image} width={1140} height={450} alt={featured?.title} />
-          <Title
-            maxWidth={780}
-            smallTitle={`Published at ${featured?.date}`}
-            title={featured?.title}
-          />
+        <Link to={`/blog/${featured?.slug}`} className={featuredArticle}>
+          {data ? (
+            <>
+              <img src={featured?.cover_image} width={1140} height={450} alt={featured?.title} />
+              <Title
+                maxWidth={780}
+                smallTitle={`Published at ${featured?.date}`}
+                title={featured?.title}
+              />
+            </>
+          ) : (
+            <>
+              <div className={imageLoader}>
+                <Loader type="ThreeDots" color="#00b9cb" height={80} width={80} timeout={2000} />
+              </div>
+            </>
+          )}
         </Link>
       )}
       <Divider className="style4" />

@@ -25,6 +25,13 @@
     z-index: 11;
     @include flex-align(center, center);
   }
+
+  .imageLoader {
+    height: 63rem;
+    width: 100%;
+    // margin-bottom: 12rem;
+    @include flex-align(center, center);
+  }
 }
 
 .buttonList {
@@ -91,7 +98,8 @@
   }
 }
 
-.featurdArticle {
+.featuredArticle {
+  width: 100%;
   &:hover {
     > div {
       h2 {

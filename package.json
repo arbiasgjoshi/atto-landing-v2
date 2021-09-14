@@ -59,6 +59,7 @@
     "react-loader-spinner": "^4.0.0",
     "react-player": "^2.9.0",
     "react-responsive-carousel": "^3.2.18",
+    "react-router": "^5.2.1",
     "react-share": "^4.4.0",
     "react-slick": "^0.28.1",
     "react-tabbordion": "^1.0.6",

@@ -23,6 +23,7 @@ import TableOfContent from '@components/molecules/table-of-content';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { apiUrl, parseDate } from '@helpers';
+import { useParams } from 'react-router';
 import { container } from '@styles/main.module.scss';
 import {
   blogTemplateContainer,
@@ -44,6 +45,8 @@ const BlogTemplate = ({ id }) => {
   const Intl = useIntl();
 
   const [hasMounted, setHasMounted] = useState(false);
+
+  // const { id } = useParams();
 
   useEffect(() => {
     setHasMounted(true);
@@ -86,7 +89,7 @@ const BlogTemplate = ({ id }) => {
     }
   };
 
-  console.log('_____________ WE ARE ENTERING THE BLOG POST - BUT REHYDRATION ________');
+  console.log('_____________ WE ARE ENTERING THE BLOG POST - BUT REHYDRATION ________', id);
 
   const fetcher = () => fetch(`${apiUrl}/api/v2/blog/${id}`).then((res) => res.json());
   const { data, error } = useSWR(['/blog-article', id], fetcher);
