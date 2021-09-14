@@ -27,6 +27,10 @@ const App = () => {
         to="https://play.google.com/store/apps/details?id=tech.zetta.atto"
       />
       <Redirect
+        from="/quickbooks-help"
+        to="https://help.attotime.com/article/86-how-to-integrate-to-quickbooks-online"
+      />
+      <Redirect
         from="/download/ios"
         to="https://itunes.apple.com/us/app/atto-employee-time-location/id1132847984?ls=1&mt=8"
       />
