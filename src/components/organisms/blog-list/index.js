@@ -7,14 +7,12 @@ import Pagination from './pagination';
 
 import { blogListWrapper } from './blog-list.module.scss';
 
-const BlogList = ({ list }) => {
-  return (
-    <div className={blogListWrapper}>
-      <List list={list} />
-      <Divider className="style4" />
-    </div>
-  );
-};
+const BlogList = ({ list }) => (
+  <div className={blogListWrapper}>
+    <List list={list} />
+    <Divider className="style4" />
+  </div>
+);
 
 BlogList.propTypes = {
   list: PropTypes.arrayOf({}),

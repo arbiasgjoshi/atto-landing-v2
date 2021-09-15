@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import HeaderComponent from '@components/molecules/header';
 import Seo from '@components/molecules/seo';
 import useSWR from 'swr';
-import { Link } from '@reach/router';
+import { Link } from 'gatsby-plugin-react-intl';
 
 import { paginationList, apiUrl } from '@helpers';
 import FooterComponent from '@components/molecules/footer';
@@ -21,8 +21,9 @@ import {
   blogStyle,
   loadingContent,
   loaderWrap,
+  imageLoader,
   buttonList,
-  featurdArticle,
+  featuredArticle,
   paginationWrapper,
   pagination,
   disabledPagination,
@@ -45,6 +46,12 @@ const Blog = () => {
   const [pageIndex, setPageIndex] = useState(1);
 
   const [loader, setLoader] = useState(true);
+
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   const fetcher = () =>
     fetch(
@@ -121,6 +128,10 @@ const Blog = () => {
     }
   }, [data, error]);
 
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
     <div className={`${container} ${blogStyle} ${loader && !articles ? loadingContent : null}`}>
       <Seo title={seoTitle} />
@@ -143,13 +154,23 @@ const Blog = () => {
           ))}
       </div>
       {featured && (
-        <Link to={`/blog-template?slug=${featured?.slug}`} className={featurdArticle}>
-          <img src={featured?.cover_image} width={1140} height={450} alt={featured?.title} />
-          <Title
-            maxWidth={780}
-            smallTitle={`Published at ${featured?.date}`}
-            title={featured?.title}
-          />
+        <Link to={`/blog/${featured?.slug}`} className={featuredArticle}>
+          {data ? (
+            <>
+              <img src={featured?.cover_image} width={1140} height={450} alt={featured?.title} />
+              <Title
+                maxWidth={780}
+                smallTitle={`Published at ${featured?.date}`}
+                title={featured?.title}
+              />
+            </>
+          ) : (
+            <>
+              <div className={imageLoader}>
+                <Loader type="ThreeDots" color="#00b9cb" height={80} width={80} timeout={2000} />
+              </div>
+            </>
+          )}
         </Link>
       )}
       <Divider className="style4" />

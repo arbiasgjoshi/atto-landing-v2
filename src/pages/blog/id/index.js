@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
 import { useIntl, Link } from 'gatsby-plugin-react-intl';
 import loadable from '@loadable/component';
-import useSWR from 'swr';
+import useSWR, { cache } from 'swr';
 import Seo from '@components/molecules/seo';
 
 // import { StaticImage } from 'gatsby-plugin-image';
@@ -23,14 +22,16 @@ import TableOfContent from '@components/molecules/table-of-content';
 // import Footer from '@components/molecules/footer';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import { apiUrl, parseDate } from '@helpers';
+import { apiUrl } from '@helpers';
 import { container } from '@styles/main.module.scss';
 import {
   blogTemplateContainer,
   titleWrapper,
   goBackContainer,
   iconWrapper,
+  articleNotFound,
   loadingArticle,
+  shrinkLoader,
   relatedArticles,
   relatedWrapper,
   featuredImage,
@@ -41,14 +42,25 @@ const Modal = loadable(() => import('@components/molecules/modal'));
 const FooterComponent = loadable(() => import('@components/molecules/footer'));
 const SubscribeBanner = loadable(() => import('@components/molecules/subscribe-banner'));
 
-const BlogTemplate = ({ location }) => {
+const BlogTemplate = ({ id }) => {
   const Intl = useIntl();
+
+  const [hasMounted, setHasMounted] = useState(false);
+  const [notFound, setNotFound] = useState(false);
+
+  // const { id } = useParams();
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   const [showDialog, setShowDialog] = useState(false);
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
   const [values, setValues] = useState(null);
-  // const [deletedInvite, setDeleted] = useState(false);
+  const [slug, setSlug] = useState('');
+  const [article, setArticle] = useState([]);
+  const [seo, setSeo] = useState([]);
 
   const toggleDeleteInvite = (data) => {
     const requestOptions = {
@@ -79,38 +91,47 @@ const BlogTemplate = ({ location }) => {
     }
   };
 
-  const [article, setArticle] = useState([]);
-  const [seo, setSeo] = useState([]);
-  const [slug, setSlug] = useState(false);
+  const fetcher = () => fetch(`${apiUrl}/api/v2/blog/${id}`).then((res) => res.json());
+  // .catch((err) => {
+  //   console.log('____we are finding the error____', err);
+  //   setNotFound(true);
+  // });
 
-  const fetcher = () =>
-    fetch(`https://staging.attotime.com/api/v2/blog/${slug}`).then((res) => res.json());
-  const { data, error } = useSWR(slug ? '/blog-article' : null, fetcher);
+  const { data, error } = useSWR(['/blog-article', id], fetcher);
 
   useEffect(() => {
-    if (location.search) {
-      setSlug(location.search.replaceAll('?slug=', ''));
+    if (id) {
+      setSlug(id);
     } else {
       setSlug(false);
     }
   }, []);
 
-  // TODO use this to confirm share check
-  // const handleClick = () => {};
-
   useEffect(() => {
-    if (data) {
+    console.log(data);
+    if (id !== slug) {
+      cache.clear();
+      setSlug(id);
+    }
+
+    if (data && !data?.message) {
       setArticle(data.article);
-      console.log(data.article);
       setSeo(data.seo);
     }
 
-    // ReactDOM.findDOMNode(this.domNode).addEventListener('click', handleClick);
+    if (data && data?.message) {
+      setNotFound(true);
+    }
+
     return () => {
-      // document.getElementsByClassName('js-btn-tag').removeEventListener('click', handleClick);
       setArticle([]);
     };
-  }, [data, error]);
+  }, [data, error, id]);
+
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
     <div className={`${blogTemplateContainer} ${container}`}>
       <Modal
@@ -122,7 +143,24 @@ const BlogTemplate = ({ location }) => {
       />
       {seo && <Seo title={seo.title} description={seo.description} seoImage={seo.image} />}
       <Header />
-      {data && article ? (
+      {notFound && (
+        <div className={articleNotFound}>
+          <h2>Article not found</h2>
+          <p>
+            The article you are trying to reach does not exist,
+            <br /> or has been deleted.
+          </p>
+          <div className={goBackContainer}>
+            <Link to="/blog">
+              <div className={iconWrapper}>
+                <Icon iconClass="arrow-left" fSize={1.6} />
+              </div>
+              <p>Go back to blog for more articles</p>
+            </Link>
+          </div>
+        </div>
+      )}
+      {data && article.length > 0 ? (
         <>
           <div className={titleWrapper}>
             <div className={goBackContainer}>
@@ -134,7 +172,9 @@ const BlogTemplate = ({ location }) => {
               <p>All posts</p>
             </div>
             <BlogTitle
-              smallTitle={`Published ${parseDate(article.published_at)}`}
+              smallTitle={`Published ${article.date} ${
+                article.tags && ` in ${article.tags[0].name}`
+              }`}
               // smallTitle="Published March 18, 2021 in Productivity   ·   2 min read"
               title={article.title}
               // author="By Nick Blackeye"
@@ -149,7 +189,7 @@ const BlogTemplate = ({ location }) => {
               <TableOfContent
                 title={article.title}
                 description={seo.description}
-                slug={slug}
+                slug={id}
                 seo={seo}
                 toggleModal={() => openModal()}
               />
@@ -158,7 +198,7 @@ const BlogTemplate = ({ location }) => {
               <Content
                 title={article.title}
                 description={seo.description}
-                slug={slug}
+                slug={id}
                 content={article.body}
               />
             )}
@@ -168,25 +208,29 @@ const BlogTemplate = ({ location }) => {
             <h3>Related Articles</h3>
             <div className={relatedWrapper}>
               {data &&
-                data.article.related_articles.map((item, idx) => (
-                  <BlogCard
-                    title={item.title}
-                    description={item.description}
-                    key={idx}
-                    date={item.date}
-                    slug={slug}
-                    smallTitle={item.tag}
-                    image={item.cover_image}
-                  />
+                data.article &&
+                data.article?.related_articles.map((item, idx) => (
+                  <>
+                    <BlogCard
+                      title={item.title}
+                      description={item.description}
+                      key={idx}
+                      date={item.date}
+                      slug={item.slug}
+                      smallTitle={item.tag}
+                      image={item.cover_image}
+                    />
+                  </>
                 ))}
             </div>
           </div>
         </>
       ) : (
-        <div className={loadingArticle}>
-          <Loader type="ThreeDots" color="#00b9cb" height={80} width={80} timeout={3000} />
+        <div className={`${loadingArticle} ${notFound && shrinkLoader}`}>
+          <Loader type="ThreeDots" color="#00b9cb" height={80} width={80} timeout={250} />
         </div>
       )}
+
       <Divider className="style5" />
       <SubscribeBanner
         title={`${Intl.formatMessage({
@@ -203,7 +247,7 @@ const BlogTemplate = ({ location }) => {
 };
 
 BlogTemplate.propTypes = {
-  location: PropTypes.shape(),
+  id: PropTypes.string,
 };
 
 export default BlogTemplate;
