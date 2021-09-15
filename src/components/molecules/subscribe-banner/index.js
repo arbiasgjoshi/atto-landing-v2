@@ -39,10 +39,10 @@ const SubscribeBanner = ({
     };
     fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
-      .then((data) => {
+      .then((dd) => {
         closeModal();
         setDeleted(true);
-        setValues(data);
+        setValues(dd);
         setTimeout(() => openModal(), 2000);
       });
   };

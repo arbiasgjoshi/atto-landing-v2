@@ -118,5 +118,15 @@
         }
       }
     }
+
+    @include max(mobile) {
+      > div {
+        header {
+          h5 {
+            margin-left: 0;
+          }
+        }
+      }
+    }
   }
 }

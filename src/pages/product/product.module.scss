@@ -86,7 +86,8 @@
       grid-auto-flow: column;
     }
 
-    > div {
+    > div,
+    a {
       @include max(tablet) {
         margin-bottom: 1rem;
       }

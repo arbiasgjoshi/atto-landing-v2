@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useIntl, navigate } from 'gatsby-plugin-react-intl';
-import { motion } from 'framer-motion';
 import useScroll from 'react-use-scroll';
 
 import Button from '@components/atoms/button';

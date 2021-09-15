@@ -41,6 +41,14 @@ module.exports = {
       },
       __key: 'images',
     },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'pages',
+    //     path: `${__dirname}/src/pages/`,
+    //   },
+    //   __key: 'pages',
+    // },
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
@@ -61,6 +69,7 @@ module.exports = {
       options: {
         aliases: {
           '@components': 'src/components',
+          '@pages': 'src/components',
           '@images': 'src/images',
           '@data': 'src/data',
           '@api': 'src/api',
@@ -76,6 +85,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: 'GTM-NV2DTP3',
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: 'gatsby' },
       },
     },
     `gatsby-plugin-preload-fonts`,
@@ -119,16 +130,23 @@ module.exports = {
           'script-src':
             "'self' 'unsafe-inline' http: https: 'report-sample' https://beacon-v2.helpscout.net/ https://script.hotjar.com/modules.189ddfe225c89657c20d.js https://static.hotjar.com/c/hotjar-2526807.js https://www.googletagmanager.com/gtm.js;",
           'style-src': "'self' http: https: 'unsafe-inline' https://hello.myfonts.net;",
-          'img-src': "'self' data: https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.google.com;",
+          'img-src':
+            "'self' data: https://atto-production.s3.us-west-2.amazonaws.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.google.com;",
           'default-src': "'self' http: https:",
           'frame-src': "'self' https://vars.hotjar.com;",
           'font-src': "'self' data: https://hello.myfonts.net;",
           'connect-src':
-            "'self' https://vc.hotjar.io https://ws16.hotjar.com https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net  https://stats.g.doubleclick.net https://staging.attotime.com https://www.google-analytics.com http://*.hotjar.com:* https://*.hotjar.com:* https://vc.hotjar.io:* https://surveystats.hotjar.io wss://*.hotjar.com;",
+            "'self' https://hits-i.iubenda.com https://app.attotime.com https://vc.hotjar.io https://ws16.hotjar.com https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net  https://stats.g.doubleclick.net https://staging.attotime.com https://www.google-analytics.com http://*.hotjar.com:* https://*.hotjar.com:* https://vc.hotjar.io:* https://surveystats.hotjar.io wss://*.hotjar.com;",
           // you can add your directives or override defaults
+          //
         },
       },
     },
-    // 'gatsby-plugin-webpack-bundle-analyser-v2',
+    {
+      resolve: `gatsby-plugin-force-trailing-slashes`,
+      options: {
+        excludedPaths: [`/404.html`, `/blog/*`],
+      },
+    },
   ],
 };

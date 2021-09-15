@@ -6,10 +6,9 @@
     padding-left: 0;
   }
 
-  @media only screen and (max-device-width: 1024px) and (orientation:landscape) {
+  @media only screen and (max-device-width: 1024px) and (orientation: landscape) {
     margin: 0 1.5rem;
   }
-
 }
 
 .featuredImage {
@@ -47,6 +46,34 @@
   .loadingArticle {
     min-height: 50vh;
     @include flex-align(center, center);
+
+    &.shrinkLoader {
+      min-height: 0;
+    }
+  }
+
+  .articleNotFound {
+    min-height: 50vh;
+    padding-left: 4rem;
+    flex-direction: column;
+    @include flex-align(flex-start, center);
+
+    h2 {
+      font-family: 'Charter BT W01 Roman';
+      margin-bottom: 2rem;
+    }
+
+    p {
+      line-height: 4rem;
+    }
+
+    .goBackContainer {
+      margin-top: 3rem;
+      a {
+        @include flex-direction(row);
+        align-items: center;
+      }
+    }
   }
 
   .contentWrapper {
@@ -57,7 +84,7 @@
       @include flex-direction(column);
     }
 
-    @media only screen and (max-device-width: 1024px) and (orientation:landscape) {
+    @media only screen and (max-device-width: 1024px) and (orientation: landscape) {
       margin: 4.8rem 1.5rem 0;
     }
   }
@@ -87,7 +114,7 @@
       grid-template-columns: repeat(1, 1fr);
       row-gap: 4.5rem;
     }
-  
+
     @include max(tablet) {
       margin: 0;
       grid-template-columns: revert;

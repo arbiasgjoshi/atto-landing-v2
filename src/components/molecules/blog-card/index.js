@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import PropTypes from 'prop-types';
+
+import { Link } from 'gatsby-plugin-react-intl';
 import {
   cardWrapper,
   smallTitleWrapper,
@@ -9,7 +11,7 @@ import {
 } from './blog-card.module.scss';
 
 const BlogCard = ({ image, slug, smallTitle, date, title, description }) => (
-  <Link to={`/blog-template?slug=${slug}`} className={cardWrapper}>
+  <Link to={`/blog/${slug}`} className={cardWrapper}>
     <div className={smallTitleWrapper}>
       <div className={horizontalLine} />
       <p>{`${date} · ${smallTitle}`}</p>
@@ -24,5 +26,14 @@ const BlogCard = ({ image, slug, smallTitle, date, title, description }) => (
     </div>
   </Link>
 );
+
+BlogCard.propTypes = {
+  image: PropTypes.string,
+  slug: PropTypes.string,
+  smallTitle: PropTypes.string,
+  date: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+};
 
 export default BlogCard;

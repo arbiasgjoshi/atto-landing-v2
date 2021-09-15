@@ -1,7 +1,9 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 
-// styles
+// const browser = typeof window !== 'undefined' && window;
+
+// styles added here :)
 const pageStyles = {
   color: '#232129',
   padding: '96px',
@@ -24,29 +26,40 @@ const codeStyles = {
   borderRadius: 4,
 };
 
-// markup
-const NotFoundPage = () => (
-  <main style={pageStyles}>
-    <title>Not found</title>
-    <h1 style={headingStyles}>Page not found</h1>
-    <p style={paragraphStyles}>
-      Sorry{' '}
-      <span role="img" aria-label="Pensive emoji">
-        😔
-      </span>{' '}
-      we couldn’t find what you were looking for.
-      <br />
-      {process.env.NODE_ENV === 'development' ? (
-        <>
-          <br />
-          Try creating a page in <code style={codeStyles}>src/pages/</code>.
-          <br />
-        </>
-      ) : null}
-      <br />
-      <Link to="/">Go home</Link>.
-    </p>
-  </main>
-);
+const NotFoundPage = () => {
+  const [isMount, setMount] = useState(false);
+
+  useEffect(() => {
+    setMount(true);
+  }, []);
+
+  if (!isMount) {
+    return null;
+  }
+
+  return (
+    <main style={pageStyles}>
+      <title>Not found</title>
+      <h1 style={headingStyles}>Page not found</h1>
+      <p style={paragraphStyles}>
+        Sorry{' '}
+        <span role="img" aria-label="Pensive emoji">
+          😔
+        </span>{' '}
+        we couldn’t find what you were looking for.
+        <br />
+        {process.env.NODE_ENV === 'development' ? (
+          <>
+            <br />
+            Try creating a page in <code style={codeStyles}>src/pages/</code>.
+            <br />
+          </>
+        ) : null}
+        <br />
+        <Link to="/">Go home</Link>.
+      </p>
+    </main>
+  );
+};
 
 export default NotFoundPage;
