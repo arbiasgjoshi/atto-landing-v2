@@ -22,15 +22,16 @@ import TableOfContent from '@components/molecules/table-of-content';
 // import Footer from '@components/molecules/footer';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import { apiUrl, parseDate } from '@helpers';
-import { useParams } from 'react-router';
+import { apiUrl } from '@helpers';
 import { container } from '@styles/main.module.scss';
 import {
   blogTemplateContainer,
   titleWrapper,
   goBackContainer,
   iconWrapper,
+  articleNotFound,
   loadingArticle,
+  shrinkLoader,
   relatedArticles,
   relatedWrapper,
   featuredImage,
@@ -45,6 +46,7 @@ const BlogTemplate = ({ id }) => {
   const Intl = useIntl();
 
   const [hasMounted, setHasMounted] = useState(false);
+  const [notFound, setNotFound] = useState(false);
 
   // const { id } = useParams();
 
@@ -89,9 +91,12 @@ const BlogTemplate = ({ id }) => {
     }
   };
 
-  console.log('_____________ WE ARE ENTERING THE BLOG POST - BUT REHYDRATION ________', id);
-
   const fetcher = () => fetch(`${apiUrl}/api/v2/blog/${id}`).then((res) => res.json());
+  // .catch((err) => {
+  //   console.log('____we are finding the error____', err);
+  //   setNotFound(true);
+  // });
+
   const { data, error } = useSWR(['/blog-article', id], fetcher);
 
   useEffect(() => {
@@ -103,14 +108,19 @@ const BlogTemplate = ({ id }) => {
   }, []);
 
   useEffect(() => {
+    console.log(data);
     if (id !== slug) {
       cache.clear();
       setSlug(id);
     }
 
-    if (data) {
+    if (data && !data?.message) {
       setArticle(data.article);
       setSeo(data.seo);
+    }
+
+    if (data && data?.message) {
+      setNotFound(true);
     }
 
     return () => {
@@ -133,7 +143,24 @@ const BlogTemplate = ({ id }) => {
       />
       {seo && <Seo title={seo.title} description={seo.description} seoImage={seo.image} />}
       <Header />
-      {data && article ? (
+      {notFound && (
+        <div className={articleNotFound}>
+          <h2>Article not found</h2>
+          <p>
+            The article you are trying to reach does not exist,
+            <br /> or has been deleted.
+          </p>
+          <div className={goBackContainer}>
+            <Link to="/blog">
+              <div className={iconWrapper}>
+                <Icon iconClass="arrow-left" fSize={1.6} />
+              </div>
+              <p>Go back to blog for more articles</p>
+            </Link>
+          </div>
+        </div>
+      )}
+      {data && article.length > 0 ? (
         <>
           <div className={titleWrapper}>
             <div className={goBackContainer}>
@@ -181,7 +208,8 @@ const BlogTemplate = ({ id }) => {
             <h3>Related Articles</h3>
             <div className={relatedWrapper}>
               {data &&
-                data.article.related_articles.map((item, idx) => (
+                data.article &&
+                data.article?.related_articles.map((item, idx) => (
                   <>
                     <BlogCard
                       title={item.title}
@@ -198,10 +226,11 @@ const BlogTemplate = ({ id }) => {
           </div>
         </>
       ) : (
-        <div className={loadingArticle}>
-          <Loader type="ThreeDots" color="#00b9cb" height={80} width={80} timeout={3000} />
+        <div className={`${loadingArticle} ${notFound && shrinkLoader}`}>
+          <Loader type="ThreeDots" color="#00b9cb" height={80} width={80} timeout={250} />
         </div>
       )}
+
       <Divider className="style5" />
       <SubscribeBanner
         title={`${Intl.formatMessage({

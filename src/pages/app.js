@@ -4,22 +4,24 @@ import { Router, Redirect } from '@reach/router';
 import BlogTemplate from './blog/id';
 import Blog from './blog';
 import HomePage from './home';
+import NotFoundPage from './404';
 
 const App = () => {
-  const [hasMounted, setHasMounted] = useState(false);
+  // const [hasMounted, setHasMounted] = useState(false);
 
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setHasMounted(true);
+  // }, []);
 
-  if (!hasMounted) {
-    return null;
-  }
+  // if (!hasMounted) {
+  //   return null;
+  // }
   const Article = ({ id }) => <BlogTemplate id={id} />;
   return (
     <Router>
+      <NotFoundPage default />
       <HomePage path="/" />
-      <Blog path="/blog">{/* <BlogTemplate path=":id" />  */}</Blog>
+      <Blog path="/blog" />
       <Article path="/blog/:id" />
 
       <Redirect
