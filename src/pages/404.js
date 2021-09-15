@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 // const browser = typeof window !== 'undefined' && window;
 
-// styles
+// styles added here :)
 const pageStyles = {
   color: '#232129',
   padding: '96px',
