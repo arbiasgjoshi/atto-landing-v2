@@ -82,7 +82,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-tagmanager-delayed`,
+      resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: 'GTM-NV2DTP3',
         includeInDevelopment: false,
