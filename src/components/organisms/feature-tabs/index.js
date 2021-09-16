@@ -129,7 +129,9 @@ const FeatureTabs = () => {
           <ProductCard
             title={Intl.formatMessage({ id: 'pages.homepage.timeTrackingTitle' })}
             description={Intl.formatMessage({ id: 'pages.homepage.timeTrackingDescription' })}
-            category={Intl.formatMessage({ id: 'header.menu.timeTrackingLabel' })}
+            category={Intl.formatMessage({
+              id: 'header.menu.timeTrackingLabel',
+            })}
             image={imageLocaleOne(Intl.locale)}
             isSwapped
             style="homepage"

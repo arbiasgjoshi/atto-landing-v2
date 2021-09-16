@@ -227,6 +227,8 @@ const ProductCard = ({
     }
   };
 
+  const lowerCaseEntry = (val) => val.toString().toLowerCase();
+
   return (
     <div className={`${styles.container} ${isSwapped && styles.swapped} ${styles[style]}`}>
       <div className={styles.firstWrapper}>
@@ -258,7 +260,7 @@ const ProductCard = ({
             <Link to={path}>
               {Intl.formatMessage({ id: 'pages.miscellaneous.learnMore' })} {` `}
               {Intl.formatMessage({ id: 'pages.miscellaneous.about' })} {` `}
-              {category}
+              {lowerCaseEntry(category)}
             </Link>
           </h5>
           <span className={styles.rightArrow}>
