@@ -277,6 +277,7 @@ SubscribeForm.propTypes = {
   placeholder: PropTypes.string,
   onSuccessRes: PropTypes.func,
   onError: PropTypes.func,
+  sucessfullyDeleted: PropTypes.bool,
 };
 
 export default SubscribeForm;
