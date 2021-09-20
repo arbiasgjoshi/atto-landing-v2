@@ -108,8 +108,6 @@ const BlogTemplate = ({ id }) => {
   }, []);
 
   useEffect(() => {
-    debugger;
-    console.log(data);
     if (id !== slug) {
       cache.clear();
       setSlug(id);
