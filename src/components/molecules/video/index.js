@@ -12,7 +12,7 @@ import {
   videoContainer,
   videoBackground,
   videoPlaceholder,
-  rightAligned,
+  // rightAligned,
   leftAligned,
   maskOverlay,
   playIcon,
@@ -123,6 +123,7 @@ const Video = ({ placeholder, videoUrl }) => {
         >
           <StaticImage
             src="../../../images/grey-copy@2x.png"
+            alt=""
             className={`${videoBackground} ${leftAligned}`}
             quality={98}
             placeholder="blurred"
@@ -130,6 +131,7 @@ const Video = ({ placeholder, videoUrl }) => {
           {switchPlaceholder(placeholder)}
           <StaticImage
             src="../../../images/grey-copy@2x.png"
+            alt=""
             className={`${videoBackground} ${leftAligned}`}
             quality={98}
             placeholder="blurred"

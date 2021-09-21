@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-
+import React from 'react';
+import Helmet from 'react-helmet';
 import { Router, Redirect } from '@reach/router';
 import BlogTemplate from './blog/id';
 import Blog from './blog';
@@ -17,6 +17,7 @@ const App = () => {
   //   return null;
   // }
   const Article = ({ id }) => <BlogTemplate id={id} />;
+
   return (
     <Router>
       <NotFoundPage default />

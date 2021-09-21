@@ -15,6 +15,7 @@ module.exports = {
     DEV_SSR: false,
   },
   plugins: [
+    `gatsby-plugin-preact`,
     {
       resolve: 'gatsby-plugin-sass',
       options: {
@@ -81,14 +82,16 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-tagmanager`,
-    //   options: {
-    //     id: 'GTM-NV2DTP3',
-    //     // includeInDevelopment: false,
-    //     // defaultDataLayer: { platform: 'gatsby' },
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        analyzerMode: 'server',
+        analyzerPort: '8888',
+        devMode: true,
+        // analyzerHost: 'http://localhost:8000',
+        defaultSizes: 'gzip',
+      },
+    },
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-meta-redirect`,
     {

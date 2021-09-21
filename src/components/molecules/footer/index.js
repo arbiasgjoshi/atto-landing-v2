@@ -194,6 +194,8 @@ const Footer = () => {
     },
   ];
 
+  const CookieScript = () => {};
+
   return (
     <>
       <footer className={pageFooter}>
@@ -321,11 +323,10 @@ const Footer = () => {
             `}
           </script>
         )}
-
         <script type="text/javascript">
           {`
             document.addEventListener('DOMContentLoaded', () => {
-              setTimeout(initGTM, 3500); 
+              setTimeout(initGTM, 4000); 
             });
             document.addEventListener('scroll', initGTMOnEvent);
             document.addEventListener('mousemove', initGTMOnEvent);
@@ -341,7 +342,7 @@ const Footer = () => {
                 return false;
               }
               window.gtmDidInit = true;
-              console.log('I am loading the GOOGLETAG MANAGER');
+              // alert('I am loading the GOOGLETAG MANAGER');  
               const script = document.createElement('script');
               script.type = 'text/javascript';
               script.async = true;
@@ -352,15 +353,15 @@ const Footer = () => {
             }
           `}
         </script>
-
-        <script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js" async />
-        <script
-          type="text/javascript"
-          src="//cdn.iubenda.com/cs/iubenda_cs.js"
-          charSet="UTF-8"
-          async
-        />
       </Helmet>
+
+      <script
+        type="text/javascript"
+        src="//cdn.iubenda.com/cs/iubenda_cs.js"
+        charSet="UTF-8"
+        async
+      />
+      <script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js" async />
     </>
   );
 };
