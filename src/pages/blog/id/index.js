@@ -59,8 +59,8 @@ const BlogTemplate = ({ id }) => {
   const closeModal = () => setShowDialog(false);
   const [values, setValues] = useState(null);
   const [slug, setSlug] = useState('');
-  const [article, setArticle] = useState([]);
-  const [seo, setSeo] = useState([]);
+  const [article, setArticle] = useState();
+  const [seo, setSeo] = useState();
 
   const toggleDeleteInvite = (data) => {
     const requestOptions = {
@@ -108,7 +108,6 @@ const BlogTemplate = ({ id }) => {
   }, []);
 
   useEffect(() => {
-    console.log(data);
     if (id !== slug) {
       cache.clear();
       setSlug(id);
@@ -124,7 +123,7 @@ const BlogTemplate = ({ id }) => {
     }
 
     return () => {
-      setArticle([]);
+      setArticle();
     };
   }, [data, error, id]);
 
@@ -160,7 +159,7 @@ const BlogTemplate = ({ id }) => {
           </div>
         </div>
       )}
-      {data && article.length > 0 ? (
+      {data && article ? (
         <>
           <div className={titleWrapper}>
             <div className={goBackContainer}>
