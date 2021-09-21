@@ -325,7 +325,7 @@ const Footer = () => {
         <script type="text/javascript">
           {`
             document.addEventListener('DOMContentLoaded', () => {
-              setTimeout(initGTM, 2500);
+              setTimeout(initGTM, 3500); 
             });
             document.addEventListener('scroll', initGTMOnEvent);
             document.addEventListener('mousemove', initGTMOnEvent);
