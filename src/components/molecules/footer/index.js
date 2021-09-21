@@ -321,14 +321,46 @@ const Footer = () => {
             `}
           </script>
         )}
+
+        <script type="text/javascript">
+          {`
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(initGTM, 2500);
+            });
+            document.addEventListener('scroll', initGTMOnEvent);
+            document.addEventListener('mousemove', initGTMOnEvent);
+            document.addEventListener('touchstart', initGTMOnEvent);
+            
+            function initGTMOnEvent (event) {
+              initGTM();
+              event.currentTarget.removeEventListener(event.type, initGTMOnEvent);
+            }
+            
+            function initGTM () {
+              if (window.gtmDidInit) {
+                return false;
+              }
+              window.gtmDidInit = true;
+              console.log('I am loading the GOOGLETAG MANAGER');
+              const script = document.createElement('script');
+              script.type = 'text/javascript';
+              script.async = true;
+              script.onload = () => { dataLayer.push({ event: 'gtm.js', 'gtm.start': (new Date()).getTime(), 'gtm.uniqueEventId': 0 }); }
+              script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NV2DTP3';
+            
+              document.head.appendChild(script);
+            }
+          `}
+        </script>
+
+        <script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js" async />
+        <script
+          type="text/javascript"
+          src="//cdn.iubenda.com/cs/iubenda_cs.js"
+          charSet="UTF-8"
+          async
+        />
       </Helmet>
-      <script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js" async />
-      <script
-        type="text/javascript"
-        src="//cdn.iubenda.com/cs/iubenda_cs.js"
-        charSet="UTF-8"
-        async
-      />
     </>
   );
 };

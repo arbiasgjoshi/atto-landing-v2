@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby-plugin-react-intl';
+import { Link, useIntl } from 'gatsby-plugin-react-intl';
 
 import Icon from '@components/atoms/icon';
 import Title from '@components/molecules/title';
@@ -9,7 +9,6 @@ import CheckCard from '@components/molecules/check-card';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import arrowIcon from '@images/arrowForward@2x.png';
-import { useIntl } from 'gatsby-plugin-react-intl';
 
 import * as styles from './product-card.module.scss';
 
@@ -21,11 +20,12 @@ const ProductCard = ({
   image,
   isSwapped,
   insideTitle = false,
+  category,
   style = '',
   imagePadding = '',
   path = '/',
-  imageWidth,
-  imageHeight,
+  // imageWidth,
+  // imageHeight,
 }) => {
   const Intl = useIntl();
 
@@ -255,7 +255,11 @@ const ProductCard = ({
             {style === 'homepage' && <Icon fSize={3} iconClass="long-arrow" />}
           </span>
           <h5>
-            <Link to={path}>{Intl.formatMessage({ id: 'pages.miscellaneous.learnMore' })}</Link>
+            <Link to={path}>
+              {Intl.formatMessage({ id: 'pages.miscellaneous.learnMore' })} {` `}
+              {Intl.formatMessage({ id: 'pages.miscellaneous.about' })} {` `}
+              <p>{category}</p>
+            </Link>
           </h5>
           <span className={styles.rightArrow}>
             {style === 'homepage' && <Icon fSize={3} iconClass="long-arrow" />}
@@ -275,12 +279,14 @@ ProductCard.propTypes = {
   productName: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
+  category: PropTypes.string,
   list: PropTypes.shape(),
   image: PropTypes.shape({}),
   path: PropTypes.string,
-  imageWidth: PropTypes.number,
-  imageHeight: PropTypes.number,
+  // imageWidth: PropTypes.number,
+  // imageHeight: PropTypes.number,
   isSwapped: PropTypes.bool,
+  insideTitle: PropTypes.bool,
   style: PropTypes.string,
   imagePadding: PropTypes.string,
 };

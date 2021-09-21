@@ -34,9 +34,9 @@
 
   .videoBackground {
     @include absolute(top 9.4rem);
-    background-image: url('@images/grey-copy@2x.png');
-    background-position: center;
-    background-size: contain;
+    // background-image: url('@images/grey-copy@2x.png');
+    // background-position: center;
+    // background-size: contain;
 
     width: 5.9rem;
     height: 30rem;

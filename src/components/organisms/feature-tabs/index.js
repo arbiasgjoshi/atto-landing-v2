@@ -129,6 +129,9 @@ const FeatureTabs = () => {
           <ProductCard
             title={Intl.formatMessage({ id: 'pages.homepage.timeTrackingTitle' })}
             description={Intl.formatMessage({ id: 'pages.homepage.timeTrackingDescription' })}
+            category={Intl.formatMessage({
+              id: 'header.menu.timeTrackingLabel',
+            })}
             image={imageLocaleOne(Intl.locale)}
             isSwapped
             style="homepage"
@@ -142,6 +145,7 @@ const FeatureTabs = () => {
           <ProductCard
             title={Intl.formatMessage({ id: 'pages.homepage.gpsTitle' })}
             description={Intl.formatMessage({ id: 'pages.homepage.gpsDescription' })}
+            category={Intl.formatMessage({ id: 'header.menu.locationTrackingLabel' })}
             image={imageLocaleTwo(Intl.locale)}
             isSwapped
             style="homepage"
@@ -154,6 +158,7 @@ const FeatureTabs = () => {
           <ProductCard
             title={Intl.formatMessage({ id: 'pages.homepage.teamActivityTitle' })}
             description={Intl.formatMessage({ id: 'pages.homepage.teamActivityDescription' })}
+            category={Intl.formatMessage({ id: 'header.menu.teamActivityTrackingLabel' })}
             image={imageLocaleThree(Intl.locale)}
             isSwapped
             style="homepage"
@@ -167,6 +172,7 @@ const FeatureTabs = () => {
           <ProductCard
             title={Intl.formatMessage({ id: 'pages.homepage.timesheetsTitle' })}
             description={Intl.formatMessage({ id: 'pages.homepage.timesheetsDescription' })}
+            category={Intl.formatMessage({ id: 'header.menu.timesheetsTrackingLabel' })}
             image={imageLocaleFour(Intl.locale)}
             isSwapped
             style="homepage"
