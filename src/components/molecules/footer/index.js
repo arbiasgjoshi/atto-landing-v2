@@ -321,14 +321,47 @@ const Footer = () => {
             `}
           </script>
         )}
+
+        <script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js" async />
+        <script
+          type="text/javascript"
+          src="//cdn.iubenda.com/cs/iubenda_cs.js"
+          charSet="UTF-8"
+          async
+        />
+
+        <script type="text/javascript">
+          {`
+            document.addEventListener('DOMContentLoaded', () => {
+              /** init gtm after 3500 seconds - this could be adjusted */
+              console.log('I am loading the GOOGLETAG MANAGER')
+              setTimeout(initGTM, 3500);
+            });
+            document.addEventListener('scroll', initGTMOnEvent);
+            document.addEventListener('mousemove', initGTMOnEvent);
+            document.addEventListener('touchstart', initGTMOnEvent);
+            
+            function initGTMOnEvent (event) {
+              initGTM();
+              event.currentTarget.removeEventListener(event.type, initGTMOnEvent); // remove the event listener that got triggered
+            }
+            
+            function initGTM () {
+              if (window.gtmDidInit) {
+                return false;
+              }
+              window.gtmDidInit = true; // flag to ensure script does not get added to DOM more than once.
+              const script = document.createElement('script');
+              script.type = 'text/javascript';
+              script.async = true;
+              script.onload = () => { dataLayer.push({ event: 'gtm.js', 'gtm.start': (new Date()).getTime(), 'gtm.uniqueEventId': 0 }); } // this part ensures PageViews is always tracked
+              script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NV2DTP3';
+            
+              document.head.appendChild(script);
+            }
+          `}
+        </script>
       </Helmet>
-      <script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js" async />
-      <script
-        type="text/javascript"
-        src="//cdn.iubenda.com/cs/iubenda_cs.js"
-        charSet="UTF-8"
-        async
-      />
     </>
   );
 };

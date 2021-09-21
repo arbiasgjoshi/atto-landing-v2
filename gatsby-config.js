@@ -81,14 +81,14 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: 'GTM-NV2DTP3',
-        // includeInDevelopment: false,
-        // defaultDataLayer: { platform: 'gatsby' },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-tagmanager`,
+    //   options: {
+    //     id: 'GTM-NV2DTP3',
+    //     // includeInDevelopment: false,
+    //     // defaultDataLayer: { platform: 'gatsby' },
+    //   },
+    // },
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-meta-redirect`,
     {
