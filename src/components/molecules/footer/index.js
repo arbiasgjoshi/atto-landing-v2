@@ -325,7 +325,6 @@ const Footer = () => {
         <script type="text/javascript">
           {`
             document.addEventListener('DOMContentLoaded', () => {
-              console.log('I am loading the GOOGLETAG MANAGER') 
               setTimeout(initGTM, 3500);
             });
             document.addEventListener('scroll', initGTMOnEvent);
@@ -342,6 +341,7 @@ const Footer = () => {
                 return false;
               }
               window.gtmDidInit = true;
+              console.log('I am loading the GOOGLETAG MANAGER');
               const script = document.createElement('script');
               script.type = 'text/javascript';
               script.async = true;
