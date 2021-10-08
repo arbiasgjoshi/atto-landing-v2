@@ -45,8 +45,9 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
             'event': 'signup',
-            'userID': data.uid
+            'userID': data.uid + '_atto'
           });
+          localStorage.setItem('uid', data.uid);
 
         } else {
           setHasError(true);

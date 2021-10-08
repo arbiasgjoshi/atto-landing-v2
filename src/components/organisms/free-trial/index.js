@@ -64,8 +64,9 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
             'event': 'signup',
-            'userID': data.uid
+            'userID': data.uid + '_atto'
           });
+          localStorage.setItem('uid', data.uid);
         } else {
           setError(true);
           if (data) {
