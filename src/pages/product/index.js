@@ -303,6 +303,9 @@ const Product = () => {
         productName={Intl.formatMessage({ id: 'header.menu.timeTrackingLabel' })}
         title={Intl.formatMessage({ id: 'pages.productOverview.mainFeatureTitleOne' })}
         description={Intl.formatMessage({ id: 'pages.productOverview.mainFeatureDescOne' })}
+        category={Intl.formatMessage({
+          id: 'header.menu.timeTrackingLabel',
+        })}
         list={productList1}
         image={imageLocaleOne(Intl.locale)}
         imagePadding="3.5rem 3.1rem"
@@ -316,6 +319,7 @@ const Product = () => {
         productName={Intl.formatMessage({ id: 'pages.productTimeTracking.bottomFeatureOneTitle' })}
         title={Intl.formatMessage({ id: 'pages.productOverview.mainFeatureTitleTwo' })}
         description={Intl.formatMessage({ id: 'pages.productOverview.mainFeatureDescTwo' })}
+        category={Intl.formatMessage({ id: 'header.menu.locationTrackingLabel' })}
         list={productList2}
         image={imageLocaleTwo(Intl.locale)}
         isSwapped
@@ -329,6 +333,7 @@ const Product = () => {
         productName={Intl.formatMessage({ id: 'header.menu.teamActivityTrackingLabel' })}
         title={Intl.formatMessage({ id: 'pages.productOverview.mainFeatureTitleThree' })}
         description={Intl.formatMessage({ id: 'pages.productOverview.mainFeatureDescThree' })}
+        category={Intl.formatMessage({ id: 'header.menu.teamActivityTrackingLabel' })}
         list={productList3}
         image={imageLocaleThree(Intl.locale)}
         imagePadding="3.5rem 1.87rem 3.5rem 1.8rem"
@@ -342,6 +347,7 @@ const Product = () => {
         productName={Intl.formatMessage({ id: 'header.menu.timesheetsTrackingLabel' })}
         title={Intl.formatMessage({ id: 'pages.productOverview.mainFeatureTitleFour' })}
         description={Intl.formatMessage({ id: 'pages.productOverview.mainFeatureDescFour' })}
+        category={Intl.formatMessage({ id: 'header.menu.timesheetsTrackingLabel' })}
         list={productList4}
         image={imageLocaleFour(Intl.locale)}
         isSwapped

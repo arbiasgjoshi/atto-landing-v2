@@ -12,7 +12,7 @@ import {
   videoContainer,
   videoBackground,
   videoPlaceholder,
-  rightAligned,
+  // rightAligned,
   leftAligned,
   maskOverlay,
   playIcon,
@@ -121,9 +121,21 @@ const Video = ({ placeholder, videoUrl }) => {
           style={{ height: '100%' }}
           className={maskOverlay}
         >
-          <span className={`${videoBackground} ${leftAligned}`} />
+          <StaticImage
+            src="../../../images/grey-copy@2x.png"
+            alt=""
+            className={`${videoBackground} ${leftAligned}`}
+            quality={98}
+            placeholder="blurred"
+          />
           {switchPlaceholder(placeholder)}
-          <span className={`${videoBackground} ${rightAligned}`} />
+          <StaticImage
+            src="../../../images/grey-copy@2x.png"
+            alt=""
+            className={`${videoBackground} ${leftAligned}`}
+            quality={98}
+            placeholder="blurred"
+          />
           <div className={playIcon} role="button" aria-label="Play Video" tabIndex="-1">
             <Icon iconClass="play" fSize={11} />
           </div>
@@ -151,7 +163,7 @@ const Video = ({ placeholder, videoUrl }) => {
             />
           )}
         </div>
-        <script src="https://player.vimeo.com/api/player.js" async defer></script>
+        <script src="https://player.vimeo.com/api/player.js" async defer />
       </div>
     </div>
   );

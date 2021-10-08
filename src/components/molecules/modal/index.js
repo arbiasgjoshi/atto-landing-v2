@@ -263,7 +263,7 @@ function ModalDialog({ showDialog, setFormValues, close, hasValues }) {
 }
 
 ModalDialog.propTypes = {
-  showDialog: PropTypes.func,
+  showDialog: PropTypes.bool,
   setFormValues: PropTypes.func,
   hasValues: PropTypes.shape(),
   close: PropTypes.func,

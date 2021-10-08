@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useIntl, navigate } from 'gatsby-plugin-react-intl';
 import useScroll from 'react-use-scroll';
-
+import { Helmet } from 'react-helmet';
 import Button from '@components/atoms/button';
 import Divider from '@components/atoms/divider';
 import Icon from '@components/atoms/icon';
@@ -353,19 +353,6 @@ const HeaderComponent = ({ headerStyle }) => {
     }
   };
 
-  const item = {};
-
-  const parent = {};
-
-  // const animationVariants = {
-  //   product: {
-  //     left: 0,
-
-  //   },
-  //   industries: {},
-  //   resources: {},
-  // };
-
   const menuClasses = (val) => {
     let menuClass = menu;
     if (val === 'resources') {
@@ -465,6 +452,9 @@ const HeaderComponent = ({ headerStyle }) => {
         hasValues={values}
         setFormValues={(formValues) => formSuccessState(formValues)}
       />
+      <Helmet>
+        <meta charSet="utf-8" />
+      </Helmet>
       <div className={container}>
         <div className={headerItems}>
           <div className={leftNav}>
@@ -482,7 +472,7 @@ const HeaderComponent = ({ headerStyle }) => {
             </Link>
             {Intl.locale === 'en' && (
               <a
-                href="#"
+                href="javascript:void(0)"
                 onClick={(e) => e.preventDefault()}
                 activeClassName={activeMenuItem}
                 onMouseEnter={() => showMenu('industries')}
@@ -491,7 +481,7 @@ const HeaderComponent = ({ headerStyle }) => {
               </a>
             )}
             <a
-              href="#"
+              href="javascript:void(0)"
               onClick={(e) => e.preventDefault()}
               activeClassName={activeMenuItem}
               onMouseEnter={() => showMenu('resources')}

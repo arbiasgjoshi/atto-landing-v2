@@ -107,9 +107,17 @@
       }
 
       h5 a {
+        // @include flex-direction(row);
         &:hover {
           color: var(--color-1);
         }
+      }
+
+      a p {
+        display: inline;
+        text-transform: lowercase;
+        font-weight: unset;
+        font-size: unset;
       }
 
       @include max(tablet) {
