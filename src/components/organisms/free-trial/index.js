@@ -60,6 +60,12 @@ const FreeTrial = ({ title, description, list = [], onSuccessRes, onToggleModal 
         if (data && !data.error) {
           setError(false);
           onSuccessRes(data);
+
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'signup',
+            'userID': data.uid
+          });
         } else {
           setError(true);
           if (data) {

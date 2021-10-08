@@ -41,6 +41,13 @@ const SubscribeForm = ({ placeholder, onSuccessRes, onError, sucessfullyDeleted 
         if (data && !data.error) {
           setHasError(false);
           onSuccessRes(data);
+
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'signup',
+            'userID': data.uid
+          });
+
         } else {
           setHasError(true);
           if (data) {
