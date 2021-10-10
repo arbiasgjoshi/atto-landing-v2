@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
 import loadable from '@loadable/component';
@@ -57,9 +57,9 @@ const HomeHealthcare = () => {
     };
     fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
-      .then((data) => {
+      .then((response) => {
         closeModal();
-        setValues(data);
+        setValues(response);
         setTimeout(() => openModal(), 2000);
       });
   };
@@ -72,6 +72,14 @@ const HomeHealthcare = () => {
       toggleDeleteInvite(val);
     }
   };
+
+  useEffect(() => {
+    if (values) {
+      setTimeout(() => {
+        setShowDialog(true);
+      }, 1500);
+    }
+  }, [values]);
 
   return (
     <>

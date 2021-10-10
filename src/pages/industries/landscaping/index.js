@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
 import loadable from '@loadable/component';
@@ -56,9 +56,9 @@ const Landscaping = () => {
     };
     fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
-      .then((data) => {
+      .then((dd) => {
         closeModal();
-        setValues(data);
+        setValues(dd);
         setTimeout(() => openModal(), 2000);
       });
   };
@@ -71,6 +71,15 @@ const Landscaping = () => {
       toggleDeleteInvite(val);
     }
   };
+
+  useEffect(() => {
+    if (values) {
+      setTimeout(() => {
+        setShowDialog(true);
+      }, 1500);
+    }
+  }, [values]);
+
   return (
     <>
       <div className={`${container} ${industryPadding}`}>

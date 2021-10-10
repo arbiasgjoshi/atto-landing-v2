@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import loadable from '@loadable/component';
 
@@ -69,6 +69,14 @@ const TeamActivity = () => {
       toggleDeleteInvite(val);
     }
   };
+
+  useEffect(() => {
+    if (values) {
+      setTimeout(() => {
+        setShowDialog(true);
+      }, 1500);
+    }
+  }, [values]);
 
   const titleList2 = [
     { title: Intl.formatMessage({ id: 'pages.productTeamActivity.checkListItemZero' }) },
@@ -206,7 +214,13 @@ const TeamActivity = () => {
 
   return (
     <div className={`${teamActivityContainer} ${container}`}>
-      <Modal close={closeModal} showDialog={showDialog} />
+      <Modal
+        close={closeModal}
+        hasValues={values}
+        showDialog={showDialog}
+        onDelete={toggleDeleteInvite}
+        setFormValues={(formValues) => formSuccessState(formValues)}
+      />
       <Seo
         title={Intl.formatMessage({ id: 'pages.productTeamActivity.metaTitle' })}
         description={Intl.formatMessage({ id: 'pages.productTeamActivity.metaDescription' })}

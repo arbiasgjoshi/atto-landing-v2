@@ -16,7 +16,7 @@ export const placeholders = [
   { id: 8 },
   { id: 9 },
   { id: 10 },
-  { id: 11 }
+  { id: 11 },
 ];
 
 // export const parseDate = (date) => {
@@ -24,22 +24,22 @@ export const placeholders = [
 //   // format(date, 'dd MMMM yyyy')
 // };
 
-export const apiUrl = 'https://app.attotime.com';
+export const apiUrl = 'https://staging.attotime.com';
 
 export const deleteInvitation = (data) => {
   const requestOptions = {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email: data.email })
+    body: JSON.stringify({ email: data.email }),
   };
   fetch(`${apiUrl}/delete-invite`, requestOptions);
 };
 
 export const parseHTML = (bodyText) => {
   const parsedContent = parse(bodyText, {
-    trim: true
+    trim: true,
   });
   return parsedContent;
 };

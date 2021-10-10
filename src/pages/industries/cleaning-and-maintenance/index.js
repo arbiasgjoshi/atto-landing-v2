@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import loadable from '@loadable/component';
@@ -72,6 +72,15 @@ const Cleaning = () => {
       toggleDeleteInvite(val);
     }
   };
+
+  useEffect(() => {
+    if (values) {
+      setTimeout(() => {
+        setShowDialog(true);
+      }, 1500);
+    }
+  }, [values]);
+
   return (
     <>
       <div className={`${container} ${industryPadding}`}>

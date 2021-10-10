@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import loadable from '@loadable/component';
@@ -122,9 +122,9 @@ const TimeTracking = () => {
     };
     fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
-      .then((data) => {
+      .then((dd) => {
         closeModal();
-        setValues(data);
+        setValues(dd);
         setTimeout(() => openModal(), 2000);
       });
   };
@@ -137,6 +137,14 @@ const TimeTracking = () => {
       toggleDeleteInvite(val);
     }
   };
+
+  useEffect(() => {
+    if (values) {
+      setTimeout(() => {
+        setShowDialog(true);
+      }, 1500);
+    }
+  }, [values]);
 
   const timeTrackingTitleList = [
     {
