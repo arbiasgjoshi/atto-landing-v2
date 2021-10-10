@@ -61,7 +61,10 @@ const Home = () => {
   const [values, setValues] = useState(null);
   const [deletedInvite, setDeleted] = useState(false);
   const openModal = () => setShowDialog(true);
-  const closeModal = () => setShowDialog(false);
+  const closeModal = () => {
+    setShowDialog(false);
+    setValues(null);
+  };
 
   const [settings, setSettings] = useState({
     dots: false,
