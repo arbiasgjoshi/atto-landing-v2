@@ -215,12 +215,14 @@ const Home = () => {
   };
 
   const formSuccessState = (val) => {
-    if (val && val?.action !== 'delete') {
+    if (val?.action !== 'delete') {
       closeModal();
-      setValues(val);
-      setTimeout(() => {
-        openModal();
-      }, 500);
+      if (val !== null) {
+        setValues(val);
+        setTimeout(() => {
+          openModal();
+        }, 500);
+      }
     } else {
       toggleDeleteInvite(val);
     }
