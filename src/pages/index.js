@@ -224,6 +224,14 @@ const Home = () => {
   };
 
   useEffect(() => {
+    if (values) {
+      setTimeout(() => {
+        setShowDialog(true);
+      }, 1500);
+    }
+  }, [values]);
+
+  useEffect(() => {
     if (window.innerWidth < 768) {
       setSettings({
         ...settings,
@@ -367,7 +375,10 @@ const Home = () => {
         description={Intl.formatMessage({ id: 'pages.homepage.subscribeDesc' })}
         list={checkList}
         onToggleModal={() => openModal()}
-        onSuccessRes={(val) => formSuccessState(val)}
+        onSuccessRes={(val) => {
+          console.log(val);
+          formSuccessState(val);
+        }}
       />
       <FooterComponent />
     </div>
