@@ -58,7 +58,7 @@ const Home = () => {
   const Intl = useIntl();
   // dialog config
   const [showDialog, setShowDialog] = useState(false);
-  const [values, setValues] = useState({});
+  const [values, setValues] = useState(null);
   const [deletedInvite, setDeleted] = useState(false);
   const openModal = () => setShowDialog(true);
   const closeModal = () => setShowDialog(false);
