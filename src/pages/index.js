@@ -378,10 +378,7 @@ const Home = () => {
         description={Intl.formatMessage({ id: 'pages.homepage.subscribeDesc' })}
         list={checkList}
         onToggleModal={() => openModal()}
-        onSuccessRes={(val) => {
-          console.log(val);
-          formSuccessState(val);
-        }}
+        onSuccessRes={(val) => formSuccessState(val)}
       />
       <FooterComponent />
     </div>
