@@ -215,7 +215,7 @@ const Home = () => {
   };
 
   const formSuccessState = (val) => {
-    if (val?.action !== 'delete') {
+    if (val && val?.action !== 'delete') {
       closeModal();
       setValues(val);
       setTimeout(() => {
