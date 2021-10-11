@@ -214,6 +214,7 @@ const Home = () => {
       });
   };
 
+  // This one has been updated
   const formSuccessState = (val) => {
     if (val?.action !== 'delete') {
       closeModal();
