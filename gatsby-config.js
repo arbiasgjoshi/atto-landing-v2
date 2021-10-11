@@ -136,7 +136,7 @@ module.exports = {
           'img-src':
             "'self' data: https://atto-production.s3.us-west-2.amazonaws.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.google.com;",
           'default-src': "'self' http: https:",
-          'frame-src': "'self' https://vars.hotjar.com;",
+          'frame-src': "'self' https://vars.hotjar.com https://player.vimeo.com;",
           'font-src': "'self' data: https://hello.myfonts.net;",
           'connect-src':
             "'self' https://hits-i.iubenda.com https://app.attotime.com https://vc.hotjar.io https://ws16.hotjar.com https://analytics.google.com https://d3hb14vkzrxvla.cloudfront.net  https://stats.g.doubleclick.net https://staging.attotime.com https://www.google-analytics.com http://*.hotjar.com:* https://*.hotjar.com:* https://vc.hotjar.io:* https://surveystats.hotjar.io wss://*.hotjar.com;",
