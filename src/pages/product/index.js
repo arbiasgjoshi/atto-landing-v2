@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
 import loadable from '@loadable/component';
@@ -54,13 +54,16 @@ const Product = () => {
     if (val?.action !== 'delete') {
       closeModal();
       setValues(val);
-      setTimeout(() => {
-        openModal();
-      }, 500);
     } else {
       toggleDeleteInvite(val);
     }
   };
+
+  useEffect(() => {
+    if (values) {
+      setTimeout(() => openModal(), 1000);
+    }
+  }, [values]);
 
   const firstList = [
     {

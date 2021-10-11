@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import loadable from '@loadable/component';
@@ -73,6 +73,12 @@ const LocationTracking = () => {
       toggleDeleteInvite(val);
     }
   };
+
+  useEffect(() => {
+    if (values) {
+      setTimeout(() => openModal(), 1000);
+    }
+  }, [values]);
 
   const checkList1 = [
     { title: Intl.formatMessage({ id: 'pages.productLocationTracking.checkListItemZero' }) },

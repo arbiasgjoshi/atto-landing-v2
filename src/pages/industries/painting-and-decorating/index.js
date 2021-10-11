@@ -58,9 +58,9 @@ const Painting = () => {
     };
     fetch(`${apiUrl}/delete-invite`, requestOptions)
       .then((res) => res.json())
-      .then((data) => {
+      .then((dd) => {
         closeModal();
-        setValues(data);
+        setValues(dd);
         setTimeout(() => openModal(), 2000);
       });
   };
@@ -78,9 +78,7 @@ const Painting = () => {
 
   useEffect(() => {
     if (values) {
-      setTimeout(() => {
-        setShowDialog(true);
-      }, 1500);
+      setTimeout(() => openModal(), 1000);
     }
   }, [values]);
 

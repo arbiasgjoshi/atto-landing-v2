@@ -76,9 +76,7 @@ const Landscaping = () => {
 
   useEffect(() => {
     if (values) {
-      setTimeout(() => {
-        setShowDialog(true);
-      }, 1500);
+      setTimeout(() => openModal(), 1000);
     }
   }, [values]);
 

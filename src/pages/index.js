@@ -220,9 +220,6 @@ const Home = () => {
       closeModal();
       if (val !== null) {
         setValues(val);
-        setTimeout(() => {
-          openModal();
-        }, 500);
       }
     } else {
       toggleDeleteInvite(val);
@@ -231,9 +228,7 @@ const Home = () => {
 
   useEffect(() => {
     if (values) {
-      setTimeout(() => {
-        setShowDialog(true);
-      }, 1500);
+      setTimeout(() => openModal(), 1000);
     }
   }, [values]);
 

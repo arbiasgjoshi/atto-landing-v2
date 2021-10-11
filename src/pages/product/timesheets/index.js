@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import loadable from '@loadable/component';
@@ -400,6 +400,12 @@ const Timesheets = () => {
       return featureImgLocaleFourFr;
     }
   };
+
+  useEffect(() => {
+    if (values) {
+      setTimeout(() => openModal(), 1000);
+    }
+  }, [values]);
 
   return (
     <div className={`${container} ${teamActivityContainer}`}>
