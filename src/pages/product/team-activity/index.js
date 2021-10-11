@@ -64,7 +64,9 @@ const TeamActivity = () => {
   const formSuccessState = (val) => {
     if (val?.action !== 'delete') {
       closeModal();
-      setValues(val);
+      if (val !== null) {
+        setValues(val);
+      }
     } else {
       toggleDeleteInvite(val);
     }
